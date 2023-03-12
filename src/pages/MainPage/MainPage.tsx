@@ -1,11 +1,13 @@
 import React from 'react'
 import { Container } from '@mui/material'
+import { InfoSidebar } from './InfoSidebar'
 import { ModelingScene } from './ModelingScene'
-import { InfoSidebar } from './InfoSidebar/InfoSidebar'
 
 export const MainPage = () => {
   return (
-    <Container sx={{ display: 'grid', gridTemplateColumns: '1fr 400px' }}>
+    <Container
+      sx={{ height: '100%', display: 'grid', gridTemplateColumns: '1fr 400px' }}
+    >
       <ModelingScene />
 
       <InfoSidebar />

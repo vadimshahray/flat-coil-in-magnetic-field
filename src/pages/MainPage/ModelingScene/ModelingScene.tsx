@@ -6,7 +6,9 @@ export const ModelingScene = () => {
     <Container
       sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
     >
-      <Typography variant='h1'>Здесь будет сцена моделирования</Typography>
+      <Typography variant='h1' textAlign='center'>
+        Здесь будет сцена моделирования
+      </Typography>
     </Container>
   )
 }

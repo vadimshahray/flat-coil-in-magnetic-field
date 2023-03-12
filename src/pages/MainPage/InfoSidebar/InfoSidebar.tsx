@@ -4,7 +4,7 @@ import { Container, Typography } from '@mui/material'
 export const InfoSidebar = () => {
   return (
     <Container>
-      <Typography>Информационная панель</Typography>
+      <Typography textAlign='center'>Информационная панель</Typography>
     </Container>
   )
 }
