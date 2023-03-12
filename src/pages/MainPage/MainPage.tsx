@@ -2,5 +2,5 @@ import React from 'react'
 import { Container } from '@mui/material'
 
 export const MainPage = () => {
-  return <Container>wefwefew</Container>
+  return <Container></Container>
 }
