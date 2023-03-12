@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@components": ["src/components"],
+      "@constants": ["src/constants"],
+      "@hooks": ["src/hooks"],
+      "@layouts": ["src/layouts"],
+      "@models": ["src/models"],
+      "@pages": ["src/pages"],
+      "@providers": ["src/providers"],
+      "@selectors": ["src/selectors"],
+      "@slices": ["src/slices"],
+      "@styles": ["src/styles"],
+      "@utils": ["src/utils"],
+    }
+  }
+}
