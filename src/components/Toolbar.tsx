@@ -17,8 +17,8 @@ export const Toolbar = ({ title, Icon, actionButtons }: ToolbarProps) => {
       </Stack>
 
       <Stack direction='row' spacing={1}>
-        {actionButtons?.map((btn, i) => (
-          <span key={i}>{btn}</span>
+        {actionButtons?.map((Btn, i) => (
+          <Btn key={i.toString()} />
         ))}
       </Stack>
     </MUIToolbar>
