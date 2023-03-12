@@ -1,3 +1,4 @@
+import { components } from './components'
 import { createTheme } from '@mui/material'
 
 export const theme = createTheme({
@@ -16,4 +17,5 @@ export const theme = createTheme({
   typography: {
     fontFamily: 'Jost, sans-serif',
   },
+  components,
 })
