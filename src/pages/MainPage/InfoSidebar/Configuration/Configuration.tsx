@@ -5,7 +5,7 @@ import { SettingsOutlined } from '@mui/icons-material'
 
 export const Configuration = () => {
   return (
-    <Container>
+    <Container disableGutters>
       <Toolbar title='Настройки моделирования' Icon={SettingsOutlined} />
 
       <Section title='Моторчик' collapsible></Section>
