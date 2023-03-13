@@ -1,15 +1,20 @@
 import React from 'react'
 import { Container } from '@mui/material'
 import { SettingsOutlined } from '@mui/icons-material'
-import { Section, ThemeColorModeButton, Toolbar } from '@components'
+import {
+  Section,
+  Toolbar,
+  ThemeColorModeButton,
+  ProjectDocumentButton,
+} from '@components'
 
 export const Configuration = () => {
   return (
     <Container disableGutters>
       <Toolbar
-        title='Настройки моделирования'
+        title='Настройки приложения'
         Icon={SettingsOutlined}
-        actionButtons={[ThemeColorModeButton]}
+        actionButtons={[ThemeColorModeButton, ProjectDocumentButton]}
       />
 
       <Section title='Моторчик' collapsible></Section>
