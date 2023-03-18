@@ -2,13 +2,13 @@ import React from 'react'
 import { useDispatch } from '@hooks'
 import { setColorMode } from '@slices'
 import { useSelector } from 'react-redux'
-import { selectThemeColorMode } from '@selectors'
+import { selectUserColorMode } from '@selectors'
 import { IconButton, Tooltip } from '@mui/material'
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material'
 
-export const ThemeColorModeButton = () => {
+export const ColorModeButton = () => {
   const dispatch = useDispatch()
-  const colorMode = useSelector(selectThemeColorMode)
+  const colorMode = useSelector(selectUserColorMode)
 
   const handleClick = () => {
     dispatch(setColorMode(colorMode === 'light' ? 'dark' : 'light'))

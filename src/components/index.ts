@@ -1,5 +1,5 @@
 export * from './Section'
 export * from './Toolbar'
 export * from './ErrorBoundary'
-export * from './ThemeColorModeButton'
+export * from './ColorModeButton'
 export * from './ProjectDocumentButton'

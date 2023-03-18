@@ -4,7 +4,7 @@ import { SettingsOutlined } from '@mui/icons-material'
 import {
   Section,
   Toolbar,
-  ThemeColorModeButton,
+  ColorModeButton,
   ProjectDocumentButton,
 } from '@components'
 
@@ -14,7 +14,7 @@ export const Configuration = () => {
       <Toolbar
         title='Настройки приложения'
         Icon={SettingsOutlined}
-        actionButtons={[ThemeColorModeButton, ProjectDocumentButton]}
+        actionButtons={[ColorModeButton, ProjectDocumentButton]}
       />
 
       <Section title='Моторчик' collapsible></Section>

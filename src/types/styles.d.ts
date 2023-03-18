@@ -1,0 +1,1 @@
+type ColorMode = 'light' | 'dark'
