@@ -1,7 +1,7 @@
 import { minMaxRule } from '@utils'
 import { ValidatedTextField } from '@components'
 import React, { useEffect, useState } from 'react'
-import { Stack, Slider, Box } from '@mui/material'
+import { Stack, Slider, Container } from '@mui/material'
 
 export type SliderTextFieldProps = {
   min: number
@@ -62,11 +62,11 @@ export const SliderTextField = ({
         onValid={onTextFieldValid}
       />
 
-      <Box
+      <Container
         sx={{
-          width: '100%',
           display: 'flex',
           justifyContent: 'center',
+          paddingY: 0,
         }}
       >
         <Slider
@@ -77,7 +77,7 @@ export const SliderTextField = ({
           value={sliderValue}
           onChange={onSliderChange}
         />
-      </Box>
+      </Container>
     </Stack>
   )
 }
