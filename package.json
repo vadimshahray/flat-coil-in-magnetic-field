@@ -20,6 +20,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "camera-controls": "^2.3.1",
+    "i18n-js": "^4.2.3",
     "lamina": "^1.1.23",
     "notistack": "^3.0.1",
     "react": "^18.2.0",
@@ -42,7 +43,8 @@
     "lint:es": "eslint --ext .js,.jsx,.ts,.tsx src",
     "lint:es:fix": "npm run lint:es -- --fix",
     "lint:css": "stylelint src",
-    "lint:css:fix": "npm run lint:css -- --fix"
+    "lint:css:fix": "npm run lint:css -- --fix",
+    "convert_dictionary": "yarn ts-node --compilerOptions \"{\\\"module\\\":\\\"commonjs\\\"}\" scripts/convertDictionary.ts"
   },
   "eslintConfig": {
     "extends": [

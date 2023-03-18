@@ -4,26 +4,30 @@ import { SettingsOutlined } from '@mui/icons-material'
 import {
   Section,
   Toolbar,
+  LanguageButton,
   ColorModeButton,
   ProjectDocumentButton,
 } from '@components'
+import { useTranslate } from '@languages'
 
 export const Configuration = () => {
+  const translate = useTranslate('Configuration')
+
   return (
     <Container disableGutters>
       <Toolbar
-        title='Настройки приложения'
+        title={translate('title')}
         Icon={SettingsOutlined}
-        actionButtons={[ColorModeButton, ProjectDocumentButton]}
+        actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
       />
 
-      <Section title='Моторчик' collapsible></Section>
+      <Section title={translate('motorSection')} collapsible></Section>
 
-      <Section title='Катушка' collapsible></Section>
+      <Section title={translate('coilSection')} collapsible></Section>
 
-      <Section title='Вольтметр' collapsible></Section>
+      <Section title={translate('voltmeterSection')} collapsible></Section>
 
-      <Section title='Катушки Гельмгольца' collapsible></Section>
+      <Section title={translate('HelmholtzCoils')} collapsible></Section>
     </Container>
   )
 }

@@ -1,4 +1,5 @@
 import React, { ErrorInfo } from 'react'
+import { useTranslate } from '@languages'
 import { ErrorOutlineOutlined } from '@mui/icons-material'
 import { Box, Paper, Stack, Typography } from '@mui/material'
 
@@ -8,6 +9,8 @@ type Props = {
 }
 
 export const ErrorFallback = ({ error, errorInfo }: Props) => {
+  const translate = useTranslate('ErrorFallback')
+
   return (
     <Box
       sx={{
@@ -24,7 +27,7 @@ export const ErrorFallback = ({ error, errorInfo }: Props) => {
             <ErrorOutlineOutlined color='error' fontSize='large' />
 
             <Typography variant='h4' color='error'>
-              На сайте произошла ошибка
+              {translate('title')}
             </Typography>
           </Stack>
 

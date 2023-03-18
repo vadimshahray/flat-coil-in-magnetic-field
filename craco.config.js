@@ -8,7 +8,7 @@ module.exports = {
       '@components': resolvePath('./src/components'),
       '@constants': resolvePath('./src/constants'),
       '@hooks': resolvePath('./src/hooks'),
-      '@layouts': resolvePath('./src/layouts'),
+      '@languages': resolvePath('./src/languages'),
       '@models': resolvePath('./src/models'),
       '@pages': resolvePath('./src/pages'),
       '@providers': resolvePath('./src/providers'),
