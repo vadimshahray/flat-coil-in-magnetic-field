@@ -7,7 +7,12 @@ export const MainPage = () => {
   return (
     <Container
       disableGutters
-      sx={{ height: '100%', display: 'grid', gridTemplateColumns: '1fr 400px' }}
+      sx={{
+        height: '100%',
+        display: 'grid',
+        gridTemplateColumns: '1fr 400px',
+        overflow: 'hidden',
+      }}
     >
       <ModelingScene />
 
