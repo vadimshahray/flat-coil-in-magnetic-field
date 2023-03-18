@@ -1,5 +1,5 @@
-import { userSlice } from '@slices'
 import storage from 'redux-persist/lib/storage'
+import { userSlice, motorSlice } from '@slices'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   FLUSH,
@@ -20,6 +20,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
+  motor: motorSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
