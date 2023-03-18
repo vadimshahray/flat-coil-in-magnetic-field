@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container } from '@mui/material'
 import { useTranslate } from '@languages'
+import { MotorSection } from './MotorSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import {
   Section,
@@ -21,7 +22,7 @@ export const Configuration = () => {
         actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
       />
 
-      <Section title={translate('motorSection')}></Section>
+      <MotorSection />
 
       <Section title={translate('coilSection')}></Section>
 
