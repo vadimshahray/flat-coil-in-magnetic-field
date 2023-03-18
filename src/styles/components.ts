@@ -72,4 +72,24 @@ export const components: ThemeOptions['components'] = {
       },
     },
   },
+  MuiSlider: {
+    styleOverrides: {
+      root: ({ theme: { palette } }) => ({
+        '& .MuiSlider-thumb': {
+          backgroundColor: palette.primary.light,
+        },
+        '& .MuiSlider-track': {
+          backgroundColor: palette.primary.light,
+        },
+        '&:hover, &.Mui-focusVisible': {
+          '& .MuiSlider-thumb': {
+            backgroundColor: palette.primary.main,
+          },
+          '& .MuiSlider-track': {
+            backgroundColor: palette.primary.main,
+          },
+        },
+      }),
+    },
+  },
 }

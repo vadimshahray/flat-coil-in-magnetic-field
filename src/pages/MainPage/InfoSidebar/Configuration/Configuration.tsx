@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container } from '@mui/material'
+import { useTranslate } from '@languages'
 import { SettingsOutlined } from '@mui/icons-material'
 import {
   Section,
@@ -8,7 +9,6 @@ import {
   ColorModeButton,
   ProjectDocumentButton,
 } from '@components'
-import { useTranslate } from '@languages'
 
 export const Configuration = () => {
   const translate = useTranslate('Configuration')
