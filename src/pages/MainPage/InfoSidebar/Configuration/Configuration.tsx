@@ -21,13 +21,13 @@ export const Configuration = () => {
         actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
       />
 
-      <Section title={translate('motorSection')} collapsible></Section>
+      <Section title={translate('motorSection')}></Section>
 
-      <Section title={translate('coilSection')} collapsible></Section>
+      <Section title={translate('coilSection')}></Section>
 
-      <Section title={translate('voltmeterSection')} collapsible></Section>
+      <Section title={translate('voltmeterSection')}></Section>
 
-      <Section title={translate('HelmholtzCoils')} collapsible></Section>
+      <Section title={translate('HelmholtzCoils')}></Section>
     </Container>
   )
 }

@@ -13,14 +13,14 @@ import {
 export type SectionProps = {
   title: string
   Icon?: Icon
-  collapsible?: boolean
+  notCollapsible?: boolean
 } & PropsWithChildren
 
 export const Section = ({
   title,
   Icon,
   children,
-  collapsible,
+  notCollapsible,
 }: SectionProps) => {
   const [expanded, setExpanded] = useState(true)
 
@@ -36,7 +36,7 @@ export const Section = ({
           {title}
         </Typography>
 
-        {collapsible && (
+        {!notCollapsible && (
           <Tooltip title={expanded ? 'Свернуть' : 'Развернуть'}>
             <IconButton onClick={handleClick} size='small'>
               {expanded ? <ExpandLess /> : <ExpandMore />}
