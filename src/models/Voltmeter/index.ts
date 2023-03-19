@@ -1,1 +1,1 @@
-export * from './Voltmeter'
+export { default } from './Voltmeter'

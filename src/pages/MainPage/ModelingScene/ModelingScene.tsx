@@ -1,18 +1,22 @@
-import React from 'react'
 import { Camera } from './Camera'
-import { Voltmeter } from '@models'
+import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { ModelingSceneLoading } from './ModelingSceneLoading'
+
+const Voltmeter = React.lazy(() => import('src/models/Voltmeter'))
 
 export const ModelingScene = () => {
   return (
-    <Canvas>
-      <Camera />
+    <Suspense fallback={<ModelingSceneLoading />}>
+      <Canvas>
+        <Camera />
 
-      <ambientLight />
+        <ambientLight />
 
-      <pointLight position={[100, 10, 0]} />
+        <pointLight position={[100, 10, 0]} />
 
-      <Voltmeter />
-    </Canvas>
+        <Voltmeter />
+      </Canvas>
+    </Suspense>
   )
 }

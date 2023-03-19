@@ -15,7 +15,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
+const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(VoltmeterModelPath) as GLTFResult
 
   return (
@@ -34,3 +34,5 @@ export const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
     </group>
   )
 }
+
+export default Voltmeter
