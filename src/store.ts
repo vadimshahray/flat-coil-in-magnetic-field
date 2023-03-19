@@ -3,6 +3,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   userSlice,
   motorSlice,
+  modelingSlice,
   voltmeterSlice,
   configurationSlice,
 } from '@slices'
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
   motor: motorSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
   configuration: configurationSlice.reducer,
+  modeling: modelingSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
