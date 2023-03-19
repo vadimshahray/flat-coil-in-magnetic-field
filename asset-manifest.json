@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.2ef8b87b.js",
-    "static/js/611.5e5dc46e.chunk.js": "/alternator/static/js/611.5e5dc46e.chunk.js",
+    "main.js": "/alternator/static/js/main.c6a60189.js",
+    "static/js/511.8a11c82a.chunk.js": "/alternator/static/js/511.8a11c82a.chunk.js",
+    "static/js/611.5c6ad83c.chunk.js": "/alternator/static/js/611.5c6ad83c.chunk.js",
     "static/js/655.e0282b71.chunk.js": "/alternator/static/js/655.e0282b71.chunk.js",
     "static/media/voltmeter.glb": "/alternator/static/media/voltmeter.c680f0043dc5e15bcebe.glb",
+    "static/media/coil.glb": "/alternator/static/media/coil.58c5c7cf8886ca958cdf.glb",
     "index.html": "/alternator/index.html",
     "static/media/alternator.pdf": "/alternator/static/media/alternator.31d6cfe0d16ae931b73c.pdf",
-    "main.2ef8b87b.js.map": "/alternator/static/js/main.2ef8b87b.js.map",
-    "611.5e5dc46e.chunk.js.map": "/alternator/static/js/611.5e5dc46e.chunk.js.map",
+    "main.c6a60189.js.map": "/alternator/static/js/main.c6a60189.js.map",
+    "511.8a11c82a.chunk.js.map": "/alternator/static/js/511.8a11c82a.chunk.js.map",
+    "611.5c6ad83c.chunk.js.map": "/alternator/static/js/611.5c6ad83c.chunk.js.map",
     "655.e0282b71.chunk.js.map": "/alternator/static/js/655.e0282b71.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.2ef8b87b.js"
+    "static/js/main.c6a60189.js"
   ]
 }
