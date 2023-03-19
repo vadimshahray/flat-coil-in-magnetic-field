@@ -1,6 +1,6 @@
 import React from 'react'
+import { Sidebar } from './Sidebar'
 import { Container } from '@mui/material'
-import { InfoSidebar } from './InfoSidebar'
 import { ModelingScene } from './ModelingScene'
 
 export const MainPage = () => {
@@ -16,7 +16,7 @@ export const MainPage = () => {
     >
       <ModelingScene />
 
-      <InfoSidebar />
+      <Sidebar />
     </Container>
   )
 }

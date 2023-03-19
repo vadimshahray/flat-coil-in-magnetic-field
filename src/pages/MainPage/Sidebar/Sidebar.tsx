@@ -1,8 +1,8 @@
-import { Box } from '@mui/material'
 import React from 'react'
+import { Box } from '@mui/material'
 import { Configuration } from './Configuration'
 
-export const InfoSidebar = () => {
+export const Sidebar = () => {
   return (
     <Box sx={{ overflowY: 'auto' }}>
       <Configuration />
