@@ -2,6 +2,7 @@ import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
+import VoltmeterModelPath from './voltmeter.glb'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -15,9 +16,7 @@ type GLTFResult = GLTF & {
 }
 
 export const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
-  const { nodes, materials } = useGLTF(
-    process.env.PUBLIC_URL + '/models/voltmeter-transformed.glb',
-  ) as GLTFResult
+  const { nodes, materials } = useGLTF(VoltmeterModelPath) as GLTFResult
 
   return (
     <group {...props} dispose={null}>
@@ -26,6 +25,7 @@ export const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           geometry={nodes.Cube_1.geometry}
           material={materials['Material.001']}
         />
+
         <mesh
           geometry={nodes.Cube_2.geometry}
           material={materials['Material.002']}
@@ -34,5 +34,3 @@ export const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
     </group>
   )
 }
-
-useGLTF.preload('/voltmeter-transformed.glb')
