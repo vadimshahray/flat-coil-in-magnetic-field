@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { ModelingInfo } from './ModelingInfo'
 import { Configuration } from './Configuration'
@@ -9,8 +8,8 @@ export const Sidebar = () => {
   const modelingStatus = useSelector(selectModelingStatus)
 
   return (
-    <Box sx={{ overflowY: 'auto' }}>
+    <div style={{ overflowY: 'auto' }}>
       {modelingStatus === 'idle' ? <Configuration /> : <ModelingInfo />}
-    </Box>
+    </div>
   )
 }

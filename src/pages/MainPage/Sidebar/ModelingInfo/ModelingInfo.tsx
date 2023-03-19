@@ -17,7 +17,7 @@ export const ModelingInfo = () => {
 
   return (
     <Stack justifyContent='space-between' sx={{ height: '100%' }}>
-      <Box>
+      <div>
         <Toolbar
           title={translate('title')}
           Icon={BoltOutlined}
@@ -27,7 +27,7 @@ export const ModelingInfo = () => {
             ProjectDocumentButton,
           ]}
         />
-      </Box>
+      </div>
 
       <Stack
         direction='row'
