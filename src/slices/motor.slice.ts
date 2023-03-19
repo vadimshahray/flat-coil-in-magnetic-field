@@ -1,9 +1,10 @@
+import { MOTOR_SPEED_MIN } from '@constants'
 import { createSlice } from '@reduxjs/toolkit'
 
 export const motorSlice = createSlice<MotorSliceState, MotorSlice>({
   name: 'motor',
   initialState: {
-    speed: 0,
+    speed: MOTOR_SPEED_MIN,
   },
   reducers: {
     setMotorSpeed: (state, { payload }) => {
