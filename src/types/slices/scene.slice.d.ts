@@ -3,5 +3,8 @@ type SceneSliceState = {
 }
 
 interface SceneSlice extends SliceCaseReducers<SceneSliceState> {
-  setDeviceInView(state: SceneSliceState, action: PayloadAction<Device>): void
+  setSceneDeviceInView(
+    state: SceneSliceState,
+    action: PayloadAction<Device | undefined>,
+  ): void
 }
