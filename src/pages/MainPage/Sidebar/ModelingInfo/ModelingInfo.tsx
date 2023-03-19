@@ -3,6 +3,7 @@ import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
 import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
+import { MotorInfoSection } from './MotorInfoSection'
 import { DropModelingButton } from './DropModelingButton'
 import { VoltmeterInfoSection } from './VoltmeterInfoSection'
 import { StopStartModelingButton } from './StopStartModelingButton'
@@ -28,6 +29,8 @@ export const ModelingInfo = () => {
             ProjectDocumentButton,
           ]}
         />
+
+        <MotorInfoSection />
 
         <VoltmeterInfoSection />
       </div>

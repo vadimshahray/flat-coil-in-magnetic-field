@@ -11,6 +11,14 @@ export const modelingInfoRU = {
     label: 'Вольты',
   },
 
+  MotorInfoSection: {
+    title: 'Моторчик',
+  },
+
+  MotorSpeedInfoItem: {
+    label: 'Количество оборотов',
+  },
+
   StopStartModelingButton: {
     stopModeling: 'Остановить моделирование',
     startModeling: 'Продолжить моделирование',
@@ -35,6 +43,14 @@ export const modelingInfoEN = {
 
   VoltmeterVoltsInfoItem: {
     label: 'Volts',
+  },
+
+  MotorInfoSection: {
+    title: 'Motor',
+  },
+
+  MotorSpeedInfoItem: {
+    label: 'Speed',
   },
 
   StopStartModelingButton: {
