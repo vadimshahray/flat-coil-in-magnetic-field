@@ -5,7 +5,7 @@ type Props = {
   label: string
 } & PropsWithChildren
 
-export const Item = ({ label, children }: Props) => {
+export const InfoItem = ({ label, children }: Props) => {
   return (
     <Stack
       direction='row'
