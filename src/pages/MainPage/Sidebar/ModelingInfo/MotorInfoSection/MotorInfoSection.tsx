@@ -1,16 +1,14 @@
 import React from 'react'
 import { useTranslate } from '@languages'
+import { SectionWithButton } from '@components'
+import { ViewMotorButton } from './ViewMotorButton'
 import { MotorSpeedInfoItem } from './MotorSpeedInfoItem'
-import { SectionWithButton, ViewDeviceButton } from '@components'
 
 export const MotorInfoSection = () => {
   const translate = useTranslate('MotorInfoSection')
 
   return (
-    <SectionWithButton
-      title={translate('title')}
-      Button={<ViewDeviceButton onClick={() => null} />}
-    >
+    <SectionWithButton title={translate('title')} Button={<ViewMotorButton />}>
       <MotorSpeedInfoItem />
     </SectionWithButton>
   )
