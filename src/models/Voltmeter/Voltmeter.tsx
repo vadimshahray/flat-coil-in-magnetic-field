@@ -20,7 +20,10 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group scale={[20, 25, 45]}>
+      <group
+        scale={[20, 25, 45]}
+        rotation={[0, THREE.MathUtils.degToRad(-90), 0]}
+      >
         <mesh
           geometry={nodes.Cube_1.geometry}
           material={materials['Material.001']}
