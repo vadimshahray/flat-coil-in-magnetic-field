@@ -1,14 +1,18 @@
 import React from 'react'
-import { Container, Typography } from '@mui/material'
+import { Camera } from './Camera'
+import { Voltmeter } from '@models'
+import { Canvas } from '@react-three/fiber'
 
 export const ModelingScene = () => {
   return (
-    <Container
-      sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-    >
-      <Typography variant='h1' textAlign='center'>
-        Здесь будет сцена моделирования
-      </Typography>
-    </Container>
+    <Canvas>
+      <Camera />
+
+      <ambientLight />
+
+      <pointLight position={[100, 10, 0]} />
+
+      <Voltmeter />
+    </Canvas>
   )
 }
