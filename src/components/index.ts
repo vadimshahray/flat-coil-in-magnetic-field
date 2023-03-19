@@ -1,5 +1,6 @@
 export * from './Section'
 export * from './Toolbar'
+export * from './InfoItem'
 export * from './ErrorBoundary'
 export * from './LanguageButton'
 export * from './ColorModeButton'
