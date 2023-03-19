@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.1c5f16d8.js",
+    "main.js": "/alternator/static/js/main.fda919d1.js",
+    "static/media/voltmeter.glb": "/alternator/static/media/voltmeter.c680f0043dc5e15bcebe.glb",
     "index.html": "/alternator/index.html",
-    "main.1c5f16d8.js.map": "/alternator/static/js/main.1c5f16d8.js.map"
+    "static/media/alternator.pdf": "/alternator/static/media/alternator.31d6cfe0d16ae931b73c.pdf",
+    "main.fda919d1.js.map": "/alternator/static/js/main.fda919d1.js.map"
   },
   "entrypoints": [
-    "static/js/main.1c5f16d8.js"
+    "static/js/main.fda919d1.js"
   ]
 }
