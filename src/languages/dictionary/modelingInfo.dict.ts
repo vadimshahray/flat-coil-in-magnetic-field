@@ -9,6 +9,11 @@ export const modelingInfoRU = {
     stop: 'Стоп',
     start: 'Запуск',
   },
+
+  DropModelingButton: {
+    dropModeling: 'Сбросить сеанс моделирования',
+    drop: 'Сброс',
+  },
 }
 
 export const modelingInfoEN = {
@@ -21,5 +26,10 @@ export const modelingInfoEN = {
     startModeling: 'Continue modeling',
     stop: 'Stop',
     start: 'Start',
+  },
+
+  DropModelingButton: {
+    dropModeling: 'Drop modeling session',
+    drop: 'Drop',
   },
 }

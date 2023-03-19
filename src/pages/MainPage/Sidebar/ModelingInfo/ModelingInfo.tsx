@@ -3,6 +3,7 @@ import { useTranslate } from '@languages'
 import { Box, Stack } from '@mui/material'
 import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
+import { DropModelingButton } from './DropModelingButton'
 import { StopStartModelingButton } from './StopStartModelingButton'
 import {
   Toolbar,
@@ -36,6 +37,8 @@ export const ModelingInfo = () => {
       >
         <Stack direction='row' spacing={1}>
           <StopStartModelingButton />
+
+          <DropModelingButton />
         </Stack>
 
         <ModelingTimer />
