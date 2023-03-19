@@ -21,6 +21,7 @@ export const extraRU = {
 
   ViewDeviceButton: {
     viewDevice: 'Посмотреть на прибор',
+    doNotViewDevice: 'Не смотреть на прибор',
   },
 }
 
@@ -46,6 +47,7 @@ export const extraEN = {
   },
 
   ViewDeviceButton: {
-    viewDevice: 'View device',
+    viewDevice: 'Look at the device',
+    doNotViewDevice: "Don't look at the device",
   },
 }

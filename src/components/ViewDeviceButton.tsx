@@ -8,13 +8,13 @@ type Props = {
   onClick: () => void
 }
 
-export const ViewDeviceButton = ({ inView: isActive, onClick }: Props) => {
+export const ViewDeviceButton = ({ inView, onClick }: Props) => {
   const translate = useTranslate('ViewDeviceButton')
 
   return (
-    <Tooltip title={translate('viewDevice')}>
+    <Tooltip title={translate(inView ? 'doNotViewDevice' : 'viewDevice')}>
       <IconButton onClick={onClick}>
-        {isActive ? <VisibilityOffOutlined /> : <VisibilityOutlined />}
+        {inView ? <VisibilityOffOutlined /> : <VisibilityOutlined />}
       </IconButton>
     </Tooltip>
   )
