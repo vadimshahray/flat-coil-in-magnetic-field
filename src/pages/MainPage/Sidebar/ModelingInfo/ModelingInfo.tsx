@@ -1,9 +1,10 @@
 import React from 'react'
+import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
-import { Box, Stack } from '@mui/material'
 import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
 import { DropModelingButton } from './DropModelingButton'
+import { VoltmeterInfoSection } from './VoltmeterInfoSection'
 import { StopStartModelingButton } from './StopStartModelingButton'
 import {
   Toolbar,
@@ -27,6 +28,8 @@ export const ModelingInfo = () => {
             ProjectDocumentButton,
           ]}
         />
+
+        <VoltmeterInfoSection />
       </div>
 
       <Stack

@@ -3,6 +3,14 @@ export const modelingInfoRU = {
     title: 'Моделирование',
   },
 
+  VoltmeterInfoSection: {
+    title: 'Вольтметр',
+  },
+
+  VoltmeterVoltsInfoItem: {
+    label: 'Вольты',
+  },
+
   StopStartModelingButton: {
     stopModeling: 'Остановить моделирование',
     startModeling: 'Продолжить моделирование',
@@ -19,6 +27,14 @@ export const modelingInfoRU = {
 export const modelingInfoEN = {
   ModelingInfo: {
     title: 'Modeling',
+  },
+
+  VoltmeterInfoSection: {
+    title: 'Voltmeter',
+  },
+
+  VoltmeterVoltsInfoItem: {
+    label: 'Volts',
   },
 
   StopStartModelingButton: {
