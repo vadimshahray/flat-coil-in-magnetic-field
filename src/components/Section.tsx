@@ -10,18 +10,13 @@ import {
   Typography,
 } from '@mui/material'
 
-export type SectionProps = {
+type Props = {
   title: string
   Icon?: Icon
   collapsible?: boolean
 } & PropsWithChildren
 
-export const Section = ({
-  title,
-  Icon,
-  children,
-  collapsible,
-}: SectionProps) => {
+export const Section = ({ title, Icon, children, collapsible }: Props) => {
   const [expanded, setExpanded] = useState(true)
 
   const handleClick = () => {
@@ -33,6 +28,7 @@ export const Section = ({
       <Stack direction='row' alignItems='center' justifyContent='space-between'>
         <Typography variant='subtitle1' display='flex' alignItems='center'>
           {Icon && <Icon sx={{ marginRight: 1 }} />}
+
           {title}
         </Typography>
 
