@@ -13,6 +13,11 @@ export const configurationRU = {
   MotorSpeedField: {
     label: 'Количество оборотов',
   },
+
+  StartModelingButton: {
+    start: 'Запуск',
+    startModeling: 'Начать моделирование',
+  },
 }
 
 export const configurationEN = {
@@ -29,5 +34,10 @@ export const configurationEN = {
 
   MotorSpeedField: {
     label: 'Speed',
+  },
+
+  StartModelingButton: {
+    start: 'Start',
+    startModeling: 'Start modeling',
   },
 }
