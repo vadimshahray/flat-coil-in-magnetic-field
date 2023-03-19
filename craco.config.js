@@ -14,6 +14,7 @@ module.exports = {
       '@providers': resolvePath('./src/providers'),
       '@selectors': resolvePath('./src/selectors'),
       '@slices': resolvePath('./src/slices'),
+      '@storage': resolvePath('./src/storage'),
       '@styles': resolvePath('./src/styles'),
       '@utils': resolvePath('./src/utils'),
     },
