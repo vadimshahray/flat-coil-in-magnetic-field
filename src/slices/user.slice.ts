@@ -5,7 +5,7 @@ import { getStorageItem, setStorageItem } from '@storage'
 export const userSlice = createSlice<UserSliceState, UserSlice>({
   name: 'user',
   initialState: {
-    language: (getStorageItem('@userLanguage') as Languages) || 'ru',
+    language: (getStorageItem('@userLanguage') as Language) || 'ru',
     colorMode: 'light',
   },
   reducers: {

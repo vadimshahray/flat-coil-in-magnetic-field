@@ -1,4 +1,4 @@
-type Languages = 'ru' | 'en'
+type Language = 'ru' | 'en'
 
 /**
  * Интерфейс словаря для любого из языков

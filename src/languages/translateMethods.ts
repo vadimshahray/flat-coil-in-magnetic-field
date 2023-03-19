@@ -4,10 +4,10 @@ import { getStorageItem } from '@storage'
 
 export const i18n = new I18n()
 
-export const findBestAvailableLanguage = (): Languages => {
-  const lang: Languages = navigator.language as any
+export const findBestAvailableLanguage = (): Language => {
+  const lang: Language = navigator.language as any
 
-  const availableLanguage: Languages[] = ['ru', 'en']
+  const availableLanguage: Language[] = ['ru', 'en']
 
   if (availableLanguage.includes(lang)) {
     return lang
