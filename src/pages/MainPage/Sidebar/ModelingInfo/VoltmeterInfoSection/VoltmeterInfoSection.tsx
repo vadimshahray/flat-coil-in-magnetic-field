@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslate } from '@languages'
-import { SectionWithButton, ViewDeviceButton } from '@components'
+import { SectionWithButton } from '@components'
+import { ViewVoltmeterButton } from './ViewVoltmeterButton'
 import { VoltmeterVoltsInfoItem } from './VoltmeterVoltsInfoItem'
 
 export const VoltmeterInfoSection = () => {
@@ -9,7 +10,7 @@ export const VoltmeterInfoSection = () => {
   return (
     <SectionWithButton
       title={translate('title')}
-      Button={<ViewDeviceButton onClick={() => null} />}
+      Button={<ViewVoltmeterButton />}
     >
       <VoltmeterVoltsInfoItem />
     </SectionWithButton>
