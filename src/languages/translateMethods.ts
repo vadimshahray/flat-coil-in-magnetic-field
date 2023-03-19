@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { I18n } from 'i18n-js'
-import { store } from 'src/store'
+import { getStorageItem } from '@storage'
 
 export const i18n = new I18n()
 
@@ -42,5 +42,5 @@ export const setI18nConfig = (language: string) => {
 setTimeout(
   setI18nConfig,
   0,
-  store.getState().user.language || findBestAvailableLanguage(),
+  getStorageItem('@userLanguage') || findBestAvailableLanguage(),
 )
