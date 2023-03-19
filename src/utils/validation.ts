@@ -1,15 +1,22 @@
 import * as yup from 'yup'
 
-const commaToDot = (v: any, ov: any) => {
-  return typeof ov === 'string' ? Number(ov.replace(',', '.')) : v
-}
-
-export const minMaxRule = (min: number, max: number) => {
+export const minMaxRule = ({
+  min,
+  max,
+  typeError,
+  minError,
+  maxError,
+  requiredError,
+}: MinMaxRuleOptions) => {
   return yup
     .number()
     .transform(commaToDot)
-    .typeError('Не число')
-    .min(min, `Значение меньше минимального (${min})`)
-    .max(max, `Значение больше максимального (${max})`)
-    .required('Обязательно')
+    .typeError(typeError)
+    .min(min, minError)
+    .max(max, maxError)
+    .required(requiredError)
+}
+
+const commaToDot = (v: any, ov: any) => {
+  return typeof ov === 'string' ? Number(ov.replace(',', '.')) : v
 }

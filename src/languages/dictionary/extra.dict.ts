@@ -11,6 +11,13 @@ export const extraRU = {
   ProjectDocumentButton: {
     downloadDocument: 'Скачать отчет',
   },
+
+  SliderTextField: {
+    typeError: 'Не число',
+    minError: 'Число меньше минимального ({{number}})',
+    maxError: 'Число больше максимального ({{number}})',
+    requiredError: 'Обязательное поле',
+  },
 }
 
 export const extraEN = {
@@ -25,5 +32,12 @@ export const extraEN = {
 
   ProjectDocumentButton: {
     downloadDocument: 'Download report',
+  },
+
+  SliderTextField: {
+    typeError: 'Not a number',
+    minError: 'The number is less than the minimum ({{number}})',
+    maxError: 'The number is greater than the maximum ({{number}})',
+    requiredError: 'Required field',
   },
 }

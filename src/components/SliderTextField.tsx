@@ -1,7 +1,8 @@
 import { minMaxRule } from '@utils'
+import { useTranslate } from '@languages'
 import { ValidatedTextField } from '@components'
-import React, { useEffect, useState } from 'react'
 import { Stack, Slider, Container } from '@mui/material'
+import React, { useEffect, useMemo, useState } from 'react'
 
 export type SliderTextFieldProps = {
   min: number
@@ -26,6 +27,8 @@ export const SliderTextField = ({
   max,
   step,
 }: SliderTextFieldProps) => {
+  const translate = useTranslate('SliderTextField')
+
   const [fieldValue, setFieldValue] = useState(value.toString())
   const [sliderValue, setSliderValue] = useState(value)
 
@@ -50,13 +53,26 @@ export const SliderTextField = ({
     setSliderValue(value)
   }, [value])
 
+  const validationRule = useMemo(
+    () =>
+      minMaxRule({
+        min,
+        max,
+        typeError: translate('typeError'),
+        minError: translate('minError', { number: min }),
+        maxError: translate('maxError', { number: max }),
+        requiredError: translate('requiredError'),
+      }),
+    [min, max, translate],
+  )
+
   return (
     <Stack>
       <ValidatedTextField
         label={label}
         adornment={adornment}
         value={fieldValue}
-        rule={minMaxRule(min, max)}
+        rule={validationRule}
         EndIcon={EndIcon}
         endIconTooltip={endIconTooltip}
         onValid={onTextFieldValid}
