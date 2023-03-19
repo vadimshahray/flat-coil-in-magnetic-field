@@ -1,6 +1,6 @@
 import React from 'react'
+import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
-import { Box, Stack } from '@mui/material'
 import { MotorSection } from './MotorSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import { StartModelingButton } from './StartModelingButton'
@@ -17,7 +17,7 @@ export const Configuration = () => {
 
   return (
     <Stack justifyContent='space-between' sx={{ height: '100%' }}>
-      <Box>
+      <div>
         <Toolbar
           title={translate('title')}
           Icon={SettingsOutlined}
@@ -35,7 +35,7 @@ export const Configuration = () => {
         <Section title={translate('voltmeterSection')}></Section>
 
         <Section title={translate('HelmholtzCoils')}></Section>
-      </Box>
+      </div>
 
       <StartModelingButton />
     </Stack>

@@ -1,7 +1,7 @@
 import React, { ErrorInfo } from 'react'
 import { useTranslate } from '@languages'
-import { Box, Stack, Typography } from '@mui/material'
 import { ErrorOutlineOutlined } from '@mui/icons-material'
+import { Container, Stack, Typography } from '@mui/material'
 
 type Props = {
   error?: Error
@@ -12,9 +12,8 @@ export const ErrorFallback = ({ error, errorInfo }: Props) => {
   const translate = useTranslate('ErrorFallback')
 
   return (
-    <Box
+    <Container
       sx={{
-        width: '100%',
         display: 'flex',
         justifyContent: 'center',
         padding: 4,
@@ -41,6 +40,6 @@ export const ErrorFallback = ({ error, errorInfo }: Props) => {
           {errorInfo?.componentStack}
         </Typography>
       </Stack>
-    </Box>
+    </Container>
   )
 }
