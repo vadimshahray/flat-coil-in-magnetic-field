@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslate } from '@languages'
 import { Box, Stack } from '@mui/material'
+import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
 import {
   Toolbar,
@@ -25,6 +26,10 @@ export const ModelingInfo = () => {
           ]}
         />
       </Box>
+
+      <Stack direction='row' sx={{ padding: 1 }}>
+        <ModelingTimer />
+      </Stack>
     </Stack>
   )
 }
