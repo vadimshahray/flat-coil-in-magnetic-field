@@ -18,6 +18,10 @@ export const extraRU = {
     maxError: 'Число больше максимального ({{number}})',
     requiredError: 'Обязательное поле',
   },
+
+  ViewDeviceButton: {
+    viewDevice: 'Посмотреть на прибор',
+  },
 }
 
 export const extraEN = {
@@ -39,5 +43,9 @@ export const extraEN = {
     minError: 'The number is less than the minimum ({{number}})',
     maxError: 'The number is greater than the maximum ({{number}})',
     requiredError: 'Required field',
+  },
+
+  ViewDeviceButton: {
+    viewDevice: 'View device',
   },
 }
