@@ -1,4 +1,5 @@
 export * from './user.slice'
+export * from './scene.slice'
 export * from './motor.slice'
 export * from './modeling.slice'
 export * from './voltmeter.slice'

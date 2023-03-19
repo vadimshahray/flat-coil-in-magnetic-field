@@ -2,6 +2,7 @@ import storage from 'redux-persist/lib/storage'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   userSlice,
+  sceneSlice,
   motorSlice,
   modelingSlice,
   voltmeterSlice,
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   motor: motorSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
   configuration: configurationSlice.reducer,
+  scene: sceneSlice.reducer,
   modeling: modelingSlice.reducer,
 })
 
