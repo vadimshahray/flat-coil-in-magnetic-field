@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.dcd84c15.js",
+    "main.js": "/alternator/static/js/main.5241ca1d.js",
     "static/js/611.83b0a0f2.chunk.js": "/alternator/static/js/611.83b0a0f2.chunk.js",
     "static/js/655.e0282b71.chunk.js": "/alternator/static/js/655.e0282b71.chunk.js",
     "static/media/voltmeter.glb": "/alternator/static/media/voltmeter.c680f0043dc5e15bcebe.glb",
     "index.html": "/alternator/index.html",
     "static/media/alternator.pdf": "/alternator/static/media/alternator.31d6cfe0d16ae931b73c.pdf",
-    "main.dcd84c15.js.map": "/alternator/static/js/main.dcd84c15.js.map",
+    "main.5241ca1d.js.map": "/alternator/static/js/main.5241ca1d.js.map",
     "611.83b0a0f2.chunk.js.map": "/alternator/static/js/611.83b0a0f2.chunk.js.map",
     "655.e0282b71.chunk.js.map": "/alternator/static/js/655.e0282b71.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.dcd84c15.js"
+    "static/js/main.5241ca1d.js"
   ]
 }
