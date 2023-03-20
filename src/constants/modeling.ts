@@ -1,0 +1,1 @@
+export const CALCULATION_INTERVAL_MS = 33

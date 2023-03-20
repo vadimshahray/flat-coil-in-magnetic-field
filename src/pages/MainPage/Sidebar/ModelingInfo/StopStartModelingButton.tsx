@@ -1,11 +1,11 @@
 import React from 'react'
+import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { Tooltip, Button } from '@mui/material'
 import { selectModelingStatus } from '@selectors'
+import { restartModeling, stopModeling } from '@slices'
 import { RestartAltOutlined, StopOutlined } from '@mui/icons-material'
-import { useDispatch } from '@hooks'
-import { setModelingStatus } from '@slices'
 
 export const StopStartModelingButton = () => {
   const dispatch = useDispatch()
@@ -16,7 +16,7 @@ export const StopStartModelingButton = () => {
   const isModelingStarted = modelingStatus === 'started'
 
   const handleClick = () => {
-    dispatch(setModelingStatus(isModelingStarted ? 'stopped' : 'started'))
+    dispatch(isModelingStarted ? stopModeling() : restartModeling())
   }
 
   return (

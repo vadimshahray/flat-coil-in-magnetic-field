@@ -4,9 +4,4 @@ type ModelingSliceState = {
   time: Time
 }
 
-interface ModelingSlice extends SliceCaseReducers<ModelingSliceState> {
-  setModelingStatus(
-    state: ModelingSliceState,
-    action: PayloadAction<ModelingStatus>,
-  ): void
-}
+type ModelingSlice = SliceCaseReducers<ModelingSliceState>

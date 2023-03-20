@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from '@hooks'
+import { startModeling } from '@slices'
 import { useTranslate } from '@languages'
-import { setModelingStatus } from '@slices'
 import { PlayArrow } from '@mui/icons-material'
 import { Button, Container, Tooltip } from '@mui/material'
 
@@ -10,7 +10,7 @@ export const StartModelingButton = () => {
   const translate = useTranslate('StartModelingButton')
 
   const handleClick = () => {
-    dispatch(setModelingStatus('started'))
+    dispatch(startModeling())
   }
 
   return (
