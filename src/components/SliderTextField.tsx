@@ -5,6 +5,7 @@ import { Stack, Slider, Container } from '@mui/material'
 import React, { useEffect, useMemo, useState } from 'react'
 
 export type SliderTextFieldProps = {
+  name: string
   min: number
   max: number
   step: number
@@ -18,6 +19,7 @@ export type SliderTextFieldProps = {
 
 export const SliderTextField = ({
   label,
+  name,
   adornment,
   value,
   onChange,
@@ -70,6 +72,7 @@ export const SliderTextField = ({
     <Stack>
       <ValidatedTextField
         label={label}
+        name={name}
         adornment={adornment}
         value={fieldValue}
         rule={validationRule}

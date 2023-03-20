@@ -1,10 +1,16 @@
 type ConfigurationSliceState = {
-  invalidFieldsNumber: number
+  invalidFields: string[]
 }
 
 interface ConfigurationSlice
   extends SliceCaseReducers<ConfigurationSliceState> {
-  increaseInvalidFieldsNumber(state: ConfigurationSliceState): void
+  addInvalidField(
+    state: ConfigurationSliceState,
+    action: PayloadAction<string>,
+  ): void
 
-  decreaseInvalidFieldsNumber(state: ConfigurationSliceState): void
+  removeInvalidField(
+    state: ConfigurationSliceState,
+    action: PayloadAction<string>,
+  ): void
 }

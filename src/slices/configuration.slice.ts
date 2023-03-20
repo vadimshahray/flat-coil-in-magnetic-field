@@ -1,26 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState: ConfigurationSliceState = {
-  invalidFieldsNumber: 0,
-}
-
 export const configurationSlice = createSlice<
   ConfigurationSliceState,
   ConfigurationSlice
 >({
   name: 'configuration',
-  initialState,
+  initialState: {
+    invalidFields: [],
+  },
   reducers: {
-    increaseInvalidFieldsNumber: (state) => {
-      state.invalidFieldsNumber++
+    addInvalidField: (state, { payload }) => {
+      if (state.invalidFields.includes(payload)) return
+
+      state.invalidFields.push(payload)
     },
-    decreaseInvalidFieldsNumber: (state) => {
-      if (state.invalidFieldsNumber > 0) {
-        state.invalidFieldsNumber--
-      }
+    removeInvalidField: (state, { payload }) => {
+      const i = state.invalidFields.findIndex((f) => f === payload)
+
+      if (i === -1) return
+
+      state.invalidFields.splice(i, 1)
     },
   },
 })
 
-export const { increaseInvalidFieldsNumber, decreaseInvalidFieldsNumber } =
+export const { addInvalidField, removeInvalidField } =
   configurationSlice.actions

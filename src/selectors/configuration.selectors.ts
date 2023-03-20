@@ -1,2 +1,2 @@
-export const selectInvalidFieldsNumber = (state: RootState) =>
-  state.configuration.invalidFieldsNumber
+export const selectInvalidFieldsLength = (state: RootState) =>
+  state.configuration.invalidFields.length

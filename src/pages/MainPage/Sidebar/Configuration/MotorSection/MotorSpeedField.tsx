@@ -19,6 +19,7 @@ export const MotorSpeedField = () => {
 
   return (
     <SliderTextField
+      name='motor_speed'
       label={translate('label')}
       value={speed}
       onChange={handleChange}
