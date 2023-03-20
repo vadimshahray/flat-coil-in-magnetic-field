@@ -17,6 +17,9 @@ export const configurationRU = {
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
+    unableStartModeling: 'Невозможно начать моделирование!',
+    resolveMistakes:
+      'Введенные данные содержат ошибки ({{count}}). Исправьте их!',
   },
 }
 
@@ -39,5 +42,7 @@ export const configurationEN = {
   StartModelingButton: {
     start: 'Start',
     startModeling: 'Start modeling',
+    unableStartModeling: 'Unable to start modeling!',
+    resolveMistakes: 'The entered data contains errors ({{count}}). Fix them!',
   },
 }

@@ -1,5 +1,7 @@
 import React from 'react'
 import { useDispatch } from '@hooks'
+import { useSnackbar } from 'notistack'
+import { errorSnackbar } from '@utils'
 import { startModeling } from '@slices'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
@@ -11,10 +13,16 @@ export const StartModelingButton = () => {
   const dispatch = useDispatch()
   const translate = useTranslate('StartModelingButton')
 
-  const invalidFields = useSelector(selectInvalidFieldsLength)
+  const { enqueueSnackbar } = useSnackbar()
+
+  const invalidFieldsCount = useSelector(selectInvalidFieldsLength)
 
   const handleClick = () => {
-    if (invalidFields) return
+    if (invalidFieldsCount)
+      return enqueueSnackbar(
+        translate('resolveMistakes', { count: invalidFieldsCount }),
+        errorSnackbar(translate('unableStartModeling')),
+      )
 
     dispatch(startModeling())
   }
@@ -26,7 +34,7 @@ export const StartModelingButton = () => {
           variant='contained'
           onClick={handleClick}
           startIcon={<PlayArrow />}
-          color={invalidFields ? 'error' : 'primary'}
+          color={invalidFieldsCount ? 'error' : 'primary'}
           fullWidth
         >
           {translate('start')}
