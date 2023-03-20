@@ -1,6 +1,7 @@
 import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
+import CoilModelPath from './coil.glb'
 import { useGLTF } from '@react-three/drei'
 
 type GLTFResult = GLTF & {
@@ -13,11 +14,11 @@ type GLTFResult = GLTF & {
   }
 }
 
-export const Coil = (props: JSX.IntrinsicElements['group']) => {
-  const { nodes, materials } = useGLTF('/coil.glb') as GLTFResult
+const Coil = (props: JSX.IntrinsicElements['group']) => {
+  const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult
 
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} scale={70}>
       <mesh
         geometry={nodes.Cube.geometry}
         material={materials.Material}
@@ -33,3 +34,5 @@ export const Coil = (props: JSX.IntrinsicElements['group']) => {
     </group>
   )
 }
+
+export default Coil

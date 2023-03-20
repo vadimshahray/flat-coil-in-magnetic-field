@@ -1,1 +1,1 @@
-export * from './Coil'
+export { default } from './Coil'
