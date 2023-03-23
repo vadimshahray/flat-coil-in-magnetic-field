@@ -24,6 +24,10 @@ export const configurationRU = {
     title: 'Катушка',
   },
 
+  CoilTurnCountField: {
+    label: 'Количество витков',
+  },
+
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -57,6 +61,10 @@ export const configurationEN = {
 
   CoilSection: {
     title: 'Coil',
+  },
+
+  CoilTurnCountField: {
+    label: 'Number of turns',
   },
 
   StartModelingButton: {
