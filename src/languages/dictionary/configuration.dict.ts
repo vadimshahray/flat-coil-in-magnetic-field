@@ -14,6 +14,13 @@ export const configurationRU = {
     label: 'Количество оборотов',
   },
 
+  MotorRotationDirectionControl: {
+    rotationDirection: 'Направление вращения: {{direction}}',
+    left: 'левое',
+    right: 'правое',
+    changeDirectionButton: 'Поменять',
+  },
+
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -37,6 +44,13 @@ export const configurationEN = {
 
   MotorSpeedField: {
     label: 'Speed',
+  },
+
+  MotorRotationDirectionControl: {
+    rotationDirection: 'Direction of rotation: {{direction}}',
+    left: 'left',
+    right: 'right',
+    changeDirectionButton: 'Change',
   },
 
   StartModelingButton: {
