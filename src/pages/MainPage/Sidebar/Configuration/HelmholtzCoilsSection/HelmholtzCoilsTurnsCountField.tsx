@@ -3,7 +3,7 @@ import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { SliderTextField } from '@components'
-import { setHelmholtzCoilsRadius } from '@slices'
+import { setHelmholtzCoilsTurnsCount } from '@slices'
 import { selectHelmholtzCoilsTurnsCount } from '@selectors'
 import {
   HELMHOLTZ_COILS_TURNS_COUNT_MIN,
@@ -18,7 +18,7 @@ export const HelmholtzCoilsTurnsCountField = () => {
   const turnsCount = useSelector(selectHelmholtzCoilsTurnsCount)
 
   const handleChange = (newTurnsCount: number) => {
-    dispatch(setHelmholtzCoilsRadius(newTurnsCount))
+    dispatch(setHelmholtzCoilsTurnsCount(newTurnsCount))
   }
 
   return (
