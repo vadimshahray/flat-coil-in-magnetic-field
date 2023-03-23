@@ -1,7 +1,6 @@
 export const configurationRU = {
   Configuration: {
     title: 'Настройки',
-    voltmeterSection: 'Вольтметр',
     HelmholtzCoils: 'Катушки Гельмгольца',
   },
 
@@ -40,7 +39,6 @@ export const configurationRU = {
 export const configurationEN = {
   Configuration: {
     title: 'Settings',
-    voltmeterSection: 'Voltmeter',
     HelmholtzCoils: 'Helmholtz Coils',
   },
 

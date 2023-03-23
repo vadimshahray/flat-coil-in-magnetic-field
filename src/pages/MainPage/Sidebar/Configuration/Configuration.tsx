@@ -33,8 +33,6 @@ export const Configuration = () => {
 
         <CoilSection />
 
-        <Section title={translate('voltmeterSection')}></Section>
-
         <Section title={translate('HelmholtzCoils')}></Section>
       </div>
 
