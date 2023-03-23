@@ -8,6 +8,7 @@ import {
   modelingSlice,
   voltmeterSlice,
   configurationSlice,
+  HelmholtzCoilsSlice,
 } from '@slices'
 import {
   FLUSH,
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   motor: motorSlice.reducer,
   coil: coilSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
+  HelmholtzCoils: HelmholtzCoilsSlice.reducer,
   configuration: configurationSlice.reducer,
   scene: sceneSlice.reducer,
   modeling: modelingSlice.reducer,
