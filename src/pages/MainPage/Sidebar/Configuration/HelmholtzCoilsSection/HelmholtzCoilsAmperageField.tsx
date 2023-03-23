@@ -3,7 +3,7 @@ import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { SliderTextField } from '@components'
-import { setHelmholtzCoilsRadius } from '@slices'
+import { setHelmholtzCoilsAmperage } from '@slices'
 import { selectHelmholtzCoilsAmperage } from '@selectors'
 import {
   HELMHOLTZ_COILS_AMPERAGE_MIN,
@@ -18,7 +18,7 @@ export const HelmholtzCoilsAmperageField = () => {
   const amperage = useSelector(selectHelmholtzCoilsAmperage)
 
   const handleChange = (newAmperage: number) => {
-    dispatch(setHelmholtzCoilsRadius(newAmperage))
+    dispatch(setHelmholtzCoilsAmperage(newAmperage))
   }
 
   return (
