@@ -1,6 +1,7 @@
 import React from 'react'
 import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
+import { CoilSection } from './CoilSection'
 import { MotorSection } from './MotorSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import { StartModelingButton } from './StartModelingButton'
@@ -30,7 +31,7 @@ export const Configuration = () => {
 
         <MotorSection />
 
-        <Section title={translate('coilSection')}></Section>
+        <CoilSection />
 
         <Section title={translate('voltmeterSection')}></Section>
 

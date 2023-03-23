@@ -1,7 +1,6 @@
 export const configurationRU = {
   Configuration: {
     title: 'Настройки',
-    coilSection: 'Катушка',
     voltmeterSection: 'Вольтметр',
     HelmholtzCoils: 'Катушки Гельмгольца',
   },
@@ -21,6 +20,10 @@ export const configurationRU = {
     changeDirectionButton: 'Поменять',
   },
 
+  CoilSection: {
+    title: 'Катушка',
+  },
+
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -33,7 +36,6 @@ export const configurationRU = {
 export const configurationEN = {
   Configuration: {
     title: 'Settings',
-    coilSection: 'Coil',
     voltmeterSection: 'Voltmeter',
     HelmholtzCoils: 'Helmholtz Coils',
   },
@@ -51,6 +53,10 @@ export const configurationEN = {
     left: 'left',
     right: 'right',
     changeDirectionButton: 'Change',
+  },
+
+  CoilSection: {
+    title: 'Coil',
   },
 
   StartModelingButton: {
