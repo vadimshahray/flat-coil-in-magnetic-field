@@ -30,6 +30,18 @@ export const configurationRU = {
     title: 'Катушки Гельмгольца',
   },
 
+  HelmholtzCoilsRadiusField: {
+    label: 'Радиус',
+  },
+
+  HelmholtzCoilsAmperageField: {
+    label: 'Сила тока',
+  },
+
+  HelmholtzCoilsTurnsCountField: {
+    label: 'Количество витков',
+  },
+
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -69,6 +81,18 @@ export const configurationEN = {
 
   HelmholtzCoilsSection: {
     title: 'Helmholtz coils',
+  },
+
+  HelmholtzCoilsRadiusField: {
+    label: 'Radius',
+  },
+
+  HelmholtzCoilsAmperageField: {
+    label: 'Amperage',
+  },
+
+  HelmholtzCoilsTurnsCountField: {
+    label: 'Number of turns',
   },
 
   StartModelingButton: {
