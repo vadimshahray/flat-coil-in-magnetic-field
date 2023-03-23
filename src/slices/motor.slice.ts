@@ -5,6 +5,7 @@ export const motorSlice = createSlice<MotorSliceState, MotorSlice>({
   name: 'motor',
   initialState: {
     speed: MOTOR_SPEED_MIN,
+    rotationDirection: 'right',
   },
   reducers: {
     setMotorSpeed: (state, { payload }) => {
@@ -12,7 +13,11 @@ export const motorSlice = createSlice<MotorSliceState, MotorSlice>({
 
       state.speed = Math.floor(payload)
     },
+
+    setMotorRotationDirection: (state, { payload }) => {
+      state.rotationDirection = payload
+    },
   },
 })
 
-export const { setMotorSpeed } = motorSlice.actions
+export const { setMotorSpeed, setMotorRotationDirection } = motorSlice.actions
