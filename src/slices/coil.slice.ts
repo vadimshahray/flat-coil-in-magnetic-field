@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { COIL_TURNS_COUNT_MIN } from '@constants'
+import { COIL_TURNS_COUNT_DEFAULT } from '@constants'
 
 export const coilSlice = createSlice<CoilSliceState, CoilSlice>({
   name: 'coil',
   initialState: {
-    turnsCount: COIL_TURNS_COUNT_MIN,
+    turnsCount: COIL_TURNS_COUNT_DEFAULT,
   },
   reducers: {
     setCoilTurnsCount: (state, { payload }) => {

@@ -1,10 +1,10 @@
-import { MOTOR_SPEED_MIN } from '@constants'
 import { createSlice } from '@reduxjs/toolkit'
+import { MOTOR_SPEED_DEFAULT } from '@constants'
 
 export const motorSlice = createSlice<MotorSliceState, MotorSlice>({
   name: 'motor',
   initialState: {
-    speed: MOTOR_SPEED_MIN,
+    speed: MOTOR_SPEED_DEFAULT,
     rotationDirection: 'right',
   },
   reducers: {

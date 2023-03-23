@@ -1,4 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
+import {
+  HELMHOLTZ_COILS_RADIUS_DEFAULT,
+  HELMHOLTZ_COILS_AMPERAGE_DEFAULT,
+  HELMHOLTZ_COILS_TURNS_COUNT_DEFAULT,
+} from '@constants'
 
 export const HelmholtzCoilsSlice = createSlice<
   HelmholtzCoilsSliceState,
@@ -6,9 +11,9 @@ export const HelmholtzCoilsSlice = createSlice<
 >({
   name: 'HelmholtzCoils',
   initialState: {
-    radius: 0,
-    amperage: 0,
-    turnsCount: 0,
+    radius: HELMHOLTZ_COILS_RADIUS_DEFAULT,
+    amperage: HELMHOLTZ_COILS_AMPERAGE_DEFAULT,
+    turnsCount: HELMHOLTZ_COILS_TURNS_COUNT_DEFAULT,
   },
   reducers: {
     setHelmholtzCoilsRadius: (state, { payload }) => {
