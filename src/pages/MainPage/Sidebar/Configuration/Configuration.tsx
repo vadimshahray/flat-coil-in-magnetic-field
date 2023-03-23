@@ -5,8 +5,8 @@ import { CoilSection } from './CoilSection'
 import { MotorSection } from './MotorSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import { StartModelingButton } from './StartModelingButton'
+import { HelmholtzCoilsSection } from './HelmholtzCoilsSection'
 import {
-  Section,
   Toolbar,
   LanguageButton,
   ColorModeButton,
@@ -33,7 +33,7 @@ export const Configuration = () => {
 
         <CoilSection />
 
-        <Section title={translate('HelmholtzCoils')}></Section>
+        <HelmholtzCoilsSection />
       </div>
 
       <StartModelingButton />

@@ -1,7 +1,6 @@
 export const configurationRU = {
   Configuration: {
     title: 'Настройки',
-    HelmholtzCoils: 'Катушки Гельмгольца',
   },
 
   MotorSection: {
@@ -27,6 +26,10 @@ export const configurationRU = {
     label: 'Количество витков',
   },
 
+  HelmholtzCoilsSection: {
+    title: 'Катушки Гельмгольца',
+  },
+
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -39,7 +42,6 @@ export const configurationRU = {
 export const configurationEN = {
   Configuration: {
     title: 'Settings',
-    HelmholtzCoils: 'Helmholtz Coils',
   },
 
   MotorSection: {
@@ -63,6 +65,10 @@ export const configurationEN = {
 
   CoilTurnCountField: {
     label: 'Number of turns',
+  },
+
+  HelmholtzCoilsSection: {
+    title: 'Helmholtz coils',
   },
 
   StartModelingButton: {
