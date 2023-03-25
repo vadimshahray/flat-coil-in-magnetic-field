@@ -1,3 +1,5 @@
+import { addInsignificantZeros } from './number'
+
 export const ticksToTime = (ticks: number): Time => {
   return {
     hours: Math.floor(ticks / 1000 / 60 / 60),
@@ -14,20 +16,11 @@ export const timeToString = ({
   seconds,
   milliseconds,
 }: Time) => {
-  return `${addZeros(hours, 2)}:${addZeros(minutes, 2)}:${addZeros(
-    seconds,
+  return `${addInsignificantZeros(hours, 2)}:${addInsignificantZeros(
+    minutes,
     2,
-  )}:${addZeros(milliseconds, 3)}`
-}
-
-const addZeros = (x: number, count: number) => {
-  let zeros = ''
-
-  for (let i = 1; i < count; i++) {
-    if (x / 10 ** i < 1) {
-      zeros += '0'
-    }
-  }
-
-  return zeros + x
+  )}:${addInsignificantZeros(seconds, 2)}:${addInsignificantZeros(
+    milliseconds,
+    3,
+  )}`
 }

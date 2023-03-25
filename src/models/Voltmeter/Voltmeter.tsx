@@ -1,8 +1,12 @@
-import React from 'react'
 import * as THREE from 'three'
+import { store } from 'src/store'
 import { GLTF } from 'three-stdlib'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
+import { addInsignificantZeros } from '@utils'
 import VoltmeterModelPath from './voltmeter.glb'
+import { Text, useGLTF } from '@react-three/drei'
+import { selectVoltmeterVolts } from '@selectors'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -18,10 +22,21 @@ type GLTFResult = GLTF & {
 const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(VoltmeterModelPath) as GLTFResult
 
+  const textRef = useRef<Text & { text: string }>()
+
+  useFrame(() => {
+    if (textRef.current) {
+      textRef.current.text = addInsignificantZeros(
+        selectVoltmeterVolts(store.getState()).toFixed(2),
+        2,
+      )
+    }
+  })
+
   return (
     <group {...props} dispose={null}>
       <group
-        scale={[20, 25, 45]}
+        scale={[20, 25, 50]}
         rotation={[0, THREE.MathUtils.degToRad(-90), 0]}
       >
         <mesh
@@ -34,6 +49,17 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           material={materials['Material.002']}
         />
       </group>
+
+      <Text
+        ref={textRef}
+        fontSize={34}
+        color='#F44336'
+        scale={[0.7, 1, 1]}
+        position={[0, -1.5, 18]}
+        font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+      >
+        {' '}
+      </Text>
     </group>
   )
 }
