@@ -18,7 +18,7 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult
 
   return (
-    <group {...props} dispose={null} scale={70}>
+    <group {...props} dispose={null} scale={110}>
       <mesh
         geometry={nodes.Cube.geometry}
         material={materials.Material}
