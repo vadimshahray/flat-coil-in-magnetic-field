@@ -6,12 +6,11 @@ import { useGLTF } from '@react-three/drei'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Plane001_FLOOR_0: THREE.Mesh
-    Jenson_Extending_Table_DarkStainedOak_DARK_STAIN_OAK_0: THREE.Mesh
+    TableBase__0: THREE.Mesh
+    TableStructure__0: THREE.Mesh
   }
   materials: {
-    FLOOR: THREE.MeshStandardMaterial
-    DARK_STAIN_OAK: THREE.MeshStandardMaterial
+    ['Scene_-_Root']: THREE.MeshStandardMaterial
   }
 }
 
@@ -19,28 +18,27 @@ const Table = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(TableModelPath) as GLTFResult
 
   return (
-    <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group rotation={[-Math.PI / 2, 0, 0]}>
-            <mesh
-              geometry={nodes.Plane001_FLOOR_0.geometry}
-              material={materials.FLOOR}
-            />
-          </group>
-          <group position={[0, 0.1, 0]}>
-            <group position={[55.62, -6.29, -169.42]}>
-              <mesh
-                geometry={
-                  nodes.Jenson_Extending_Table_DarkStainedOak_DARK_STAIN_OAK_0
-                    .geometry
-                }
-                material={materials.DARK_STAIN_OAK}
-              />
-            </group>
-          </group>
-        </group>
-      </group>
+    <group
+      {...props}
+      dispose={null}
+      rotation={[0, -Math.PI / 2, 0]}
+      scale={0.5}
+    >
+      <mesh
+        geometry={nodes.TableBase__0.geometry}
+        material={materials['Scene_-_Root']}
+        position={[0, 511.54, 0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={[394.8, 520.83, 9.38]}
+      />
+
+      <mesh
+        geometry={nodes.TableStructure__0.geometry}
+        material={materials['Scene_-_Root']}
+        position={[0, 242.01, -418.66]}
+        rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+        scale={[10.19, 302.94, 29.51]}
+      />
     </group>
   )
 }
