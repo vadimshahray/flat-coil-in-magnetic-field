@@ -7,6 +7,7 @@ import { MotorInfoSection } from './MotorInfoSection'
 import { DropModelingButton } from './DropModelingButton'
 import { VoltmeterInfoSection } from './VoltmeterInfoSection'
 import { StopStartModelingButton } from './StopStartModelingButton'
+import { HelmholtzCoilsInfoSection } from './HelmholtzCoilsInfoSection'
 import {
   Toolbar,
   LanguageButton,
@@ -31,6 +32,8 @@ export const ModelingInfo = () => {
         />
 
         <MotorInfoSection />
+
+        <HelmholtzCoilsInfoSection />
 
         <VoltmeterInfoSection />
       </div>

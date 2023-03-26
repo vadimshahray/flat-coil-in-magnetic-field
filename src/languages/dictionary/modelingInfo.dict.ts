@@ -19,6 +19,10 @@ export const modelingInfoRU = {
     label: 'Количество оборотов',
   },
 
+  HelmholtzCoilsInfoSection: {
+    title: 'Катушки Гельмгольца',
+  },
+
   StopStartModelingButton: {
     stopModeling: 'Остановить моделирование',
     startModeling: 'Продолжить моделирование',
@@ -51,6 +55,10 @@ export const modelingInfoEN = {
 
   MotorSpeedInfoItem: {
     label: 'Speed',
+  },
+
+  HelmholtzCoilsInfoSection: {
+    title: 'Helmholtz сoils',
   },
 
   StopStartModelingButton: {
