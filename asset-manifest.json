@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.a018091a.js",
-    "static/js/511.8a11c82a.chunk.js": "/alternator/static/js/511.8a11c82a.chunk.js",
-    "static/js/611.5c6ad83c.chunk.js": "/alternator/static/js/611.5c6ad83c.chunk.js",
-    "static/js/655.e0282b71.chunk.js": "/alternator/static/js/655.e0282b71.chunk.js",
+    "main.js": "/alternator/static/js/main.63562f3c.js",
+    "static/js/511.c94e91d2.chunk.js": "/alternator/static/js/511.c94e91d2.chunk.js",
+    "static/js/295.72ddb8c5.chunk.js": "/alternator/static/js/295.72ddb8c5.chunk.js",
+    "static/js/611.923ea025.chunk.js": "/alternator/static/js/611.923ea025.chunk.js",
+    "static/js/655.5b75334e.chunk.js": "/alternator/static/js/655.5b75334e.chunk.js",
+    "static/js/334.0c11d12e.chunk.js": "/alternator/static/js/334.0c11d12e.chunk.js",
+    "static/media/table.glb": "/alternator/static/media/table.747711e8b055542fd8f8.glb",
     "static/media/voltmeter.glb": "/alternator/static/media/voltmeter.c680f0043dc5e15bcebe.glb",
     "static/media/coil.glb": "/alternator/static/media/coil.58c5c7cf8886ca958cdf.glb",
     "index.html": "/alternator/index.html",
     "static/media/alternator.pdf": "/alternator/static/media/alternator.31d6cfe0d16ae931b73c.pdf",
-    "main.a018091a.js.map": "/alternator/static/js/main.a018091a.js.map",
-    "511.8a11c82a.chunk.js.map": "/alternator/static/js/511.8a11c82a.chunk.js.map",
-    "611.5c6ad83c.chunk.js.map": "/alternator/static/js/611.5c6ad83c.chunk.js.map",
-    "655.e0282b71.chunk.js.map": "/alternator/static/js/655.e0282b71.chunk.js.map"
+    "main.63562f3c.js.map": "/alternator/static/js/main.63562f3c.js.map",
+    "511.c94e91d2.chunk.js.map": "/alternator/static/js/511.c94e91d2.chunk.js.map",
+    "295.72ddb8c5.chunk.js.map": "/alternator/static/js/295.72ddb8c5.chunk.js.map",
+    "611.923ea025.chunk.js.map": "/alternator/static/js/611.923ea025.chunk.js.map",
+    "655.5b75334e.chunk.js.map": "/alternator/static/js/655.5b75334e.chunk.js.map",
+    "334.0c11d12e.chunk.js.map": "/alternator/static/js/334.0c11d12e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a018091a.js"
+    "static/js/main.63562f3c.js"
   ]
 }
