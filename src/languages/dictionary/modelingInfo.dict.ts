@@ -19,6 +19,10 @@ export const modelingInfoRU = {
     label: 'Количество оборотов',
   },
 
+  CoilInfoSection: {
+    title: 'Катушка',
+  },
+
   HelmholtzCoilsInfoSection: {
     title: 'Катушки Гельмгольца',
   },
@@ -55,6 +59,10 @@ export const modelingInfoEN = {
 
   MotorSpeedInfoItem: {
     label: 'Speed',
+  },
+
+  CoilInfoSection: {
+    title: 'Coil',
   },
 
   HelmholtzCoilsInfoSection: {
