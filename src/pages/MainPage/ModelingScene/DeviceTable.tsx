@@ -1,5 +1,5 @@
-import { COIL_SCENE_POSITION, VOLTMETER_SCENE_POSITION } from '@constants'
 import React from 'react'
+import { COIL_SCENE_POSITION, VOLTMETER_SCENE_POSITION } from '@constants'
 
 const Coil = React.lazy(() => import('src/models/Coil'))
 const Table = React.lazy(() => import('src/models/Table'))

@@ -16,9 +16,9 @@ export const useDeviceInViewPosition = () => {
 
 const getDevicePosition = (device: Device) => {
   switch (device) {
-    case '@Coil':
-      return COIL_SCENE_POSITION
-    default:
+    case '@Voltmeter':
       return VOLTMETER_SCENE_POSITION
+    default:
+      return COIL_SCENE_POSITION
   }
 }
