@@ -1,3 +1,4 @@
+import { COIL_SCENE_POSITION, VOLTMETER_SCENE_POSITION } from '@constants'
 import React from 'react'
 
 const Coil = React.lazy(() => import('src/models/Coil'))
@@ -9,9 +10,9 @@ export const DeviceTable = () => {
     <>
       <Table />
 
-      <Coil position={[-40, 309, -120]} />
+      <Coil position={COIL_SCENE_POSITION} />
 
-      <Voltmeter position={[80, 286, 0]} />
+      <Voltmeter position={VOLTMETER_SCENE_POSITION} />
     </>
   )
 }
