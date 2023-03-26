@@ -18,6 +18,15 @@ export const Camera = () => {
   const devicePosition = useDeviceInViewPosition()
 
   useEffect(() => {
+    controls.camera.far = 2000
+
+    controls.minDistance = 360
+    controls.maxDistance = 900
+
+    controls.maxPolarAngle = Math.PI / 2
+  }, [controls])
+
+  useEffect(() => {
     controls.setLookAt(
       cameraPosition.x,
       cameraPosition.y,
