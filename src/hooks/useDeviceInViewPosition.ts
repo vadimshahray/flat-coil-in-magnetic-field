@@ -4,6 +4,7 @@ import {
   COIL_SCENE_POSITION,
   CAMERA_DEFAULT_POSITION,
   VOLTMETER_SCENE_POSITION,
+  HELMHOLTZ_COILS_SCENE_POSITION,
 } from '@constants'
 
 export const useDeviceInViewPosition = () => {
@@ -18,7 +19,9 @@ const getDevicePosition = (device: Device) => {
   switch (device) {
     case '@Voltmeter':
       return VOLTMETER_SCENE_POSITION
-    default:
+    case '@Coil':
       return COIL_SCENE_POSITION
+    default:
+      return HELMHOLTZ_COILS_SCENE_POSITION
   }
 }

@@ -4,6 +4,7 @@ import {
   CAMERA_COIL_POSITION,
   CAMERA_VOLTMETER_POSITION,
   CAMERA_ALL_DEVICES_POSITION,
+  CAMERA_HELMHOLTZ_COILS_POSITION,
 } from '@constants'
 
 export const useCameraPosition = () => {
@@ -18,8 +19,9 @@ const getDeviceCameraPosition = (device: Device) => {
   switch (device) {
     case '@Voltmeter':
       return CAMERA_VOLTMETER_POSITION
-
-    default:
+    case '@Coil':
       return CAMERA_COIL_POSITION
+    default:
+      return CAMERA_HELMHOLTZ_COILS_POSITION
   }
 }
