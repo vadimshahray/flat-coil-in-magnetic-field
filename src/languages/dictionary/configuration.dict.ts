@@ -46,7 +46,7 @@ export const configurationRU = {
     title: 'Провода',
   },
 
-  WiresMaterial: {
+  WiresMaterialControl: {
     label: 'Материал',
     copper: 'Медь',
     aluminum: 'Алюминий',
@@ -109,7 +109,7 @@ export const configurationEN = {
     title: 'Wires',
   },
 
-  WiresMaterial: {
+  WiresMaterialControl: {
     label: 'Material',
     copper: 'Copper',
     aluminum: 'Aluminum',
