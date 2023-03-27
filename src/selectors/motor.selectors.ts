@@ -1,4 +1,5 @@
-export const selectMotorSpeed = (state: RootState) => state.motor.speed
+export const selectMotorRotationFrequency = (state: RootState) =>
+  state.motor.rotationFrequency
 
 export const selectMotorRotationDirection = (state: RootState) =>
   state.motor.rotationDirection

@@ -1,10 +1,13 @@
 type MotorSliceState = {
-  speed: number
+  rotationFrequency: number
   rotationDirection: RotationDirection
 }
 
 interface MotorSlice extends SliceCaseReducers<MotorSliceState> {
-  setMotorSpeed(state: MotorSliceState, action: PayloadAction<number>): void
+  setMotorRotationFrequency(
+    state: MotorSliceState,
+    action: PayloadAction<number>,
+  ): void
 
   setMotorRotationDirection(
     state: MotorSliceState,

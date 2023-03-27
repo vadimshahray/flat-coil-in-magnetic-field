@@ -15,7 +15,7 @@ export const modelingInfoRU = {
     title: 'Моторчик',
   },
 
-  MotorSpeedInfoItem: {
+  MotorRotationFrequencyInfoItem: {
     label: 'Количество оборотов',
   },
 
@@ -57,8 +57,8 @@ export const modelingInfoEN = {
     title: 'Motor',
   },
 
-  MotorSpeedInfoItem: {
-    label: 'Speed',
+  MotorRotationFrequencyInfoItem: {
+    label: 'RotationFrequency',
   },
 
   CoilInfoSection: {

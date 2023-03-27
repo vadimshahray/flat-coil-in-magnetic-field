@@ -7,7 +7,7 @@ export const configurationRU = {
     title: 'Моторчик',
   },
 
-  MotorSpeedField: {
+  MotorRotationFrequencyField: {
     label: 'Частота вращения',
   },
 
@@ -70,7 +70,7 @@ export const configurationEN = {
     title: 'Motor',
   },
 
-  MotorSpeedField: {
+  MotorRotationFrequencyField: {
     label: 'Rotation frequency',
   },
 

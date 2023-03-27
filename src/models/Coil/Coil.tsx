@@ -5,7 +5,7 @@ import React, { useRef } from 'react'
 import CoilModelPath from './coil.glb'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
-import { selectModelingStatus, selectMotorSpeed } from '@selectors'
+import { selectModelingStatus, selectMotorRotationFrequency } from '@selectors'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -30,7 +30,7 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
 
     if (selectModelingStatus(store.getState()) !== 'started') return
 
-    ref.current.rotateX(selectMotorSpeed(store.getState()) / 10)
+    ref.current.rotateX(selectMotorRotationFrequency(store.getState()) / 10)
   })
 
   return (

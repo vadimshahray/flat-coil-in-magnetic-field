@@ -1,20 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 import {
-  MOTOR_SPEED_DEFAULT,
+  MOTOR_ROTATION_FREQUENCY_DEFAULT,
   MOTOR_ROTATION_DIRECTION_DEFAULT,
 } from '@constants'
 
 export const motorSlice = createSlice<MotorSliceState, MotorSlice>({
   name: 'motor',
   initialState: {
-    speed: MOTOR_SPEED_DEFAULT,
+    rotationFrequency: MOTOR_ROTATION_FREQUENCY_DEFAULT,
     rotationDirection: MOTOR_ROTATION_DIRECTION_DEFAULT,
   },
   reducers: {
-    setMotorSpeed: (state, { payload }) => {
+    setMotorRotationFrequency: (state, { payload }) => {
       if (payload <= 0) return
 
-      state.speed = Math.floor(payload)
+      state.rotationFrequency = Math.floor(payload)
     },
 
     setMotorRotationDirection: (state, { payload }) => {
@@ -23,4 +23,5 @@ export const motorSlice = createSlice<MotorSliceState, MotorSlice>({
   },
 })
 
-export const { setMotorSpeed, setMotorRotationDirection } = motorSlice.actions
+export const { setMotorRotationFrequency, setMotorRotationDirection } =
+  motorSlice.actions
