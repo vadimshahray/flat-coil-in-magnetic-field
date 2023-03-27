@@ -19,17 +19,13 @@ export const Configuration = () => {
 
   return (
     <Stack justifyContent='space-between' sx={{ height: '100%' }}>
-      <div>
-        <Toolbar
-          title={translate('title')}
-          Icon={SettingsOutlined}
-          actionButtons={[
-            ColorModeButton,
-            LanguageButton,
-            ProjectDocumentButton,
-          ]}
-        />
+      <Toolbar
+        title={translate('title')}
+        Icon={SettingsOutlined}
+        actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
+      />
 
+      <div style={{ overflowY: 'auto' }}>
         <MotorSection />
 
         <CoilSection />
