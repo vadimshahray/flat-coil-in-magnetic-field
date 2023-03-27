@@ -8,7 +8,7 @@ export const configurationRU = {
   },
 
   MotorRotationFrequencyField: {
-    label: 'Частота вращения',
+    label: 'Частота вращения, Гц',
   },
 
   MotorRotationDirectionControl: {
@@ -23,7 +23,7 @@ export const configurationRU = {
   },
 
   CoilTurnCountField: {
-    label: 'Количество витков',
+    label: 'Количество витков, шт.',
   },
 
   HelmholtzCoilsSection: {
@@ -31,15 +31,15 @@ export const configurationRU = {
   },
 
   HelmholtzCoilsRadiusField: {
-    label: 'Радиус',
+    label: 'Радиус, м',
   },
 
   HelmholtzCoilsAmperageField: {
-    label: 'Сила тока',
+    label: 'Сила тока, А',
   },
 
   HelmholtzCoilsTurnsCountField: {
-    label: 'Количество витков',
+    label: 'Количество витков, шт.',
   },
 
   WiresSection: {
@@ -71,7 +71,7 @@ export const configurationEN = {
   },
 
   MotorRotationFrequencyField: {
-    label: 'Rotation frequency',
+    label: 'Rotation frequency, Hz',
   },
 
   MotorRotationDirectionControl: {
@@ -86,7 +86,7 @@ export const configurationEN = {
   },
 
   CoilTurnCountField: {
-    label: 'Number of turns',
+    label: 'Number of turns, pc.',
   },
 
   HelmholtzCoilsSection: {
@@ -94,15 +94,15 @@ export const configurationEN = {
   },
 
   HelmholtzCoilsRadiusField: {
-    label: 'Radius',
+    label: 'Radius, m',
   },
 
   HelmholtzCoilsAmperageField: {
-    label: 'Amperage',
+    label: 'Amperage, A',
   },
 
   HelmholtzCoilsTurnsCountField: {
-    label: 'Number of turns',
+    label: 'Number of turns, pc.',
   },
 
   WiresSection: {
