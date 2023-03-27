@@ -1,16 +1,6 @@
 import storage from 'redux-persist/lib/storage'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
-  coilSlice,
-  userSlice,
-  sceneSlice,
-  motorSlice,
-  modelingSlice,
-  voltmeterSlice,
-  configurationSlice,
-  HelmholtzCoilsSlice,
-} from '@slices'
-import {
   FLUSH,
   PAUSE,
   PURGE,
@@ -20,6 +10,17 @@ import {
   persistStore,
   persistReducer,
 } from 'redux-persist'
+import {
+  coilSlice,
+  userSlice,
+  wireSlice,
+  sceneSlice,
+  motorSlice,
+  modelingSlice,
+  voltmeterSlice,
+  configurationSlice,
+  HelmholtzCoilsSlice,
+} from '@slices'
 
 const persistConfig = {
   key: 'root',
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   coil: coilSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
   HelmholtzCoils: HelmholtzCoilsSlice.reducer,
+  wire: wireSlice.reducer,
   configuration: configurationSlice.reducer,
   scene: sceneSlice.reducer,
   modeling: modelingSlice.reducer,

@@ -1,4 +1,5 @@
 export * from './user.selectors'
+export * from './wire.selectors'
 export * from './scene.selectors'
 export * from './motor.selectors'
 export * from './modeling.selectors'
