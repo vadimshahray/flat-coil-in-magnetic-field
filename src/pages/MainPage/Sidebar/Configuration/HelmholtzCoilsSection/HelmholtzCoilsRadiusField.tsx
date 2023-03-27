@@ -30,6 +30,7 @@ export const HelmholtzCoilsRadiusField = () => {
       min={HELMHOLTZ_COILS_RADIUS_MIN}
       max={HELMHOLTZ_COILS_RADIUS_MAX}
       step={HELMHOLTZ_COILS_RADIUS_STEP}
+      adornment='ℛ'
     />
   )
 }

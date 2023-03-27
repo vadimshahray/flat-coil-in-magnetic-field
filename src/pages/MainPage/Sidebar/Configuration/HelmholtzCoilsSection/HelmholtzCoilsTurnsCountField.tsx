@@ -30,6 +30,7 @@ export const HelmholtzCoilsTurnsCountField = () => {
       min={HELMHOLTZ_COILS_TURNS_COUNT_MIN}
       max={HELMHOLTZ_COILS_TURNS_COUNT_MAX}
       step={HELMHOLTZ_COILS_TURNS_COUNT_STEP}
+      adornment='𝓃'
     />
   )
 }

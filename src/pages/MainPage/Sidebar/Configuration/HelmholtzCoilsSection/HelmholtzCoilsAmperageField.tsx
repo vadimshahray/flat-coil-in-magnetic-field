@@ -30,6 +30,7 @@ export const HelmholtzCoilsAmperageField = () => {
       min={HELMHOLTZ_COILS_AMPERAGE_MIN}
       max={HELMHOLTZ_COILS_AMPERAGE_MAX}
       step={HELMHOLTZ_COILS_AMPERAGE_STEP}
+      adornment='𝒜'
     />
   )
 }

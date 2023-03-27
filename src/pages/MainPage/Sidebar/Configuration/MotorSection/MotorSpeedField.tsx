@@ -26,6 +26,7 @@ export const MotorSpeedField = () => {
       min={MOTOR_SPEED_MIN}
       max={MOTOR_SPEED_MAX}
       step={MOTOR_SPEED_STEP}
+      adornment='𝒱'
     />
   )
 }
