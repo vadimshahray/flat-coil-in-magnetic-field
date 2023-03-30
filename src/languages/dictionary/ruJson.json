@@ -46,5 +46,5 @@
   "ru.StartModelingButton.startModeling": "Начать моделирование",
   "ru.StartModelingButton.unableStartModeling": "Невозможно начать моделирование!",
   "ru.StartModelingButton.resolveMistakes": "Введенные данные содержат ошибки ({{count}}). Исправьте их!",
-  "ru.SceneLoading.modelsLoading": "Загрузка моделей..."
+  "ru.SceneFallback.modelsLoading": "Загрузка моделей..."
 }

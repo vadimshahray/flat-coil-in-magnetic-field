@@ -46,5 +46,5 @@
   "en.StopStartModelingButton.start": "Start",
   "en.DropModelingButton.dropModeling": "Drop modeling session",
   "en.DropModelingButton.drop": "Drop",
-  "en.SceneLoading.modelsLoading": "Models loading..."
+  "en.SceneFallback.modelsLoading": "Models loading..."
 }

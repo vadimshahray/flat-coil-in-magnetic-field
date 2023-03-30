@@ -2,11 +2,11 @@ import { Camera } from './Camera'
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { DeviceTable } from './DeviceTable'
-import { SceneLoading } from './SceneLoading'
+import { SceneFallback } from './SceneFallback'
 
 export const Scene = () => {
   return (
-    <Suspense fallback={<SceneLoading />}>
+    <Suspense fallback={<SceneFallback />}>
       <Canvas>
         <Camera />
 
