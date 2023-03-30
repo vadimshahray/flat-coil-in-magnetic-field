@@ -6,20 +6,20 @@ import HelmholtzCoilsModelPath from './HelmholtzCoils.glb'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cylinder010: THREE.Mesh
-    Cylinder010_1: THREE.Mesh
-    Cylinder010_2: THREE.Mesh
-    Cylinder010_3: THREE.Mesh
-    Cylinder010_4: THREE.Mesh
-    Cylinder010_5: THREE.Mesh
+    Cylinder058: THREE.Mesh
+    Cylinder058_1: THREE.Mesh
+    Cylinder058_2: THREE.Mesh
+    Cylinder058_3: THREE.Mesh
+    Cylinder058_4: THREE.Mesh
+    Cylinder058_5: THREE.Mesh
   }
   materials: {
-    синий: THREE.MeshStandardMaterial
-    красный: THREE.MeshStandardMaterial
-    металл: THREE.MeshStandardMaterial
-    дерево: THREE.MeshStandardMaterial
-    ['Material.002']: THREE.MeshStandardMaterial
-    черный: THREE.MeshStandardMaterial
+    cuprium: THREE.MeshPhysicalMaterial
+    blue: THREE.MeshStandardMaterial
+    red: THREE.MeshStandardMaterial
+    grey_plastic: THREE.MeshPhysicalMaterial
+    very_grey_plastic: THREE.MeshPhysicalMaterial
+    black_plastic: THREE.MeshStandardMaterial
   }
 }
 
@@ -27,40 +27,35 @@ const HelmholtzCoils = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(HelmholtzCoilsModelPath) as GLTFResult
 
   return (
-    <group {...props} scale={0.5} dispose={null}>
+    <group {...props} dispose={null}>
       <group
-        position={[52.54, -164.24, -157.4]}
+        position={[0, 194.46, 347.23]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={[0.03, 0.25, 0.04]}
+        scale={[157.63, 0.45, 157.63]}
       >
         <mesh
-          geometry={nodes.Cylinder010.geometry}
-          material={materials.синий}
+          geometry={nodes.Cylinder058.geometry}
+          material={materials.cuprium}
         />
-
         <mesh
-          geometry={nodes.Cylinder010_1.geometry}
-          material={materials.красный}
+          geometry={nodes.Cylinder058_1.geometry}
+          material={materials.blue}
         />
-
         <mesh
-          geometry={nodes.Cylinder010_2.geometry}
-          material={materials.металл}
+          geometry={nodes.Cylinder058_2.geometry}
+          material={materials.red}
         />
-
         <mesh
-          geometry={nodes.Cylinder010_3.geometry}
-          material={materials.дерево}
+          geometry={nodes.Cylinder058_3.geometry}
+          material={materials.grey_plastic}
         />
-
         <mesh
-          geometry={nodes.Cylinder010_4.geometry}
-          material={materials['Material.002']}
+          geometry={nodes.Cylinder058_4.geometry}
+          material={materials.very_grey_plastic}
         />
-
         <mesh
-          geometry={nodes.Cylinder010_5.geometry}
-          material={materials.черный}
+          geometry={nodes.Cylinder058_5.geometry}
+          material={materials.black_plastic}
         />
       </group>
     </group>
