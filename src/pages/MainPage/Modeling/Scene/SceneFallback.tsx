@@ -6,7 +6,12 @@ export const SceneFallback = () => {
   const translate = useTranslate('SceneFallback')
 
   return (
-    <Stack spacing={2} justifyContent='center' alignItems='center'>
+    <Stack
+      spacing={2}
+      justifyContent='center'
+      alignItems='center'
+      sx={{ height: '100%' }}
+    >
       <CircularProgress />
 
       <Typography>{translate('modelsLoading')}</Typography>
