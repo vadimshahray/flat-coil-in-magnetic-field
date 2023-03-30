@@ -10,9 +10,11 @@ export const Scene = () => {
       <Canvas resize={{ debounce: 0 }}>
         <Camera />
 
-        <ambientLight />
+        <directionalLight intensity={0.3} position={[300, 600, 200]} />
+        <directionalLight intensity={0.3} position={[300, 600, -200]} />
 
-        <pointLight position={[0, 100, 800]} />
+        <directionalLight intensity={0.3} position={[-300, 600, 200]} />
+        <directionalLight intensity={0.3} position={[-300, 600, -200]} />
 
         <DeviceTable />
       </Canvas>
