@@ -8,7 +8,7 @@ export const Sidebar = () => {
   const modelingStatus = useSelector(selectModelingStatus)
 
   return (
-    <div style={{ overflowY: 'auto' }}>
+    <div style={{ gridRowStart: 'span 2', overflowY: 'auto' }}>
       {modelingStatus === 'idle' ? <Configuration /> : <ModelingInfo />}
     </div>
   )
