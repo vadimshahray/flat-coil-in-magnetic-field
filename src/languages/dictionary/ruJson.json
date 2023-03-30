@@ -46,7 +46,7 @@
   "ru.StartModelingButton.startModeling": "Начать моделирование",
   "ru.StartModelingButton.unableStartModeling": "Невозможно начать моделирование!",
   "ru.StartModelingButton.resolveMistakes": "Введенные данные содержат ошибки ({{count}}). Исправьте их!",
-  "ru.ModelingSceneFallback.modelsLoading": "Загрузка моделей...",
+  "ru.SceneFallback.modelsLoading": "Загрузка моделей...",
   "ru.ChangeSidebarVisibilityButton.hideSidebar": "Скрыть информационную панель",
   "ru.ChangeSidebarVisibilityButton.showSidebar": "Показать информационную панель"
 }

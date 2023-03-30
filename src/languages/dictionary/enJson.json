@@ -46,7 +46,7 @@
   "en.StopStartModelingButton.start": "Start",
   "en.DropModelingButton.dropModeling": "Drop modeling session",
   "en.DropModelingButton.drop": "Drop",
-  "en.ModelingSceneFallback.modelsLoading": "Models loading...",
+  "en.SceneFallback.modelsLoading": "Models loading...",
   "en.ChangeSidebarVisibilityButton.hideSidebar": "Hide information sidebar",
   "en.ChangeSidebarVisibilityButton.showSidebar": "Show information sidebar"
 }
