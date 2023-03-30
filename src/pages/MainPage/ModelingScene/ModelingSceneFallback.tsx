@@ -2,8 +2,8 @@ import React from 'react'
 import { useTranslate } from '@languages'
 import { CircularProgress, Stack, Typography } from '@mui/material'
 
-export const SceneFallback = () => {
-  const translate = useTranslate('SceneFallback')
+export const ModelingSceneFallback = () => {
+  const translate = useTranslate('ModelingSceneFallback')
 
   return (
     <Stack

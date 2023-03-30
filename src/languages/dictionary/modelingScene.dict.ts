@@ -1,5 +1,5 @@
 export const modelingSceneRU = {
-  SceneFallback: {
+  ModelingSceneFallback: {
     modelsLoading: 'Загрузка моделей...',
   },
 
@@ -10,7 +10,7 @@ export const modelingSceneRU = {
 }
 
 export const modelingSceneEN = {
-  SceneFallback: {
+  ModelingSceneFallback: {
     modelsLoading: 'Models loading...',
   },
 
