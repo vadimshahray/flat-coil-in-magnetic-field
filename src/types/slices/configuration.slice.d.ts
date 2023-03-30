@@ -1,5 +1,6 @@
 type ConfigurationSliceState = {
   invalidFields: string[]
+  isSidebarVisible: boolean
 }
 
 interface ConfigurationSlice
@@ -12,5 +13,10 @@ interface ConfigurationSlice
   removeInvalidField(
     state: ConfigurationSliceState,
     action: PayloadAction<string>,
+  ): void
+
+  setIsSidebarVisible(
+    state: ConfigurationSliceState,
+    action: PayloadAction<boolean>,
   ): void
 }

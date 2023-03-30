@@ -7,6 +7,7 @@ export const configurationSlice = createSlice<
   name: 'configuration',
   initialState: {
     invalidFields: [],
+    isSidebarVisible: true,
   },
   reducers: {
     addInvalidField: (state, { payload }) => {
@@ -21,8 +22,12 @@ export const configurationSlice = createSlice<
 
       state.invalidFields.splice(i, 1)
     },
+
+    setIsSidebarVisible: (state, { payload }) => {
+      state.isSidebarVisible = payload
+    },
   },
 })
 
-export const { addInvalidField, removeInvalidField } =
+export const { addInvalidField, removeInvalidField, setIsSidebarVisible } =
   configurationSlice.actions
