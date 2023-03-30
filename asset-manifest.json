@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.73cf63aa.js",
+    "main.js": "/alternator/static/js/main.f9ef218c.js",
     "static/js/511.30a196dc.chunk.js": "/alternator/static/js/511.30a196dc.chunk.js",
     "static/js/295.69e23794.chunk.js": "/alternator/static/js/295.69e23794.chunk.js",
     "static/js/611.923ea025.chunk.js": "/alternator/static/js/611.923ea025.chunk.js",
@@ -13,7 +13,7 @@
     "static/media/coil.glb": "/alternator/static/media/coil.58c5c7cf8886ca958cdf.glb",
     "index.html": "/alternator/index.html",
     "static/media/alternator.pdf": "/alternator/static/media/alternator.31d6cfe0d16ae931b73c.pdf",
-    "main.73cf63aa.js.map": "/alternator/static/js/main.73cf63aa.js.map",
+    "main.f9ef218c.js.map": "/alternator/static/js/main.f9ef218c.js.map",
     "511.30a196dc.chunk.js.map": "/alternator/static/js/511.30a196dc.chunk.js.map",
     "295.69e23794.chunk.js.map": "/alternator/static/js/295.69e23794.chunk.js.map",
     "611.923ea025.chunk.js.map": "/alternator/static/js/611.923ea025.chunk.js.map",
@@ -22,6 +22,6 @@
     "334.0c11d12e.chunk.js.map": "/alternator/static/js/334.0c11d12e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.73cf63aa.js"
+    "static/js/main.f9ef218c.js"
   ]
 }
