@@ -7,7 +7,7 @@ import { ModelingSceneFallback } from './ModelingSceneFallback'
 export const ModelingScene = () => {
   return (
     <Suspense fallback={<ModelingSceneFallback />}>
-      <Canvas>
+      <Canvas resize={{ debounce: 0 }}>
         <Camera />
 
         <ambientLight />

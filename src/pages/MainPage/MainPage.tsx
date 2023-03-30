@@ -11,8 +11,8 @@ export const MainPage = () => {
       sx={{
         height: '100%',
         display: 'grid',
-        gridTemplateColumns: '1fr 400px',
-        gridTemplateRows: '1fr auto',
+        gridTemplateColumns: '1fr auto',
+        gridTemplateRows: '1fr 0',
         position: 'relative',
         overflow: 'hidden',
       }}
