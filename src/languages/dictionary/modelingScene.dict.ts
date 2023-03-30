@@ -1,11 +1,11 @@
 export const modelingSceneRU = {
-  ModelingSceneLoading: {
+  SceneLoading: {
     modelsLoading: 'Загрузка моделей...',
   },
 }
 
 export const modelingSceneEN = {
-  ModelingSceneLoading: {
+  SceneLoading: {
     modelsLoading: 'Models loading...',
   },
 }

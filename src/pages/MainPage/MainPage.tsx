@@ -1,7 +1,7 @@
 import React from 'react'
 import { Sidebar } from './Sidebar'
+import { Modeling } from './Modeling'
 import { Container } from '@mui/material'
-import { ModelingScene } from './ModelingScene'
 
 export const MainPage = () => {
   return (
@@ -14,7 +14,7 @@ export const MainPage = () => {
         overflow: 'hidden',
       }}
     >
-      <ModelingScene />
+      <Modeling />
 
       <Sidebar />
     </Container>
