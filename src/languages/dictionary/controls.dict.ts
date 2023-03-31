@@ -10,6 +10,11 @@ export const controlsRU = {
   DisassembleSchemeButton: {
     disassembleScheme: 'Разобрать схему',
   },
+
+  ChangeSidebarVisibilityButton: {
+    hideSidebar: 'Скрыть информационную панель',
+    showSidebar: 'Показать информационную панель',
+  },
 }
 
 export const controlsEN = {
@@ -23,5 +28,10 @@ export const controlsEN = {
 
   DisassembleSchemeButton: {
     disassembleScheme: 'Disassemble the scheme',
+  },
+
+  ChangeSidebarVisibilityButton: {
+    hideSidebar: 'Hide information sidebar',
+    showSidebar: 'Show information sidebar',
   },
 }
