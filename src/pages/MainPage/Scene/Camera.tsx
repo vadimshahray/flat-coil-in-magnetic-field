@@ -20,6 +20,13 @@ export const Camera = () => {
   useEffect(() => {
     controls.camera.far = 2000
 
+    controls.mouseButtons = {
+      right: CameraControls.ACTION.ROTATE,
+      left: CameraControls.ACTION.ROTATE,
+      middle: CameraControls.ACTION.DOLLY,
+      wheel: CameraControls.ACTION.DOLLY,
+    }
+
     controls.minDistance = 360
     controls.maxDistance = 900
 
