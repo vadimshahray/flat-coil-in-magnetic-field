@@ -12,8 +12,8 @@ export const controlsRU = {
   },
 
   ChangeSidebarVisibilityButton: {
-    hideSidebar: 'Скрыть информационную панель',
-    showSidebar: 'Показать информационную панель',
+    hideSidebar: 'Скрыть боковую панель',
+    showSidebar: 'Показать боковую панель',
   },
 }
 
@@ -31,7 +31,7 @@ export const controlsEN = {
   },
 
   ChangeSidebarVisibilityButton: {
-    hideSidebar: 'Hide information sidebar',
-    showSidebar: 'Show information sidebar',
+    hideSidebar: 'Hide sidebar',
+    showSidebar: 'Show sidebar',
   },
 }
