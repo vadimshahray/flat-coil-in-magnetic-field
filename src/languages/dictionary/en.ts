@@ -1,4 +1,5 @@
 import { extraEN } from './extra.dict'
+import { controlsEN } from './controls.dict'
 import { modelingInfoEN } from './modelingInfo.dict'
 import { errorBoundaryEN } from './errorBoundary.dict'
 import { configurationEN } from './configuration.dict'
@@ -10,6 +11,7 @@ const en = {
   ...configurationEN,
   ...modelingInfoEN,
   ...modelingSceneEN,
+  ...controlsEN,
 }
 
 export default en
