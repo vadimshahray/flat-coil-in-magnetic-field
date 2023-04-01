@@ -1,0 +1,1 @@
+type CameraViewPoint = Device | '@Wires'

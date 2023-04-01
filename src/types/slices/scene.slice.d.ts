@@ -1,10 +1,10 @@
 type SceneSliceState = {
-  deviceInView?: Device
+  cameraViewPoint?: CameraViewPoint
 }
 
 interface SceneSlice extends SliceCaseReducers<SceneSliceState> {
-  setSceneDeviceInView(
+  setSceneCameraViewPoint(
     state: SceneSliceState,
-    action: PayloadAction<Device | undefined>,
+    action: PayloadAction<CameraViewPoint | undefined>,
   ): void
 }

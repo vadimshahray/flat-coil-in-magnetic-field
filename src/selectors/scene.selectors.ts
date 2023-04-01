@@ -1,2 +1,2 @@
-export const selectSceneDeviceInView = (state: RootState) =>
-  state.scene.deviceInView
+export const selectSceneCameraViewPoint = (state: RootState) =>
+  state.scene.cameraViewPoint

@@ -2,16 +2,16 @@ import React from 'react'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { ViewDeviceButton } from '@components'
-import { setSceneDeviceInView } from '@slices'
-import { selectSceneDeviceInView } from '@selectors'
+import { setSceneCameraViewPoint } from '@slices'
+import { selectSceneCameraViewPoint } from '@selectors'
 
 export const ViewHelmholtzCoilsButton = () => {
   const dispatch = useDispatch()
 
-  const inView = useSelector(selectSceneDeviceInView) === '@HelmholtzCoils'
+  const inView = useSelector(selectSceneCameraViewPoint) === '@HelmholtzCoils'
 
   const handleClick = () => {
-    dispatch(setSceneDeviceInView(inView ? undefined : '@HelmholtzCoils'))
+    dispatch(setSceneCameraViewPoint(inView ? undefined : '@HelmholtzCoils'))
   }
 
   return <ViewDeviceButton inView={inView} onClick={handleClick} />

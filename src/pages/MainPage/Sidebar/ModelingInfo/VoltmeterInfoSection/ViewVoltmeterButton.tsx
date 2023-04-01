@@ -2,16 +2,16 @@ import React from 'react'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { ViewDeviceButton } from '@components'
-import { setSceneDeviceInView } from '@slices'
-import { selectSceneDeviceInView } from '@selectors'
+import { setSceneCameraViewPoint } from '@slices'
+import { selectSceneCameraViewPoint } from '@selectors'
 
 export const ViewVoltmeterButton = () => {
   const dispatch = useDispatch()
 
-  const inView = useSelector(selectSceneDeviceInView) === '@Voltmeter'
+  const inView = useSelector(selectSceneCameraViewPoint) === '@Voltmeter'
 
   const handleClick = () => {
-    dispatch(setSceneDeviceInView(inView ? undefined : '@Voltmeter'))
+    dispatch(setSceneCameraViewPoint(inView ? undefined : '@Voltmeter'))
   }
 
   return <ViewDeviceButton inView={inView} onClick={handleClick} />

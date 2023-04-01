@@ -4,10 +4,10 @@ export const sceneSlice = createSlice<SceneSliceState, SceneSlice>({
   name: 'scene',
   initialState: {},
   reducers: {
-    setSceneDeviceInView: (state, { payload }) => {
-      state.deviceInView = payload
+    setSceneCameraViewPoint: (state, { payload }) => {
+      state.cameraViewPoint = payload
     },
   },
 })
 
-export const { setSceneDeviceInView } = sceneSlice.actions
+export const { setSceneCameraViewPoint } = sceneSlice.actions

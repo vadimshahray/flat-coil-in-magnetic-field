@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import { useEffect, useMemo } from 'react'
+import { useCameraViewPoint } from '@hooks'
 import CameraControls from 'camera-controls'
 import { useThree, useFrame } from '@react-three/fiber'
-import { useCameraPosition, useDeviceInViewPosition } from '@hooks'
 
 CameraControls.install({ THREE })
 
@@ -14,8 +14,7 @@ export const Camera = () => {
     [camera, gl.domElement],
   )
 
-  const cameraPosition = useCameraPosition()
-  const devicePosition = useDeviceInViewPosition()
+  const [targetPosition, cameraPosition] = useCameraViewPoint()
 
   useEffect(() => {
     controls.camera.far = 2000
@@ -38,12 +37,12 @@ export const Camera = () => {
       cameraPosition.x,
       cameraPosition.y,
       cameraPosition.z,
-      devicePosition.x,
-      devicePosition.y,
-      devicePosition.z,
+      targetPosition.x,
+      targetPosition.y,
+      targetPosition.z,
       true,
     )
-  }, [cameraPosition, devicePosition, controls])
+  }, [cameraPosition, targetPosition, controls])
 
   useFrame((_, delta) => {
     return controls.update(delta)
