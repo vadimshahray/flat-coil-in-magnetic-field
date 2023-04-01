@@ -22,7 +22,7 @@ export const Camera = () => {
 
     controls.mouseButtons = {
       right: CameraControls.ACTION.ROTATE,
-      left: CameraControls.ACTION.ROTATE,
+      left: CameraControls.ACTION.NONE,
       middle: CameraControls.ACTION.DOLLY,
       wheel: CameraControls.ACTION.DOLLY,
     }
