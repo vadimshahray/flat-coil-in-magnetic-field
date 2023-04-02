@@ -1,4 +1,5 @@
 export * from './coil'
+export * from './wire'
 export * from './motor'
 export * from './scene'
 export * from './modeling'
