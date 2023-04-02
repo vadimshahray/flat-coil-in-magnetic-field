@@ -9,6 +9,7 @@ import {
   CAMERA_ALL_DEVICES_POSITION,
   HELMHOLTZ_COILS_SCENE_POSITION,
   CAMERA_HELMHOLTZ_COILS_POSITION,
+  CAMERA_SCHEME_ASSEMBLY_POSITION,
 } from '@constants'
 
 export const useCameraViewPoint = () => {
@@ -21,6 +22,8 @@ export const useCameraViewPoint = () => {
       return [COIL_SCENE_POSITION, CAMERA_COIL_POSITION]
     case '@HelmholtzCoils':
       return [HELMHOLTZ_COILS_SCENE_POSITION, CAMERA_HELMHOLTZ_COILS_POSITION]
+    case '@SchemeAssembly':
+      return [CAMERA_DEFAULT_POSITION, CAMERA_SCHEME_ASSEMBLY_POSITION]
     default:
       return [CAMERA_DEFAULT_POSITION, CAMERA_ALL_DEVICES_POSITION]
   }

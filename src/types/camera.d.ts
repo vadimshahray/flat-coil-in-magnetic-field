@@ -1,1 +1,1 @@
-type CameraViewPoint = Device | '@Wires'
+type CameraViewPoint = Device | '@SchemeAssembly'
