@@ -1,5 +1,6 @@
 import React from 'react'
 import { WireHeap } from './WireHeap'
+import { VoltmeterCoilPlusWire } from './VoltmeterCoilPlusWire'
 import {
   COIL_SCENE_POSITION,
   VOLTMETER_SCENE_POSITION,
@@ -19,6 +20,8 @@ export const DeviceTable = () => {
       <HelmholtzCoils position={HELMHOLTZ_COILS_SCENE_POSITION} />
 
       <Coil position={COIL_SCENE_POSITION} />
+
+      <VoltmeterCoilPlusWire />
 
       <Voltmeter position={VOLTMETER_SCENE_POSITION} />
 
