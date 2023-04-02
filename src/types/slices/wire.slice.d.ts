@@ -11,7 +11,10 @@ interface WireSlice extends SliceCaseReducers<WireSliceState> {
     action: PayloadAction<MetalMaterial>,
   ): void
 
-  setDraggableWire(state: WireSliceState, action: PayloadAction<number | null>)
+  setDraggableWire(
+    state: WireSliceState,
+    action: PayloadAction<number | null>,
+  ): void
 
   setWireConnection(
     state: WireSliceState,
@@ -20,5 +23,7 @@ interface WireSlice extends SliceCaseReducers<WireSliceState> {
       connectionA: Terminal | null
       connectionB: Terminal | null
     }>,
-  )
+  ): void
+
+  dropAllConnections(state: WireSliceState): void
 }

@@ -35,8 +35,19 @@ export const wireSlice = createSlice<WireSliceState, WireSlice>({
       state.wires[payload.wireIndex].connectionA = payload.connectionA
       state.wires[payload.wireIndex].connectionB = payload.connectionB
     },
+
+    dropAllConnections: (state) => {
+      state.wires = state.wires.map(() => ({
+        connectionA: null,
+        connectionB: null,
+      }))
+    },
   },
 })
 
-export const { setWireMaterial, setDraggableWire, setWireConnection } =
-  wireSlice.actions
+export const {
+  setWireMaterial,
+  setDraggableWire,
+  setWireConnection,
+  dropAllConnections,
+} = wireSlice.actions

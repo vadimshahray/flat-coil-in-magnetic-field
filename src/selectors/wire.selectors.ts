@@ -15,3 +15,6 @@ export const selectVoltmeterCoilPlusWire = (state: RootState) =>
   state.wire.wires.findIndex(
     (w) => w.connectionA === '@VoltmeterPlus' && w.connectionB === '@CoilPlus',
   )
+
+export const selectAreAllWiresDisconnected = (state: RootState) =>
+  state.wire.wires.every((w) => !w.connectionA && !w.connectionB)
