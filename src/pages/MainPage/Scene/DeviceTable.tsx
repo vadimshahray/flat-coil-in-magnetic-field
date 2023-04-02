@@ -1,4 +1,5 @@
 import React from 'react'
+import { WireHeap } from './WireHeap'
 import {
   COIL_SCENE_POSITION,
   VOLTMETER_SCENE_POSITION,
@@ -20,6 +21,8 @@ export const DeviceTable = () => {
       <Coil position={COIL_SCENE_POSITION} />
 
       <Voltmeter position={VOLTMETER_SCENE_POSITION} />
+
+      <WireHeap />
     </>
   )
 }
