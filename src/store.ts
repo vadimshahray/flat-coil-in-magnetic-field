@@ -25,7 +25,7 @@ import {
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['user', 'motor', 'coil', 'HelmholtzCoils', 'wire'],
+  // whitelist: ['user', 'motor', 'coil', 'HelmholtzCoils', 'wire'],
 }
 
 const rootReducer = combineReducers({
