@@ -3,6 +3,11 @@ export const controlsRU = {
     showScheme: 'Показать схему',
   },
 
+  SchemeDialog: {
+    title: 'Схемы подключения',
+    okButton: 'Понятно',
+  },
+
   AssembleSchemeButton: {
     assembleScheme: 'Собрать схему',
   },
@@ -20,6 +25,11 @@ export const controlsRU = {
 export const controlsEN = {
   ShowSchemeButton: {
     showScheme: 'Show the scheme',
+  },
+
+  SchemeDialog: {
+    title: 'Wiring schemes',
+    okButton: 'Ok',
   },
 
   AssembleSchemeButton: {

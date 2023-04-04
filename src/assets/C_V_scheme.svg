@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="232px" height="171px" viewBox="-0.5 -0.5 232 171">
+  <g>
+    <path d="M 0 160 L 105 160" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 230 160 L 230 100 L 230 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 0 40 L 60 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 0 160 L 0 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 170 40 L 230 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <rect x="60" y="10" width="110" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+    <ellipse cx="115" cy="160" rx="10" ry="10" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+    <path d="M 125 160 L 230 160" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 78.15 70 L 140 10" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+    <text x="109.5" y="164" font-family='Fira Code'>А</text>
+    <text x="134" y="45" font-weight='900' font-family='Fira Code' font-size='20px'>n</text>
+    <rect x="130" y="10" width="20" height="40" fill="none" stroke="none" pointer-events="all"/>
+  </g>
+</svg>
