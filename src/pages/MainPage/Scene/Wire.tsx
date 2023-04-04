@@ -7,14 +7,14 @@ import { setDraggableWire, setSceneCameraViewPoint } from '@slices'
 import React, { useRef, useEffect, useCallback, useState } from 'react'
 
 type Props = {
-  index: number
+  id: number
   points: THREE.Vector3[]
   position: THREE.Vector3
   color?: string
   opacity?: number
 }
 
-export const Wire = ({ index, position, ...props }: Props) => {
+export const Wire = ({ id, position, ...props }: Props) => {
   const { gl } = useThree()
 
   const ref = useRef<Line2>(null)
@@ -40,10 +40,10 @@ export const Wire = ({ index, position, ...props }: Props) => {
       setIsDragging(true)
       setStartDragPoints([e.clientX, e.clientY])
 
-      store.dispatch(setDraggableWire(index))
+      store.dispatch(setDraggableWire(id))
       store.dispatch(setSceneCameraViewPoint('@SchemeAssembly'))
     },
-    [index],
+    [id],
   )
 
   const handlePointerUp = useCallback(() => {

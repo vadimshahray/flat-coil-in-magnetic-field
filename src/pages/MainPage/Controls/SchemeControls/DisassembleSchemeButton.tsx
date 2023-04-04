@@ -1,23 +1,24 @@
 import React from 'react'
 import { useDispatch } from '@hooks'
 import { Button } from '@mui/material'
-import { useTranslate } from '@languages'
-import { dropAllConnections } from '@slices'
-import { CloseOutlined } from '@mui/icons-material'
 import { useSelector } from 'react-redux'
-import { selectAreAllWiresDisconnected } from '@selectors'
+import { useTranslate } from '@languages'
+import { disassemblyScheme } from '@slices'
+import { selectSchemeStatus } from '@selectors'
+import { CloseOutlined } from '@mui/icons-material'
 
 export const DisassembleSchemeButton = () => {
   const dispatch = useDispatch()
   const translate = useTranslate('DisassembleSchemeButton')
 
-  const areAllWiresDisconnected = useSelector(selectAreAllWiresDisconnected)
+  const isSchemeDisassembled =
+    useSelector(selectSchemeStatus) === 'disassembled'
 
   const handleClick = () => {
-    dispatch(dropAllConnections())
+    dispatch(disassemblyScheme())
   }
 
-  return !areAllWiresDisconnected ? (
+  return !isSchemeDisassembled ? (
     <Button onClick={handleClick} startIcon={<CloseOutlined />}>
       {translate('disassembleScheme')}
     </Button>

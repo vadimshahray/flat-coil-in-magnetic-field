@@ -1,7 +1,6 @@
 type WireSliceState = {
   material: MetalMaterial
 
-  wires: Wire[]
   draggableWireIndex: number | null
 }
 
@@ -15,15 +14,4 @@ interface WireSlice extends SliceCaseReducers<WireSliceState> {
     state: WireSliceState,
     action: PayloadAction<number | null>,
   ): void
-
-  setWireConnection(
-    state: WireSliceState,
-    action: PayloadAction<{
-      wireIndex: number
-      connectionA: Terminal | null
-      connectionB: Terminal | null
-    }>,
-  ): void
-
-  dropAllConnections(state: WireSliceState): void
 }

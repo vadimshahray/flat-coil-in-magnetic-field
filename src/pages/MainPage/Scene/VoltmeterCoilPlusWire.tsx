@@ -1,25 +1,26 @@
 import { Wire } from './Wire'
 import * as THREE from 'three'
 import { useDispatch } from '@hooks'
+import { connectWire } from '@slices'
 import { useSelector } from 'react-redux'
 import React, { useCallback } from 'react'
-import { setWireConnection } from '@slices'
 import { WireDropZone } from './WireDropZone'
-import { DISCONNECTED_WIRE_POINTS } from '@constants'
-import { selectVoltmeterCoilPlusWire } from '@selectors'
+import { selectSchemeWireByConnection } from '@selectors'
+import { DISCONNECTED_WIRE_POINTS, SCHEME_CONNECTIONS } from '@constants'
+
+const connection = SCHEME_CONNECTIONS['Coil+Voltmeter+']
 
 export const VoltmeterCoilPlusWire = () => {
   const dispatch = useDispatch()
 
-  const connectedWireIndex = useSelector(selectVoltmeterCoilPlusWire)
+  const connectedWire = useSelector(selectSchemeWireByConnection(connection))
 
   const handleWireDrop = useCallback(
-    (wireIndex: number) => {
+    (id: number) => {
       dispatch(
-        setWireConnection({
-          wireIndex,
-          connectionA: '@VoltmeterPlus',
-          connectionB: '@CoilPlus',
+        connectWire({
+          id,
+          ...connection,
         }),
       )
     },
@@ -28,9 +29,9 @@ export const VoltmeterCoilPlusWire = () => {
 
   return (
     <group position={new THREE.Vector3(170, -5, -40)}>
-      {connectedWireIndex !== -1 && (
+      {connectedWire && (
         <Wire
-          index={connectedWireIndex}
+          id={connectedWire.id}
           position={new THREE.Vector3(0, 0, 0)}
           points={DISCONNECTED_WIRE_POINTS}
         />
@@ -38,7 +39,7 @@ export const VoltmeterCoilPlusWire = () => {
 
       <WireDropZone
         placeholderWire={{
-          isVisible: connectedWireIndex === -1,
+          isVisible: connectedWire === null,
           points: DISCONNECTED_WIRE_POINTS,
         }}
         dropZone={{

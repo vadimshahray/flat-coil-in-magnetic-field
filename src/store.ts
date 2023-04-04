@@ -16,6 +16,7 @@ import {
   wireSlice,
   sceneSlice,
   motorSlice,
+  schemeSlice,
   modelingSlice,
   voltmeterSlice,
   configurationSlice,
@@ -25,7 +26,7 @@ import {
 const persistConfig = {
   key: 'root',
   storage,
-  // whitelist: ['user', 'motor', 'coil', 'HelmholtzCoils', 'wire'],
+  whitelist: ['user'],
 }
 
 const rootReducer = combineReducers({
@@ -35,6 +36,7 @@ const rootReducer = combineReducers({
   voltmeter: voltmeterSlice.reducer,
   HelmholtzCoils: HelmholtzCoilsSlice.reducer,
   wire: wireSlice.reducer,
+  scheme: schemeSlice.reducer,
   configuration: configurationSlice.reducer,
   scene: sceneSlice.reducer,
   modeling: modelingSlice.reducer,
