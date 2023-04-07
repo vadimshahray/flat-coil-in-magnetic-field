@@ -2,19 +2,19 @@ import React from 'react'
 import { useDisclose } from '@hooks'
 import { useTranslate } from '@languages'
 import { SchemeDialog } from './SchemeDialog'
+import { HelpOutline } from '@mui/icons-material'
 import { IconButton, Tooltip } from '@mui/material'
-import { OfflineBoltOutlined } from '@mui/icons-material'
 
-export const ShowSchemeButton = () => {
-  const translate = useTranslate('ShowSchemeButton')
+export const SchemeButton = () => {
+  const translate = useTranslate('SchemeButton')
 
   const { isOpen, onOpen, onClose } = useDisclose()
 
   return (
     <>
-      <Tooltip title={translate('showScheme')}>
+      <Tooltip title={translate('aboutScheme')}>
         <IconButton color='primary' onClick={onOpen}>
-          <OfflineBoltOutlined />
+          <HelpOutline />
         </IconButton>
       </Tooltip>
 

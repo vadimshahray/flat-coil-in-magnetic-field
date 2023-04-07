@@ -5,8 +5,8 @@ export const controlsRU = {
     wrong: 'Схема собрана с ошибками',
   },
 
-  ShowSchemeButton: {
-    showScheme: 'Показать схему',
+  SchemeButton: {
+    aboutScheme: 'О схеме',
   },
 
   SchemeDialog: {
@@ -35,8 +35,8 @@ export const controlsEN = {
     wrong: 'Scheme assembled with errors',
   },
 
-  ShowSchemeButton: {
-    showScheme: 'Show the scheme',
+  SchemeButton: {
+    aboutScheme: 'About scheme',
   },
 
   SchemeDialog: {
