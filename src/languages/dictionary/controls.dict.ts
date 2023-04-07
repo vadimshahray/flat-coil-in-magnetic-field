@@ -1,4 +1,10 @@
 export const controlsRU = {
+  SchemeStatus: {
+    assembled: 'Схема собрана правильно',
+    disassembled: 'Схема не собрана',
+    wrong: 'Схема собрана с ошибками',
+  },
+
   ShowSchemeButton: {
     showScheme: 'Показать схему',
   },
@@ -23,6 +29,12 @@ export const controlsRU = {
 }
 
 export const controlsEN = {
+  SchemeStatus: {
+    assembled: 'Scheme assembled right',
+    disassembled: 'Scheme disassembled',
+    wrong: 'Scheme assembled with errors',
+  },
+
   ShowSchemeButton: {
     showScheme: 'Show the scheme',
   },
