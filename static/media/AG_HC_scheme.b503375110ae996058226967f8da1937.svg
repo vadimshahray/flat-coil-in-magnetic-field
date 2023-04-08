@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="242px" height="182px" viewBox="-0.5 -0.5 242 182">
+  <g>
+    <path d="M 120 180 L 120 140" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 130 170 L 130 150 L 130 160" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 10 160 L 120 160" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 130 160 L 240 160" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 10 160 L 10 110" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 240 160 L 240 100 L 240 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 10 40 L 40.38 39.97" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 105 145 L 110 145" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 105 145 L 105 140" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 105 150 L 105 145" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 100 145 L 105 145" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 140 144.93 L 150 144.93" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 10 90 L 10 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <ellipse cx="10" cy="100" rx="10" ry="10" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="none"/>
+    <path d="M 50.3 50 C 42.02 50.11 35.18 45.73 35 40.21 C 34.83 34.69 41.39 30.13 49.67 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,50,40)" pointer-events="none"/>
+    <path d="M 70.3 50 C 62.02 50.11 55.18 45.73 55 40.21 C 54.83 34.69 61.39 30.13 69.67 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,70,40)" pointer-events="none"/>
+    <path d="M 90.3 50 C 82.02 50.11 75.18 45.73 75 40.21 C 74.83 34.69 81.39 30.13 89.67 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,90,40)" pointer-events="none"/>
+    <path d="M 200.3 50 C 192.02 50.11 185.18 45.73 185 40.21 C 184.83 34.69 191.39 30.13 199.67 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,200,40)" pointer-events="none"/>
+    <path d="M 180.3 50 C 172.02 50.11 165.18 45.73 165 40.21 C 164.83 34.69 171.39 30.13 179.67 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,180,40)" pointer-events="none"/>
+    <path d="M 160.3 50 C 152.02 50.11 145.18 45.73 145 40.21 C 144.83 34.69 151.39 30.13 159.67 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" transform="rotate(90,160,40)" pointer-events="none"/>
+    <path d="M 100.72 39.85 L 149.38 39.67" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <path d="M 210 40 L 240 40" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="none"/>
+    <text x="6" y="104" fill="rgb(0, 0, 0)" font-family="Fira Code" font-size="12px">A</text>
+    <text x="65" y="12" fill="rgb(0, 0, 0)" font-family="Fira Code" font-size="12px">L1</text>
+    <text x="175" y="12" fill="rgb(0, 0, 0)" font-family="Fira Code" font-size="12px">L2</text>
+  </g>
+</svg>
