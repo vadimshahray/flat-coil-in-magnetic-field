@@ -1,20 +1,22 @@
 type SchemeSliceState = {
   wires: Wire[]
 
+  connectingWire: ({ id: number } & Partial<WireConnection>) | null
+
   status: SchemeStatus
 }
 
 interface SchemeSlice extends SliceCaseReducers<SchemeSliceState> {
-  connectWire(
+  setSchemeConnectingWireId(
     state: SchemeSliceState,
-    action: PayloadAction<
-      {
-        id: number
-      } & WireConnection
-    >,
+    action: PayloadAction<number>,
   ): void
 
-  disconnectWire(state: SchemeSliceState, action: PayloadAction<number>): void
+  dropSchemeConnectingWire(state: SchemeSliceState): void
+
+  connectWire(state: SchemeSliceState, action: PayloadAction<Terminal>): void
+
+  disconnectWire(state: SchemeSliceState, action: PayloadAction<Terminal>): void
 
   assemblyScheme(state: SchemeSliceState): void
 

@@ -1,10 +1,16 @@
 import * as THREE from 'three'
-import { store } from 'src/store'
 import { Line2 } from 'three-stdlib'
+import { useDispatch } from '@hooks'
+import { useSelector } from 'react-redux'
+import { useThree } from '@react-three/fiber'
 import { CatmullRomLine } from '@react-three/drei'
-import { useThree, ThreeEvent } from '@react-three/fiber'
-import { setDraggableWire, setSceneCameraViewPoint } from '@slices'
+import { selectSchemeConnectingWireId } from '@selectors'
 import React, { useRef, useEffect, useCallback, useState } from 'react'
+import {
+  setSceneCameraViewPoint,
+  dropSchemeConnectingWire,
+  setSchemeConnectingWireId,
+} from '@slices'
 
 type Props = {
   id: number
@@ -16,57 +22,48 @@ type Props = {
 
 export const Wire = ({ id, position, ...props }: Props) => {
   const { gl } = useThree()
+  const dispatch = useDispatch()
 
   const ref = useRef<Line2>(null)
 
-  const [isDragging, setIsDragging] = useState(false)
-  const [startDragPoints, setStartDragPoints] = useState([0, 0])
+  const connectingWireId = useSelector(selectSchemeConnectingWireId)
+  const [isConnecting, setIsConnecting] = useState(false)
 
-  const handleMouseMove = useCallback(
-    (e: MouseEvent) => {
-      if (!isDragging) return
+  const handleWireClick = useCallback(() => {
+    dispatch(
+      !isConnecting
+        ? setSchemeConnectingWireId(id)
+        : dropSchemeConnectingWire(),
+    )
+    dispatch(
+      setSceneCameraViewPoint(!isConnecting ? '@SchemeAssembly' : undefined),
+    )
 
-      ref.current?.position.set(
-        position.x - (startDragPoints[0] - e.clientX) * 1.5,
-        position.y,
-        position.z - (startDragPoints[1] - e.clientY) * 1.5,
-      )
-    },
-    [isDragging, startDragPoints, position],
-  )
+    setIsConnecting(!isConnecting)
+  }, [isConnecting, id, dispatch])
 
-  const handlePointerDown = useCallback(
-    (e: ThreeEvent<PointerEvent>) => {
-      setIsDragging(true)
-      setStartDragPoints([e.clientX, e.clientY])
+  const handlePointerOut = useCallback(() => {
+    if (!isConnecting) return
 
-      store.dispatch(setDraggableWire(id))
-      store.dispatch(setSceneCameraViewPoint('@SchemeAssembly'))
-    },
-    [id],
-  )
+    dispatch(dropSchemeConnectingWire())
+    dispatch(setSceneCameraViewPoint())
 
-  const handlePointerUp = useCallback(() => {
-    if (!isDragging) return
-
-    setIsDragging(false)
-    ref.current?.position.set(position.x, position.y, position.z)
-
-    store.dispatch(setDraggableWire(null))
-    store.dispatch(setSceneCameraViewPoint())
-  }, [position, isDragging])
+    setIsConnecting(false)
+  }, [isConnecting, dispatch])
 
   useEffect(() => {
-    gl.domElement.addEventListener('pointermove', handleMouseMove)
-    gl.domElement.addEventListener('pointerup', handlePointerUp)
-    gl.domElement.addEventListener('pointerout', handlePointerUp)
+    if (connectingWireId === id) return
+
+    setIsConnecting(false)
+  }, [id, connectingWireId])
+
+  useEffect(() => {
+    gl.domElement.addEventListener('pointerout', handlePointerOut)
 
     return () => {
-      gl.domElement.removeEventListener('pointermove', handleMouseMove)
-      gl.domElement.removeEventListener('pointerup', handlePointerUp)
-      gl.domElement.removeEventListener('pointerout', handlePointerUp)
+      gl.domElement.removeEventListener('pointerout', handlePointerOut)
     }
-  }, [gl.domElement, handleMouseMove, handlePointerUp])
+  }, [gl.domElement, handlePointerOut])
 
   return (
     <CatmullRomLine
@@ -75,8 +72,7 @@ export const Wire = ({ id, position, ...props }: Props) => {
       {...props}
       position={position}
       lineWidth={5}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
+      onClick={handleWireClick}
     />
   )
 }

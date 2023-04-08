@@ -7,25 +7,64 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
   initialState: {
     wires: createWires(4),
 
+    connectingWire: null,
+
     status: 'disassembled',
   },
   reducers: {
+    setSchemeConnectingWireId: (state, { payload }) => {
+      state.connectingWire = {
+        id: payload,
+      }
+    },
+
+    dropSchemeConnectingWire: (state) => {
+      state.connectingWire = null
+    },
+
     connectWire: (state, { payload }) => {
-      const i = state.wires.findIndex((w) => w.id === payload.id)
+      if (state.connectingWire === null) return
+
+      if (!state.connectingWire.terminal1)
+        state.connectingWire.terminal1 = payload
+      else if (!state.connectingWire.terminal2)
+        state.connectingWire.terminal2 = payload
+
+      if (!state.connectingWire.terminal1 || !state.connectingWire.terminal2)
+        return
+
+      const i = state.wires.findIndex((w) => w.id === state.connectingWire?.id)
       if (i === -1) return
 
       state.wires[i] = {
         ...state.wires[i],
-        ...payload,
+        ...state.connectingWire,
       }
+
+      state.connectingWire = null
+
       state.status = checkSchemeStatus(state.wires)
     },
 
     disconnectWire: (state, { payload }) => {
-      const i = state.wires.findIndex((w) => w.id === payload)
-      if (i === -1) return
+      const i = state.wires.findIndex(
+        (w) => w.terminal1 === payload || w.terminal2 === payload,
+      )
 
-      state.wires[i] = { ...state.wires[i], terminal1: null, terminal2: null }
+      if (i === -1) {
+        if (!state.connectingWire) return
+
+        if (state.connectingWire.terminal1 === payload)
+          state.connectingWire.terminal1 = undefined
+        if (state.connectingWire.terminal2 === payload)
+          state.connectingWire.terminal2 = undefined
+
+        return
+      }
+
+      if (state.wires[i].terminal1 === payload) state.wires[i].terminal1 = null
+      if (state.wires[i].terminal2 === payload) state.wires[i].terminal2 = null
+
       state.status = checkSchemeStatus(state.wires)
     },
 
@@ -62,6 +101,9 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
 })
 
 export const {
+  setSchemeConnectingWireId,
+  dropSchemeConnectingWire,
+
   connectWire,
   disconnectWire,
 
@@ -81,7 +123,10 @@ function createWires(n: number) {
 }
 
 const checkSchemeStatus = (wires: Wire[]): SchemeStatus => {
-  if (wires.some((w) => isWireRightConnection(w))) return 'wrong'
+  if (
+    wires.some((w) => w.terminal1 && w.terminal2 && !isWireRightConnection(w))
+  )
+    return 'wrong'
 
   if (wires.some((w) => !w.terminal1 || !w.terminal2)) return 'disassembled'
 
