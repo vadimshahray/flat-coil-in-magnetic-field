@@ -7,6 +7,7 @@ import { addInsignificantZeros } from '@utils'
 import VoltmeterModelPath from './voltmeter.glb'
 import { Text, useGLTF } from '@react-three/drei'
 import { selectVoltmeterVolts } from '@selectors'
+import { TerminalConnectingZone } from '@components'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -18,6 +19,9 @@ type GLTFResult = GLTF & {
     ['Material.002']: THREE.MeshStandardMaterial
   }
 }
+
+const terminalPlusPosition = new THREE.Vector3(30, -10, -35)
+const terminalMinusPosition = new THREE.Vector3(-30, -10, -35)
 
 const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(VoltmeterModelPath) as GLTFResult
@@ -49,6 +53,16 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           material={materials['Material.002']}
         />
       </group>
+
+      <TerminalConnectingZone
+        terminal='Voltmeter+'
+        position={terminalPlusPosition}
+      />
+
+      <TerminalConnectingZone
+        terminal='Voltmeter-'
+        position={terminalMinusPosition}
+      />
 
       <Text
         ref={textRef}

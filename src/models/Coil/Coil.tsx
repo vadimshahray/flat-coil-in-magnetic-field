@@ -5,6 +5,7 @@ import React, { useRef } from 'react'
 import CoilModelPath from './coil.glb'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { TerminalConnectingZone } from '@components'
 import {
   selectModelingStatus,
   selectMotorRotationDirection,
@@ -20,6 +21,9 @@ type GLTFResult = GLTF & {
     Material: THREE.MeshStandardMaterial
   }
 }
+
+const terminalPlusPosition = new THREE.Vector3(70, -36, 22)
+const terminalMinusPosition = new THREE.Vector3(-70, -36, 22)
 
 const Coil = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult
@@ -42,20 +46,32 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
   })
 
   return (
-    <group {...props} dispose={null} scale={110}>
-      <mesh
-        geometry={nodes.Cube.geometry}
-        material={materials.Material}
-        scale={[0.98, 0.44, 0.19]}
+    <group {...props} dispose={null}>
+      <group scale={110}>
+        <mesh
+          geometry={nodes.Cube.geometry}
+          material={materials.Material}
+          scale={[0.98, 0.44, 0.19]}
+        />
+
+        <mesh
+          ref={ref}
+          geometry={nodes.Cube001.geometry}
+          material={nodes.Cube001.material}
+          position={[0, 0.27, 0]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[0.69, 0.23, 0.01]}
+        />
+      </group>
+
+      <TerminalConnectingZone
+        terminal='Coil+'
+        position={terminalPlusPosition}
       />
 
-      <mesh
-        ref={ref}
-        geometry={nodes.Cube001.geometry}
-        material={nodes.Cube001.material}
-        position={[0, 0.27, 0]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={[0.69, 0.23, 0.01]}
+      <TerminalConnectingZone
+        terminal='Coil-'
+        position={terminalMinusPosition}
       />
     </group>
   )

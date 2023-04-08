@@ -2,6 +2,7 @@ import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
+import { TerminalConnectingZone } from '@components'
 import HelmholtzCoilsModelPath from './HelmholtzCoils.glb'
 
 type GLTFResult = GLTF & {
@@ -22,6 +23,9 @@ type GLTFResult = GLTF & {
     black_plastic: THREE.MeshStandardMaterial
   }
 }
+
+const terminalPlusPosition = new THREE.Vector3(51, -154, 170)
+const terminalMinusPosition = new THREE.Vector3(-71, -154, 170)
 
 const HelmholtzCoils = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(HelmholtzCoilsModelPath) as GLTFResult
@@ -55,6 +59,16 @@ const HelmholtzCoils = (props: JSX.IntrinsicElements['group']) => {
           material={materials.black_plastic}
         />
       </group>
+
+      <TerminalConnectingZone
+        terminal='HelmholtzCoils+'
+        position={terminalPlusPosition}
+      />
+
+      <TerminalConnectingZone
+        terminal='HelmholtzCoils-'
+        position={terminalMinusPosition}
+      />
     </group>
   )
 }
