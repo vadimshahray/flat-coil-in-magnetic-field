@@ -20,6 +20,7 @@ export const WireHeap = () => {
           <Wire
             key={w.id}
             id={w.id}
+            color={w.color}
             points={DISCONNECTED_WIRE_POINTS}
             position={wirePositions[i]}
           />
