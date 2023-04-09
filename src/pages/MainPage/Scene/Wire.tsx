@@ -15,7 +15,7 @@ import {
 type Props = {
   id: number
   points: THREE.Vector3[]
-  position: THREE.Vector3
+  position?: THREE.Vector3
   color?: string
   opacity?: number
 }
