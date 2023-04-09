@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.a5fdddbf.js",
-    "static/js/511.202c78cc.chunk.js": "/alternator/static/js/511.202c78cc.chunk.js",
+    "main.js": "/alternator/static/js/main.5fbb2697.js",
+    "static/js/511.ca8e09be.chunk.js": "/alternator/static/js/511.ca8e09be.chunk.js",
     "static/js/295.69e23794.chunk.js": "/alternator/static/js/295.69e23794.chunk.js",
     "static/js/189.ec4c3bc0.chunk.js": "/alternator/static/js/189.ec4c3bc0.chunk.js",
     "static/js/611.9aaf70a4.chunk.js": "/alternator/static/js/611.9aaf70a4.chunk.js",
@@ -12,15 +12,15 @@
     "static/media/HelmholtzCoils.glb": "/alternator/static/media/HelmholtzCoils.491f3510b01dfaad973c.glb",
     "static/media/engine.glb": "/alternator/static/media/engine.f5e1d4d70ffe6985ae35.glb",
     "static/media/amperageGenerator.glb": "/alternator/static/media/amperageGenerator.e2e972dd5cdc38f5b312.glb",
+    "static/media/coil.glb": "/alternator/static/media/coil.d53cf1f32550f9486e7e.glb",
     "static/media/table.glb": "/alternator/static/media/table.df96ff294a2475b2d0b3.glb",
     "static/media/AG_HC_scheme.svg": "/alternator/static/media/AG_HC_scheme.b503375110ae996058226967f8da1937.svg",
     "static/media/voltmeter.glb": "/alternator/static/media/voltmeter.c680f0043dc5e15bcebe.glb",
-    "static/media/coil.glb": "/alternator/static/media/coil.58c5c7cf8886ca958cdf.glb",
     "static/media/C_V_scheme.svg": "/alternator/static/media/C_V_scheme.b4bd4cba01a4923cc90966e2a7ebead8.svg",
     "index.html": "/alternator/index.html",
     "static/media/alternator.pdf": "/alternator/static/media/alternator.31d6cfe0d16ae931b73c.pdf",
-    "main.a5fdddbf.js.map": "/alternator/static/js/main.a5fdddbf.js.map",
-    "511.202c78cc.chunk.js.map": "/alternator/static/js/511.202c78cc.chunk.js.map",
+    "main.5fbb2697.js.map": "/alternator/static/js/main.5fbb2697.js.map",
+    "511.ca8e09be.chunk.js.map": "/alternator/static/js/511.ca8e09be.chunk.js.map",
     "295.69e23794.chunk.js.map": "/alternator/static/js/295.69e23794.chunk.js.map",
     "189.ec4c3bc0.chunk.js.map": "/alternator/static/js/189.ec4c3bc0.chunk.js.map",
     "611.9aaf70a4.chunk.js.map": "/alternator/static/js/611.9aaf70a4.chunk.js.map",
@@ -30,6 +30,6 @@
     "334.0c11d12e.chunk.js.map": "/alternator/static/js/334.0c11d12e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a5fdddbf.js"
+    "static/js/main.5fbb2697.js"
   ]
 }
