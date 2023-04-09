@@ -19,12 +19,12 @@ export const ALL_SCHEME_CONNECTIONS: (WireConnection & {
   {
     terminal1: 'Coil+',
     terminal2: 'Voltmeter+',
-    points: [new Vector3(0, 0, 0), new Vector3(10, 0, 100)],
+    points: [new Vector3(70, 44, -80), new Vector3(370, 19, 140)],
   },
   {
     terminal1: 'Coil-',
     terminal2: 'Voltmeter-',
-    points: [new Vector3(0, 0, 0), new Vector3(10, 0, 100)],
+    points: [new Vector3(-70, 44, -80), new Vector3(310, 19, 140)],
   },
   {
     terminal1: 'AmperageGenerator+',
