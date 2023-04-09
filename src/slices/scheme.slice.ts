@@ -115,7 +115,7 @@ function createWires(n: number) {
   return new Array(n).fill(0).map(
     (_, i): Wire => ({
       id: i,
-      color: i % 2 ? 'blue' : 'red',
+      color: i % 2 ? '#4C4C8A' : '#832D2E',
       terminal1: null,
       terminal2: null,
     }),
