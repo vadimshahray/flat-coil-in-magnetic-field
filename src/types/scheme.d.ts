@@ -14,14 +14,11 @@ type SchemeConnection =
   | 'AmperageGenerator+HelmholtzCoils+'
   | 'AmperageGenerator-HelmholtzCoils-'
 
-type WireConnection = { terminal1: Terminal; terminal2: Terminal }
+type WireConnection = { terminal1: Terminal | null; terminal2: Terminal | null }
 
 type Wire = {
   id: number
   color: string
-
-  terminal1: Terminal | null
-  terminal2: Terminal | null
-}
+} & WireConnection
 
 type SchemeStatus = 'assembled' | 'disassembled' | 'wrong'
