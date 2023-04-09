@@ -14,21 +14,30 @@ import {
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cube: THREE.Mesh
-    Cube001: THREE.Mesh
+    Cube012: THREE.Mesh
+    Cube012_1: THREE.Mesh
+    Cube012_2: THREE.Mesh
+    Cube012_3: THREE.Mesh
+    Cube016: THREE.Mesh
+    Cube016_1: THREE.Mesh
+    Cube016_2: THREE.Mesh
   }
   materials: {
-    Material: THREE.MeshStandardMaterial
+    grey_plastic: THREE.MeshStandardMaterial
+    au: THREE.MeshStandardMaterial
+    metallic: THREE.MeshStandardMaterial
+    metalica: THREE.MeshStandardMaterial
+    cu: THREE.MeshPhysicalMaterial
   }
 }
 
 const terminalPlusPosition = new THREE.Vector3(70, -36, 22)
 const terminalMinusPosition = new THREE.Vector3(-70, -36, 22)
 
-const Coil = (props: JSX.IntrinsicElements['group']) => {
+export default function Coil(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult
 
-  const ref = useRef<THREE.Mesh>(null)
+  const ref = useRef<THREE.Group>(null)
 
   useFrame(() => {
     const state = store.getState()
@@ -36,32 +45,52 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
     if (!ref.current) return
 
     if (selectModelingStatus(state) === 'idle')
-      return (ref.current.rotation.x = Math.PI / 2)
+      return (ref.current.rotation.z = 0)
 
     if (selectModelingStatus(state) !== 'started') return
 
     const direction = selectMotorRotationDirection(state) === 'left' ? 1 : -1
 
-    ref.current.rotateX((direction * selectMotorRotationFrequency(state)) / 10)
+    ref.current.rotateZ(
+      (direction * selectMotorRotationFrequency(state)) / 10 / 100,
+    )
   })
 
   return (
     <group {...props} dispose={null}>
-      <group scale={110}>
-        <mesh
-          geometry={nodes.Cube.geometry}
-          material={materials.Material}
-          scale={[0.98, 0.44, 0.19]}
-        />
+      <group rotation={[0, Math.PI / 2, 0]} scale={4}>
+        <group position={[0, 1.4, -25.13]} scale={[5.41, 1.2, 3.16]}>
+          <mesh
+            geometry={nodes.Cube012.geometry}
+            material={materials.grey_plastic}
+          />
 
-        <mesh
-          ref={ref}
-          geometry={nodes.Cube001.geometry}
-          material={nodes.Cube001.material}
-          position={[0, 0.27, 0]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.69, 0.23, 0.01]}
-        />
+          <mesh geometry={nodes.Cube012_1.geometry} material={materials.au} />
+
+          <mesh
+            geometry={nodes.Cube012_2.geometry}
+            material={materials.metallic}
+          />
+
+          <mesh
+            geometry={nodes.Cube012_3.geometry}
+            material={materials.metalica}
+          />
+        </group>
+
+        <group ref={ref} position={[0, 32.44, 0]} scale={[1.17, 10.24, 13.31]}>
+          <mesh geometry={nodes.Cube016.geometry} material={materials.cu} />
+
+          <mesh
+            geometry={nodes.Cube016_1.geometry}
+            material={materials.grey_plastic}
+          />
+
+          <mesh
+            geometry={nodes.Cube016_2.geometry}
+            material={nodes.Cube016_2.material}
+          />
+        </group>
       </group>
 
       <TerminalConnectingZone
@@ -76,5 +105,3 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
     </group>
   )
 }
-
-export default Coil
