@@ -13,6 +13,8 @@ export const Scene = () => {
 
         <Camera />
 
+        <ambientLight intensity={0.6} />
+
         <directionalLight intensity={0.3} position={[300, 600, 200]} />
         <directionalLight intensity={0.3} position={[300, 600, -200]} />
 
