@@ -17,7 +17,7 @@ export const Camera = () => {
   const [targetPosition, cameraPosition] = useCameraViewPoint()
 
   useEffect(() => {
-    controls.camera.far = 2000
+    controls.camera.far = 20000
 
     controls.mouseButtons = {
       right: CameraControls.ACTION.ROTATE,

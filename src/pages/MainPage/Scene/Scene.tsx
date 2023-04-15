@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import { DeviceTable } from './DeviceTable'
 import { SceneFallback } from './SceneFallback'
 import { Stats } from '@react-three/drei'
+import { Floor } from './Floor'
 
 export const Scene = () => {
   return (
@@ -22,6 +23,8 @@ export const Scene = () => {
         <directionalLight intensity={0.3} position={[-300, 600, -200]} />
 
         <DeviceTable />
+
+        <Floor />
       </Canvas>
     </Suspense>
   )
