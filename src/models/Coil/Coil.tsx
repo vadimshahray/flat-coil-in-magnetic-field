@@ -31,8 +31,8 @@ type GLTFResult = GLTF & {
   }
 }
 
-const terminalPlusPosition = new THREE.Vector3(70, -36, 22)
-const terminalMinusPosition = new THREE.Vector3(-70, -36, 22)
+const terminalPlusPosition = new THREE.Vector3(80, 18, 22)
+const terminalMinusPosition = new THREE.Vector3(-80, 18, 22)
 
 export default function Coil(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult

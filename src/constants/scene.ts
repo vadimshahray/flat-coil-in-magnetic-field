@@ -12,7 +12,7 @@ export const CAMERA_ENGINE_POSITION = ENGINE_SCENE_POSITION.clone().add(
   new THREE.Vector3(0, 20, 120),
 )
 
-export const COIL_SCENE_POSITION = new THREE.Vector3(0, 44, -80)
+export const COIL_SCENE_POSITION = new THREE.Vector3(0, -6, -80)
 export const CAMERA_COIL_POSITION = COIL_SCENE_POSITION.clone().add(
   new THREE.Vector3(0, 20, 120),
 )
@@ -27,9 +27,9 @@ export const CAMERA_HELMHOLTZ_COILS_POSITION =
   HELMHOLTZ_COILS_SCENE_POSITION.clone().add(new THREE.Vector3(0, 60, 220))
 
 export const AMPERAGE_GENERATOR_SCENE_POSITION = new THREE.Vector3(
-  -470,
-  30,
-  200,
+  -330,
+  62,
+  100,
 )
 export const CAMERA_AMPERAGE_GENERATOR_POSITION =
   AMPERAGE_GENERATOR_SCENE_POSITION.clone().add(new THREE.Vector3(0, 20, 120))
