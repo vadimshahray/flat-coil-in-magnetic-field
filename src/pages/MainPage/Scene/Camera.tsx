@@ -27,7 +27,7 @@ export const Camera = () => {
     }
 
     controls.minDistance = 360
-    controls.maxDistance = 900
+    controls.maxDistance = 4000
 
     controls.maxPolarAngle = Math.PI / 2
   }, [controls])

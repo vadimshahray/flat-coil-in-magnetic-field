@@ -27,25 +27,23 @@ const Blackboard = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
-        <group rotation={[Math.PI / 2, 0, 0]}>
-          <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-            <mesh
-              geometry={nodes.Cube__0.geometry}
-              material={materials['Scene_-_Root']}
-            />
-          </group>
+      <group scale={[1.5, 1.5, 1.8]} rotation={[0, -Math.PI / 2, 0]}>
+        <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+          <mesh
+            geometry={nodes.Cube__0.geometry}
+            material={materials['Scene_-_Root']}
+          />
+        </group>
 
-          <group
-            position={[0, 700, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-            scale={100}
-          >
-            <mesh
-              geometry={nodes.Cube001__0.geometry}
-              material={materials['Scene_-_Root']}
-            />
-          </group>
+        <group
+          position={[0, 700, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={100}
+        >
+          <mesh
+            geometry={nodes.Cube001__0.geometry}
+            material={materials['Scene_-_Root']}
+          />
         </group>
       </group>
     </group>

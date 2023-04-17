@@ -13,7 +13,7 @@ export const Wall = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <mesh position={[0, size / 2, 0]}>
+      <mesh position={[0, size / 2, 0]} rotation={[0, Math.PI / 2, 0]}>
         <boxGeometry args={[1, size, size]} />
 
         <meshStandardMaterial map={whiteWall} />
