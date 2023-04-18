@@ -7,7 +7,6 @@ import { Stats } from '@react-three/drei'
 import { Room } from './Room'
 
 const Blackboard = React.lazy(() => import('src/models/Blackboard'))
-const Door = React.lazy(() => import('src/models/Door'))
 const Chair = React.lazy(() => import('src/models/Chair'))
 const Lamp = React.lazy(() => import('src/models/Lamp'))
 const ProjectorScreen = React.lazy(() => import('src/models/ProjectorScreen'))

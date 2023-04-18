@@ -30,7 +30,7 @@ const Door = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group scale={2.8} position={[0, 548, 0]}>
+      <group scale={4} position={[0, 784, 50]}>
         <group position={[-90.09, -194.36, -7.05]} scale={100}>
           <mesh
             geometry={nodes.door_door_0.geometry}
