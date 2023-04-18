@@ -1,3 +1,4 @@
+export * from './room'
 export * from './coil'
 export * from './wire'
 export * from './motor'
