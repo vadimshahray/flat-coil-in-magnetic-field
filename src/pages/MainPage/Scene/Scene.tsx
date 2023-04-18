@@ -1,22 +1,10 @@
+import { Room } from './Room'
 import { Camera } from './Camera'
 import React, { Suspense } from 'react'
+import { Stats } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
 import { DeviceTable } from './DeviceTable'
 import { SceneFallback } from './SceneFallback'
-import { Stats } from '@react-three/drei'
-import { Room } from './Room'
-
-const Blackboard = React.lazy(() => import('src/models/Blackboard'))
-const Chair = React.lazy(() => import('src/models/Chair'))
-const Lamp = React.lazy(() => import('src/models/Lamp'))
-const ProjectorScreen = React.lazy(() => import('src/models/ProjectorScreen'))
-const Projector = React.lazy(() => import('src/models/Projector'))
-const Plinth = React.lazy(() => import('src/models/Plinth'))
-const Sofa = React.lazy(() => import('src/models/Sofa'))
-const Bookshelf = React.lazy(() => import('src/models/Bookshelf'))
-const Fan = React.lazy(() => import('src/models/Fan'))
-const LightSwitch = React.lazy(() => import('src/models/LightSwitch'))
-const PowerSocket = React.lazy(() => import('src/models/PowerSocket'))
 
 export const Scene = () => {
   return (
@@ -37,24 +25,6 @@ export const Scene = () => {
         <directionalLight intensity={0.3} position={[-300, 600, -200]} />
 
         <DeviceTable />
-
-        {/* <Blackboard />
-
-        <ProjectorScreen />
-        <Wall />
-        <Window />
-        <Sofa />
-        <Plinth />
-        <Fan />
-        <Door />
-        <Chair />
-        <Lamp />
-        <Projector />
-
-        <Bookshelf />
-        <PowerSocket />
-        <LightSwitch />
-        <Sink /> */}
       </Canvas>
     </Suspense>
   )

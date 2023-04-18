@@ -26,7 +26,7 @@ const Plinth = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group scale={0.8} position={[38, 44, 0]} rotation={[0, 0, -Math.PI / 2]}>
+      <group scale={0.8} position={[40, 44, 0]} rotation={[0, 0, -Math.PI / 2]}>
         <mesh
           geometry={nodes.Object_2.geometry}
           material={materials.material_0}

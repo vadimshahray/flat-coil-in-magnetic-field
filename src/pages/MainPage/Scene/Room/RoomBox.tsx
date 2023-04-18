@@ -24,7 +24,7 @@ export const RoomBox = () => {
         <group position={[0, 0, 2.5 * CEILING_D]}>{CeilingRow}</group>
       </group>
 
-      <group visible={false}>
+      <group>
         <group position={[-2 * WALL_D, 0, 0]}>
           <group position={[0, WALL_H, 0]}>{WallLong}</group>
           {WallLong}

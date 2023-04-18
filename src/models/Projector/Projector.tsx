@@ -76,7 +76,7 @@ const Projector = (props: JSX.IntrinsicElements['group']) => {
             material={materials['08_-_Default']}
           />
         </group>
-        <group position={[1.53, 3.37, 3.87]}>
+        <group position={[1.53, 3.37, 3.87]} scale={[1, 1, 3]}>
           <mesh
             geometry={nodes['Box006_08_-_Default_0'].geometry}
             material={materials['08_-_Default']}
