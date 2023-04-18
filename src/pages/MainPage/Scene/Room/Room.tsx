@@ -1,10 +1,11 @@
 import React from 'react'
 import { RoomBox } from './RoomBox'
-import { FLOOR_W, WALL_D, WALL_H } from '@constants'
+import { FLOOR_D, FLOOR_W, WALL_D, WALL_H } from '@constants'
 
 const Door = React.lazy(() => import('src/models/Door'))
 const Sink = React.lazy(() => import('src/models/Sink'))
 const Window = React.lazy(() => import('src/models/Window'))
+const ComputerDesk = React.lazy(() => import('src/models/ComputerDesk'))
 
 export const Room = () => {
   return (
@@ -23,6 +24,11 @@ export const Room = () => {
 
         <Window position={[1.25 * FLOOR_W, 0, 0]} />
       </group>
+
+      <ComputerDesk
+        position={[3 * FLOOR_D - 200, 0, -FLOOR_W - 40]}
+        rotation={[0, Math.PI / 2, 0]}
+      />
     </>
   )
 }

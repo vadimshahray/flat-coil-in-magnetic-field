@@ -17,7 +17,6 @@ const Bookshelf = React.lazy(() => import('src/models/Bookshelf'))
 const Fan = React.lazy(() => import('src/models/Fan'))
 const LightSwitch = React.lazy(() => import('src/models/LightSwitch'))
 const PowerSocket = React.lazy(() => import('src/models/PowerSocket'))
-const ComputerDesk = React.lazy(() => import('src/models/ComputerDesk'))
 
 export const Scene = () => {
   return (
@@ -53,7 +52,6 @@ export const Scene = () => {
         <Projector />
 
         <Bookshelf />
-        <ComputerDesk />
         <PowerSocket />
         <LightSwitch />
         <Sink /> */}
