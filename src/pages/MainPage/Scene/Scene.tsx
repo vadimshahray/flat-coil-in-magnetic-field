@@ -1,10 +1,10 @@
 import { Camera } from './Camera'
-import { RoomBox } from './RoomBox'
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { DeviceTable } from './DeviceTable'
 import { SceneFallback } from './SceneFallback'
 import { Stats } from '@react-three/drei'
+import { Room } from './Room'
 
 const Blackboard = React.lazy(() => import('src/models/Blackboard'))
 const Door = React.lazy(() => import('src/models/Door'))
@@ -30,6 +30,8 @@ export const Scene = () => {
 
         <Camera />
 
+        <Room />
+
         <ambientLight intensity={0.6} />
 
         <directionalLight intensity={0.3} position={[300, 600, 200]} />
@@ -39,8 +41,6 @@ export const Scene = () => {
         <directionalLight intensity={0.3} position={[-300, 600, -200]} />
 
         <DeviceTable />
-
-        <RoomBox />
 
         {/* <Blackboard />
 
