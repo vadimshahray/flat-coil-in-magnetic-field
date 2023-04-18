@@ -16,12 +16,12 @@ export const RoomBox = () => {
   return (
     <group rotation={[0, Math.PI / 2, 0]}>
       <group position={[0, 2 * WALL_H, 0]}>
-        <group position={[0, 0, -2 * CEILING_D]}>{CeilingRow}</group>
-        <group position={[0, 0, -CEILING_D]}>{CeilingRow}</group>
-        <group>{CeilingRow}</group>
-        <group position={[0, 0, CEILING_D]}>{CeilingRow}</group>
-        <group position={[0, 0, 2 * CEILING_D]}>{CeilingRow}</group>
-        <group position={[0, 0, 3 * CEILING_D]}>{CeilingRow}</group>
+        <group position={[0, 0, -2.5 * CEILING_D]}>{CeilingRow}</group>
+        <group position={[0, 0, -1.5 * CEILING_D]}>{CeilingRow}</group>
+        <group position={[0, 0, -0.5 * CEILING_D]}>{CeilingRow}</group>
+        <group position={[0, 0, 0.5 * CEILING_D]}>{CeilingRow}</group>
+        <group position={[0, 0, 1.5 * CEILING_D]}>{CeilingRow}</group>
+        <group position={[0, 0, 2.5 * CEILING_D]}>{CeilingRow}</group>
       </group>
 
       <group visible={false}>
@@ -35,24 +35,24 @@ export const RoomBox = () => {
           {WallLong}
         </group>
 
-        <group position={[0, 0, -2.5 * WALL_D]} rotation={[0, Math.PI / 2, 0]}>
+        <group position={[0, 0, -3 * WALL_D]} rotation={[0, Math.PI / 2, 0]}>
           <group position={[0, WALL_H, 0]}>{WallShort}</group>
           {WallShort}
         </group>
 
-        <group position={[0, 0, 3.5 * WALL_D]} rotation={[0, Math.PI / 2, 0]}>
+        <group position={[0, 0, 3 * WALL_D]} rotation={[0, Math.PI / 2, 0]}>
           <group position={[0, WALL_H, 0]}>{WallShort}</group>
           {WallShort}
         </group>
       </group>
 
       <group>
-        <group position={[0, 0, -2 * FLOOR_D]}>{FloorRow}</group>
-        <group position={[0, 0, -FLOOR_D]}>{FloorRow}</group>
-        <group>{FloorRow}</group>
-        <group position={[0, 0, FLOOR_D]}>{FloorRow}</group>
-        <group position={[0, 0, 2 * FLOOR_D]}>{FloorRow}</group>
-        <group position={[0, 0, 3 * FLOOR_D]}>{FloorRow}</group>
+        <group position={[0, 0, -2.5 * FLOOR_D]}>{FloorRow}</group>
+        <group position={[0, 0, -1.5 * FLOOR_D]}>{FloorRow}</group>
+        <group position={[0, 0, -0.5 * FLOOR_D]}>{FloorRow}</group>
+        <group position={[0, 0, 0.5 * FLOOR_D]}>{FloorRow}</group>
+        <group position={[0, 0, 1.5 * FLOOR_D]}>{FloorRow}</group>
+        <group position={[0, 0, 2.5 * FLOOR_D]}>{FloorRow}</group>
       </group>
     </group>
   )
@@ -78,12 +78,12 @@ const FloorRow = (
 
 const WallLong = (
   <>
-    <Wall position={[0, 0, -2 * WALL_D]} />
-    <Wall position={[0, 0, -1 * WALL_D]} />
-    <Wall position={[0, 0, 0]} />
-    <Wall position={[0, 0, WALL_D]} />
-    <Wall position={[0, 0, 2 * WALL_D]} />
-    <Wall position={[0, 0, 3 * WALL_D]} />
+    <Wall position={[0, 0, -2.5 * WALL_D]} />
+    <Wall position={[0, 0, -1.5 * WALL_D]} />
+    <Wall position={[0, 0, -0.5 * WALL_D]} />
+    <Wall position={[0, 0, 0.5 * WALL_D]} />
+    <Wall position={[0, 0, 1.5 * WALL_D]} />
+    <Wall position={[0, 0, 2.5 * WALL_D]} />
   </>
 )
 
