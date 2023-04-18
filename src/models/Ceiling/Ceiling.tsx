@@ -21,7 +21,7 @@ const Ceiling = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <mesh position={[0, size / 2, 0]} rotation={[0, Math.PI / 2, 0]}>
+      <mesh rotation={[0, 0, Math.PI / 2]}>
         <boxGeometry args={[1, size, size]} />
 
         <meshStandardMaterial {...textureMaps} />
