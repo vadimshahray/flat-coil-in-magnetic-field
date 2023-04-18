@@ -10,12 +10,12 @@ export const Room = () => {
     <>
       <RoomBox />
 
-      <Door
-        position={[1.8 * FLOOR_W, 0, -2 * FLOOR_W]}
+      <Door position={[-1.35 * FLOOR_W, 0, 2 * FLOOR_W]} />
+
+      <Sink
+        position={[-2.33 * FLOOR_W, 0.24 * WALL_H, 1.9 * FLOOR_W]}
         rotation={[0, Math.PI, 0]}
       />
-
-      <Sink position={[2.85 * FLOOR_W, 0.24 * WALL_H, -1.9 * FLOOR_W]} />
     </>
   )
 }
