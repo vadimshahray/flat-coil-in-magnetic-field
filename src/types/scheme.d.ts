@@ -5,14 +5,14 @@ type Terminal =
   | 'Voltmeter-'
   | 'HelmholtzCoils+'
   | 'HelmholtzCoils-'
-  | 'AmperageGenerator+'
-  | 'AmperageGenerator-'
+  | 'CurrentSource+'
+  | 'CurrentSource-'
 
 type SchemeConnection =
   | 'Coil+Voltmeter+'
   | 'Coil-Voltmeter-'
-  | 'AmperageGenerator+HelmholtzCoils+'
-  | 'AmperageGenerator-HelmholtzCoils-'
+  | 'CurrentSource+HelmholtzCoils+'
+  | 'CurrentSource-HelmholtzCoils-'
 
 type WireConnection = { terminal1: Terminal | null; terminal2: Terminal | null }
 

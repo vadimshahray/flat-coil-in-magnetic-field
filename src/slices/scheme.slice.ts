@@ -79,11 +79,11 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
       }
       state.wires[2] = {
         ...state.wires[2],
-        ...SCHEME_CONNECTIONS['AmperageGenerator+HelmholtzCoils+'],
+        ...SCHEME_CONNECTIONS['CurrentSource+HelmholtzCoils+'],
       }
       state.wires[3] = {
         ...state.wires[3],
-        ...SCHEME_CONNECTIONS['AmperageGenerator-HelmholtzCoils-'],
+        ...SCHEME_CONNECTIONS['CurrentSource-HelmholtzCoils-'],
       }
 
       state.status = 'assembled'

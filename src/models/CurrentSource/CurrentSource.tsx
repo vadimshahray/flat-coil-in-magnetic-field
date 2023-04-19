@@ -2,8 +2,8 @@ import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
-import AmperageGeneratorModelPath from './amperageGenerator.glb'
 import { TerminalConnectingZone } from '@components'
+import CurrentSourceModelPath from './currentSource.glb'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -29,8 +29,8 @@ type GLTFResult = GLTF & {
   }
 }
 
-const AmperageGenerator = (props: JSX.IntrinsicElements['group']) => {
-  const { nodes, materials } = useGLTF(AmperageGeneratorModelPath) as GLTFResult
+const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
+  const { nodes, materials } = useGLTF(CurrentSourceModelPath) as GLTFResult
 
   return (
     <group rotation={[0, -Math.PI / 2, 0]} {...props} dispose={null}>
@@ -84,11 +84,11 @@ const AmperageGenerator = (props: JSX.IntrinsicElements['group']) => {
         </group>
 
         <TerminalConnectingZone
-          terminal='AmperageGenerator+'
+          terminal='CurrentSource+'
           position={new THREE.Vector3(70, -22, 3)}
         />
         <TerminalConnectingZone
-          terminal='AmperageGenerator-'
+          terminal='CurrentSource-'
           position={new THREE.Vector3(70, -22, 40)}
         />
       </group>
@@ -96,4 +96,4 @@ const AmperageGenerator = (props: JSX.IntrinsicElements['group']) => {
   )
 }
 
-export default AmperageGenerator
+export default CurrentSource
