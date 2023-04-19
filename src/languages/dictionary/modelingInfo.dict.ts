@@ -27,6 +27,22 @@ export const modelingInfoRU = {
     title: 'Катушки Гельмгольца',
   },
 
+  ResultsInfoSection: {
+    title: 'Результаты',
+  },
+
+  InductionInfoItem: {
+    label: 'Индуктивность, Ф',
+  },
+
+  VoltageInfoItem: {
+    label: 'Сопротивление, Ом',
+  },
+
+  AmperageInfoItem: {
+    label: 'Сила тока, А',
+  },
+
   StopStartModelingButton: {
     stopModeling: 'Остановить моделирование',
     startModeling: 'Продолжить моделирование',
@@ -67,6 +83,22 @@ export const modelingInfoEN = {
 
   HelmholtzCoilsInfoSection: {
     title: 'Helmholtz сoils',
+  },
+
+  ResultsInfoSection: {
+    title: 'Results',
+  },
+
+  InductionInfoItem: {
+    label: 'Induction, H',
+  },
+
+  VoltageInfoItem: {
+    label: 'Resistance, Ohm',
+  },
+
+  AmperageInfoItem: {
+    label: 'Amperage, A',
   },
 
   StopStartModelingButton: {

@@ -6,7 +6,7 @@ let interval: NodeJS.Timer
 
 export const startModelingTimer = createAsyncThunk<
   void,
-  () => void,
+  (t: number) => void,
   { state: RootState; dispatch: AppDispatch }
 >('modeling/startTimer', (callback, { getState, dispatch }) => {
   let ticks = getState().modeling.time.ticks
@@ -15,7 +15,7 @@ export const startModelingTimer = createAsyncThunk<
     ticks += CALCULATION_INTERVAL_MS
     dispatch(setModelingTimerTime(ticks))
 
-    callback()
+    callback(ticks)
   }, CALCULATION_INTERVAL_MS)
 })
 
