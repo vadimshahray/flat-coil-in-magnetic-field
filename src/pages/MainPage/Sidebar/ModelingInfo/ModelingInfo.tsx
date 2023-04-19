@@ -5,11 +5,11 @@ import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
 import { CoilInfoSection } from './CoilInfoSection'
 import { ResultsInfoSection } from './ResultsInfoSection'
-import { EngineInfoSection } from './EngineInfoSection'
 import { DropModelingButton } from './DropModelingButton'
 import { VoltmeterInfoSection } from './VoltmeterInfoSection'
 import { StopStartModelingButton } from './StopStartModelingButton'
 import { HelmholtzCoilsInfoSection } from './HelmholtzCoilsInfoSection'
+import { EngineInfoSection } from './EngineInfoSection/EngineInfoSection'
 import {
   Toolbar,
   LanguageButton,
