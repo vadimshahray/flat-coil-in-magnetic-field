@@ -2,6 +2,8 @@ import React from 'react'
 import { useTranslate } from '@languages'
 import { SectionWithButton } from '@components'
 import { ViewHelmholtzCoilsButton } from './ViewHelmholtzCoilsButton'
+import { HelmholtzCoilsRadiusInfoItem } from './HelmholtzCoilsRadiusInfoItem'
+import { HelmholtzCoilsTurnCountInfoItem } from './HelmholtzCoilsTurnCountInfoItem'
 
 export const HelmholtzCoilsInfoSection = () => {
   const translate = useTranslate('HelmholtzCoilsInfoSection')
@@ -10,6 +12,10 @@ export const HelmholtzCoilsInfoSection = () => {
     <SectionWithButton
       title={translate('title')}
       Button={<ViewHelmholtzCoilsButton />}
-    ></SectionWithButton>
+    >
+      <HelmholtzCoilsTurnCountInfoItem />
+
+      <HelmholtzCoilsRadiusInfoItem />
+    </SectionWithButton>
   )
 }

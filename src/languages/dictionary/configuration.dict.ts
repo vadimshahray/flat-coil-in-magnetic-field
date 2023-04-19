@@ -19,7 +19,7 @@ export const configurationRU = {
   },
 
   CoilSection: {
-    title: 'Катушка',
+    title: 'Плоская катушка',
   },
 
   CoilTurnCountField: {
@@ -35,12 +35,12 @@ export const configurationRU = {
     title: 'Катушки Гельмгольца',
   },
 
-  HelmholtzCoilsRadiusField: {
-    label: 'Радиус, м',
-  },
-
   HelmholtzCoilsTurnsCountField: {
     label: 'Количество витков, шт.',
+  },
+
+  HelmholtzCoilsRadiusField: {
+    label: 'Радиус, м',
   },
 
   CurrentSourceSection: {
@@ -81,7 +81,7 @@ export const configurationEN = {
   },
 
   CoilSection: {
-    title: 'Coil',
+    title: 'Flat coil',
   },
 
   CoilTurnCountField: {
@@ -97,12 +97,12 @@ export const configurationEN = {
     title: 'Helmholtz coils',
   },
 
-  HelmholtzCoilsRadiusField: {
-    label: 'Radius, m',
-  },
-
   HelmholtzCoilsTurnsCountField: {
     label: 'Number of turns, pc.',
+  },
+
+  HelmholtzCoilsRadiusField: {
+    label: 'Radius, m',
   },
 
   CurrentSourceSection: {

@@ -1,12 +1,14 @@
 import React from 'react'
-import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
+import { Divider, Stack } from '@mui/material'
 import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
 import { CoilInfoSection } from './CoilInfoSection'
+import { WiresInfoSection } from './WiresInfoSection'
 import { ResultsInfoSection } from './ResultsInfoSection'
 import { DropModelingButton } from './DropModelingButton'
 import { StopStartModelingButton } from './StopStartModelingButton'
+import { CurrentSourceInfoSection } from './CurrentSourceInfoSection'
 import { HelmholtzCoilsInfoSection } from './HelmholtzCoilsInfoSection'
 import { EngineInfoSection } from './EngineInfoSection/EngineInfoSection'
 import {
@@ -21,22 +23,24 @@ export const ModelingInfo = () => {
 
   return (
     <Stack justifyContent='space-between' sx={{ height: '100%' }}>
-      <div>
-        <Toolbar
-          title={translate('title')}
-          Icon={BoltOutlined}
-          actionButtons={[
-            ColorModeButton,
-            LanguageButton,
-            ProjectDocumentButton,
-          ]}
-        />
+      <Toolbar
+        title={translate('title')}
+        Icon={BoltOutlined}
+        actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
+      />
 
+      <div style={{ overflowY: 'auto' }}>
         <EngineInfoSection />
 
         <CoilInfoSection />
 
         <HelmholtzCoilsInfoSection />
+
+        <CurrentSourceInfoSection />
+
+        <WiresInfoSection />
+
+        <Divider />
 
         <ResultsInfoSection />
       </div>

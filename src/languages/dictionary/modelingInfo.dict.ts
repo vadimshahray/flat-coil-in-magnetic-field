@@ -3,28 +3,79 @@ export const modelingInfoRU = {
     title: 'Моделирование',
   },
 
-  VoltmeterInfoSection: {
-    title: 'Вольтметр',
-  },
-
-  VoltmeterVoltsInfoItem: {
-    label: 'Вольты',
-  },
-
   EngineInfoSection: {
     title: 'Двигатель',
   },
 
   EngineRotationFrequencyInfoItem: {
     label: 'Частота вращения',
+    value: '{{value}} Гц',
   },
 
   CoilInfoSection: {
-    title: 'Катушка',
+    title: 'Плоская катушка',
+  },
+
+  CoilTurnCountInfoItem: {
+    label: 'Количество витков',
+    value: '{{value}} шт.',
+  },
+
+  CoilFrameLengthInfoItem: {
+    label: 'Длина рамки',
+    value: '{{value}} м',
+  },
+
+  CoilFrameWidthInfoItem: {
+    label: 'Ширина рамки',
+    value: '{{value}} м',
   },
 
   HelmholtzCoilsInfoSection: {
     title: 'Катушки Гельмгольца',
+  },
+
+  HelmholtzCoilsTurnCountInfoItem: {
+    label: 'Количество витков',
+    value: '{{value}} шт.',
+  },
+
+  HelmholtzCoilsRadiusInfoItem: {
+    label: 'Радиус',
+    value: '{{value}} м',
+  },
+
+  CurrentSourceInfoSection: {
+    title: 'Источник тока',
+  },
+
+  CurrentSourceAmperageInfoItem: {
+    label: 'Сила тока',
+    value: '{{value}} А',
+  },
+
+  WiresInfoSection: {
+    title: 'Провода',
+  },
+
+  WiresLengthInfoItem: {
+    label: 'Длина',
+    value: '{{value}} м',
+  },
+
+  WiresMaterialInfoItem: {
+    label: 'Материал',
+    value: '{{value}}',
+  },
+
+  WiresResistivityInfoItem: {
+    label: 'Удельное сопротивление',
+    value: '{{value}} Ом * м',
+  },
+
+  WiresSectionInfoItem: {
+    label: 'Сечение',
+    value: '{{value}} м²',
   },
 
   ResultsInfoSection: {
@@ -32,15 +83,18 @@ export const modelingInfoRU = {
   },
 
   InductionInfoItem: {
-    label: 'Индуктивность, Ф',
+    label: 'Индуктивность магнитного поля',
+    value: '{{value}} Тл',
   },
 
   VoltageInfoItem: {
-    label: 'Сопротивление, Ом',
+    label: 'Сопротивление',
+    value: '{{value}} Ом',
   },
 
   AmperageInfoItem: {
-    label: 'Сила тока, А',
+    label: 'Сила тока',
+    value: '{{value}} А',
   },
 
   StopStartModelingButton: {
@@ -61,28 +115,79 @@ export const modelingInfoEN = {
     title: 'Modeling',
   },
 
-  VoltmeterInfoSection: {
-    title: 'Voltmeter',
-  },
-
-  VoltmeterVoltsInfoItem: {
-    label: 'Volts',
-  },
-
   EngineInfoSection: {
     title: 'Engine',
   },
 
   EngineRotationFrequencyInfoItem: {
     label: 'Rotation frequency',
+    value: '{{value}} Hz',
   },
 
   CoilInfoSection: {
-    title: 'Coil',
+    title: 'Flat coil',
+  },
+
+  CoilTurnCountInfoItem: {
+    label: 'Number of turns',
+    value: '{{value}} pc.',
+  },
+
+  CoilFrameWidthInfoItem: {
+    label: 'Frame width',
+    value: '{{value}} m',
+  },
+
+  CoilFrameLengthInfoItem: {
+    label: 'Frame length',
+    value: '{{value}} m',
   },
 
   HelmholtzCoilsInfoSection: {
     title: 'Helmholtz сoils',
+  },
+
+  HelmholtzCoilsTurnCountInfoItem: {
+    label: 'Number of turns',
+    value: '{{value}} pc.',
+  },
+
+  HelmholtzCoilsRadiusInfoItem: {
+    label: 'Radius',
+    value: '{{value}} m',
+  },
+
+  CurrentSourceInfoSection: {
+    title: 'Current source',
+  },
+
+  CurrentSourceAmperageInfoItem: {
+    label: 'Amperage',
+    value: '{{value}} A',
+  },
+
+  WiresInfoSection: {
+    title: 'Wires',
+  },
+
+  WiresLengthInfoItem: {
+    label: 'Length',
+    value: '{{value}} m',
+  },
+
+  WiresMaterialInfoItem: {
+    label: 'Material',
+    value: '{{value}}',
+  },
+
+  WiresResistivityInfoItem: {
+    label: 'Resistivity',
+    value: '{{value}} Ohm * m',
+  },
+
+  WiresSectionInfoItem: {
+    label: 'Section',
+    value: '{{value}} m²',
   },
 
   ResultsInfoSection: {
@@ -90,15 +195,18 @@ export const modelingInfoEN = {
   },
 
   InductionInfoItem: {
-    label: 'Induction, H',
+    label: 'Magnetic field induction',
+    value: '{{value}} T',
   },
 
   VoltageInfoItem: {
-    label: 'Resistance, Ohm',
+    label: 'Resistance',
+    value: '{{value}} Ohm',
   },
 
   AmperageInfoItem: {
-    label: 'Amperage, A',
+    label: 'Amperage',
+    value: '{{value}} A',
   },
 
   StopStartModelingButton: {

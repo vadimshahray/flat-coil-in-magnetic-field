@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { WIRES_LENGTH, WIRES_RESISTIVITY, WIRES_SECTION } from '@constants'
 import {
   selectCoilTurnsCount,
   selectCoilFrameWidth,
@@ -19,8 +20,8 @@ export const calculateData = createAsyncThunk<
   const mu = 4 * Math.PI * 10 ** -7
   const k = (2 / Math.sqrt(5)) ** 3
 
-  const lp = 0.2
-  const Pm = 2.8 * 10 ** -8
+  const lp = WIRES_LENGTH
+  const Pm = WIRES_RESISTIVITY
 
   const n = selectCoilTurnsCount(state)
   const R = selectHelmholtzCoilsRadius(state)
@@ -38,8 +39,7 @@ export const calculateData = createAsyncThunk<
   const E = Em * sin(2 * Math.PI * Nu * t)
 
   const Rob =
-    (Pm * (2 * n * (a + b))) / (4.7 * 10 ** -8) +
-    (2 * Pm * lp) / (0.5 * 10 ** -6)
+    (Pm * (2 * n * (a + b))) / (4.7 * 10 ** -8) + (2 * Pm * lp) / WIRES_SECTION
 
   const I = E / Rob
 
