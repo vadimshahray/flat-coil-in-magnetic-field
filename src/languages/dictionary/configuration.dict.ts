@@ -85,8 +85,8 @@ export const configurationEN = {
   },
 
   CoilFrameSizeFields: {
-    widthLabel: 'Frame width, м',
-    lengthLabel: 'Frame length, м',
+    widthLabel: 'Frame width, m',
+    lengthLabel: 'Frame length, m',
   },
 
   HelmholtzCoilsSection: {
