@@ -6,7 +6,6 @@ import { BoltOutlined } from '@mui/icons-material'
 import { CoilInfoSection } from './CoilInfoSection'
 import { ResultsInfoSection } from './ResultsInfoSection'
 import { DropModelingButton } from './DropModelingButton'
-import { VoltmeterInfoSection } from './VoltmeterInfoSection'
 import { StopStartModelingButton } from './StopStartModelingButton'
 import { HelmholtzCoilsInfoSection } from './HelmholtzCoilsInfoSection'
 import { EngineInfoSection } from './EngineInfoSection/EngineInfoSection'
@@ -38,8 +37,6 @@ export const ModelingInfo = () => {
         <CoilInfoSection />
 
         <HelmholtzCoilsInfoSection />
-
-        <VoltmeterInfoSection />
 
         <ResultsInfoSection />
       </div>
