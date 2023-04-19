@@ -1,7 +1,7 @@
-import React from 'react'
 import { useTranslate } from '@languages'
 import { Divider, Stack } from '@mui/material'
 import { ModelingTimer } from './ModelingTimer'
+import React, { useEffect, useRef } from 'react'
 import { BoltOutlined } from '@mui/icons-material'
 import { CoilInfoSection } from './CoilInfoSection'
 import { WiresInfoSection } from './WiresInfoSection'
@@ -21,6 +21,12 @@ import {
 export const ModelingInfo = () => {
   const translate = useTranslate('ModelingInfo')
 
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    ref.current?.scrollTo({ top: 10000, behavior: 'smooth' })
+  }, [])
+
   return (
     <Stack justifyContent='space-between' sx={{ height: '100%' }}>
       <Toolbar
@@ -29,7 +35,7 @@ export const ModelingInfo = () => {
         actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
       />
 
-      <div style={{ overflowY: 'auto' }}>
+      <div ref={ref} style={{ overflowY: 'auto' }}>
         <EngineInfoSection />
 
         <CoilInfoSection />
