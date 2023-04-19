@@ -40,7 +40,7 @@ export const CoilFrameSizeFields = () => {
         min={COIL_FRAME_WIDTH_MIN}
         max={COIL_FRAME_WIDTH_MAX}
         step={COIL_FRAME_WIDTH_STEP}
-        adornment='𝒲'
+        adornment='a'
       />
 
       <SliderTextField
@@ -51,7 +51,7 @@ export const CoilFrameSizeFields = () => {
         min={COIL_FRAME_LENGTH_MIN}
         max={COIL_FRAME_LENGTH_MAX}
         step={COIL_FRAME_LENGTH_STEP}
-        adornment='ℒ'
+        adornment='b'
       />
     </Stack>
   )

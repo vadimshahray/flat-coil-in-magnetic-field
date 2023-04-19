@@ -30,7 +30,7 @@ export const CoilTurnsCountField = () => {
       min={COIL_TURNS_COUNT_MIN}
       max={COIL_TURNS_COUNT_MAX}
       step={COIL_TURNS_COUNT_STEP}
-      adornment='𝒩'
+      adornment='n'
     />
   )
 }
