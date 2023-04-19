@@ -1,17 +1,14 @@
-export const COIL_TURNS_COUNT_MIN = 100
-export const COIL_TURNS_COUNT_MAX = 10000
+export const COIL_TURNS_COUNT_MIN = 10
+export const COIL_TURNS_COUNT_MAX = 4 * 1000
+export const COIL_TURNS_COUNT_STEP = 20
+export const COIL_TURNS_COUNT_DEFAULT = 100
 
-export const COIL_TURNS_COUNT_STEP = 100
-export const COIL_TURNS_COUNT_DEFAULT = 400
+export const COIL_FRAME_WIDTH_MIN = 0.02
+export const COIL_FRAME_WIDTH_MAX = 0.2
+export const COIL_FRAME_WIDTH_STEP = 0.02
+export const COIL_FRAME_WIDTH_DEFAULT = 0.1
 
-export const COIL_FRAME_WIDTH_MIN = 0.1
-export const COIL_FRAME_WIDTH_MAX = 1
-
-export const COIL_FRAME_WIDTH_STEP = 0.05
-export const COIL_FRAME_WIDTH_DEFAULT = 0.4
-
-export const COIL_FRAME_LENGTH_MIN = 0.1
-export const COIL_FRAME_LENGTH_MAX = 1
-
-export const COIL_FRAME_LENGTH_STEP = 0.05
-export const COIL_FRAME_LENGTH_DEFAULT = 0.4
+export const COIL_FRAME_LENGTH_MIN = 0.02
+export const COIL_FRAME_LENGTH_MAX = 0.2
+export const COIL_FRAME_LENGTH_STEP = 0.02
+export const COIL_FRAME_LENGTH_DEFAULT = 0.1
