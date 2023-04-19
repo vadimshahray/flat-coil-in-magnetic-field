@@ -1,6 +1,5 @@
 export * from './coil.slice'
 export * from './user.slice'
-export * from './wire.slice'
 export * from './scene.slice'
 export * from './motor.slice'
 export * from './scheme.slice'

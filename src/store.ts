@@ -13,7 +13,6 @@ import {
 import {
   coilSlice,
   userSlice,
-  wireSlice,
   sceneSlice,
   motorSlice,
   schemeSlice,
@@ -35,7 +34,6 @@ const rootReducer = combineReducers({
   coil: coilSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
   HelmholtzCoils: HelmholtzCoilsSlice.reducer,
-  wire: wireSlice.reducer,
   scheme: schemeSlice.reducer,
   configuration: configurationSlice.reducer,
   scene: sceneSlice.reducer,

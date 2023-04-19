@@ -47,16 +47,6 @@ export const configurationRU = {
     label: 'Количество витков, шт.',
   },
 
-  WiresSection: {
-    title: 'Провода',
-  },
-
-  WiresMaterialControl: {
-    label: 'Материал',
-    copper: 'Медь',
-    aluminum: 'Алюминий',
-  },
-
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -113,16 +103,6 @@ export const configurationEN = {
 
   HelmholtzCoilsTurnsCountField: {
     label: 'Number of turns, pc.',
-  },
-
-  WiresSection: {
-    title: 'Wires',
-  },
-
-  WiresMaterialControl: {
-    label: 'Material',
-    copper: 'Copper',
-    aluminum: 'Aluminum',
   },
 
   StartModelingButton: {

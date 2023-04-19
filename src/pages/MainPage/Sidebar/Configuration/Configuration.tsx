@@ -3,7 +3,6 @@ import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
 import { CoilSection } from './CoilSection'
 import { MotorSection } from './MotorSection'
-import { WiresSection } from './WiresSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import { StartModelingButton } from './StartModelingButton'
 import { HelmholtzCoilsSection } from './HelmholtzCoilsSection'
@@ -31,8 +30,6 @@ export const Configuration = () => {
         <CoilSection />
 
         <HelmholtzCoilsSection />
-
-        <WiresSection />
       </div>
 
       <StartModelingButton />
