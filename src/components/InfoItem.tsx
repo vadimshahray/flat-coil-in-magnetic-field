@@ -3,19 +3,20 @@ import { Stack, Typography } from '@mui/material'
 
 type Props = {
   label: string
+  value: string
 } & PropsWithChildren
 
-export const InfoItem = ({ label, children }: Props) => {
+export const InfoItem = ({ label, value }: Props) => {
   return (
     <Stack
       direction='row'
       spacing={2}
-      justifyContent='space-between'
       alignItems='center'
+      justifyContent='space-between'
     >
       <Typography variant='subtitle2'>{label}</Typography>
 
-      {children}
+      <Typography fontFamily='Fira Sans, monospace'>{value}</Typography>
     </Stack>
   )
 }
