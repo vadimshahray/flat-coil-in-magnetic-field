@@ -11,7 +11,7 @@ export const Sidebar = () => {
   return (
     <div
       style={{
-        width: isSidebarVisible ? 400 : 0,
+        width: isSidebarVisible ? '100%' : 0,
         overflowY: 'auto',
       }}
     >

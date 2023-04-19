@@ -1,14 +1,16 @@
 import React from 'react'
+import { Scene } from './Scene'
 import { Sidebar } from './Sidebar'
 import { Controls } from './Controls'
-import { Container } from '@mui/material'
-import { Scene } from './Scene'
+import { useMediaQuery, useTheme } from '@mui/material'
 
 export const MainPage = () => {
-  return (
-    <Container
-      disableGutters
-      sx={{
+  const theme = useTheme()
+  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'))
+
+  return isDesktop ? (
+    <div
+      style={{
         height: '100%',
         display: 'grid',
         gridTemplateColumns: '1fr auto',
@@ -22,6 +24,8 @@ export const MainPage = () => {
       <Sidebar />
 
       <Controls />
-    </Container>
+    </div>
+  ) : (
+    <Sidebar />
   )
 }
