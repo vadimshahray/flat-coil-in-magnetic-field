@@ -2,20 +2,20 @@ import React from 'react'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
-import { setMotorRotationDirection } from '@slices'
+import { setEngineRotationDirection } from '@slices'
 import { Button, Stack, Typography } from '@mui/material'
-import { selectMotorRotationDirection } from '@selectors'
+import { selectEngineRotationDirection } from '@selectors'
 import { ChangeCircleOutlined } from '@mui/icons-material'
 
-export const MotorRotationDirectionControl = () => {
+export const EngineRotationDirectionControl = () => {
   const dispatch = useDispatch()
-  const translate = useTranslate('MotorRotationDirectionControl')
+  const translate = useTranslate('EngineRotationDirectionControl')
 
-  const rotationDirection = useSelector(selectMotorRotationDirection)
+  const rotationDirection = useSelector(selectEngineRotationDirection)
 
   const handleClick = () => {
     dispatch(
-      setMotorRotationDirection(
+      setEngineRotationDirection(
         rotationDirection === 'left' ? 'right' : 'left',
       ),
     )

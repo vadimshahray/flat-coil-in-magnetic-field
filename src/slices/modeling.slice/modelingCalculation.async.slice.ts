@@ -4,8 +4,8 @@ import {
   selectCoilFrameWidth,
   selectCoilFrameLength,
   selectHelmholtzCoilsRadius,
-  selectMotorRotationFrequency,
   selectHelmholtzCoilsAmperage,
+  selectEngineRotationFrequency,
   selectHelmholtzCoilsTurnsCount,
 } from '@selectors'
 
@@ -26,7 +26,7 @@ export const calculateData = createAsyncThunk<
   const R = selectHelmholtzCoilsRadius(state)
   const Ig = selectHelmholtzCoilsAmperage(state)
   const N = selectHelmholtzCoilsTurnsCount(state)
-  const Nu = selectMotorRotationFrequency(state)
+  const Nu = selectEngineRotationFrequency(state)
 
   const a = selectCoilFrameWidth(state)
   const b = selectCoilFrameLength(state)

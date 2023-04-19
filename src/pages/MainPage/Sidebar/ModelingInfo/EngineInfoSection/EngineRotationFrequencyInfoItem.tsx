@@ -3,12 +3,12 @@ import { InfoItem } from '@components'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { Typography } from '@mui/material'
-import { selectMotorRotationFrequency } from '@selectors'
+import { selectEngineRotationFrequency } from '@selectors'
 
-export const MotorRotationFrequencyInfoItem = () => {
-  const translate = useTranslate('MotorRotationFrequencyInfoItem')
+export const EngineRotationFrequencyInfoItem = () => {
+  const translate = useTranslate('EngineRotationFrequencyInfoItem')
 
-  const rotationFrequency = useSelector(selectMotorRotationFrequency)
+  const rotationFrequency = useSelector(selectEngineRotationFrequency)
 
   return (
     <InfoItem label={translate('label')}>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack } from '@mui/material'
 import { useTranslate } from '@languages'
 import { CoilSection } from './CoilSection'
-import { MotorSection } from './MotorSection'
+import { EngineSection } from './EngineSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import { StartModelingButton } from './StartModelingButton'
 import { HelmholtzCoilsSection } from './HelmholtzCoilsSection'
@@ -25,7 +25,7 @@ export const Configuration = () => {
       />
 
       <div style={{ overflowY: 'auto' }}>
-        <MotorSection />
+        <EngineSection />
 
         <CoilSection />
 

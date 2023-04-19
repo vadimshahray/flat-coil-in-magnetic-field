@@ -11,12 +11,12 @@ export const modelingInfoRU = {
     label: 'Вольты',
   },
 
-  MotorInfoSection: {
-    title: 'Моторчик',
+  EngineInfoSection: {
+    title: 'Двигатель',
   },
 
-  MotorRotationFrequencyInfoItem: {
-    label: 'Количество оборотов',
+  EngineRotationFrequencyInfoItem: {
+    label: 'Частота вращения',
   },
 
   CoilInfoSection: {
@@ -69,12 +69,12 @@ export const modelingInfoEN = {
     label: 'Volts',
   },
 
-  MotorInfoSection: {
-    title: 'Motor',
+  EngineInfoSection: {
+    title: 'Engine',
   },
 
-  MotorRotationFrequencyInfoItem: {
-    label: 'RotationFrequency',
+  EngineRotationFrequencyInfoItem: {
+    label: 'Rotation frequency',
   },
 
   CoilInfoSection: {

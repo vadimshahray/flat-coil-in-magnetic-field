@@ -3,15 +3,15 @@ export const configurationRU = {
     title: 'Настройки',
   },
 
-  MotorSection: {
-    title: 'Моторчик',
+  EngineSection: {
+    title: 'Двигатель',
   },
 
-  MotorRotationFrequencyField: {
+  EngineRotationFrequencyField: {
     label: 'Частота вращения, Гц',
   },
 
-  MotorRotationDirectionControl: {
+  EngineRotationDirectionControl: {
     rotationDirection: 'Направление вращения: {{direction}}',
     left: 'левое',
     right: 'правое',
@@ -61,15 +61,15 @@ export const configurationEN = {
     title: 'Settings',
   },
 
-  MotorSection: {
-    title: 'Motor',
+  EngineSection: {
+    title: 'Engine',
   },
 
-  MotorRotationFrequencyField: {
+  EngineRotationFrequencyField: {
     label: 'Rotation frequency, Hz',
   },
 
-  MotorRotationDirectionControl: {
+  EngineRotationDirectionControl: {
     rotationDirection: 'Direction of rotation: {{direction}}',
     left: 'left',
     right: 'right',

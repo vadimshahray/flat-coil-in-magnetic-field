@@ -4,8 +4,8 @@ import { useTranslate } from '@languages'
 import { ModelingTimer } from './ModelingTimer'
 import { BoltOutlined } from '@mui/icons-material'
 import { CoilInfoSection } from './CoilInfoSection'
-import { MotorInfoSection } from './MotorInfoSection'
 import { ResultsInfoSection } from './ResultsInfoSection'
+import { EngineInfoSection } from './EngineInfoSection'
 import { DropModelingButton } from './DropModelingButton'
 import { VoltmeterInfoSection } from './VoltmeterInfoSection'
 import { StopStartModelingButton } from './StopStartModelingButton'
@@ -33,7 +33,7 @@ export const ModelingInfo = () => {
           ]}
         />
 
-        <MotorInfoSection />
+        <EngineInfoSection />
 
         <CoilInfoSection />
 

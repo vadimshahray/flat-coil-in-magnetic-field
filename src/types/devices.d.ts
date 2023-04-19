@@ -1,3 +1,3 @@
-type Device = '@Motor' | '@Voltmeter' | '@Coil' | '@HelmholtzCoils'
+type Device = '@Engine' | '@Voltmeter' | '@Coil' | '@HelmholtzCoils'
 
 type RotationDirection = 'left' | 'right'

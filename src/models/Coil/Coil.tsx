@@ -8,8 +8,8 @@ import { useFrame } from '@react-three/fiber'
 import { TerminalConnectingZone } from '@components'
 import {
   selectModelingStatus,
-  selectMotorRotationDirection,
-  selectMotorRotationFrequency,
+  selectEngineRotationDirection,
+  selectEngineRotationFrequency,
 } from '@selectors'
 
 type GLTFResult = GLTF & {
@@ -49,10 +49,10 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
 
     if (selectModelingStatus(state) !== 'started') return
 
-    const direction = selectMotorRotationDirection(state) === 'left' ? 1 : -1
+    const direction = selectEngineRotationDirection(state) === 'left' ? 1 : -1
 
     ref.current.rotateZ(
-      (direction * selectMotorRotationFrequency(state)) / 10 / 100,
+      (direction * selectEngineRotationFrequency(state)) / 10 / 100,
     )
   })
 

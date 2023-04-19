@@ -17,7 +17,7 @@ export const Camera = () => {
   const [targetPosition, cameraPosition] = useCameraViewPoint()
 
   useEffect(() => {
-    controls.camera.far = 2000
+    controls.camera.far = 10000
 
     controls.mouseButtons = {
       right: CameraControls.ACTION.ROTATE,
@@ -27,7 +27,7 @@ export const Camera = () => {
     }
 
     controls.minDistance = 360
-    controls.maxDistance = 800
+    controls.maxDistance = 1400
 
     controls.maxPolarAngle = Math.PI / 2
   }, [controls])

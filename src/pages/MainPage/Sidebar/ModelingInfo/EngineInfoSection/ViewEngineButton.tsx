@@ -5,13 +5,13 @@ import { ViewDeviceButton } from '@components'
 import { setSceneCameraViewPoint } from '@slices'
 import { selectSceneCameraViewPoint } from '@selectors'
 
-export const ViewMotorButton = () => {
+export const ViewEngineButton = () => {
   const dispatch = useDispatch()
 
-  const inView = useSelector(selectSceneCameraViewPoint) === '@Motor'
+  const inView = useSelector(selectSceneCameraViewPoint) === '@Engine'
 
   const handleClick = () => {
-    dispatch(setSceneCameraViewPoint(inView ? undefined : '@Motor'))
+    dispatch(setSceneCameraViewPoint(inView ? undefined : '@Engine'))
   }
 
   return <ViewDeviceButton inView={inView} onClick={handleClick} />

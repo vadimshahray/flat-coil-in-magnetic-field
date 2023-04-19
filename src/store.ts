@@ -14,7 +14,7 @@ import {
   coilSlice,
   userSlice,
   sceneSlice,
-  motorSlice,
+  engineSlice,
   schemeSlice,
   modelingSlice,
   voltmeterSlice,
@@ -30,7 +30,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   user: userSlice.reducer,
-  motor: motorSlice.reducer,
+  engine: engineSlice.reducer,
   coil: coilSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
   HelmholtzCoils: HelmholtzCoilsSlice.reducer,
