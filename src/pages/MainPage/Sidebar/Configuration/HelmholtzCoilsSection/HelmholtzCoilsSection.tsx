@@ -9,9 +9,9 @@ export const HelmholtzCoilsSection = () => {
 
   return (
     <Section title={translate('title')}>
-      <HelmholtzCoilsRadiusField />
-
       <HelmholtzCoilsTurnsCountField />
+
+      <HelmholtzCoilsRadiusField />
     </Section>
   )
 }
