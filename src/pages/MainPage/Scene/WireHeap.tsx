@@ -3,7 +3,7 @@ import * as THREE from 'three'
 import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { selectSchemeWires } from '@selectors'
-import { DISCONNECTED_WIRE_POINTS } from '@constants'
+import { DISCONNECTED_WIRE_POINTS, WIRE_HEAP_POSITION } from '@constants'
 
 export const WireHeap = () => {
   const wires = useSelector(selectSchemeWires)
@@ -14,7 +14,7 @@ export const WireHeap = () => {
   )
 
   return (
-    <group position={[230, -5, 200]}>
+    <group position={WIRE_HEAP_POSITION}>
       {wires.map((w, i) =>
         !w.terminal1 && !w.terminal2 ? (
           <Wire
