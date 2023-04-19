@@ -2,7 +2,6 @@ import React from 'react'
 import { Section } from '@components'
 import { useTranslate } from '@languages'
 import { HelmholtzCoilsRadiusField } from './HelmholtzCoilsRadiusField'
-import { HelmholtzCoilsAmperageField } from './HelmholtzCoilsAmperageField'
 import { HelmholtzCoilsTurnsCountField } from './HelmholtzCoilsTurnsCountField'
 
 export const HelmholtzCoilsSection = () => {
@@ -13,8 +12,6 @@ export const HelmholtzCoilsSection = () => {
       <HelmholtzCoilsRadiusField />
 
       <HelmholtzCoilsTurnsCountField />
-
-      <HelmholtzCoilsAmperageField />
     </Section>
   )
 }

@@ -19,6 +19,7 @@ import {
   modelingSlice,
   voltmeterSlice,
   configurationSlice,
+  currentSourceSlice,
   HelmholtzCoilsSlice,
 } from '@slices'
 
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
   coil: coilSlice.reducer,
   voltmeter: voltmeterSlice.reducer,
   HelmholtzCoils: HelmholtzCoilsSlice.reducer,
+  currentSource: currentSourceSlice.reducer,
   scheme: schemeSlice.reducer,
   configuration: configurationSlice.reducer,
   scene: sceneSlice.reducer,

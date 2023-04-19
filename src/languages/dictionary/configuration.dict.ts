@@ -39,12 +39,16 @@ export const configurationRU = {
     label: 'Радиус, м',
   },
 
-  HelmholtzCoilsAmperageField: {
-    label: 'Сила тока, А',
-  },
-
   HelmholtzCoilsTurnsCountField: {
     label: 'Количество витков, шт.',
+  },
+
+  CurrentSourceSection: {
+    title: 'Источник тока',
+  },
+
+  CurrentSourceAmperageField: {
+    label: 'Сила тока, А',
   },
 
   StartModelingButton: {
@@ -97,12 +101,16 @@ export const configurationEN = {
     label: 'Radius, m',
   },
 
-  HelmholtzCoilsAmperageField: {
-    label: 'Amperage, A',
-  },
-
   HelmholtzCoilsTurnsCountField: {
     label: 'Number of turns, pc.',
+  },
+
+  CurrentSourceSection: {
+    title: 'Current source',
+  },
+
+  CurrentSourceAmperageField: {
+    label: 'Amperage, A',
   },
 
   StartModelingButton: {
