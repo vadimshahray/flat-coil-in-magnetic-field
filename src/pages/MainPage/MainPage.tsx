@@ -1,24 +1,22 @@
 import { Scene } from './Scene'
 import { Sidebar } from './Sidebar'
-import { useDispatch } from '@hooks'
 import { Controls } from './Controls'
-import React, { useEffect } from 'react'
 import { assemblyScheme } from '@slices'
-import { useMediaQuery, useTheme } from '@mui/material'
+import React, { useEffect } from 'react'
+import { useDeviceTypeValue, useDispatch } from '@hooks'
 
 export const MainPage = () => {
   const dispatch = useDispatch()
 
-  const theme = useTheme()
-  const isDesktop = useMediaQuery(theme.breakpoints.up('sm'))
+  const showModelingSection = useDeviceTypeValue(true, false)
 
   useEffect(() => {
-    if (!isDesktop) {
+    if (!showModelingSection) {
       dispatch(assemblyScheme())
     }
-  }, [isDesktop, dispatch])
+  }, [showModelingSection, dispatch])
 
-  return isDesktop ? (
+  return showModelingSection ? (
     <div
       style={{
         height: '100%',
