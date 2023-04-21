@@ -1,6 +1,7 @@
 import React from 'react'
 import { RoomBox } from './RoomBox'
 import { degToRad } from 'three/src/math/MathUtils'
+import { LeftWindow, RightWindow } from './Windows'
 import { CEILING_W, FLOOR_D, FLOOR_W, WALL_D, WALL_H } from '@constants'
 
 const Fan = React.lazy(() => import('src/models/Fan'))
@@ -9,7 +10,6 @@ const Lamp = React.lazy(() => import('src/models/Lamp'))
 const Sink = React.lazy(() => import('src/models/Sink'))
 const Sofa = React.lazy(() => import('src/models/Sofa'))
 const Chair = React.lazy(() => import('src/models/Chair'))
-const Window = React.lazy(() => import('src/models/Window'))
 const Plinth = React.lazy(() => import('src/models/Plinth'))
 const Bookshelf = React.lazy(() => import('src/models/Bookshelf'))
 const Projector = React.lazy(() => import('src/models/Projector'))
@@ -75,9 +75,9 @@ export const Room = () => {
       />
 
       <group position={[0, 0.55 * WALL_H, -2 * WALL_D + 40]}>
-        <Window position={[-1.25 * FLOOR_W, 0, 0]} />
+        <LeftWindow position={[-1.25 * FLOOR_W, 0, 0]} />
 
-        <Window position={[1.25 * FLOOR_W, 0, 0]} />
+        <RightWindow position={[1.25 * FLOOR_W, 0, 0]} />
       </group>
 
       <PowerSocket position={[270, 200, -2 * WALL_D + 12]} />

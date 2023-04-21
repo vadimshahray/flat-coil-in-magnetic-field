@@ -42,33 +42,7 @@ const Window = (props: JSX.IntrinsicElements['group']) => {
           position={[294.55, 746.44, -1513.97]}
           rotation={[-Math.PI, -1.39, 2.85]}
         />
-        <group
-          position={[-236.87, 302.21, 12.55]}
-          rotation={[Math.PI / 2, -0.01, 0.01]}
-        >
-          <mesh
-            geometry={nodes.Plane_4_PBR1_0.geometry}
-            material={materials['PBR.1']}
-          />
-        </group>
-        <group
-          position={[241.87, 308.53, 8.73]}
-          rotation={[Math.PI / 2, -0.01, 0.01]}
-        >
-          <mesh
-            geometry={nodes.Plane_3_PBR1_0.geometry}
-            material={materials['PBR.1']}
-          />
-        </group>
-        <group
-          position={[-0.17, 309.23, -0.26]}
-          rotation={[Math.PI / 2, -0.01, 0.01]}
-        >
-          <mesh
-            geometry={nodes.Plane_2_PBR1_0.geometry}
-            material={materials['PBR.1']}
-          />
-        </group>
+
         <group position={[37.2, 333.26, -45.45]} rotation={[0, 0, -1.59]}>
           <mesh
             geometry={nodes.Disc__0.geometry}
