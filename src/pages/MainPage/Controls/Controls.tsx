@@ -6,7 +6,15 @@ import { ChangeSidebarVisibilityButton } from './ChangeSidebarVisibilityButton'
 export const Controls = () => {
   return (
     <div style={{ position: 'relative' }}>
-      <Container sx={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
+      <div
+        style={{
+          position: 'absolute',
+          padding: '8px 16px',
+          bottom: 0,
+          left: 0,
+          right: 0,
+        }}
+      >
         <Stack
           direction='row'
           alignItems='center'
@@ -16,7 +24,7 @@ export const Controls = () => {
 
           <ChangeSidebarVisibilityButton />
         </Stack>
-      </Container>
+      </div>
     </div>
   )
 }
