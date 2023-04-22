@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 
-const TABLE_TOP = 524
+export const TABLE_TOP = 524
 
 export const CAMERA_DEFAULT_POSITION = new THREE.Vector3(0, TABLE_TOP, 0)
 export const CAMERA_ALL_DEVICES_POSITION = CAMERA_DEFAULT_POSITION.clone().add(
@@ -19,7 +19,7 @@ export const CAMERA_COIL_POSITION = COIL_SCENE_POSITION.clone().add(
   new THREE.Vector3(0, 20, 120),
 )
 
-export const VOLTMETER_SCENE_POSITION = new THREE.Vector3(340, TABLE_TOP, 140)
+export const VOLTMETER_SCENE_POSITION = new THREE.Vector3(240, TABLE_TOP, 190)
 export const CAMERA_VOLTMETER_POSITION = VOLTMETER_SCENE_POSITION.clone().add(
   new THREE.Vector3(0, 20, 120),
 )

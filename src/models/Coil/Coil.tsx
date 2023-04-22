@@ -31,6 +31,8 @@ type GLTFResult = GLTF & {
   }
 }
 
+const WoodBlock = React.lazy(() => import('src/models/WoodBlock'))
+
 const terminalPlusPosition = new THREE.Vector3(80, 18, 22)
 const terminalMinusPosition = new THREE.Vector3(-80, 18, 22)
 
@@ -58,50 +60,60 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
 
   return (
     <group {...props} dispose={null}>
-      <group rotation={[0, Math.PI / 2, 0]} scale={4}>
-        <group position={[0, 1.4, -25.13]} scale={[5.41, 1.2, 3.16]}>
-          <mesh
-            geometry={nodes.Cube012.geometry}
-            material={materials.grey_plastic}
-          />
+      <group position={[0, 70, 0]}>
+        <group rotation={[0, Math.PI / 2, 0]} scale={4}>
+          <group position={[0, 1.4, -25.13]} scale={[5.41, 1.2, 3.16]}>
+            <mesh
+              geometry={nodes.Cube012.geometry}
+              material={materials.grey_plastic}
+            />
 
-          <mesh geometry={nodes.Cube012_1.geometry} material={materials.au} />
+            <mesh geometry={nodes.Cube012_1.geometry} material={materials.au} />
 
-          <mesh
-            geometry={nodes.Cube012_2.geometry}
-            material={materials.metallic}
-          />
+            <mesh
+              geometry={nodes.Cube012_2.geometry}
+              material={materials.metallic}
+            />
 
-          <mesh
-            geometry={nodes.Cube012_3.geometry}
-            material={materials.metalica}
-          />
+            <mesh
+              geometry={nodes.Cube012_3.geometry}
+              material={materials.metalica}
+            />
+          </group>
+
+          <group
+            ref={ref}
+            position={[0, 32.44, 0]}
+            scale={[1.17, 10.24, 13.31]}
+          >
+            <mesh geometry={nodes.Cube016.geometry} material={materials.cu} />
+
+            <mesh
+              geometry={nodes.Cube016_1.geometry}
+              material={materials.grey_plastic}
+            />
+
+            <mesh
+              geometry={nodes.Cube016_2.geometry}
+              material={nodes.Cube016_2.material}
+            />
+          </group>
         </group>
 
-        <group ref={ref} position={[0, 32.44, 0]} scale={[1.17, 10.24, 13.31]}>
-          <mesh geometry={nodes.Cube016.geometry} material={materials.cu} />
+        <TerminalConnectingZone
+          terminal='Coil+'
+          position={terminalPlusPosition}
+        />
 
-          <mesh
-            geometry={nodes.Cube016_1.geometry}
-            material={materials.grey_plastic}
-          />
-
-          <mesh
-            geometry={nodes.Cube016_2.geometry}
-            material={nodes.Cube016_2.material}
-          />
-        </group>
+        <TerminalConnectingZone
+          terminal='Coil-'
+          position={terminalMinusPosition}
+        />
       </group>
 
-      <TerminalConnectingZone
-        terminal='Coil+'
-        position={terminalPlusPosition}
-      />
+      <WoodBlock args={[50, 70, 120]} position={[-100, 35, 0]} />
 
-      <TerminalConnectingZone
-        terminal='Coil-'
-        position={terminalMinusPosition}
-      />
+      <WoodBlock args={[50, 70, 120]} position={[100, 35, 0]} />
     </group>
   )
 }
