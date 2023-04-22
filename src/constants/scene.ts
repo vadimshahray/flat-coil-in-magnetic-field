@@ -33,7 +33,7 @@ export const CAMERA_HELMHOLTZ_COILS_POSITION =
   HELMHOLTZ_COILS_SCENE_POSITION.clone().add(new THREE.Vector3(0, 60, 220))
 
 export const CURRENT_SOURCE_SCENE_POSITION = new THREE.Vector3(
-  -330,
+  -380,
   TABLE_TOP,
   100,
 )
