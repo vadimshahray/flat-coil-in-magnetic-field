@@ -14,20 +14,20 @@ import {
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cube012: THREE.Mesh
-    Cube012_1: THREE.Mesh
-    Cube012_2: THREE.Mesh
-    Cube012_3: THREE.Mesh
+    handle: THREE.Mesh
     Cube016: THREE.Mesh
     Cube016_1: THREE.Mesh
     Cube016_2: THREE.Mesh
+    axis: THREE.Mesh
+    Cube013: THREE.Mesh
+    Cube013_1: THREE.Mesh
+    Cube013_2: THREE.Mesh
   }
   materials: {
+    metallic: THREE.MeshStandardMaterial
+    cu: THREE.MeshPhysicalMaterial
     grey_plastic: THREE.MeshStandardMaterial
     au: THREE.MeshStandardMaterial
-    metallic: THREE.MeshStandardMaterial
-    metalica: THREE.MeshStandardMaterial
-    cu: THREE.MeshPhysicalMaterial
   }
 }
 
@@ -61,41 +61,51 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
   return (
     <group {...props} dispose={null}>
       <group position={[0, 70, 0]}>
-        <group rotation={[0, Math.PI / 2, 0]} scale={4}>
-          <group position={[0, 1.4, -25.13]} scale={[5.41, 1.2, 3.16]}>
-            <mesh
-              geometry={nodes.Cube012.geometry}
-              material={materials.grey_plastic}
-            />
+        <group scale={4}>
+          <mesh
+            geometry={nodes.handle.geometry}
+            material={materials.metallic}
+            position={[29.98, 32.56, -0.21]}
+            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+            scale={[0.83, 21.06, 0.83]}
+          />
 
-            <mesh geometry={nodes.Cube012_1.geometry} material={materials.au} />
-
-            <mesh
-              geometry={nodes.Cube012_2.geometry}
-              material={materials.metallic}
-            />
-
-            <mesh
-              geometry={nodes.Cube012_3.geometry}
-              material={materials.metalica}
-            />
-          </group>
+          <mesh
+            geometry={nodes.axis.geometry}
+            material={materials.metallic}
+            position={[29.98, 32.56, -0.21]}
+            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+            scale={[0.83, 4.06, 0.83]}
+          />
 
           <group
-            ref={ref}
-            position={[0, 32.44, 0]}
+            position={[-0.26, 32.57, -0.21]}
+            rotation={[0, Math.PI / 2, 0]}
             scale={[1.17, 10.24, 13.31]}
           >
             <mesh geometry={nodes.Cube016.geometry} material={materials.cu} />
-
             <mesh
               geometry={nodes.Cube016_1.geometry}
               material={materials.grey_plastic}
             />
-
             <mesh
               geometry={nodes.Cube016_2.geometry}
               material={nodes.Cube016_2.material}
+            />
+          </group>
+          <group
+            position={[24.88, 1.54, -0.21]}
+            rotation={[0, Math.PI / 2, 0]}
+            scale={[5.41, 1.2, 3.16]}
+          >
+            <mesh
+              geometry={nodes.Cube013.geometry}
+              material={materials.grey_plastic}
+            />
+            <mesh geometry={nodes.Cube013_1.geometry} material={materials.au} />
+            <mesh
+              geometry={nodes.Cube013_2.geometry}
+              material={materials.metallic}
             />
           </group>
         </group>
