@@ -79,6 +79,7 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
           />
 
           <group
+            ref={ref}
             position={[-0.26, 32.57, -0.21]}
             rotation={[0, Math.PI / 2, 0]}
             scale={[1.17, 10.24, 13.31]}
