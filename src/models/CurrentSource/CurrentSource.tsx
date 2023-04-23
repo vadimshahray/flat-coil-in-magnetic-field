@@ -1,10 +1,14 @@
-import React from 'react'
 import * as THREE from 'three'
+import { store } from 'src/store'
 import { GLTF } from 'three-stdlib'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef } from 'react'
+import { useFrame } from '@react-three/fiber'
+import { addInsignificantZeros } from '@utils'
+import { Text, useGLTF } from '@react-three/drei'
+import { degToRad } from 'three/src/math/MathUtils'
 import { TerminalConnectingZone } from '@components'
 import CurrentSourceModelPath from './currentSource.glb'
-import { degToRad } from 'three/src/math/MathUtils'
+import { selectCurrentSourceAmperage } from '@selectors'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -34,6 +38,17 @@ type GLTFResult = GLTF & {
 
 const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CurrentSourceModelPath) as GLTFResult
+
+  const textRef = useRef<Text & { text: string }>()
+
+  useFrame(() => {
+    if (textRef.current) {
+      textRef.current.text = addInsignificantZeros(
+        selectCurrentSourceAmperage(store.getState()).toFixed(2),
+        1,
+      )
+    }
+  })
 
   return (
     <group {...props} dispose={null}>
@@ -82,6 +97,17 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
           rotation={[0, -Math.PI / 2, 0]}
           scale={[3.92, 5.58, 5.58]}
         />
+
+        <Text
+          ref={textRef}
+          fontSize={34}
+          color='#F44336'
+          scale={[0.7, 1, 1]}
+          position={[-33, 152, 102]}
+          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+        >
+          {' '}
+        </Text>
 
         <TerminalConnectingZone
           terminal='CurrentSource+'
