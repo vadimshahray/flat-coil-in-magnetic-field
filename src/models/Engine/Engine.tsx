@@ -30,7 +30,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 104, 0]}>
+      <group position={[0, 105, 0]}>
         <group scale={0.4} position={[0, 4, 0]} rotation={[0, -Math.PI / 2, 0]}>
           <group
             position={[-169.62, 7.9, 15.07]}
@@ -50,6 +50,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
               material={materials.grey_tabl}
             />
           </group>
+
           <mesh
             geometry={nodes.Cube001.geometry}
             material={materials.grey_button}
@@ -80,7 +81,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
         </group>
       </group>
 
-      <WoodBlock args={[170, 104, 220]} position={[0, 52, 0]} />
+      <WoodBlock args={[170, 105, 220]} position={[0, 52, 0]} />
     </group>
   )
 }
