@@ -1,8 +1,11 @@
-import React from 'react'
 import * as THREE from 'three'
+import { store } from 'src/store'
 import { GLTF } from 'three-stdlib'
+import React, { useRef } from 'react'
 import EngineModelPath from './engine.glb'
-import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { Text, useGLTF } from '@react-three/drei'
+import { selectEngineRotationFrequency } from '@selectors'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -27,6 +30,16 @@ const WoodBlock = React.lazy(() => import('src/models/WoodBlock'))
 
 const Engine = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(EngineModelPath) as GLTFResult
+
+  const textRef = useRef<Text & { text: string }>()
+
+  useFrame(() => {
+    if (textRef.current) {
+      textRef.current.text = selectEngineRotationFrequency(
+        store.getState(),
+      ).toString()
+    }
+  })
 
   return (
     <group {...props} dispose={null}>
@@ -79,6 +92,17 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
             scale={[12.97, 34.12, 12.97]}
           />
         </group>
+
+        <Text
+          ref={textRef}
+          fontSize={47}
+          color='#F44336'
+          scale={[0.7, 1, 1]}
+          position={[0, 100, 120]}
+          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+        >
+          {' '}
+        </Text>
       </group>
 
       <WoodBlock args={[170, 105, 220]} position={[0, 52, 0]} />
