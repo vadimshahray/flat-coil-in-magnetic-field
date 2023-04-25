@@ -111,12 +111,12 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
 
         <TerminalConnectingZone
           terminal='CurrentSource+'
-          position={new THREE.Vector3(0, 68, 116)}
+          position={new THREE.Vector3(-68, 68, 116)}
         />
 
         <TerminalConnectingZone
           terminal='CurrentSource-'
-          position={new THREE.Vector3(-68, 68, 116)}
+          position={new THREE.Vector3(0, 68, 116)}
         />
       </group>
     </group>
