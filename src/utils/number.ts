@@ -12,3 +12,7 @@ export const addInsignificantZeros = (
 
   return zeros + target
 }
+
+export const numberBetween = (value: number, min: number, max: number) => {
+  return Math.min(max, Math.max(min, value))
+}

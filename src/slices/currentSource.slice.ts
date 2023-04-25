@@ -7,13 +7,19 @@ export const currentSourceSlice = createSlice<
 >({
   name: 'currentSource',
   initialState: {
+    isPowerSupplied: false,
     amperage: CURRENT_SOURCE_AMPERAGE_DEFAULT,
   },
   reducers: {
+    setCurrentSourceIsPowerSupplied: (state, { payload }) => {
+      state.isPowerSupplied = payload
+    },
+
     setCurrentSourceAmperage: (state, { payload }) => {
       state.amperage = payload
     },
   },
 })
 
-export const { setCurrentSourceAmperage } = currentSourceSlice.actions
+export const { setCurrentSourceIsPowerSupplied, setCurrentSourceAmperage } =
+  currentSourceSlice.actions

@@ -2,13 +2,31 @@ import * as THREE from 'three'
 import { store } from 'src/store'
 import { GLTF } from 'three-stdlib'
 import React, { useRef } from 'react'
-import { useFrame } from '@react-three/fiber'
-import { addInsignificantZeros } from '@utils'
 import { Text, useGLTF } from '@react-three/drei'
 import { degToRad } from 'three/src/math/MathUtils'
 import { TerminalConnectingZone } from '@components'
 import CurrentSourceModelPath from './currentSource.glb'
-import { selectCurrentSourceAmperage } from '@selectors'
+import { useFrame, ThreeEvent } from '@react-three/fiber'
+import {
+  setCurrentSourceAmperage,
+  setCurrentSourceIsPowerSupplied,
+} from '@slices'
+import {
+  selectCurrentSourceAmperage,
+  selectCurrentSourceIsPowerSupplied,
+} from '@selectors'
+import {
+  CURRENT_SOURCE_AMPERAGE_MAX,
+  CURRENT_SOURCE_AMPERAGE_MIN,
+  CURRENT_SOURCE_AMPERAGE_STEP,
+} from '@constants'
+import {
+  numberBetween,
+  setDefaultCursor,
+  setPointerCursor,
+  setRotationCursor,
+  addInsignificantZeros,
+} from '@utils'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -36,19 +54,67 @@ type GLTFResult = GLTF & {
   }
 }
 
+const powerBtnPositionZ = 106.5
+
+const amperageSwitchRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0)
+
 const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CurrentSourceModelPath) as GLTFResult
 
   const textRef = useRef<Text & { text: string }>()
+  const powerBtnRef = useRef<THREE.Mesh>(null)
+  const amperageSwitchRef = useRef<THREE.Group>(null)
 
   useFrame(() => {
+    const amperage = selectCurrentSourceAmperage(store.getState())
+    const isPowerSupplied = selectCurrentSourceIsPowerSupplied(store.getState())
+
     if (textRef.current) {
-      textRef.current.text = addInsignificantZeros(
-        selectCurrentSourceAmperage(store.getState()).toFixed(2),
-        1,
-      )
+      textRef.current.text = isPowerSupplied
+        ? addInsignificantZeros(amperage.toFixed(2), 1)
+        : ''
     }
+
+    powerBtnRef.current?.position?.setZ(
+      isPowerSupplied ? powerBtnPositionZ - 6 : powerBtnPositionZ,
+    )
+
+    const angle =
+      Math.PI / 2 - (Math.PI * amperage) / CURRENT_SOURCE_AMPERAGE_MAX
+
+    amperageSwitchRotation.set(
+      amperageSwitchRotation.x,
+      angle,
+      amperageSwitchRotation.z,
+    )
+
+    amperageSwitchRef.current?.setRotationFromEuler(amperageSwitchRotation)
   })
+
+  const handlePowerClick = () => {
+    const isPowerSupplied = selectCurrentSourceIsPowerSupplied(store.getState())
+
+    store.dispatch(setCurrentSourceIsPowerSupplied(!isPowerSupplied))
+  }
+
+  const handleWheel = (e: ThreeEvent<WheelEvent>) => {
+    const amperage = selectCurrentSourceAmperage(store.getState())
+
+    const newAmperage =
+      amperage + Math.sign(-e.deltaY) * CURRENT_SOURCE_AMPERAGE_STEP * 3
+    const newRoundedAmperage =
+      Math.round((newAmperage + Number.EPSILON) * 100) / 100
+
+    store.dispatch(
+      setCurrentSourceAmperage(
+        numberBetween(
+          newRoundedAmperage,
+          CURRENT_SOURCE_AMPERAGE_MIN,
+          CURRENT_SOURCE_AMPERAGE_MAX,
+        ),
+      ),
+    )
+  }
 
   return (
     <group {...props} dispose={null}>
@@ -75,10 +141,15 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
           />
           <mesh geometry={nodes.Cube_6.geometry} material={materials.red} />
         </group>
+
         <group
+          ref={amperageSwitchRef}
           position={[68.25, 145.31, 110.7]}
-          rotation={[Math.PI / 2, 0, 0]}
+          rotation={[Math.PI / 2, Math.PI / 2, 0]}
           scale={[-17.51, -8.23, -17.51]}
+          onPointerEnter={setRotationCursor}
+          onPointerLeave={setDefaultCursor}
+          onWheel={handleWheel}
         >
           <mesh
             geometry={nodes.Cylinder_1.geometry}
@@ -91,11 +162,15 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         </group>
 
         <mesh
+          ref={powerBtnRef}
           geometry={nodes.power.geometry}
           material={materials.power}
           position={[68.25, 58.92, 106.5]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={[3.92, 5.58, 5.58]}
+          onClick={handlePowerClick}
+          onPointerEnter={setPointerCursor}
+          onPointerLeave={setDefaultCursor}
         />
 
         <Text
