@@ -23,7 +23,7 @@ export const Camera = () => {
       right: CameraControls.ACTION.ROTATE,
       left: CameraControls.ACTION.NONE,
       middle: CameraControls.ACTION.DOLLY,
-      wheel: CameraControls.ACTION.DOLLY,
+      wheel: CameraControls.ACTION.NONE,
     }
 
     controls.minDistance = 360
