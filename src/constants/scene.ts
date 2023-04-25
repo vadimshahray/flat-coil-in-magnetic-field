@@ -42,4 +42,4 @@ export const CAMERA_CURRENT_SOURCE_POSITION =
     new THREE.Vector3(0, TABLE_TOP, 120),
   )
 
-export const WIRE_HEAP_POSITION = new THREE.Vector3(230, TABLE_TOP + 2, 200)
+export const WIRE_HEAP_POSITION = new THREE.Vector3(330, TABLE_TOP + 2, 200)
