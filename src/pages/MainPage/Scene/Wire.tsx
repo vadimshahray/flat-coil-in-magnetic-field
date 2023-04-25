@@ -2,7 +2,9 @@ import * as THREE from 'three'
 import { Line2 } from 'three-stdlib'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
+import WireIcon from 'src/assets/wire.svg'
 import { useThree } from '@react-three/fiber'
+import NoWireIcon from 'src/assets/no_wire.svg'
 import { CatmullRomLine } from '@react-three/drei'
 import { selectSchemeConnectingWireId } from '@selectors'
 import React, { useRef, useEffect, useCallback, useState } from 'react'
@@ -42,6 +44,15 @@ export const Wire = ({ id, position, ...props }: Props) => {
     setIsConnecting(!isConnecting)
   }, [isConnecting, id, dispatch])
 
+  const handlePointerEnter = () => {
+    const cursorUrl = isConnecting ? NoWireIcon : WireIcon
+    document.body.style.cursor = `url(${cursorUrl}), pointer`
+  }
+
+  const handlePointerLeave = () => {
+    document.body.style.cursor = 'default'
+  }
+
   const handlePointerOut = useCallback(() => {
     if (!isConnecting) return
 
@@ -73,6 +84,8 @@ export const Wire = ({ id, position, ...props }: Props) => {
       position={position}
       lineWidth={5}
       onClick={handleWireClick}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     />
   )
 }

@@ -3,6 +3,8 @@ import { Box } from '@react-three/drei'
 import { useSelector } from 'react-redux'
 import React, { useCallback } from 'react'
 import { connectWire, disconnectWire } from '@slices'
+import ConnectWireIcon from 'src/assets/connect_wire.svg'
+import DisconnectWireIcon from 'src/assets/disconnect_wire.svg'
 import {
   selectIsSchemeConnecting,
   selectHaveTerminalConnection,
@@ -35,12 +37,26 @@ export const TerminalConnectingZone = ({
     dispatch(connectWire(terminal))
   }, [isSchemeConnecting, haveConnection, terminal, dispatch])
 
+  const handlePointerEnter = () => {
+    if (!isSchemeConnecting) return
+
+    const cursorUrl = haveConnection ? ConnectWireIcon : DisconnectWireIcon
+
+    document.body.style.cursor = `url(${cursorUrl}), pointer`
+  }
+
+  const handlePointerLeave = () => {
+    document.body.style.cursor = 'default'
+  }
+
   return (
     <Box
       args={[size, size, size]}
       {...props}
-      visible={true}
+      visible={false}
       onClick={handleClick}
+      onPointerEnter={handlePointerEnter}
+      onPointerLeave={handlePointerLeave}
     />
   )
 }
