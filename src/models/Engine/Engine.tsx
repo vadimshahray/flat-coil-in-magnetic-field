@@ -5,7 +5,17 @@ import React, { useRef } from 'react'
 import EngineModelPath from './engine.glb'
 import { useFrame } from '@react-three/fiber'
 import { Text, useGLTF } from '@react-three/drei'
-import { selectEngineRotationFrequency } from '@selectors'
+import { setDefaultCursor, setPointerCursor } from '@utils'
+import { setEngineIsPowerSupplied, setEngineRotationFrequency } from '@slices'
+import {
+  selectEngineIsPowerSupplied,
+  selectEngineRotationFrequency,
+} from '@selectors'
+import {
+  ENGINE_ROTATION_FREQUENCY_MAX,
+  ENGINE_ROTATION_FREQUENCY_MIN,
+  ENGINE_ROTATION_FREQUENCY_STEP,
+} from '@constants'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -28,18 +38,61 @@ type GLTFResult = GLTF & {
 
 const WoodBlock = React.lazy(() => import('src/models/WoodBlock'))
 
+const powerBtnInitZ = -202.32
+
 const Engine = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(EngineModelPath) as GLTFResult
 
   const textRef = useRef<Text & { text: string }>()
+  const powerBtnRef = useRef<THREE.Mesh>(null)
 
   useFrame(() => {
+    const isPowerSupplied = selectEngineIsPowerSupplied(store.getState())
+
     if (textRef.current) {
-      textRef.current.text = selectEngineRotationFrequency(
-        store.getState(),
-      ).toString()
+      textRef.current.text = isPowerSupplied
+        ? selectEngineRotationFrequency(store.getState()).toString()
+        : ''
+    }
+
+    if (powerBtnRef.current) {
+      powerBtnRef.current.position.setZ(
+        isPowerSupplied ? powerBtnInitZ + 10 : powerBtnInitZ,
+      )
     }
   })
+
+  const handlePowerClick = () => {
+    const isPowerSupplied = selectEngineIsPowerSupplied(store.getState())
+
+    store.dispatch(setEngineIsPowerSupplied(!isPowerSupplied))
+  }
+
+  const handleFrequencyUpClick = () => {
+    const frequency = selectEngineRotationFrequency(store.getState())
+
+    store.dispatch(
+      setEngineRotationFrequency(
+        Math.min(
+          ENGINE_ROTATION_FREQUENCY_MAX,
+          frequency + ENGINE_ROTATION_FREQUENCY_STEP,
+        ),
+      ),
+    )
+  }
+
+  const handleFrequencyDownClick = () => {
+    const frequency = selectEngineRotationFrequency(store.getState())
+
+    store.dispatch(
+      setEngineRotationFrequency(
+        Math.max(
+          ENGINE_ROTATION_FREQUENCY_MIN,
+          frequency - ENGINE_ROTATION_FREQUENCY_STEP,
+        ),
+      ),
+    )
+  }
 
   return (
     <group {...props} dispose={null}>
@@ -69,6 +122,9 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
             material={materials.grey_button}
             position={[300.19, 281.96, -151.04]}
             scale={[3.61, 19.76, 19.78]}
+            onClick={handleFrequencyUpClick}
+            onPointerEnter={setPointerCursor}
+            onPointerLeave={setDefaultCursor}
           />
           <mesh
             geometry={nodes.Cube002.geometry}
@@ -76,13 +132,20 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
             position={[300.19, 212.62, -151.04]}
             rotation={[0, 0, Math.PI]}
             scale={[3.61, 19.76, 19.78]}
+            onClick={handleFrequencyDownClick}
+            onPointerEnter={setPointerCursor}
+            onPointerLeave={setDefaultCursor}
           />
           <mesh
+            ref={powerBtnRef}
             geometry={nodes.button_on.geometry}
             material={materials.red}
             position={[255.71, 305.49, -202.32]}
             rotation={[Math.PI / 2, 0, 0]}
             scale={[22.49, 10.95, 15.01]}
+            onClick={handlePowerClick}
+            onPointerEnter={setPointerCursor}
+            onPointerLeave={setDefaultCursor}
           />
           <mesh
             geometry={nodes.handle_1.geometry}

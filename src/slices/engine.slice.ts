@@ -7,10 +7,15 @@ import {
 export const engineSlice = createSlice<EngineSliceState, EngineSlice>({
   name: 'engine',
   initialState: {
+    isPowerSupplied: false,
     rotationFrequency: ENGINE_ROTATION_FREQUENCY_DEFAULT,
     rotationDirection: ENGINE_ROTATION_DIRECTION_DEFAULT,
   },
   reducers: {
+    setEngineIsPowerSupplied: (state, { payload }) => {
+      state.isPowerSupplied = payload
+    },
+
     setEngineRotationFrequency: (state, { payload }) => {
       if (payload <= 0) return
 
@@ -23,5 +28,8 @@ export const engineSlice = createSlice<EngineSliceState, EngineSlice>({
   },
 })
 
-export const { setEngineRotationFrequency, setEngineRotationDirection } =
-  engineSlice.actions
+export const {
+  setEngineIsPowerSupplied,
+  setEngineRotationFrequency,
+  setEngineRotationDirection,
+} = engineSlice.actions
