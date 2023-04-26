@@ -27,7 +27,6 @@ export const Sidebar = () => {
 
   return (
     <Stack
-      justifyContent='space-between'
       sx={{
         height: '100%',
         width: isSidebarVisible ? sidebarWidth : 0,
