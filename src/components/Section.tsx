@@ -14,13 +14,20 @@ type Props = {
   title: string
   Icon?: Icon
   collapsible?: boolean
+  defaultCollapsed?: boolean
 } & PropsWithChildren
 
-export const Section = ({ title, Icon, children, collapsible }: Props) => {
-  const [expanded, setExpanded] = useState(true)
+export const Section = ({
+  title,
+  Icon,
+  children,
+  collapsible,
+  defaultCollapsed = false,
+}: Props) => {
+  const [collapsed, setCollapsed] = useState(defaultCollapsed)
 
   const handleClick = () => {
-    setExpanded(!expanded)
+    setCollapsed(!collapsed)
   }
 
   return (
@@ -33,15 +40,15 @@ export const Section = ({ title, Icon, children, collapsible }: Props) => {
         </Typography>
 
         {collapsible && (
-          <Tooltip title={expanded ? 'Свернуть' : 'Развернуть'}>
+          <Tooltip title={!collapsed ? 'Свернуть' : 'Развернуть'}>
             <IconButton onClick={handleClick} size='small'>
-              {expanded ? <ExpandLess /> : <ExpandMore />}
+              {!collapsed ? <ExpandLess /> : <ExpandMore />}
             </IconButton>
           </Tooltip>
         )}
       </Stack>
 
-      <Collapse in={expanded}>{children}</Collapse>
+      <Collapse in={!collapsed}>{children}</Collapse>
     </Container>
   )
 }
