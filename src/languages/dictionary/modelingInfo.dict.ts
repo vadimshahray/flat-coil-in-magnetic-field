@@ -83,12 +83,12 @@ export const modelingInfoRU = {
   },
 
   InductionInfoItem: {
-    label: 'Индуктивность магнитного поля',
+    label: 'Индукция магнитного поля',
     value: '{{value}} Тл',
   },
 
   VoltageInfoItem: {
-    label: 'Сопротивление',
+    label: 'Напряжение',
     value: '{{value}} Ом',
   },
 
@@ -200,7 +200,7 @@ export const modelingInfoEN = {
   },
 
   VoltageInfoItem: {
-    label: 'Resistance',
+    label: 'Voltage',
     value: '{{value}} Ohm',
   },
 
