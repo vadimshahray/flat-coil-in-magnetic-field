@@ -9,7 +9,7 @@ export const ResultsInfoSection = () => {
   const translate = useTranslate('ResultsInfoSection')
 
   return (
-    <Section title={translate('title')} collapsible>
+    <Section title={translate('title')}>
       <InductionInfoItem />
 
       <VoltageInfoItem />
