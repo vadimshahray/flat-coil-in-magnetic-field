@@ -21,13 +21,13 @@ export const modelingInfoRU = {
     value: '{{value}} шт.',
   },
 
-  CoilFrameLengthInfoItem: {
-    label: 'Длина рамки',
+  CoilLengthInfoItem: {
+    label: 'Длина',
     value: '{{value}} м',
   },
 
-  CoilFrameWidthInfoItem: {
-    label: 'Ширина рамки',
+  CoilWidthInfoItem: {
+    label: 'Ширина',
     value: '{{value}} м',
   },
 
@@ -133,13 +133,13 @@ export const modelingInfoEN = {
     value: '{{value}} pc.',
   },
 
-  CoilFrameWidthInfoItem: {
-    label: 'Frame width',
+  CoilWidthInfoItem: {
+    label: 'Width',
     value: '{{value}} m',
   },
 
-  CoilFrameLengthInfoItem: {
-    label: 'Frame length',
+  CoilLengthInfoItem: {
+    label: 'Length',
     value: '{{value}} m',
   },
 

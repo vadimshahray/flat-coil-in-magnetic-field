@@ -26,9 +26,9 @@ export const configurationRU = {
     label: 'Количество витков, шт.',
   },
 
-  CoilFrameSizeFields: {
-    widthLabel: 'Ширина рамки, м',
-    lengthLabel: 'Длина рамки, м',
+  CoilSizeFields: {
+    widthLabel: 'Ширина, м',
+    lengthLabel: 'Длина, м',
   },
 
   HelmholtzCoilsSection: {
@@ -88,9 +88,9 @@ export const configurationEN = {
     label: 'Number of turns, pc.',
   },
 
-  CoilFrameSizeFields: {
-    widthLabel: 'Frame width, m',
-    lengthLabel: 'Frame length, m',
+  CoilSizeFields: {
+    widthLabel: 'Width, m',
+    lengthLabel: 'Length, m',
   },
 
   HelmholtzCoilsSection: {

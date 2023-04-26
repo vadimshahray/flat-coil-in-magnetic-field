@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { selectCoilFrameLength } from '@selectors'
 
-export const CoilFrameLengthInfoItem = () => {
-  const translate = useTranslate('CoilFrameLengthInfoItem')
+export const CoilLengthInfoItem = () => {
+  const translate = useTranslate('CoilLengthInfoItem')
 
   const frameLength = useSelector(selectCoilFrameLength)
 
