@@ -7,7 +7,7 @@ import { useThree } from '@react-three/fiber'
 import NoWireIcon from 'src/assets/no_wire.svg'
 import { CatmullRomLine } from '@react-three/drei'
 import { selectSchemeConnectingWireId } from '@selectors'
-import React, { useRef, useEffect, useCallback, useState } from 'react'
+import React, { useRef, useEffect, useCallback } from 'react'
 import { dropSchemeConnectingWire, setSchemeConnectingWireId } from '@slices'
 
 type Props = {
@@ -15,7 +15,6 @@ type Props = {
   points: THREE.Vector3[]
   position?: THREE.Vector3
   color?: string
-  opacity?: number
 }
 
 export const Wire = ({ id, position, ...props }: Props) => {
@@ -25,7 +24,7 @@ export const Wire = ({ id, position, ...props }: Props) => {
   const ref = useRef<Line2>(null)
 
   const connectingWireId = useSelector(selectSchemeConnectingWireId)
-  const [isConnecting, setIsConnecting] = useState(false)
+  const isConnecting = connectingWireId === id
 
   const handleWireClick = useCallback(() => {
     dispatch(
@@ -33,8 +32,6 @@ export const Wire = ({ id, position, ...props }: Props) => {
         ? setSchemeConnectingWireId(id)
         : dropSchemeConnectingWire(),
     )
-
-    setIsConnecting(!isConnecting)
   }, [isConnecting, id, dispatch])
 
   const handlePointerEnter = () => {
@@ -50,15 +47,7 @@ export const Wire = ({ id, position, ...props }: Props) => {
     if (!isConnecting) return
 
     dispatch(dropSchemeConnectingWire())
-
-    setIsConnecting(false)
   }, [isConnecting, dispatch])
-
-  useEffect(() => {
-    if (connectingWireId === id) return
-
-    setIsConnecting(false)
-  }, [id, connectingWireId])
 
   useEffect(() => {
     gl.domElement.addEventListener('pointerout', handlePointerOut)
