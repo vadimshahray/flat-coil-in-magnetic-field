@@ -2,7 +2,6 @@ type EngineSliceState = {
   isPowerSupplied: boolean
 
   rotationFrequency: number
-  rotationDirection: RotationDirection
 }
 
 interface EngineSlice extends SliceCaseReducers<EngineSliceState> {
@@ -14,10 +13,5 @@ interface EngineSlice extends SliceCaseReducers<EngineSliceState> {
   setEngineRotationFrequency(
     state: EngineSliceState,
     action: PayloadAction<number>,
-  ): void
-
-  setEngineRotationDirection(
-    state: EngineSliceState,
-    action: PayloadAction<RotationDirection>,
   ): void
 }

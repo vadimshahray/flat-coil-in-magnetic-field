@@ -11,13 +11,6 @@ export const configurationRU = {
     label: 'Частота вращения, Гц',
   },
 
-  EngineRotationDirectionControl: {
-    rotationDirection: 'Направление вращения: {{direction}}',
-    left: 'левое',
-    right: 'правое',
-    changeDirectionButton: 'Поменять',
-  },
-
   CoilSection: {
     title: 'Плоская катушка',
   },
@@ -71,13 +64,6 @@ export const configurationEN = {
 
   EngineRotationFrequencyField: {
     label: 'Rotation frequency, Hz',
-  },
-
-  EngineRotationDirectionControl: {
-    rotationDirection: 'Direction of rotation: {{direction}}',
-    left: 'left',
-    right: 'right',
-    changeDirectionButton: 'Change',
   },
 
   CoilSection: {
