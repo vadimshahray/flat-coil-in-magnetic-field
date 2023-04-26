@@ -19,7 +19,7 @@ export const SchemeStatus = () => {
 
   return (
     <Tooltip title={translate(status)}>
-      {<ElectricalServicesOutlined color={color} />}
+      <ElectricalServicesOutlined color={color} />
     </Tooltip>
   )
 }

@@ -17,6 +17,8 @@ export const AssembleSchemeButton = () => {
   }
 
   return !isSchemeAssembled ? (
-    <Button onClick={handleClick}>{translate('assembleScheme')}</Button>
+    <Button variant='contained' onClick={handleClick}>
+      {translate('assembleScheme')}
+    </Button>
   ) : null
 }

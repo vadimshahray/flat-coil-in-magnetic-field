@@ -19,7 +19,11 @@ export const DisassembleSchemeButton = () => {
   }
 
   return !isSchemeDisassembled ? (
-    <Button onClick={handleClick} startIcon={<CloseOutlined />}>
+    <Button
+      variant='contained'
+      onClick={handleClick}
+      startIcon={<CloseOutlined />}
+    >
       {translate('disassembleScheme')}
     </Button>
   ) : null
