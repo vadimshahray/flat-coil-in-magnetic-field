@@ -1,5 +1,5 @@
 export const configurationRU = {
-  Configuration: {
+  Sidebar: {
     title: 'Настройки',
   },
 
@@ -54,7 +54,7 @@ export const configurationRU = {
 }
 
 export const configurationEN = {
-  Configuration: {
+  Sidebar: {
     title: 'Settings',
   },
 
