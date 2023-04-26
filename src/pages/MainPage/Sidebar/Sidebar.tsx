@@ -40,11 +40,11 @@ export const Sidebar = () => {
       <div style={{ overflowY: 'auto' }}>
         <EngineSection />
 
+        <CurrentSourceSection />
+
         <CoilSection />
 
         <HelmholtzCoilsSection />
-
-        <CurrentSourceSection />
 
         <WiresInfoSection />
 
