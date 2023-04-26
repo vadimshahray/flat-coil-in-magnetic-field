@@ -23,6 +23,7 @@ export const DisassembleSchemeButton = () => {
       variant='contained'
       onClick={handleClick}
       startIcon={<CloseOutlined />}
+      disableElevation
     >
       {translate('disassembleScheme')}
     </Button>
