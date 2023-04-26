@@ -1,6 +1,7 @@
 import React from 'react'
 import { Section } from '@components'
 import { useTranslate } from '@languages'
+import { EnginePowerButton } from './EnginePowerButton'
 import { EngineRotationFrequencyField } from './EngineRotationFrequencyField'
 
 export const EngineSection = () => {
@@ -9,6 +10,8 @@ export const EngineSection = () => {
   return (
     <Section title={translate('title')} collapsible>
       <EngineRotationFrequencyField />
+
+      <EnginePowerButton />
     </Section>
   )
 }

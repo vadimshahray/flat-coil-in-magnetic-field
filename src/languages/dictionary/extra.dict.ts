@@ -23,6 +23,11 @@ export const extraRU = {
     viewDevice: 'Посмотреть на прибор',
     doNotViewDevice: 'Не смотреть на прибор',
   },
+
+  DevicePowerButton: {
+    powerOff: 'Выключить',
+    powerOn: 'Включить',
+  },
 }
 
 export const extraEN = {
@@ -49,5 +54,10 @@ export const extraEN = {
   ViewDeviceButton: {
     viewDevice: 'Look at the device',
     doNotViewDevice: "Don't look at the device",
+  },
+
+  DevicePowerButton: {
+    powerOff: 'Power off',
+    powerOn: 'Power on',
   },
 }
