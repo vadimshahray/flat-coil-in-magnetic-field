@@ -1,7 +1,7 @@
 type ModelingSliceState = {
   status: ModelingStatus
 
-  data: ModelingData & { voltageMax: number; amperageMax: number }
+  data: ModelingData
 
   time: Time
 }

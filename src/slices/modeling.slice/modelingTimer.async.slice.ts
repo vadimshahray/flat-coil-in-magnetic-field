@@ -2,8 +2,6 @@ import { ticksToTime } from '@utils'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { CALCULATION_INTERVAL_MS } from '@constants'
 
-let interval: NodeJS.Timer
-
 export const startModelingTimer = createAsyncThunk<
   void,
   (t: number) => void,
@@ -11,20 +9,13 @@ export const startModelingTimer = createAsyncThunk<
 >('modeling/startTimer', (callback, { getState, dispatch }) => {
   let ticks = getState().modeling.time.ticks
 
-  interval = setInterval(() => {
+  setInterval(() => {
     ticks += CALCULATION_INTERVAL_MS
     dispatch(setModelingTimerTime(ticks))
 
     callback(ticks)
   }, CALCULATION_INTERVAL_MS)
 })
-
-export const stopModelingTimer = createAsyncThunk(
-  'modeling/stopTimer',
-  async () => {
-    await clearInterval(interval)
-  },
-)
 
 export const setModelingTimerTime = createAsyncThunk<Time, number>(
   'modeling/setTimerTime',
