@@ -6,8 +6,8 @@ import { useFrame } from '@react-three/fiber'
 import { addInsignificantZeros } from '@utils'
 import VoltmeterModelPath from './voltmeter.glb'
 import { Text, useGLTF } from '@react-three/drei'
-import { selectModelingVoltage } from '@selectors'
 import { TerminalConnectingZone } from '@components'
+import { selectIsVoltmeterConnected, selectModelingVoltage } from '@selectors'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -30,10 +30,14 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
 
   useFrame(() => {
     if (textRef.current) {
-      textRef.current.text = addInsignificantZeros(
-        selectModelingVoltage(store.getState()).toFixed(2),
-        1,
-      )
+      const isVoltmeterConnected = selectIsVoltmeterConnected(store.getState())
+
+      textRef.current.text = isVoltmeterConnected
+        ? addInsignificantZeros(
+            selectModelingVoltage(store.getState()).toFixed(2),
+            1,
+          )
+        : ''
     }
   })
 

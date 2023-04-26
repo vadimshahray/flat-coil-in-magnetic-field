@@ -1,4 +1,5 @@
 import { areConnectionsEqual } from '@utils'
+import { SCHEME_CONNECTIONS } from '@constants'
 
 export const selectIsSchemeConnecting = (state: RootState) =>
   state.scheme.connectingWire !== null
@@ -23,3 +24,25 @@ export const selectHaveTerminalConnection =
     ) ||
     state.scheme.connectingWire?.terminal1 === terminal ||
     state.scheme.connectingWire?.terminal2 === terminal
+
+export const selectAreHelmholtzCoilsConnected = (state: RootState) => {
+  const wireA = state.scheme.wires.find((w) =>
+    areConnectionsEqual(SCHEME_CONNECTIONS['CurrentSource+HelmholtzCoils+'], w),
+  )
+  const wireB = state.scheme.wires.find((w) =>
+    areConnectionsEqual(SCHEME_CONNECTIONS['CurrentSource-HelmholtzCoils-'], w),
+  )
+
+  return !!wireA && !!wireB
+}
+
+export const selectIsVoltmeterConnected = (state: RootState) => {
+  const wireA = state.scheme.wires.find((w) =>
+    areConnectionsEqual(SCHEME_CONNECTIONS['Coil+Voltmeter+'], w),
+  )
+  const wireB = state.scheme.wires.find((w) =>
+    areConnectionsEqual(SCHEME_CONNECTIONS['Coil-Voltmeter-'], w),
+  )
+
+  return !!wireA && !!wireB
+}

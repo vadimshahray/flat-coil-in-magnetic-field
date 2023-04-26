@@ -1,14 +1,18 @@
 import { Scene } from './Scene'
 import { Sidebar } from './Sidebar'
 import { Controls } from './Controls'
-import { assemblyScheme } from '@slices'
 import React, { useEffect } from 'react'
+import { assemblyScheme, startModeling } from '@slices'
 import { useDeviceTypeValue, useDispatch } from '@hooks'
 
 export const MainPage = () => {
   const dispatch = useDispatch()
 
   const showModelingSection = useDeviceTypeValue(true, false)
+
+  useEffect(() => {
+    dispatch(startModeling())
+  })
 
   useEffect(() => {
     if (!showModelingSection) {

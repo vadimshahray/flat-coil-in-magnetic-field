@@ -5,17 +5,35 @@ import {
   selectCoilFrameWidth,
   selectCoilFrameLength,
   selectHelmholtzCoilsRadius,
+  selectIsVoltmeterConnected,
   selectCurrentSourceAmperage,
+  selectEngineIsPowerSupplied,
   selectEngineRotationFrequency,
   selectHelmholtzCoilsTurnsCount,
+  selectAreHelmholtzCoilsConnected,
+  selectCurrentSourceIsPowerSupplied,
 } from '@selectors'
 
 export const calculateData = createAsyncThunk<
   ModelingData,
   number,
   { state: RootState }
->('modeling/calculateMeteoriteMovement', async (t, { getState }) => {
+>('modeling/calculateData', async (t, { getState }) => {
   const state = getState()
+
+  const result: ModelingData = {
+    amperage: 0,
+    induction: 0,
+    voltage: 0,
+  }
+
+  const isVoltmeterConnected = selectIsVoltmeterConnected(state)
+  const isEnginePowerSupplied = selectEngineIsPowerSupplied(state)
+  const areHelmholtzCoilsConnected = selectAreHelmholtzCoilsConnected(state)
+  const isCurrentSourcePowerSupplied = selectCurrentSourceIsPowerSupplied(state)
+
+  if (!areHelmholtzCoilsConnected || !isCurrentSourcePowerSupplied)
+    return result
 
   const mu = 4 * Math.PI * 10 ** -7
   const k = (2 / Math.sqrt(5)) ** 3
@@ -33,21 +51,19 @@ export const calculateData = createAsyncThunk<
   const b = selectCoilFrameLength(state)
   const S = a * b
 
-  const B = (mu * k * Ig * N) / R
+  const B = (result.induction = (mu * k * Ig * N) / R)
+
+  if (!isVoltmeterConnected || !isEnginePowerSupplied) return result
 
   const Em = 2 * Math.PI * Nu * n * B * S
-  const E = Em * sin(2 * Math.PI * Nu * t)
+  const E = (result.voltage = Em * sin(2 * Math.PI * Nu * t))
 
   const Rob =
     (Pm * (2 * n * (a + b))) / (4.7 * 10 ** -8) + (2 * Pm * lp) / WIRES_SECTION
 
-  const I = E / Rob
+  result.amperage = E / Rob
 
-  return {
-    voltage: E,
-    amperage: I,
-    induction: B,
-  }
+  return result
 })
 
 const sin = (n: number) => {

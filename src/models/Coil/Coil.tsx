@@ -6,7 +6,11 @@ import CoilModelPath from './coil.glb'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { TerminalConnectingZone } from '@components'
-import { selectModelingStatus, selectEngineRotationFrequency } from '@selectors'
+import {
+  selectModelingStatus,
+  selectEngineIsPowerSupplied,
+  selectEngineRotationFrequency,
+} from '@selectors'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -45,7 +49,7 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
     if (selectModelingStatus(state) === 'idle')
       return (ref.current.rotation.z = 0)
 
-    if (selectModelingStatus(state) !== 'started') return
+    if (!selectEngineIsPowerSupplied(state)) return
 
     ref.current.rotateZ(selectEngineRotationFrequency(state) / 10 / 100)
   })
