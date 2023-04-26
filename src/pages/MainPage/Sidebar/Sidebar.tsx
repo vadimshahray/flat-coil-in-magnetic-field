@@ -6,6 +6,7 @@ import { CoilSection } from './CoilSection'
 import { useDeviceTypeValue } from '@hooks'
 import { EngineSection } from './EngineSection'
 import { selectIsSidebarVisible } from '@selectors'
+import { WiresInfoSection } from './WiresInfoSection'
 import { SettingsOutlined } from '@mui/icons-material'
 import { ResultsInfoSection } from './ResultsInfoSection'
 import { CurrentSourceSection } from './CurrentSourceSection'
@@ -47,6 +48,8 @@ export const Sidebar = () => {
         <HelmholtzCoilsSection />
 
         <CurrentSourceSection />
+
+        <WiresInfoSection />
 
         <ResultsInfoSection />
       </div>
