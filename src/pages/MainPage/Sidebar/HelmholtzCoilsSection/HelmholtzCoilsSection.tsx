@@ -8,7 +8,7 @@ export const HelmholtzCoilsSection = () => {
   const translate = useTranslate('HelmholtzCoilsSection')
 
   return (
-    <Section title={translate('title')}>
+    <Section title={translate('title')} collapsible>
       <HelmholtzCoilsTurnsCountField />
 
       <HelmholtzCoilsRadiusField />

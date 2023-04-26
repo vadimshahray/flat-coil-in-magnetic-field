@@ -7,7 +7,7 @@ export const EngineSection = () => {
   const translate = useTranslate('EngineSection')
 
   return (
-    <Section title={translate('title')}>
+    <Section title={translate('title')} collapsible>
       <EngineRotationFrequencyField />
     </Section>
   )

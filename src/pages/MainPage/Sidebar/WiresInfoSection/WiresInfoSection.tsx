@@ -10,7 +10,7 @@ export const WiresInfoSection = () => {
   const translate = useTranslate('WiresInfoSection')
 
   return (
-    <Section title={translate('title')}>
+    <Section title={translate('title')} collapsible>
       <WiresLengthInfoItem />
 
       <WiresMaterialInfoItem />
