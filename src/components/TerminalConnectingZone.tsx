@@ -40,7 +40,7 @@ export const TerminalConnectingZone = ({
   const handlePointerEnter = () => {
     if (!isSchemeConnecting) return
 
-    const cursorUrl = haveConnection ? ConnectWireIcon : DisconnectWireIcon
+    const cursorUrl = haveConnection ? DisconnectWireIcon : ConnectWireIcon
 
     document.body.style.cursor = `url(${cursorUrl}), pointer`
   }
