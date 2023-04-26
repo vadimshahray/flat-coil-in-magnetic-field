@@ -1,6 +1,4 @@
 type ModelingSliceState = {
-  status: ModelingStatus
-
   data: ModelingData
 
   time: Time

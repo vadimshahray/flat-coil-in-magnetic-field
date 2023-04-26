@@ -7,7 +7,6 @@ import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { TerminalConnectingZone } from '@components'
 import {
-  selectModelingStatus,
   selectEngineIsPowerSupplied,
   selectEngineRotationFrequency,
 } from '@selectors'
@@ -45,9 +44,6 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
     const state = store.getState()
 
     if (!ref.current) return
-
-    if (selectModelingStatus(state) === 'idle')
-      return (ref.current.rotation.z = 0)
 
     if (!selectEngineIsPowerSupplied(state)) return
 
