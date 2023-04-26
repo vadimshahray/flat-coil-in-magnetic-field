@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { Line2 } from 'three-stdlib'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
+import { setDefaultCursor } from '@utils'
 import WireIcon from 'src/assets/wire.svg'
 import { useThree } from '@react-three/fiber'
 import NoWireIcon from 'src/assets/no_wire.svg'
@@ -32,15 +33,12 @@ export const Wire = ({ id, position, ...props }: Props) => {
         ? setSchemeConnectingWireId(id)
         : dropSchemeConnectingWire(),
     )
+
+    changeWireCursor(!isConnecting)
   }, [isConnecting, id, dispatch])
 
   const handlePointerEnter = () => {
-    const cursorUrl = isConnecting ? NoWireIcon : WireIcon
-    document.body.style.cursor = `url(${cursorUrl}), pointer`
-  }
-
-  const handlePointerLeave = () => {
-    document.body.style.cursor = 'default'
+    changeWireCursor(isConnecting)
   }
 
   const handlePointerOut = useCallback(() => {
@@ -66,7 +64,13 @@ export const Wire = ({ id, position, ...props }: Props) => {
       lineWidth={5}
       onClick={handleWireClick}
       onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
+      onPointerLeave={setDefaultCursor}
     />
   )
+}
+
+const changeWireCursor = (isConnecting: boolean) => {
+  const cursorUrl = isConnecting ? NoWireIcon : WireIcon
+
+  document.body.style.cursor = `url(${cursorUrl}), pointer`
 }

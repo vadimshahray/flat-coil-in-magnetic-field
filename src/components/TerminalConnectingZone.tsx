@@ -1,8 +1,9 @@
 import { useDispatch } from '@hooks'
 import { Box } from '@react-three/drei'
 import { useSelector } from 'react-redux'
-import React, { useCallback } from 'react'
+import { setDefaultCursor } from '@utils'
 import { connectWire, disconnectWire } from '@slices'
+import React, { useCallback, useEffect } from 'react'
 import ConnectWireIcon from 'src/assets/connect_wire.svg'
 import DisconnectWireIcon from 'src/assets/disconnect_wire.svg'
 import {
@@ -29,25 +30,22 @@ export const TerminalConnectingZone = ({
   const handleClick = useCallback(() => {
     if (!isSchemeConnecting) return
 
-    if (haveConnection) {
-      dispatch(disconnectWire(terminal))
-      return
-    }
+    dispatch(!haveConnection ? connectWire(terminal) : disconnectWire(terminal))
 
-    dispatch(connectWire(terminal))
+    changeTerminalCursor(!haveConnection)
   }, [isSchemeConnecting, haveConnection, terminal, dispatch])
 
   const handlePointerEnter = () => {
     if (!isSchemeConnecting) return
 
-    const cursorUrl = haveConnection ? DisconnectWireIcon : ConnectWireIcon
-
-    document.body.style.cursor = `url(${cursorUrl}), pointer`
+    changeTerminalCursor(haveConnection)
   }
 
-  const handlePointerLeave = () => {
-    document.body.style.cursor = 'default'
-  }
+  useEffect(() => {
+    if (!isSchemeConnecting) {
+      setDefaultCursor()
+    }
+  })
 
   return (
     <Box
@@ -56,7 +54,13 @@ export const TerminalConnectingZone = ({
       visible={false}
       onClick={handleClick}
       onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
+      onPointerLeave={setDefaultCursor}
     />
   )
+}
+
+const changeTerminalCursor = (haveConnection: boolean) => {
+  const cursorUrl = haveConnection ? DisconnectWireIcon : ConnectWireIcon
+
+  document.body.style.cursor = `url(${cursorUrl}), pointer`
 }
