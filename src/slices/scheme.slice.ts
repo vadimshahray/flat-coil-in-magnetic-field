@@ -23,15 +23,12 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
     },
 
     connectWire: (state, { payload }) => {
-      if (state.connectingWire === null) return
+      if (!state.connectingWire) return
 
       if (!state.connectingWire.terminal1)
         state.connectingWire.terminal1 = payload
       else if (!state.connectingWire.terminal2)
         state.connectingWire.terminal2 = payload
-
-      if (!state.connectingWire.terminal1 || !state.connectingWire.terminal2)
-        return
 
       const i = state.wires.findIndex((w) => w.id === state.connectingWire?.id)
       if (i === -1) return
@@ -41,7 +38,9 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
         ...state.connectingWire,
       }
 
-      state.connectingWire = null
+      if (state.connectingWire.terminal1 && state.connectingWire.terminal2) {
+        state.connectingWire = null
+      }
 
       state.status = checkSchemeStatus(state.wires)
     },
@@ -51,19 +50,14 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
         (w) => w.terminal1 === payload || w.terminal2 === payload,
       )
 
-      if (i === -1) {
-        if (!state.connectingWire) return
-
-        if (state.connectingWire.terminal1 === payload)
-          state.connectingWire.terminal1 = undefined
-        if (state.connectingWire.terminal2 === payload)
-          state.connectingWire.terminal2 = undefined
-
-        return
-      }
+      if (i === -1) return
 
       if (state.wires[i].terminal1 === payload) state.wires[i].terminal1 = null
       if (state.wires[i].terminal2 === payload) state.wires[i].terminal2 = null
+
+      if (!state.wires[i].terminal1 && !state.wires[i].terminal2) {
+        state.connectingWire = null
+      }
 
       state.status = checkSchemeStatus(state.wires)
     },

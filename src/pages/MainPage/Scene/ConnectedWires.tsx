@@ -12,7 +12,7 @@ export const ConnectedWires = () => {
 }
 
 const renderConnectedWire = (wire: Wire) => {
-  if (!wire.terminal1 || !wire.terminal2) return null
+  if (!wire.terminal1 && !wire.terminal2) return null
 
   const wirePoints = ALL_SCHEME_CONNECTIONS.find((c) =>
     areConnectionsEqual(wire, c),
