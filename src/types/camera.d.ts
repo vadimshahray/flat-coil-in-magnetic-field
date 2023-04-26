@@ -1,1 +1,1 @@
-type CameraViewPoint = Device | '@SchemeAssembly'
+type CameraViewPoint = Device

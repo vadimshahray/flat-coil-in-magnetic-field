@@ -8,11 +8,7 @@ import NoWireIcon from 'src/assets/no_wire.svg'
 import { CatmullRomLine } from '@react-three/drei'
 import { selectSchemeConnectingWireId } from '@selectors'
 import React, { useRef, useEffect, useCallback, useState } from 'react'
-import {
-  setSceneCameraViewPoint,
-  dropSchemeConnectingWire,
-  setSchemeConnectingWireId,
-} from '@slices'
+import { dropSchemeConnectingWire, setSchemeConnectingWireId } from '@slices'
 
 type Props = {
   id: number
@@ -37,9 +33,6 @@ export const Wire = ({ id, position, ...props }: Props) => {
         ? setSchemeConnectingWireId(id)
         : dropSchemeConnectingWire(),
     )
-    dispatch(
-      setSceneCameraViewPoint(!isConnecting ? '@SchemeAssembly' : undefined),
-    )
 
     setIsConnecting(!isConnecting)
   }, [isConnecting, id, dispatch])
@@ -57,7 +50,6 @@ export const Wire = ({ id, position, ...props }: Props) => {
     if (!isConnecting) return
 
     dispatch(dropSchemeConnectingWire())
-    dispatch(setSceneCameraViewPoint())
 
     setIsConnecting(false)
   }, [isConnecting, dispatch])
