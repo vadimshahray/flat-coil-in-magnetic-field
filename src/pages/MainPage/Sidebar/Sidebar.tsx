@@ -7,7 +7,6 @@ import { useDeviceTypeValue } from '@hooks'
 import { EngineSection } from './EngineSection'
 import { selectIsSidebarVisible } from '@selectors'
 import { WiresInfoSection } from './WiresInfoSection'
-import { SettingsOutlined } from '@mui/icons-material'
 import { ResultsInfoSection } from './ResultsInfoSection'
 import { CurrentSourceSection } from './CurrentSourceSection'
 import { HelmholtzCoilsSection } from './HelmholtzCoilsSection'
@@ -35,7 +34,6 @@ export const Sidebar = () => {
     >
       <Toolbar
         title={translate('title')}
-        Icon={SettingsOutlined}
         actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
       />
 
