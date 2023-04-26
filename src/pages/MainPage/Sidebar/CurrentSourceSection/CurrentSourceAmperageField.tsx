@@ -23,7 +23,6 @@ export const CurrentSourcesAmperageField = () => {
 
   return (
     <SliderTextField
-      name='current_source_amperage'
       label={translate('label')}
       value={amperage}
       onChange={handleChange}

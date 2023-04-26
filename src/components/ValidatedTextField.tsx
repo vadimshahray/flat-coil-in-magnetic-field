@@ -1,5 +1,3 @@
-import { useDispatch } from '@hooks'
-import { addInvalidField, removeInvalidField } from '@slices'
 import { InputAdornment, TextField, Tooltip } from '@mui/material'
 import React, { useEffect, useMemo, useState, useRef } from 'react'
 import { AnyObject, object, ValidationError, NumberSchema } from 'yup'
@@ -8,7 +6,6 @@ import { AnyObject, object, ValidationError, NumberSchema } from 'yup'
 export type ValidatedTextFieldProps = {
   /** Ярлык поля */
   label: string
-  name: string
   value?: string
   /** Числовое правило валидации */
   rule: NumberSchema<number, AnyObject>
@@ -31,7 +28,6 @@ export type ValidatedTextFieldProps = {
  */
 export const ValidatedTextField = ({
   label,
-  name,
   rule,
   adornment,
   value,
@@ -39,8 +35,6 @@ export const ValidatedTextField = ({
   endIconTooltip,
   EndIcon,
 }: ValidatedTextFieldProps) => {
-  const dispatch = useDispatch()
-
   const [error, setError] = useState<string>()
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -75,11 +69,6 @@ export const ValidatedTextField = ({
 
     setError(undefined)
   }, [value])
-
-  useEffect(() => {
-    if (error) dispatch(addInvalidField(name))
-    else dispatch(removeInvalidField(name))
-  }, [name, error, dispatch])
 
   return (
     <TextField

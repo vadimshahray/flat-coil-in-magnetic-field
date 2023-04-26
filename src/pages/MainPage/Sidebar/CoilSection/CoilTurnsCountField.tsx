@@ -23,7 +23,6 @@ export const CoilTurnsCountField = () => {
 
   return (
     <SliderTextField
-      name='coil_turns_count'
       label={translate('label')}
       value={turnsCount}
       onChange={handleChange}

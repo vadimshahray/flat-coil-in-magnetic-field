@@ -23,7 +23,6 @@ export const EngineRotationFrequencyField = () => {
 
   return (
     <SliderTextField
-      name='engine_rotation_frequency'
       label={translate('label')}
       value={rotationFrequency}
       onChange={handleChange}

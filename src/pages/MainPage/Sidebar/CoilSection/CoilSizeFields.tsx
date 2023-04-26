@@ -33,7 +33,6 @@ export const CoilSizeFields = () => {
   return (
     <Stack direction='row' spacing={1}>
       <SliderTextField
-        name='coil_frame_width'
         label={translate('widthLabel')}
         value={frameWidth}
         onChange={handleFrameWidthChange}

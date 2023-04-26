@@ -23,7 +23,6 @@ export const HelmholtzCoilsRadiusField = () => {
 
   return (
     <SliderTextField
-      name='Helmholtz_coils_radius'
       label={translate('label')}
       value={radius}
       onChange={handleChange}

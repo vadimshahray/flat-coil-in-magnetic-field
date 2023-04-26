@@ -19,7 +19,6 @@ export type SliderTextFieldProps = {
 
 export const SliderTextField = ({
   label,
-  name,
   adornment,
   value,
   onChange,
@@ -72,7 +71,6 @@ export const SliderTextField = ({
     <Stack>
       <ValidatedTextField
         label={label}
-        name={name}
         adornment={adornment}
         value={fieldValue}
         rule={validationRule}
