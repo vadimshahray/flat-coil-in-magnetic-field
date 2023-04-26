@@ -89,7 +89,7 @@ export const modelingInfoRU = {
 
   VoltageInfoItem: {
     label: 'Напряжение',
-    value: '{{value}} Ом',
+    value: '{{value}} В',
   },
 
   AmperageInfoItem: {
@@ -201,7 +201,7 @@ export const modelingInfoEN = {
 
   VoltageInfoItem: {
     label: 'Voltage',
-    value: '{{value}} Ohm',
+    value: '{{value}} V',
   },
 
   AmperageInfoItem: {
