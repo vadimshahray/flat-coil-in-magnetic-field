@@ -5,7 +5,6 @@ import { Stack, Slider, Container } from '@mui/material'
 import React, { useEffect, useMemo, useState } from 'react'
 
 export type SliderTextFieldProps = {
-  name: string
   min: number
   max: number
   step: number

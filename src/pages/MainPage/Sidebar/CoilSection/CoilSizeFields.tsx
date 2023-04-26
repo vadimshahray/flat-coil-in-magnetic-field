@@ -43,7 +43,6 @@ export const CoilSizeFields = () => {
       />
 
       <SliderTextField
-        name='coil_frame_length'
         label={translate('lengthLabel')}
         value={frameLength}
         onChange={handleFrameLengthChange}
