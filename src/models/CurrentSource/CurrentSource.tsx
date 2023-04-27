@@ -3,7 +3,6 @@ import { store } from 'src/store'
 import { GLTF } from 'three-stdlib'
 import React, { useRef } from 'react'
 import { Text, useGLTF } from '@react-three/drei'
-import { degToRad } from 'three/src/math/MathUtils'
 import { TerminalConnectingZone } from '@components'
 import CurrentSourceModelPath from './currentSource.glb'
 import { useFrame, ThreeEvent } from '@react-three/fiber'
@@ -118,7 +117,7 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 6, 0]} rotation={[0, degToRad(30), 0]}>
+      <group position={[0, 6, 0]}>
         <group
           position={[-0.37, 106.12, 0.09]}
           rotation={[0, -Math.PI / 2, 0]}
