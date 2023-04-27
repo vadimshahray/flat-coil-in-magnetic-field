@@ -19,6 +19,7 @@ export const SCHEME_CONNECTIONS: Record<SchemeConnection, WireConnection> = {
 export const ALL_SCHEME_CONNECTIONS: (WireConnection & {
   points: Vector3[]
 })[] = [
+  // Coil+ -- Voltmeter+
   {
     terminal1: 'Coil+',
     terminal2: 'Voltmeter+',
@@ -56,6 +57,7 @@ export const ALL_SCHEME_CONNECTIONS: (WireConnection & {
       new Vector3(280, WIRE_TOP + 4, 170),
     ],
   },
+  // Coil- -- Voltmeter-
   {
     terminal1: 'Coil-',
     terminal2: 'Voltmeter-',
@@ -86,6 +88,7 @@ export const ALL_SCHEME_CONNECTIONS: (WireConnection & {
       new Vector3(204, WIRE_TOP + 4, 170),
     ],
   },
+  // CurrentSource+ -- HelmholtzCoils+
   {
     terminal1: 'CurrentSource+',
     terminal2: 'HelmholtzCoils+',
@@ -108,6 +111,7 @@ export const ALL_SCHEME_CONNECTIONS: (WireConnection & {
       new Vector3(-62, WIRE_TOP + 37, 78),
     ],
   },
+  // CurrentSource- -- HelmholtzCoils-
   {
     terminal1: 'CurrentSource-',
     terminal2: 'HelmholtzCoils-',
@@ -126,6 +130,60 @@ export const ALL_SCHEME_CONNECTIONS: (WireConnection & {
       new Vector3(64, WIRE_TOP + 15, 128),
       new Vector3(62, WIRE_TOP + 37, 100),
       new Vector3(62, WIRE_TOP + 37, 78),
+    ],
+  },
+  //Coil+ -- Coil-
+  {
+    terminal1: 'Coil+',
+    terminal2: 'Coil-',
+    points: [
+      new Vector3(100, WIRE_TOP + 160, -80),
+      new Vector3(120, WIRE_TOP + 160, -80),
+      new Vector3(106, WIRE_TOP + 74, -42),
+
+      new Vector3(50, WIRE_TOP + 73, -38),
+      new Vector3(0, WIRE_TOP + 72, -32),
+      new Vector3(-50, WIRE_TOP + 73, -36),
+
+      new Vector3(-106, WIRE_TOP + 74, -50),
+      new Vector3(-120, WIRE_TOP + 160, -80),
+      new Vector3(-100, WIRE_TOP + 160, -80),
+    ],
+  },
+  // HelmholtzCoils+ -- HelmholtzCoils-
+  {
+    terminal1: 'HelmholtzCoils+',
+    terminal2: 'HelmholtzCoils-',
+    points: [
+      new Vector3(61, WIRE_TOP + 36, 75),
+      new Vector3(61, WIRE_TOP + 37, 100),
+      new Vector3(61, WIRE_TOP + 33, 120),
+      new Vector3(78, WIRE_TOP + 6, 170),
+
+      new Vector3(30, WIRE_TOP + 0, 250),
+      new Vector3(0, WIRE_TOP + 0, 260),
+      new Vector3(-30, WIRE_TOP + 0, 250),
+
+      new Vector3(-78, WIRE_TOP + 6, 170),
+      new Vector3(-61, WIRE_TOP + 33, 120),
+      new Vector3(-61, WIRE_TOP + 37, 100),
+      new Vector3(-61, WIRE_TOP + 36, 75),
+    ],
+  },
+  // CurrentSource+ -- CurrentSource-
+  {
+    terminal1: 'CurrentSource+',
+    terminal2: 'CurrentSource-',
+    points: [
+      new Vector3(-441, WIRE_TOP + 71, 205),
+      new Vector3(-441, WIRE_TOP + 71, 235),
+      new Vector3(-441, WIRE_TOP + 65, 239),
+      new Vector3(-441, WIRE_TOP + 10, 246),
+
+      new Vector3(-386, WIRE_TOP + 10, 246),
+      new Vector3(-386, WIRE_TOP + 65, 239),
+      new Vector3(-386, WIRE_TOP + 71, 235),
+      new Vector3(-386, WIRE_TOP + 71, 205),
     ],
   },
 ]
