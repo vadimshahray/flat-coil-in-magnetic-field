@@ -14,10 +14,10 @@ import {
 type GLTFResult = GLTF & {
   nodes: {
     handle: THREE.Mesh
-    Cube016: THREE.Mesh
-    Cube016_1: THREE.Mesh
-    Cube016_2: THREE.Mesh
     axis: THREE.Mesh
+    Cube028: THREE.Mesh
+    Cube028_1: THREE.Mesh
+    Cube028_2: THREE.Mesh
     Cube013: THREE.Mesh
     Cube013_1: THREE.Mesh
     Cube013_2: THREE.Mesh
@@ -67,21 +67,6 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             rotation={[Math.PI / 2, 0, -Math.PI / 2]}
             scale={[0.83, 21.06, 0.83]}
           />
-          <group
-            position={[-0.26, 32.57, -0.21]}
-            rotation={[0, Math.PI / 2, 0]}
-            scale={[1.17, 10.24, 13.31]}
-          >
-            <mesh geometry={nodes.Cube016.geometry} material={materials.cu} />
-            <mesh
-              geometry={nodes.Cube016_1.geometry}
-              material={materials.grey_plastic}
-            />
-            <mesh
-              geometry={nodes.Cube016_2.geometry}
-              material={nodes.Cube016_2.material}
-            />
-          </group>
           <mesh
             geometry={nodes.axis.geometry}
             material={materials.metallic}
@@ -89,6 +74,22 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             rotation={[Math.PI / 2, 0, -Math.PI / 2]}
             scale={[0.83, 4.06, 0.83]}
           />
+          <group
+            ref={ref}
+            position={[-0.26, 32.57, -0.21]}
+            rotation={[Math.PI, -Math.PI / 2, 0]}
+            scale={[-1.33, -7.43, -10.29]}
+          >
+            <mesh geometry={nodes.Cube028.geometry} material={materials.cu} />
+            <mesh
+              geometry={nodes.Cube028_1.geometry}
+              material={materials.grey_plastic}
+            />
+            <mesh
+              geometry={nodes.Cube028_2.geometry}
+              material={nodes.Cube028_2.material}
+            />
+          </group>
           <group
             position={[-3.67, 19.62, -0.21]}
             rotation={[0, Math.PI / 2, 0]}
@@ -117,7 +118,6 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             />
           </group>
         </group>
-
         <TerminalConnectingZone
           terminal='Coil+'
           position={terminalPlusPosition}
