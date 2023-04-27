@@ -7,20 +7,24 @@ import HelmholtzCoilsModelPath from './HelmholtzCoils.glb'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cylinder018: THREE.Mesh
-    Cylinder018_1: THREE.Mesh
-    Cylinder018_2: THREE.Mesh
-    Cylinder018_3: THREE.Mesh
-    Cylinder018_4: THREE.Mesh
-    Cylinder018_5: THREE.Mesh
+    Cylinder062: THREE.Mesh
+    Cylinder062_1: THREE.Mesh
+    Cylinder062_2: THREE.Mesh
+    Cylinder062_3: THREE.Mesh
+    Cylinder062_4: THREE.Mesh
+    Cylinder062_5: THREE.Mesh
+    Cylinder062_6: THREE.Mesh
+    Cylinder062_7: THREE.Mesh
   }
   materials: {
+    cuprium: THREE.MeshPhysicalMaterial
     blue: THREE.MeshStandardMaterial
     red: THREE.MeshStandardMaterial
     grey_plastic: THREE.MeshPhysicalMaterial
-    cuprium: THREE.MeshPhysicalMaterial
     very_grey_plastic: THREE.MeshPhysicalMaterial
-    black_plastic: THREE.MeshStandardMaterial
+    balks: THREE.MeshStandardMaterial
+    metallic: THREE.MeshStandardMaterial
+    Material: THREE.MeshStandardMaterial
   }
 }
 
@@ -32,50 +36,55 @@ const HelmholtzCoils = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[10, 193, 0]}>
-        <group
-          position={[52.54, -164.24, -157.4]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[0.03, 0.25, 0.04]}
-        >
-          <mesh
-            geometry={nodes.Cylinder018.geometry}
-            material={materials.blue}
-          />
-          <mesh
-            geometry={nodes.Cylinder018_1.geometry}
-            material={materials.red}
-          />
-          <mesh
-            geometry={nodes.Cylinder018_2.geometry}
-            material={materials.grey_plastic}
-          />
-          <mesh
-            geometry={nodes.Cylinder018_3.geometry}
-            material={materials.cuprium}
-          />
-          <mesh
-            geometry={nodes.Cylinder018_4.geometry}
-            material={materials.very_grey_plastic}
-          />
-          <mesh
-            geometry={nodes.Cylinder018_5.geometry}
-            material={materials.black_plastic}
-          />
-        </group>
-
-        <TerminalConnectingZone
-          terminal='HelmholtzCoils+'
-          position={terminalPlusPosition}
+      <group
+        position={[0, 189.78, 100.75]}
+        rotation={[Math.PI / 2, 0, Math.PI]}
+        scale={[154.41, 0.32, 154.41]}
+      >
+        <mesh
+          geometry={nodes.Cylinder062.geometry}
+          material={materials.cuprium}
         />
-
-        <TerminalConnectingZone
-          terminal='HelmholtzCoils-'
-          position={terminalMinusPosition}
+        <mesh
+          geometry={nodes.Cylinder062_1.geometry}
+          material={materials.blue}
+        />
+        <mesh
+          geometry={nodes.Cylinder062_2.geometry}
+          material={materials.red}
+        />
+        <mesh
+          geometry={nodes.Cylinder062_3.geometry}
+          material={materials.grey_plastic}
+        />
+        <mesh
+          geometry={nodes.Cylinder062_4.geometry}
+          material={materials.very_grey_plastic}
+        />
+        <mesh
+          geometry={nodes.Cylinder062_5.geometry}
+          material={materials.balks}
+        />
+        <mesh
+          geometry={nodes.Cylinder062_6.geometry}
+          material={materials.metallic}
+        />
+        <mesh
+          geometry={nodes.Cylinder062_7.geometry}
+          material={materials.Material}
         />
       </group>
+
+      <TerminalConnectingZone
+        terminal='HelmholtzCoils+'
+        position={terminalPlusPosition}
+      />
+
+      <TerminalConnectingZone
+        terminal='HelmholtzCoils-'
+        position={terminalMinusPosition}
+      />
     </group>
   )
 }
-
 export default HelmholtzCoils
