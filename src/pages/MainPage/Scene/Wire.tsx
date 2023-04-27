@@ -60,6 +60,7 @@ export const Wire = ({ id, position, ...props }: Props) => {
       ref={ref}
       color='#343A40'
       {...props}
+      curveType='chordal'
       position={position}
       lineWidth={5}
       onClick={handleWireClick}
