@@ -21,12 +21,18 @@ type GLTFResult = GLTF & {
     Cube013: THREE.Mesh
     Cube013_1: THREE.Mesh
     Cube013_2: THREE.Mesh
+    Cube013_3: THREE.Mesh
+    Cube013_4: THREE.Mesh
+    Cube013_5: THREE.Mesh
   }
   materials: {
     metallic: THREE.MeshStandardMaterial
     cu: THREE.MeshPhysicalMaterial
     grey_plastic: THREE.MeshStandardMaterial
     au: THREE.MeshStandardMaterial
+    blue: THREE.MeshStandardMaterial
+    very_grey_plastic: THREE.MeshPhysicalMaterial
+    red: THREE.MeshStandardMaterial
   }
 }
 
@@ -35,7 +41,7 @@ const WoodBlock = React.lazy(() => import('src/models/WoodBlock'))
 const terminalPlusPosition = new THREE.Vector3(118, 96, 0)
 const terminalMinusPosition = new THREE.Vector3(-118, 96, 0)
 
-export default function Coil(props: JSX.IntrinsicElements['group']) {
+const Coil = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult
 
   const ref = useRef<THREE.Group>(null)
@@ -53,7 +59,7 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
   return (
     <group {...props} dispose={null}>
       <group position={[0, 70, 0]}>
-        <group scale={4}>
+        <group scale={[4.6, 4, 4]}>
           <mesh
             geometry={nodes.handle.geometry}
             material={materials.metallic}
@@ -61,17 +67,7 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
             rotation={[Math.PI / 2, 0, -Math.PI / 2]}
             scale={[0.83, 21.06, 0.83]}
           />
-
-          <mesh
-            geometry={nodes.axis.geometry}
-            material={materials.metallic}
-            position={[29.98, 32.56, -0.21]}
-            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-            scale={[0.83, 4.06, 0.83]}
-          />
-
           <group
-            ref={ref}
             position={[-0.26, 32.57, -0.21]}
             rotation={[0, Math.PI / 2, 0]}
             scale={[1.17, 10.24, 13.31]}
@@ -86,8 +82,15 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
               material={nodes.Cube016_2.material}
             />
           </group>
+          <mesh
+            geometry={nodes.axis.geometry}
+            material={materials.metallic}
+            position={[29.98, 32.56, -0.21]}
+            rotation={[Math.PI / 2, 0, -Math.PI / 2]}
+            scale={[0.83, 4.06, 0.83]}
+          />
           <group
-            position={[24.88, 1.54, -0.21]}
+            position={[-3.67, 19.62, -0.21]}
             rotation={[0, Math.PI / 2, 0]}
             scale={[5.41, 1.2, 3.16]}
           >
@@ -99,6 +102,18 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
             <mesh
               geometry={nodes.Cube013_2.geometry}
               material={materials.metallic}
+            />
+            <mesh
+              geometry={nodes.Cube013_3.geometry}
+              material={materials.blue}
+            />
+            <mesh
+              geometry={nodes.Cube013_4.geometry}
+              material={materials.very_grey_plastic}
+            />
+            <mesh
+              geometry={nodes.Cube013_5.geometry}
+              material={materials.red}
             />
           </group>
         </group>
@@ -114,9 +129,11 @@ export default function Coil(props: JSX.IntrinsicElements['group']) {
         />
       </group>
 
-      <WoodBlock args={[50, 70, 120]} position={[-100, 35, 0]} />
+      <WoodBlock args={[50, 70, 120]} position={[-135, 35, 0]} />
 
-      <WoodBlock args={[50, 70, 120]} position={[100, 35, 0]} />
+      <WoodBlock args={[50, 70, 120]} position={[135, 35, 0]} />
     </group>
   )
 }
+
+export default Coil
