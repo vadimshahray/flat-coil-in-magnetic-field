@@ -15,9 +15,9 @@ type GLTFResult = GLTF & {
   nodes: {
     handle: THREE.Mesh
     axis: THREE.Mesh
-    Cube028: THREE.Mesh
-    Cube028_1: THREE.Mesh
-    Cube028_2: THREE.Mesh
+    Cube024: THREE.Mesh
+    Cube024_1: THREE.Mesh
+    Cube024_2: THREE.Mesh
     Cube013: THREE.Mesh
     Cube013_1: THREE.Mesh
     Cube013_2: THREE.Mesh
@@ -28,10 +28,10 @@ type GLTFResult = GLTF & {
   materials: {
     metallic: THREE.MeshStandardMaterial
     cu: THREE.MeshPhysicalMaterial
-    grey_plastic: THREE.MeshStandardMaterial
+    grey_plastic: THREE.MeshPhysicalMaterial
     au: THREE.MeshStandardMaterial
     blue: THREE.MeshStandardMaterial
-    very_grey_plastic: THREE.MeshPhysicalMaterial
+    very_grey_plastic: THREE.MeshStandardMaterial
     red: THREE.MeshStandardMaterial
   }
 }
@@ -78,16 +78,16 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             ref={ref}
             position={[-0.26, 32.57, -0.21]}
             rotation={[Math.PI, -Math.PI / 2, 0]}
-            scale={[-1.33, -7.43, -10.29]}
+            scale={[-1.33, -8.07, -10.76]}
           >
-            <mesh geometry={nodes.Cube028.geometry} material={materials.cu} />
+            <mesh geometry={nodes.Cube024.geometry} material={materials.cu} />
             <mesh
-              geometry={nodes.Cube028_1.geometry}
+              geometry={nodes.Cube024_1.geometry}
               material={materials.grey_plastic}
             />
             <mesh
-              geometry={nodes.Cube028_2.geometry}
-              material={nodes.Cube028_2.material}
+              geometry={nodes.Cube024_2.geometry}
+              material={nodes.Cube024_2.material}
             />
           </group>
           <group
