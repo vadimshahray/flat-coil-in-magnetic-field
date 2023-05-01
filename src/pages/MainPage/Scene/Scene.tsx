@@ -1,4 +1,5 @@
 import { Room } from './Room'
+import { Light } from './Light'
 import { Camera } from './Camera'
 import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
@@ -13,13 +14,7 @@ export const Scene = () => {
 
         <Room />
 
-        <ambientLight intensity={0.6} />
-
-        <directionalLight intensity={0.3} position={[300, 600, 200]} />
-        <directionalLight intensity={0.3} position={[300, 600, -200]} />
-
-        <directionalLight intensity={0.3} position={[-300, 600, 200]} />
-        <directionalLight intensity={0.3} position={[-300, 600, -200]} />
+        <Light />
 
         <DeviceTable />
       </Canvas>
