@@ -43,7 +43,7 @@ export const CAMERA_CURRENT_SOURCE_POSITION =
 export const OSCILLOSCOPE_SCENE_POSITION = new THREE.Vector3(
   -420,
   TABLE_TOP + 226,
-  -60,
+  0,
 )
 export const CAMERA_OSCILLOSCOPE_POSITION =
   VOLTMETER_SCENE_POSITION.clone().add(new THREE.Vector3(0, 20, 120))
