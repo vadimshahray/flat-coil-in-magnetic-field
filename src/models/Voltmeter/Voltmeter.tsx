@@ -7,7 +7,10 @@ import { addInsignificantZeros } from '@utils'
 import VoltmeterModelPath from './voltmeter.glb'
 import { Text, useGLTF } from '@react-three/drei'
 import { TerminalConnectingZone } from '@components'
-import { selectIsVoltmeterConnected, selectModelingVoltage } from '@selectors'
+import {
+  selectIsVoltmeterConnected,
+  selectModelingOperatingVoltage,
+} from '@selectors'
 type GLTFResult = GLTF & {
   nodes: {
     Cube_1: THREE.Mesh
@@ -39,7 +42,7 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
 
       textRef.current.text = isVoltmeterConnected
         ? addInsignificantZeros(
-            selectModelingVoltage(store.getState()).toFixed(2),
+            selectModelingOperatingVoltage(store.getState()).toFixed(2),
             1,
           )
         : ''

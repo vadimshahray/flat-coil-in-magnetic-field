@@ -7,7 +7,8 @@ export const modelingSlice = createSlice<ModelingSliceState, ModelingSlice>({
   name: 'modeling',
   initialState: {
     data: {
-      voltage: 0,
+      voltageMax: 0,
+      operatingVoltage: 0,
       amperage: 0,
       induction: 0,
     },

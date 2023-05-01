@@ -22,9 +22,10 @@ export const calculateData = createAsyncThunk<
   const state = getState()
 
   const result: ModelingData = {
+    voltageMax: 0,
+    operatingVoltage: 0,
     amperage: 0,
     induction: 0,
-    voltage: 0,
   }
 
   const isVoltmeterConnected = selectIsVoltmeterConnected(state)
@@ -55,8 +56,10 @@ export const calculateData = createAsyncThunk<
 
   if (!isVoltmeterConnected || !isEnginePowerSupplied) return result
 
-  const Em = 2 * Math.PI * Nu * n * B * S
-  const E = (result.voltage = Em * sin(2 * Math.PI * Nu * t))
+  const Em = (result.voltageMax = 2 * Math.PI * Nu * n * B * S)
+  result.operatingVoltage = Em / Math.sqrt(2)
+
+  const E = Em * sin(2 * Math.PI * Nu * t)
 
   const Rob =
     (Pm * (2 * n * (a + b))) / (4.7 * 10 ** -8) + (2 * Pm * lp) / WIRES_SECTION
