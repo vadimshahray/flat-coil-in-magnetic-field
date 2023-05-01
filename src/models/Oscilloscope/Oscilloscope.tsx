@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import { useGLTF } from '@react-three/drei'
 import OscilloscopeModelPath from './oscilloscope.glb'
+import { OscilloscopeDisplay } from './OscilloscopeDisplay'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -28,8 +29,6 @@ type GLTFResult = GLTF & {
     very_blue: THREE.MeshStandardMaterial
   }
 }
-
-const size = 124
 
 const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(OscilloscopeModelPath) as GLTFResult
@@ -88,10 +87,11 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
         />
       </group>
 
-      <mesh position={[0, size / 2 + 52, 70]}>
-        <boxGeometry args={[240, size, 1]} />
-        <meshBasicMaterial color='red' />
-      </mesh>
+      <OscilloscopeDisplay
+        width={200}
+        height={124}
+        position={[0, 124 / 2 + 52, 70]}
+      />
     </group>
   )
 }

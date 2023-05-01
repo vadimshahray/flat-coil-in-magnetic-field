@@ -1,0 +1,1 @@
+export const GRID_CELLS_COUNT_IN_QUARTER = 4
