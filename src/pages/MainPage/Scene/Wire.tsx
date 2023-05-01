@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { Line2 } from 'three-stdlib'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { setDefaultCursor } from '@utils'
@@ -7,8 +6,8 @@ import WireIcon from 'src/assets/wire.svg'
 import { useThree } from '@react-three/fiber'
 import NoWireIcon from 'src/assets/no_wire.svg'
 import { CatmullRomLine } from '@react-three/drei'
+import React, { useEffect, useCallback } from 'react'
 import { selectSchemeConnectingWireId } from '@selectors'
-import React, { useRef, useEffect, useCallback } from 'react'
 import { dropSchemeConnectingWire, setSchemeConnectingWireId } from '@slices'
 
 type Props = {
@@ -21,8 +20,6 @@ type Props = {
 export const Wire = ({ id, position, ...props }: Props) => {
   const { gl } = useThree()
   const dispatch = useDispatch()
-
-  const ref = useRef<Line2>(null)
 
   const connectingWireId = useSelector(selectSchemeConnectingWireId)
   const isConnecting = connectingWireId === id
@@ -57,7 +54,6 @@ export const Wire = ({ id, position, ...props }: Props) => {
 
   return (
     <CatmullRomLine
-      ref={ref}
       color='#343A40'
       {...props}
       curveType='chordal'
