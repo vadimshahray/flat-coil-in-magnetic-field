@@ -29,31 +29,29 @@ import {
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cube: THREE.Mesh
-    Cube_1: THREE.Mesh
-    Cube_2: THREE.Mesh
-    Cube_3: THREE.Mesh
-    Cube_4: THREE.Mesh
-    Cube_5: THREE.Mesh
-    Cube_6: THREE.Mesh
-    Cylinder_1: THREE.Mesh
-    Cylinder_2: THREE.Mesh
-    power: THREE.Mesh
+    Cylinder002: THREE.Mesh
+    Cylinder002_1: THREE.Mesh
+    power001: THREE.Mesh
+    Text061: THREE.Mesh
+    Text061_1: THREE.Mesh
+    Text061_2: THREE.Mesh
+    Text061_3: THREE.Mesh
+    Text061_4: THREE.Mesh
+    Text061_5: THREE.Mesh
   }
   materials: {
-    backgrond: THREE.MeshStandardMaterial
-    white: THREE.MeshStandardMaterial
-    very_gray: THREE.MeshStandardMaterial
-    black: THREE.MeshStandardMaterial
     tabl_background: THREE.MeshStandardMaterial
-    ['blue.001']: THREE.MeshStandardMaterial
-    red: THREE.MeshStandardMaterial
-    Material: THREE.MeshStandardMaterial
+    Black_line: THREE.MeshStandardMaterial
     power: THREE.MeshStandardMaterial
+    metall: THREE.MeshPhysicalMaterial
+    blue: THREE.MeshStandardMaterial
+    grey: THREE.MeshStandardMaterial
+    black_line: THREE.MeshStandardMaterial
+    black: THREE.MeshStandardMaterial
   }
 }
 
-const powerBtnPositionZ = 106.5
+const powerBtnPositionZ = 103.5
 
 const amperageSwitchRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0)
 
@@ -117,82 +115,74 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 6, 0]}>
-        <group
-          position={[-0.37, 106.12, 0.09]}
-          rotation={[0, -Math.PI / 2, 0]}
-          scale={[101.5, 111.61, 114.5]}
-        >
-          <mesh geometry={nodes.Cube.geometry} material={materials.backgrond} />
-          <mesh geometry={nodes.Cube_1.geometry} material={materials.white} />
-          <mesh
-            geometry={nodes.Cube_2.geometry}
-            material={materials.very_gray}
-          />
-          <mesh geometry={nodes.Cube_3.geometry} material={materials.black} />
-          <mesh
-            geometry={nodes.Cube_4.geometry}
-            material={materials.tabl_background}
-          />
-          <mesh
-            geometry={nodes.Cube_5.geometry}
-            material={materials['blue.001']}
-          />
-          <mesh geometry={nodes.Cube_6.geometry} material={materials.red} />
-        </group>
-
-        <group
-          ref={amperageSwitchRef}
-          position={[68.25, 145.31, 110.7]}
-          rotation={[Math.PI / 2, Math.PI / 2, 0]}
-          scale={[-17.51, -8.23, -17.51]}
-          onPointerEnter={setRotationCursor}
-          onPointerLeave={setDefaultCursor}
-          onWheel={handleWheel}
-        >
-          <mesh
-            geometry={nodes.Cylinder_1.geometry}
-            material={materials.Material}
-          />
-          <mesh
-            geometry={nodes.Cylinder_2.geometry}
-            material={materials.tabl_background}
-          />
-        </group>
-
+      <group
+        ref={amperageSwitchRef}
+        position={[5.84, 5.61, 105.19]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[-12.81, -6.02, -12.81]}
+        onPointerEnter={setRotationCursor}
+        onPointerLeave={setDefaultCursor}
+        onWheel={handleWheel}
+      >
         <mesh
-          ref={powerBtnRef}
-          geometry={nodes.power.geometry}
-          material={materials.power}
-          position={[68.25, 58.92, 106.5]}
-          rotation={[0, -Math.PI / 2, 0]}
-          scale={[3.92, 5.58, 5.58]}
-          onClick={handlePowerClick}
-          onPointerEnter={setPointerCursor}
-          onPointerLeave={setDefaultCursor}
+          geometry={nodes.Cylinder002.geometry}
+          material={materials.tabl_background}
         />
-
-        <Text
-          ref={textRef}
-          fontSize={34}
-          color='#F44336'
-          scale={[0.7, 1, 1]}
-          position={[-33, 152, 102]}
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
-        >
-          {' '}
-        </Text>
-
-        <TerminalConnectingZone
-          terminal='CurrentSource+'
-          position={new THREE.Vector3(-68, 68, 116)}
-        />
-
-        <TerminalConnectingZone
-          terminal='CurrentSource-'
-          position={new THREE.Vector3(0, 68, 116)}
+        <mesh
+          geometry={nodes.Cylinder002_1.geometry}
+          material={materials.Black_line}
         />
       </group>
+      <mesh
+        ref={powerBtnRef}
+        geometry={nodes.power001.geometry}
+        material={materials.power}
+        position={[94.96, 0.85, 102.85]}
+        rotation={[0, -Math.PI / 2, 0]}
+        scale={[3.92, 5.58, 5.58]}
+        onClick={handlePowerClick}
+        onPointerEnter={setPointerCursor}
+        onPointerLeave={setDefaultCursor}
+      />
+      <group
+        position={[86.4, 40.49, 101.59]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[6.64, 144.05, 6.64]}
+      >
+        <mesh
+          geometry={nodes.Text061.geometry}
+          material={materials.Black_line}
+        />
+        <mesh geometry={nodes.Text061_1.geometry} material={materials.metall} />
+        <mesh geometry={nodes.Text061_2.geometry} material={materials.blue} />
+        <mesh geometry={nodes.Text061_3.geometry} material={materials.grey} />
+        <mesh
+          geometry={nodes.Text061_4.geometry}
+          material={materials.black_line}
+        />
+        <mesh geometry={nodes.Text061_5.geometry} material={materials.black} />
+      </group>
+
+      <Text
+        ref={textRef}
+        fontSize={34}
+        color='#F44336'
+        scale={[0.7, 1, 1]}
+        position={[-73, -1, 102]}
+        font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+      >
+        {' '}
+      </Text>
+
+      <TerminalConnectingZone
+        terminal='CurrentSource+'
+        position={new THREE.Vector3(-68, 68, 116)}
+      />
+
+      <TerminalConnectingZone
+        terminal='CurrentSource-'
+        position={new THREE.Vector3(0, 68, 116)}
+      />
     </group>
   )
 }

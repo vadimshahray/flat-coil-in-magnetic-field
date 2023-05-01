@@ -32,7 +32,7 @@ export const CAMERA_HELMHOLTZ_COILS_POSITION =
 
 export const CURRENT_SOURCE_SCENE_POSITION = new THREE.Vector3(
   -420,
-  TABLE_TOP,
+  TABLE_TOP + 34,
   -60,
 )
 export const CAMERA_CURRENT_SOURCE_POSITION =
@@ -41,9 +41,9 @@ export const CAMERA_CURRENT_SOURCE_POSITION =
   )
 
 export const OSCILLOSCOPE_SCENE_POSITION = new THREE.Vector3(
-  -420,
-  TABLE_TOP + 226,
-  0,
+  -421,
+  TABLE_TOP + 67,
+  -60,
 )
 export const CAMERA_OSCILLOSCOPE_POSITION =
   VOLTMETER_SCENE_POSITION.clone().add(new THREE.Vector3(0, 20, 120))
