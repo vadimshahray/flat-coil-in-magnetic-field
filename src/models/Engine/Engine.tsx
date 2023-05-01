@@ -160,7 +160,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
         </Text>
       </group>
 
-      <WoodBlock args={[170, 107, 220]} position={[0, 52, 0]} />
+      <WoodBlock args={[280, 107, 220]} position={[8, 52, 0]} />
     </group>
   )
 }
