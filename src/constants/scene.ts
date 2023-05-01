@@ -31,13 +31,21 @@ export const CAMERA_HELMHOLTZ_COILS_POSITION =
   HELMHOLTZ_COILS_SCENE_POSITION.clone().add(new THREE.Vector3(0, 60, 220))
 
 export const CURRENT_SOURCE_SCENE_POSITION = new THREE.Vector3(
-  -380,
+  -420,
   TABLE_TOP,
-  100,
+  -60,
 )
 export const CAMERA_CURRENT_SOURCE_POSITION =
   CURRENT_SOURCE_SCENE_POSITION.clone().add(
     new THREE.Vector3(0, TABLE_TOP, 120),
   )
+
+export const OSCILLOSCOPE_SCENE_POSITION = new THREE.Vector3(
+  -420,
+  TABLE_TOP + 226,
+  -60,
+)
+export const CAMERA_OSCILLOSCOPE_POSITION =
+  VOLTMETER_SCENE_POSITION.clone().add(new THREE.Vector3(0, 20, 120))
 
 export const WIRE_HEAP_POSITION = new THREE.Vector3(330, TABLE_TOP + 2, 200)
