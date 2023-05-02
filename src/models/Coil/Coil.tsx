@@ -33,9 +33,6 @@ type GLTFResult = GLTF & {
 
 const WoodBlock = React.lazy(() => import('src/models/WoodBlock'))
 
-const terminalPlusPosition = new THREE.Vector3(118, 96, 0)
-const terminalMinusPosition = new THREE.Vector3(-118, 96, 0)
-
 const Coil = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CoilModelPath) as GLTFResult
 
@@ -107,14 +104,19 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             />
           </group>
         </group>
+
         <TerminalConnectingZone
           terminal='Coil+'
-          position={terminalPlusPosition}
+          color='#832D2E'
+          rotation={[0, Math.PI / 2, 0]}
+          position={[137, 96, 0]}
         />
 
         <TerminalConnectingZone
           terminal='Coil-'
-          position={terminalMinusPosition}
+          color='#4C4C8A'
+          rotation={[0, -Math.PI / 2, 0]}
+          position={[-137, 96, 0]}
         />
       </group>
 

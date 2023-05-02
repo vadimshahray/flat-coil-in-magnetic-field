@@ -5,6 +5,7 @@ import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
+import { TerminalConnectingZone } from '@components'
 import OscilloscopeModelPath from './oscilloscope.glb'
 import { setOscilloscopeIsPowerSupplied } from '@slices'
 import { OscilloscopeDisplay } from './OscilloscopeDisplay'
@@ -115,6 +116,20 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
         position={[45.04, 32, 77.13]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[3.92, 5.58, 5.58]}
+      />
+
+      <TerminalConnectingZone
+        terminal='Oscilloscope+'
+        color='black'
+        size={16}
+        position={[-28, 32, 83.5]}
+      />
+
+      <TerminalConnectingZone
+        terminal='Oscilloscope-'
+        color='black'
+        size={16}
+        position={[-56, 32, 83.5]}
       />
 
       {isPowerSupplied && (

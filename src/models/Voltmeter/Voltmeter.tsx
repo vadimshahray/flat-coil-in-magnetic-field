@@ -25,9 +25,6 @@ type GLTFResult = GLTF & {
   }
 }
 
-const terminalPlusPosition = new THREE.Vector3(30, -10, -35)
-const terminalMinusPosition = new THREE.Vector3(-30, -10, -35)
-
 const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(VoltmeterModelPath) as GLTFResult
 
@@ -63,16 +60,6 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
         />
         <mesh geometry={nodes.Cube_3.geometry} material={materials.blue} />
 
-        <TerminalConnectingZone
-          terminal='Voltmeter+'
-          position={terminalPlusPosition}
-        />
-
-        <TerminalConnectingZone
-          terminal='Voltmeter-'
-          position={terminalMinusPosition}
-        />
-
         <Text
           ref={textRef}
           fontSize={34}
@@ -84,6 +71,20 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           {' '}
         </Text>
       </group>
+
+      <TerminalConnectingZone
+        terminal='Voltmeter+'
+        color='#832D2E'
+        rotation={[0, Math.PI, 0]}
+        position={[34, 8, -35]}
+      />
+
+      <TerminalConnectingZone
+        terminal='Voltmeter-'
+        color='#4C4C8A'
+        rotation={[0, Math.PI, 0]}
+        position={[-34, 8, -35]}
+      />
     </group>
   )
 }

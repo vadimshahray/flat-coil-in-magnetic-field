@@ -26,9 +26,6 @@ type GLTFResult = GLTF & {
   }
 }
 
-const terminalPlusPosition = new THREE.Vector3(-71, -154, 170)
-const terminalMinusPosition = new THREE.Vector3(51, -154, 170)
-
 const HelmholtzCoils = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(HelmholtzCoilsModelPath) as GLTFResult
 
@@ -71,12 +68,14 @@ const HelmholtzCoils = (props: JSX.IntrinsicElements['group']) => {
 
       <TerminalConnectingZone
         terminal='HelmholtzCoils+'
-        position={terminalPlusPosition}
+        color='#832D2E'
+        position={[60, 30, 134]}
       />
 
       <TerminalConnectingZone
         terminal='HelmholtzCoils-'
-        position={terminalMinusPosition}
+        color='#4C4C8A'
+        position={[-60, 30, 134]}
       />
     </group>
   )

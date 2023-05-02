@@ -176,12 +176,16 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
 
       <TerminalConnectingZone
         terminal='CurrentSource+'
-        position={new THREE.Vector3(-68, 68, 116)}
+        color='#832D2E'
+        size={16}
+        position={[66, 0, 108]}
       />
 
       <TerminalConnectingZone
         terminal='CurrentSource-'
-        position={new THREE.Vector3(0, 68, 116)}
+        color='#4C4C8A'
+        size={16}
+        position={[39, 0, 108]}
       />
     </group>
   )

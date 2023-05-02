@@ -11,14 +11,17 @@ import {
   selectHaveTerminalConnection,
 } from '@selectors'
 
+const Terminal = React.lazy(() => import('src/models/Terminal'))
+
 type Props = {
   terminal: Terminal
+  color: string
   size?: number
-  position: THREE.Vector3
-}
+} & JSX.IntrinsicElements['group']
 
 export const TerminalConnectingZone = ({
   terminal,
+  color,
   size = 30,
   ...props
 }: Props) => {
@@ -48,14 +51,17 @@ export const TerminalConnectingZone = ({
   })
 
   return (
-    <Box
-      args={[size, size, size]}
-      {...props}
-      visible={false}
-      onClick={handleClick}
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={setDefaultCursor}
-    />
+    <group {...props}>
+      <Box
+        args={[size, size, size]}
+        visible={false}
+        onClick={handleClick}
+        onPointerEnter={handlePointerEnter}
+        onPointerLeave={setDefaultCursor}
+      />
+
+      <Terminal color={color} position={[0, 0, -size / 2 + 6]} />
+    </group>
   )
 }
 
