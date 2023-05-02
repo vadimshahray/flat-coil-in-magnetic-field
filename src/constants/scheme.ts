@@ -6,6 +6,8 @@ const WIRE_TOP = TABLE_TOP + 2
 export const SCHEME_CONNECTIONS: Record<SchemeConnection, WireConnection> = {
   'Coil+Voltmeter+': { terminal1: 'Coil+', terminal2: 'Voltmeter+' },
   'Coil-Voltmeter-': { terminal1: 'Coil-', terminal2: 'Voltmeter-' },
+  'Coil+Oscilloscope+': { terminal1: 'Coil+', terminal2: 'Oscilloscope+' },
+  'Coil-Oscilloscope-': { terminal1: 'Coil-', terminal2: 'Oscilloscope-' },
   'CurrentSource+HelmholtzCoils+': {
     terminal1: 'CurrentSource+',
     terminal2: 'HelmholtzCoils+',
