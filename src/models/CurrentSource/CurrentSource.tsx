@@ -32,12 +32,12 @@ type GLTFResult = GLTF & {
     Cylinder002: THREE.Mesh
     Cylinder002_1: THREE.Mesh
     power: THREE.Mesh
-    Text006: THREE.Mesh
-    Text006_1: THREE.Mesh
-    Text006_2: THREE.Mesh
-    Text006_3: THREE.Mesh
-    Text006_4: THREE.Mesh
-    Text006_5: THREE.Mesh
+    Text008: THREE.Mesh
+    Text008_1: THREE.Mesh
+    Text008_2: THREE.Mesh
+    Text008_3: THREE.Mesh
+    Text008_4: THREE.Mesh
+    Text008_5: THREE.Mesh
   }
   materials: {
     tabl_background: THREE.MeshStandardMaterial
@@ -112,7 +112,6 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
       ),
     )
   }
-
   return (
     <group {...props} dispose={null}>
       <group
@@ -145,24 +144,23 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         onPointerEnter={setPointerCursor}
         onPointerLeave={setDefaultCursor}
       />
-
       <group
         position={[32.91, -11.31, 99.86]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[6.64, 107.72, 6.64]}
       >
         <mesh
-          geometry={nodes.Text006.geometry}
+          geometry={nodes.Text008.geometry}
           material={materials.Black_line}
         />
-        <mesh geometry={nodes.Text006_1.geometry} material={materials.metall} />
-        <mesh geometry={nodes.Text006_2.geometry} material={materials.blue} />
-        <mesh geometry={nodes.Text006_3.geometry} material={materials.grey} />
+        <mesh geometry={nodes.Text008_1.geometry} material={materials.metall} />
+        <mesh geometry={nodes.Text008_2.geometry} material={materials.blue} />
+        <mesh geometry={nodes.Text008_3.geometry} material={materials.grey} />
         <mesh
-          geometry={nodes.Text006_4.geometry}
+          geometry={nodes.Text008_4.geometry}
           material={materials.black_line}
         />
-        <mesh geometry={nodes.Text006_5.geometry} material={materials.black} />
+        <mesh geometry={nodes.Text008_5.geometry} material={materials.black} />
       </group>
 
       <Text
