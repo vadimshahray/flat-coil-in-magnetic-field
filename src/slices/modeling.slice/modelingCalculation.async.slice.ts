@@ -5,7 +5,6 @@ import {
   selectCoilFrameWidth,
   selectCoilFrameLength,
   selectHelmholtzCoilsRadius,
-  selectIsVoltmeterConnected,
   selectCurrentSourceAmperage,
   selectEngineIsPowerSupplied,
   selectEngineRotationFrequency,
@@ -28,7 +27,6 @@ export const calculateData = createAsyncThunk<
     induction: 0,
   }
 
-  const isVoltmeterConnected = selectIsVoltmeterConnected(state)
   const isEnginePowerSupplied = selectEngineIsPowerSupplied(state)
   const areHelmholtzCoilsConnected = selectAreHelmholtzCoilsConnected(state)
   const isCurrentSourcePowerSupplied = selectCurrentSourceIsPowerSupplied(state)
@@ -54,7 +52,7 @@ export const calculateData = createAsyncThunk<
 
   const B = (result.induction = (mu * k * Ig * N) / R)
 
-  if (!isVoltmeterConnected || !isEnginePowerSupplied) return result
+  if (!isEnginePowerSupplied) return result
 
   const Em = (result.voltageMax = 2 * Math.PI * Nu * n * B * S)
   result.operatingVoltage = Em / Math.sqrt(2)
