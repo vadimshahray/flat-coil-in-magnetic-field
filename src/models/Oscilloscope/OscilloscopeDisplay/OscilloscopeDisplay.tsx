@@ -11,10 +11,10 @@ export const OscilloscopeDisplay = ({ width, height, ...props }: Props) => {
     <group {...props}>
       <mesh>
         <boxGeometry args={[width, height, 1]} />
-        <meshBasicMaterial color='red' transparent opacity={0.1} />
+        <meshBasicMaterial color='red' transparent opacity={0.15} />
       </mesh>
 
-      <OscilloscopeWaveform size={height - 10} />
+      <OscilloscopeWaveform size={height - 10} position={[-40, 0, 0]} />
     </group>
   )
 }

@@ -120,8 +120,8 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
       {isPowerSupplied && (
         <OscilloscopeDisplay
           width={200}
-          height={124}
-          position={[0, 124 / 2 + 52, 74]}
+          height={120}
+          position={[0, 124 / 2 + 54, 74]}
         />
       )}
     </group>
