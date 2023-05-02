@@ -31,13 +31,13 @@ type GLTFResult = GLTF & {
   nodes: {
     Cylinder002: THREE.Mesh
     Cylinder002_1: THREE.Mesh
-    power001: THREE.Mesh
-    Text061: THREE.Mesh
-    Text061_1: THREE.Mesh
-    Text061_2: THREE.Mesh
-    Text061_3: THREE.Mesh
-    Text061_4: THREE.Mesh
-    Text061_5: THREE.Mesh
+    power: THREE.Mesh
+    Text006: THREE.Mesh
+    Text006_1: THREE.Mesh
+    Text006_2: THREE.Mesh
+    Text006_3: THREE.Mesh
+    Text006_4: THREE.Mesh
+    Text006_5: THREE.Mesh
   }
   materials: {
     tabl_background: THREE.MeshStandardMaterial
@@ -117,7 +117,7 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
     <group {...props} dispose={null}>
       <group
         ref={amperageSwitchRef}
-        position={[5.84, 5.61, 105.19]}
+        position={[5.84, 1.85, 105.19]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[-12.81, -6.02, -12.81]}
         onPointerEnter={setRotationCursor}
@@ -133,9 +133,10 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
           material={materials.Black_line}
         />
       </group>
+
       <mesh
         ref={powerBtnRef}
-        geometry={nodes.power001.geometry}
+        geometry={nodes.power.geometry}
         material={materials.power}
         position={[94.96, 0.85, 102.85]}
         rotation={[0, -Math.PI / 2, 0]}
@@ -144,23 +145,24 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         onPointerEnter={setPointerCursor}
         onPointerLeave={setDefaultCursor}
       />
+
       <group
-        position={[86.4, 40.49, 101.59]}
+        position={[32.91, -11.31, 99.86]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={[6.64, 144.05, 6.64]}
+        scale={[6.64, 107.72, 6.64]}
       >
         <mesh
-          geometry={nodes.Text061.geometry}
+          geometry={nodes.Text006.geometry}
           material={materials.Black_line}
         />
-        <mesh geometry={nodes.Text061_1.geometry} material={materials.metall} />
-        <mesh geometry={nodes.Text061_2.geometry} material={materials.blue} />
-        <mesh geometry={nodes.Text061_3.geometry} material={materials.grey} />
+        <mesh geometry={nodes.Text006_1.geometry} material={materials.metall} />
+        <mesh geometry={nodes.Text006_2.geometry} material={materials.blue} />
+        <mesh geometry={nodes.Text006_3.geometry} material={materials.grey} />
         <mesh
-          geometry={nodes.Text061_4.geometry}
+          geometry={nodes.Text006_4.geometry}
           material={materials.black_line}
         />
-        <mesh geometry={nodes.Text061_5.geometry} material={materials.black} />
+        <mesh geometry={nodes.Text006_5.geometry} material={materials.black} />
       </group>
 
       <Text
