@@ -8,6 +8,7 @@ import { EngineSection } from './EngineSection'
 import { selectIsSidebarVisible } from '@selectors'
 import { WiresInfoSection } from './WiresInfoSection'
 import { ResultsInfoSection } from './ResultsInfoSection'
+import { OscilloscopeSection } from './OscilloscopeSection'
 import { CurrentSourceSection } from './CurrentSourceSection'
 import { HelmholtzCoilsSection } from './HelmholtzCoilsSection'
 import {
@@ -45,6 +46,8 @@ export const Sidebar = () => {
         <CoilSection />
 
         <HelmholtzCoilsSection />
+
+        <OscilloscopeSection />
 
         <WiresInfoSection />
 

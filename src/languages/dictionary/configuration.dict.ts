@@ -44,6 +44,10 @@ export const configurationRU = {
     label: 'Сила тока, А',
   },
 
+  OscilloscopeSection: {
+    title: 'Осциллограф',
+  },
+
   StartModelingButton: {
     start: 'Запуск',
     startModeling: 'Начать моделирование',
@@ -97,6 +101,10 @@ export const configurationEN = {
 
   CurrentSourceAmperageField: {
     label: 'Amperage, A',
+  },
+
+  OscilloscopeSection: {
+    title: 'Oscilloscope',
   },
 
   StartModelingButton: {
