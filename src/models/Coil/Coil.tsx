@@ -20,7 +20,6 @@ type GLTFResult = GLTF & {
     Cube013_2: THREE.Mesh
     Cube013_3: THREE.Mesh
     Cube013_4: THREE.Mesh
-    Cube013_5: THREE.Mesh
   }
   materials: {
     metallic: THREE.MeshStandardMaterial
@@ -29,7 +28,6 @@ type GLTFResult = GLTF & {
     au: THREE.MeshStandardMaterial
     blue: THREE.MeshStandardMaterial
     very_grey_plastic: THREE.MeshStandardMaterial
-    red: THREE.MeshStandardMaterial
   }
 }
 
@@ -106,10 +104,6 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             <mesh
               geometry={nodes.Cube013_4.geometry}
               material={materials.very_grey_plastic}
-            />
-            <mesh
-              geometry={nodes.Cube013_5.geometry}
-              material={materials.red}
             />
           </group>
         </group>

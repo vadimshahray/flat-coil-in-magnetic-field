@@ -11,20 +11,17 @@ import {
   selectIsVoltmeterConnected,
   selectModelingOperatingVoltage,
 } from '@selectors'
+
 type GLTFResult = GLTF & {
   nodes: {
     Cube_1: THREE.Mesh
     Cube_2: THREE.Mesh
     Cube_3: THREE.Mesh
-    Cube_4: THREE.Mesh
-    Cube_5: THREE.Mesh
   }
   materials: {
     ['Material.001']: THREE.MeshStandardMaterial
     ['Material.002']: THREE.MeshStandardMaterial
     blue: THREE.MeshStandardMaterial
-    very_grey_plastic: THREE.MeshPhysicalMaterial
-    red: THREE.MeshStandardMaterial
   }
 }
 
@@ -51,23 +48,20 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 24.49, 0]}>
-        <group rotation={[0, -Math.PI / 2, 0]} scale={[20, 25, 50]}>
-          <mesh
-            geometry={nodes.Cube_1.geometry}
-            material={materials['Material.001']}
-          />
-          <mesh
-            geometry={nodes.Cube_2.geometry}
-            material={materials['Material.002']}
-          />
-          <mesh geometry={nodes.Cube_3.geometry} material={materials.blue} />
-          <mesh
-            geometry={nodes.Cube_4.geometry}
-            material={materials.very_grey_plastic}
-          />
-          <mesh geometry={nodes.Cube_5.geometry} material={materials.red} />
-        </group>
+      <group
+        position={[0, 24.49, 0]}
+        rotation={[0, -Math.PI / 2, 0]}
+        scale={[20, 25, 50]}
+      >
+        <mesh
+          geometry={nodes.Cube_1.geometry}
+          material={materials['Material.001']}
+        />
+        <mesh
+          geometry={nodes.Cube_2.geometry}
+          material={materials['Material.002']}
+        />
+        <mesh geometry={nodes.Cube_3.geometry} material={materials.blue} />
 
         <TerminalConnectingZone
           terminal='Voltmeter+'
@@ -82,7 +76,7 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
         <Text
           ref={textRef}
           fontSize={34}
-          color='#F44336'
+          color='red'
           scale={[0.7, 1, 1]}
           position={[0, -1.5, 18]}
           font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
