@@ -2,6 +2,7 @@ import { Scene } from './Scene'
 import { Sidebar } from './Sidebar'
 import { Controls } from './Controls'
 import React, { useEffect } from 'react'
+import { SplashScreen } from './SplashScreen'
 import { assemblyScheme, startModeling } from '@slices'
 import { useDeviceTypeValue, useDispatch } from '@hooks'
 
@@ -20,24 +21,30 @@ export const MainPage = () => {
     }
   }, [showModelingSection, dispatch])
 
-  return showModelingSection ? (
-    <div
-      style={{
-        height: '100%',
-        display: 'grid',
-        gridTemplateColumns: '1fr auto',
-        gridTemplateRows: '1fr 0',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
-      <Scene />
+  return (
+    <>
+      <SplashScreen />
 
-      <Sidebar />
+      {showModelingSection ? (
+        <div
+          style={{
+            height: '100%',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto',
+            gridTemplateRows: '1fr 0',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <Scene />
 
-      <Controls />
-    </div>
-  ) : (
-    <Sidebar />
+          <Sidebar />
+
+          <Controls />
+        </div>
+      ) : (
+        <Sidebar />
+      )}
+    </>
   )
 }

@@ -1,4 +1,8 @@
 export const extraRU = {
+  SplashScreen: {
+
+  },
+
   ColorModeButton: {
     switchToLight: 'Переключиться на светлую тему',
     switchToDark: 'Переключиться на темную тему',
