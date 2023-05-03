@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.b9d69dc9.js",
+    "main.js": "/alternator/static/js/main.b7b2ec4a.js",
     "static/js/109.7866d259.chunk.js": "/alternator/static/js/109.7866d259.chunk.js",
     "static/js/523.d1aaf176.chunk.js": "/alternator/static/js/523.d1aaf176.chunk.js",
     "static/js/803.bf9f7159.chunk.js": "/alternator/static/js/803.bf9f7159.chunk.js",
@@ -81,12 +81,13 @@
     "static/media/AG_HC_scheme.svg": "/alternator/static/media/AG_HC_scheme.b503375110ae996058226967f8da1937.svg",
     "static/media/disconnect_wire.svg": "/alternator/static/media/disconnect_wire.e744c21946662902a1990b6ae12a212f.svg",
     "static/media/no_wire.svg": "/alternator/static/media/no_wire.35f0630fd26078461961a22ebde7059c.svg",
+    "static/media/nstu.svg": "/alternator/static/media/nstu.5ea2f81ab2078e8c89e34c5dc4cbbdf0.svg",
     "static/media/connect_wire.svg": "/alternator/static/media/connect_wire.81c27d76c3a639271d80387be93d906c.svg",
     "static/media/C_V_scheme.svg": "/alternator/static/media/C_V_scheme.b4bd4cba01a4923cc90966e2a7ebead8.svg",
     "index.html": "/alternator/index.html",
     "static/media/wire.svg": "/alternator/static/media/wire.b7364428159227a7b46748c714e8edbd.svg",
     "static/media/rotation.svg": "/alternator/static/media/rotation.e6438c5c3458895a2b0afdb454538859.svg",
-    "main.b9d69dc9.js.map": "/alternator/static/js/main.b9d69dc9.js.map",
+    "main.b7b2ec4a.js.map": "/alternator/static/js/main.b7b2ec4a.js.map",
     "109.7866d259.chunk.js.map": "/alternator/static/js/109.7866d259.chunk.js.map",
     "523.d1aaf176.chunk.js.map": "/alternator/static/js/523.d1aaf176.chunk.js.map",
     "803.bf9f7159.chunk.js.map": "/alternator/static/js/803.bf9f7159.chunk.js.map",
@@ -118,6 +119,6 @@
     "334.0c11d12e.chunk.js.map": "/alternator/static/js/334.0c11d12e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.b9d69dc9.js"
+    "static/js/main.b7b2ec4a.js"
   ]
 }
