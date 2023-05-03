@@ -59,6 +59,7 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(CurrentSourceModelPath) as GLTFResult
 
   const textRef = useRef<Text & { text: string }>()
+  const textSIRef = useRef<THREE.Mesh>()
   const powerBtnRef = useRef<THREE.Mesh>(null)
   const amperageSwitchRef = useRef<THREE.Group>(null)
 
@@ -70,6 +71,10 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
       textRef.current.text = isPowerSupplied
         ? addInsignificantZeros(amperage.toFixed(2), 1)
         : ''
+    }
+
+    if (textSIRef.current) {
+      textSIRef.current.visible = isPowerSupplied
     }
 
     powerBtnRef.current?.position?.setZ(
@@ -163,16 +168,27 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         <mesh geometry={nodes.Text008_5.geometry} material={materials.black} />
       </group>
 
-      <Text
-        ref={textRef}
-        fontSize={34}
-        color='#F44336'
-        scale={[0.7, 1, 1]}
-        position={[-73, -1, 102]}
-        font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
-      >
-        {' '}
-      </Text>
+      <group scale={[0.7, 1, 1]} position={[-73, -4, 102]}>
+        <Text
+          ref={textRef}
+          fontSize={34}
+          color='red'
+          position={[-3, 0, 0]}
+          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+        >
+          {' '}
+        </Text>
+
+        <Text
+          ref={textSIRef}
+          fontSize={14}
+          color='red'
+          position={[45, -6, 0]}
+          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+        >
+          A
+        </Text>
+      </group>
 
       <TerminalConnectingZone
         terminal='CurrentSource+'

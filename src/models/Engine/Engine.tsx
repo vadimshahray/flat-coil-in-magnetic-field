@@ -43,6 +43,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(EngineModelPath) as GLTFResult
 
   const textRef = useRef<Text & { text: string }>()
+  const textSIRef = useRef<THREE.Mesh>()
   const powerBtnRef = useRef<THREE.Mesh>(null)
 
   useFrame(() => {
@@ -52,6 +53,10 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
       textRef.current.text = isPowerSupplied
         ? selectEngineRotationFrequency(store.getState()).toString()
         : ''
+    }
+
+    if (textSIRef.current) {
+      textSIRef.current.visible = isPowerSupplied
     }
 
     if (powerBtnRef.current) {
@@ -148,16 +153,28 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
           />
         </group>
 
+        <group
+          scale={[0.7, 1, 1]}
+          position={[24, 98, 118]}>
         <Text
           ref={textRef}
           fontSize={47}
-          color='#F44336'
-          scale={[0.7, 1, 1]}
-          position={[0, 100, 120]}
+          color='red'
           font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
         >
           {' '}
         </Text>
+
+        <Text
+          ref={textSIRef}
+          fontSize={20}
+          color='red'
+          position={[44, -8, 0]}
+          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+        >
+          Hz
+          </Text>
+        </group>
       </group>
 
       <WoodBlock args={[280, 107, 220]} position={[8, 52, 0]} />

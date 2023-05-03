@@ -29,18 +29,21 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(VoltmeterModelPath) as GLTFResult
 
   const textRef = useRef<Text & { text: string }>()
+  const textSIRef = useRef<THREE.Mesh>()
 
   useFrame(() => {
-    if (textRef.current) {
-      const isVoltmeterConnected = selectIsVoltmeterConnected(store.getState())
+    if (!textRef.current) return
 
-      textRef.current.text = isVoltmeterConnected
-        ? addInsignificantZeros(
-            selectModelingOperatingVoltage(store.getState()).toFixed(2),
-            1,
-          )
-        : ''
-    }
+    const isVoltmeterConnected = selectIsVoltmeterConnected(store.getState())
+    textRef.current.text = isVoltmeterConnected
+      ? addInsignificantZeros(
+          selectModelingOperatingVoltage(store.getState()).toFixed(2),
+          1,
+        )
+      : ''
+
+    if (!textSIRef.current) return
+    textSIRef.current.visible = isVoltmeterConnected
   })
 
   return (
@@ -59,16 +62,26 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           material={materials['Material.002']}
         />
         <mesh geometry={nodes.Cube_3.geometry} material={materials.blue} />
+      </group>
 
+      <group scale={[0.7, 1, 1]} position={[0, 24, 18]}>
         <Text
           ref={textRef}
           fontSize={34}
           color='red'
-          scale={[0.7, 1, 1]}
-          position={[0, -1.5, 18]}
           font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
         >
           {' '}
+        </Text>
+
+        <Text
+          ref={textSIRef}
+          fontSize={14}
+          color='red'
+          position={[50, -6, 0]}
+          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+        >
+          V
         </Text>
       </group>
 
