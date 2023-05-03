@@ -65,11 +65,11 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
     assemblyScheme: (state) => {
       state.wires[0] = {
         ...state.wires[0],
-        ...SCHEME_CONNECTIONS['Coil+Oscilloscope+'],
+        ...SCHEME_CONNECTIONS['Coil+Voltmeter+'],
       }
       state.wires[1] = {
         ...state.wires[1],
-        ...SCHEME_CONNECTIONS['Coil-Oscilloscope-'],
+        ...SCHEME_CONNECTIONS['Coil-Voltmeter-'],
       }
       state.wires[2] = {
         ...state.wires[2],
