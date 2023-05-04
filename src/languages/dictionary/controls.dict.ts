@@ -26,6 +26,21 @@ export const controlsRU = {
     hideSidebar: 'Скрыть боковую панель',
     showSidebar: 'Показать боковую панель',
   },
+
+  CameraViewControl: {
+    engineShort: 'Д',
+    engine: 'Посмотреть на двигатель',
+    coilShort: 'К',
+    coil: 'Посмотреть на катушку',
+    HelmholtzCoilsShort: 'КГ',
+    HelmholtzCoils: 'Посмотреть на катушки Гельмгольца',
+    currentSourceShort: 'ИТ',
+    currentSource: 'Посмотреть на источник тока',
+    oscilloscopeShort: 'О',
+    oscilloscope: 'Посмотреть на осциллограф',
+    voltmeterShort: 'В',
+    voltmeter: 'Посмотреть на вольтметр',
+  },
 }
 
 export const controlsEN = {
@@ -55,5 +70,20 @@ export const controlsEN = {
   ChangeSidebarVisibilityButton: {
     hideSidebar: 'Hide sidebar',
     showSidebar: 'Show sidebar',
+  },
+
+  CameraViewControl: {
+    engineShort: 'E',
+    engine: 'Look at the engine',
+    coilShort: 'C',
+    coil: 'Look at the coil',
+    HelmholtzCoilsShort: 'HC',
+    HelmholtzCoils: 'Look at the Helmholtz coils',
+    currentSourceShort: 'CS',
+    currentSource: 'Look at the current source',
+    oscilloscopeShort: 'O',
+    oscilloscope: 'Look at the oscilloscope',
+    voltmeterShort: 'V',
+    voltmeter: 'Look at the voltmeter',
   },
 }

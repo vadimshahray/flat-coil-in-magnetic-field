@@ -1,13 +1,21 @@
 import React from 'react'
 import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
+import { useTranslate } from '@languages'
 import { setSceneCameraViewPoint } from '@slices'
 import { VideocamOutlined } from '@mui/icons-material'
 import { selectSceneCameraViewPoint } from '@selectors'
-import { Paper, Stack, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import {
+  Paper,
+  Stack,
+  Tooltip,
+  ToggleButton,
+  ToggleButtonGroup,
+} from '@mui/material'
 
 export const CameraViewControl = () => {
   const dispatch = useDispatch()
+  const translate = useTranslate('CameraViewControl')
 
   const view = useSelector(selectSceneCameraViewPoint)
 
@@ -21,12 +29,39 @@ export const CameraViewControl = () => {
         <VideocamOutlined />
 
         <ToggleButtonGroup value={view} onChange={handleChange} exclusive>
-          <ToggleButton value='@Engine'>Д</ToggleButton>
-          <ToggleButton value='@Coil'>К</ToggleButton>
-          <ToggleButton value='@HelmholtzCoils'>КГ</ToggleButton>
-          <ToggleButton value='@CurrentSource'>ИТ</ToggleButton>
-          <ToggleButton value='@Oscilloscope'>О</ToggleButton>
-          <ToggleButton value='@Voltmeter'>В</ToggleButton>
+          <Tooltip title={translate('engine')}>
+            <ToggleButton value='@Engine'>
+              {translate('engineShort')}
+            </ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('coil')}>
+            <ToggleButton value='@Coil'>{translate('coilShort')}</ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('HelmholtzCoils')}>
+            <ToggleButton value='@HelmholtzCoils'>
+              {translate('HelmholtzCoilsShort')}
+            </ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('currentSource')}>
+            <ToggleButton value='@CurrentSource'>
+              {translate('currentSourceShort')}
+            </ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('oscilloscope')}>
+            <ToggleButton value='@Oscilloscope'>
+              {translate('oscilloscopeShort')}
+            </ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('voltmeter')}>
+            <ToggleButton value='@Voltmeter'>
+              {translate('voltmeterShort')}
+            </ToggleButton>
+          </Tooltip>
         </ToggleButtonGroup>
       </Stack>
     </Paper>
