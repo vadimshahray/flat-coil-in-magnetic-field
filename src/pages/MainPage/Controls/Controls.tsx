@@ -10,7 +10,7 @@ export const Controls = () => {
       <div
         style={{
           position: 'absolute',
-          padding: '8px 16px',
+          padding: '4px 8px',
           bottom: 0,
           left: 0,
           right: 0,
@@ -23,9 +23,11 @@ export const Controls = () => {
         >
           <SchemeControls />
 
-          <CameraViewControl />
+          <Stack direction='row' spacing={2}>
+            <CameraViewControl />
 
-          <ChangeSidebarVisibilityButton />
+            <ChangeSidebarVisibilityButton />
+          </Stack>
         </Stack>
       </div>
     </div>
