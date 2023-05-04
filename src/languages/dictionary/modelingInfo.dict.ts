@@ -15,7 +15,7 @@ export const modelingInfoRU = {
 
   WiresResistivityInfoItem: {
     label: 'Удельное сопротивление',
-    value: '{{value}} Ом * м',
+    value: '{{value}} Ом·м',
   },
 
   WiresSectionInfoItem: {
@@ -60,7 +60,7 @@ export const modelingInfoEN = {
 
   WiresResistivityInfoItem: {
     label: 'Resistivity',
-    value: '{{value}} Ohm * m',
+    value: '{{value}} Ohm·m',
   },
 
   WiresSectionInfoItem: {

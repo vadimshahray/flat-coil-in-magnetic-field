@@ -1,7 +1,6 @@
 import React from 'react'
 import { InfoItem } from '@components'
 import { useTranslate } from '@languages'
-import { WIRES_SECTION } from '@constants'
 
 export const WiresSectionInfoItem = () => {
   const translate = useTranslate('WiresSectionInfoItem')
@@ -10,7 +9,7 @@ export const WiresSectionInfoItem = () => {
     <InfoItem
       label={translate('label')}
       value={translate('value', {
-        value: WIRES_SECTION,
+        value: '5 · 10⁻⁶',
       })}
     />
   )
