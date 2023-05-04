@@ -25,23 +25,23 @@ export const Room = () => {
       <RoomBox />
 
       <group>
-        <Plinth scale={[80, 1, 1]} position={[0, 0, -2 * FLOOR_W]} />
+        <Plinth scale={[80, 1, 1]} position={[0, 5, -2 * FLOOR_W + 5]} />
 
         <Plinth
           scale={[80, 1, 1]}
-          position={[0, 0, 2 * FLOOR_W]}
+          position={[0, 5, 2 * FLOOR_W - 5]}
           rotation={[0, Math.PI, 0]}
         />
 
         <Plinth
           scale={[55, 1, 1]}
-          position={[-3 * FLOOR_W, 0, 0]}
+          position={[-3 * FLOOR_W + 5, 5, 0]}
           rotation={[0, Math.PI / 2, 0]}
         />
 
         <Plinth
           scale={[55, 1, 1]}
-          position={[3 * FLOOR_W, 0, 0]}
+          position={[3 * FLOOR_W - 5, 5, 0]}
           rotation={[0, -Math.PI / 2, 0]}
         />
       </group>
@@ -80,7 +80,7 @@ export const Room = () => {
         <RightWindow position={[1.25 * FLOOR_W, 0, 0]} />
       </group>
 
-      <PowerSocket position={[270, 200, -2 * WALL_D + 12]} />
+      <PowerSocket position={[270, 200, -2 * WALL_D + 16]} />
 
       <ComputerDesk
         position={[3 * FLOOR_D - 226, 0, -FLOOR_W - 380]}
@@ -88,7 +88,7 @@ export const Room = () => {
       />
 
       <PowerSocket
-        position={[3 * FLOOR_D - 12, 200, -FLOOR_W]}
+        position={[3 * FLOOR_D - 16, 200, -FLOOR_W]}
         rotation={[0, -Math.PI / 2, 0]}
       />
 
@@ -108,14 +108,14 @@ export const Room = () => {
       />
 
       <PowerSocket
-        position={[2.5 * FLOOR_D, 200, 2 * FLOOR_W - 12]}
+        position={[2.5 * FLOOR_D, 200, 2 * FLOOR_W - 16]}
         rotation={[0, Math.PI, 0]}
       />
 
       <Blackboard position={[0.7 * FLOOR_D, 0, 2 * FLOOR_W - 320]} />
 
       <LightSwitch
-        position={[-FLOOR_D + 200, WALL_H + 100, 2 * FLOOR_W - 20]}
+        position={[-FLOOR_D + 200, WALL_H + 100, 2 * FLOOR_W - 40]}
         rotation={[0, Math.PI, 0]}
       />
     </>
