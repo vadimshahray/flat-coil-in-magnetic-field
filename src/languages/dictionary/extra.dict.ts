@@ -1,6 +1,11 @@
 export const extraRU = {
   SplashScreen: {
-
+    NSTU: 'Новосибирский государственный\nтехнический университет',
+    projectName: 'Название проекта название проекта название',
+    students:
+      'Факультет: ПМИ\nВыполнили: Шахрай Вадим, ПМ-15\n\t\t   Зуев Андрей, ПМ-15\n\t\t   Мироненко Алиса, ПМИ-11',
+    supervisor: 'Руководитель: Баранов А. В.',
+    year: '2023 год',
   },
 
   ColorModeButton: {
@@ -35,6 +40,15 @@ export const extraRU = {
 }
 
 export const extraEN = {
+  SplashScreen: {
+    NSTU: 'Novosibirsk State\nTechnical University',
+    projectName: 'Project name project name name',
+    students:
+      'Faculty: PMI\nPerformed by: Vadim Shakhray, PM-15\n\t\t     Andrey Zuev, PM-15\n\t\t     Alisa Mironenko, PMI-11',
+    supervisor: 'Supervisor: Baranov A.V.',
+    year: '2023 year',
+  },
+
   ColorModeButton: {
     switchToLight: 'Switch to light theme',
     switchToDark: 'Switch to dark theme',

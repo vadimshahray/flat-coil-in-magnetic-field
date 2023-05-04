@@ -24,16 +24,12 @@ export const SplashScreen = () => {
             <Stack direction='row' spacing={1.5} alignItems='center'>
               <img src={NSTULogoPath} width={40} height={40} />
 
-              <Typography variant='h6' fontSize={16}>
-                Новосибирский Государственный
-                <br />
-                Технический Университет
+              <Typography variant='h6' fontSize={16} component='pre'>
+                {translate('NSTU')}
               </Typography>
             </Stack>
 
-            <Typography variant='h3'>
-              Название проекта название проекта название
-            </Typography>
+            <Typography variant='h3'>{translate('projectName')}</Typography>
 
             <Stack
               direction='row'
@@ -42,15 +38,13 @@ export const SplashScreen = () => {
               alignSelf='stretch'
             >
               <Typography variant='body1' component='pre'>
-                {`Факультет: ПМИ\nВыполнили: Шахрай Вадим, ПМ-15\n\t\t   Зуев Андрей, ПМ-15\n\t\t   Мироненко Алиса, ПМИ-11`}
+                {translate('students')}
               </Typography>
 
-              <Typography variant='body1'>
-                Руководитель: Баранов А. В.
-              </Typography>
+              <Typography variant='body1'>{translate('supervisor')}</Typography>
             </Stack>
 
-            <Typography variant='caption'>2023 год</Typography>
+            <Typography variant='caption'> {translate('year')}</Typography>
           </Stack>
         </Paper>
       </Backdrop>
