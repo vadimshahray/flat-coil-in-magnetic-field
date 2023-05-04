@@ -3,8 +3,8 @@ import { useDispatch } from '@hooks'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { setIsSidebarVisible } from '@slices'
-import { IconButton, Paper, Tooltip } from '@mui/material'
 import { selectIsSidebarVisible } from '@selectors'
+import { IconButton, Paper, Tooltip } from '@mui/material'
 import { KeyboardArrowRightOutlined, MenuOutlined } from '@mui/icons-material'
 
 export const ChangeSidebarVisibilityButton = () => {
