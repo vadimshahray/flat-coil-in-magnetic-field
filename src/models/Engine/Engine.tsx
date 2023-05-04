@@ -122,10 +122,9 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
                 geometry={nodes.Cylinder_2.geometry}
                 material={materials.black}
               />
-              <mesh
-                geometry={nodes.Cylinder_3.geometry}
-                material={materials.grey_tabl}
-              />
+              <mesh geometry={nodes.Cylinder_3.geometry}>
+                <meshStandardMaterial color='black' />
+              </mesh>
             </group>
             <mesh
               geometry={nodes.green_button_1.geometry}
@@ -172,9 +171,9 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
 
             <Text
               ref={textSIRef}
-              fontSize={20}
+              fontSize={33}
               color='red'
-              position={[44, -8, 0]}
+              position={[46, -4, 0]}
               font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
             >
               Hz

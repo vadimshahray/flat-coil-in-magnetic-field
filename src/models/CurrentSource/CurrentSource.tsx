@@ -181,9 +181,9 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
 
         <Text
           ref={textSIRef}
-          fontSize={14}
+          fontSize={24}
           color='red'
-          position={[45, -6, 0]}
+          position={[45, -3, 0]}
           font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
         >
           A

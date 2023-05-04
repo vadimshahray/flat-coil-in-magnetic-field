@@ -64,7 +64,7 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
         <mesh geometry={nodes.Cube_3.geometry} material={materials.blue} />
       </group>
 
-      <group scale={[0.7, 1, 1]} position={[0, 24, 18]}>
+      <group scale={[0.7, 1, 1]} position={[-7, 24, 18]}>
         <Text
           ref={textRef}
           fontSize={34}
@@ -76,9 +76,9 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
 
         <Text
           ref={textSIRef}
-          fontSize={14}
+          fontSize={24}
           color='red'
-          position={[50, -6, 0]}
+          position={[50, -3, 0]}
           font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
         >
           V
