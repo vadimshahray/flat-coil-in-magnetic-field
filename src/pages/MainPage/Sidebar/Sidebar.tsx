@@ -1,9 +1,9 @@
 import React from 'react'
-import { Stack } from '@mui/material'
 import { useSelector } from 'react-redux'
 import { useTranslate } from '@languages'
 import { CoilSection } from './CoilSection'
 import { useDeviceTypeValue } from '@hooks'
+import { Divider, Stack } from '@mui/material'
 import { EngineSection } from './EngineSection'
 import { selectIsSidebarVisible } from '@selectors'
 import { WiresInfoSection } from './WiresInfoSection'
@@ -39,6 +39,10 @@ export const Sidebar = () => {
       />
 
       <div style={{ overflowY: 'auto' }}>
+        <ResultsInfoSection />
+
+        <Divider />
+
         <EngineSection />
 
         <CurrentSourceSection />
@@ -50,8 +54,6 @@ export const Sidebar = () => {
         <OscilloscopeSection />
 
         <WiresInfoSection />
-
-        <ResultsInfoSection />
       </div>
     </Stack>
   )
