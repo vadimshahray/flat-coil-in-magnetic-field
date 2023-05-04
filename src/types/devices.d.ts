@@ -1,1 +1,7 @@
-type Device = '@Engine' | '@Voltmeter' | '@Coil' | '@HelmholtzCoils'
+type Device =
+  | '@Coil'
+  | '@Engine'
+  | '@Voltmeter'
+  | '@Oscilloscope'
+  | '@CurrentSource'
+  | '@HelmholtzCoils'

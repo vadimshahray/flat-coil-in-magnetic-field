@@ -73,6 +73,9 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
   }
 
   const handleFrequencyUpClick = () => {
+    const isPowerSupplied = selectEngineIsPowerSupplied(store.getState())
+    if (!isPowerSupplied) return
+
     const frequency = selectEngineRotationFrequency(store.getState())
 
     store.dispatch(
@@ -86,6 +89,9 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
   }
 
   const handleFrequencyDownClick = () => {
+    const isPowerSupplied = selectEngineIsPowerSupplied(store.getState())
+    if (!isPowerSupplied) return
+
     const frequency = selectEngineRotationFrequency(store.getState())
 
     store.dispatch(
@@ -100,84 +106,84 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group position={[-10, 107, 3]}>
-        <group scale={0.4} position={[0, 4, 0]}>
-          <group
-            position={[49.94, 220.64, -22.82]}
-            rotation={[-Math.PI, 0, -Math.PI / 2]}
-            scale={[191.14, 328.3, 191.14]}
-          >
+      <group position={[0, -210, 0]}>
+        <group position={[-10, 107, 3]}>
+          <group scale={0.4} position={[0, 4, 0]}>
+            <group
+              position={[49.94, 220.64, -22.82]}
+              rotation={[-Math.PI, 0, -Math.PI / 2]}
+              scale={[191.14, 328.3, 191.14]}
+            >
+              <mesh
+                geometry={nodes.Cylinder_1.geometry}
+                material={materials.metallic}
+              />
+              <mesh
+                geometry={nodes.Cylinder_2.geometry}
+                material={materials.black}
+              />
+              <mesh
+                geometry={nodes.Cylinder_3.geometry}
+                material={materials.grey_tabl}
+              />
+            </group>
             <mesh
-              geometry={nodes.Cylinder_1.geometry}
-              material={materials.metallic}
+              geometry={nodes.green_button_1.geometry}
+              material={materials.grey_button}
+              position={[215.46, 274.68, 295.22]}
+              rotation={[0, -Math.PI / 2, 0]}
+              scale={[3.61, 19.76, 19.78]}
+              onClick={handleFrequencyUpClick}
+              onPointerEnter={setPointerCursor}
+              onPointerLeave={setDefaultCursor}
             />
             <mesh
-              geometry={nodes.Cylinder_2.geometry}
-              material={materials.black}
+              geometry={nodes.green_button_2.geometry}
+              material={materials.grey_button}
+              position={[215.46, 205.34, 295.22]}
+              rotation={[-Math.PI, -Math.PI / 2, 0]}
+              scale={[3.61, 19.76, 19.78]}
+              onClick={handleFrequencyDownClick}
+              onPointerEnter={setPointerCursor}
+              onPointerLeave={setDefaultCursor}
             />
             <mesh
-              geometry={nodes.Cylinder_3.geometry}
-              material={materials.grey_tabl}
+              ref={powerBtnRef}
+              geometry={nodes.button_on.geometry}
+              material={materials.red}
+              position={[266.74, 298.21, 250.74]}
+              rotation={[Math.PI / 2, 0, Math.PI / 2]}
+              scale={[22.49, 10.95, 15.01]}
+              onClick={handlePowerClick}
+              onPointerEnter={setPointerCursor}
+              onPointerLeave={setDefaultCursor}
             />
           </group>
-          <mesh
-            geometry={nodes.green_button_1.geometry}
-            material={materials.grey_button}
-            position={[215.46, 274.68, 295.22]}
-            rotation={[0, -Math.PI / 2, 0]}
-            scale={[3.61, 19.76, 19.78]}
-            onClick={handleFrequencyUpClick}
-            onPointerEnter={setPointerCursor}
-            onPointerLeave={setDefaultCursor}
-          />
-          <mesh
-            geometry={nodes.green_button_2.geometry}
-            material={materials.grey_button}
-            position={[215.46, 205.34, 295.22]}
-            rotation={[-Math.PI, -Math.PI / 2, 0]}
-            scale={[3.61, 19.76, 19.78]}
-            onClick={handleFrequencyDownClick}
-            onPointerEnter={setPointerCursor}
-            onPointerLeave={setDefaultCursor}
-          />
-          <mesh
-            ref={powerBtnRef}
-            geometry={nodes.button_on.geometry}
-            material={materials.red}
-            position={[266.74, 298.21, 250.74]}
-            rotation={[Math.PI / 2, 0, Math.PI / 2]}
-            scale={[22.49, 10.95, 15.01]}
-            onClick={handlePowerClick}
-            onPointerEnter={setPointerCursor}
-            onPointerLeave={setDefaultCursor}
-          />
+
+          <group scale={[0.7, 1, 1]} position={[24, 98, 118]}>
+            <Text
+              ref={textRef}
+              fontSize={47}
+              color='red'
+              font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+            >
+              {' '}
+            </Text>
+
+            <Text
+              ref={textSIRef}
+              fontSize={20}
+              color='red'
+              position={[44, -8, 0]}
+              font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+            >
+              Hz
+            </Text>
+          </group>
         </group>
 
-        <group
-          scale={[0.7, 1, 1]}
-          position={[24, 98, 118]}>
-        <Text
-          ref={textRef}
-          fontSize={47}
-          color='red'
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
-        >
-          {' '}
-        </Text>
-
-        <Text
-          ref={textSIRef}
-          fontSize={20}
-          color='red'
-          position={[44, -8, 0]}
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
-        >
-          Hz
-          </Text>
-        </group>
+        <WoodBlock args={[280, 107, 220]} position={[8, 52, 0]} />
       </group>
-
-      <WoodBlock args={[280, 107, 220]} position={[8, 52, 0]} />
     </group>
   )
 }

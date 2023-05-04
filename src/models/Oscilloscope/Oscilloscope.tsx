@@ -61,84 +61,89 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null}>
-      <group
-        position={[87.01, 34.15, 81.41]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={[-12.81, -6.02, -12.81]}
-      >
+      <group position={[0, -110, 0]}>
+        <group
+          position={[87.01, 34.15, 81.41]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[-12.81, -6.02, -12.81]}
+        >
+          <mesh
+            geometry={nodes.Cylinder.geometry}
+            material={materials.tabl_background}
+          />
+          <mesh
+            geometry={nodes.Cylinder_1.geometry}
+            material={materials.Black_line}
+          />
+        </group>
+
         <mesh
-          geometry={nodes.Cylinder.geometry}
-          material={materials.tabl_background}
+          ref={powerBtnRef}
+          geometry={nodes.power.geometry}
+          material={materials.power}
+          position={[-92.84, 32, 77.13]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[3.92, 5.58, 5.58]}
+          onClick={handlePowerClick}
+          onPointerOver={setPointerCursor}
+          onPointerLeave={setDefaultCursor}
         />
+
+        <group
+          position={[87.01, 13.75, 74.96]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[6.64, 144.05, 6.64]}
+        >
+          <mesh
+            geometry={nodes.Text001.geometry}
+            material={materials.Black_line}
+          />
+          <mesh geometry={nodes.Text001_1.geometry} material={materials.Corp} />
+          <mesh geometry={nodes.Text001_2.geometry} material={materials.blue} />
+          <mesh
+            geometry={nodes.Text001_3.geometry}
+            material={materials.metall}
+          />
+        </group>
+
         <mesh
-          geometry={nodes.Cylinder_1.geometry}
-          material={materials.Black_line}
+          geometry={nodes['-'].geometry}
+          material={materials.very_blue}
+          position={[12.23, 32, 77.13]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[3.92, 5.58, 5.58]}
         />
+
+        <mesh
+          geometry={nodes['+'].geometry}
+          material={materials.very_blue}
+          position={[45.04, 32, 77.13]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={[3.92, 5.58, 5.58]}
+        />
+
+        <TerminalConnectingZone
+          terminal='Oscilloscope+'
+          color='black'
+          size={16}
+          position={[-28, 32, 83.5]}
+        />
+
+        <TerminalConnectingZone
+          terminal='Oscilloscope-'
+          color='black'
+          size={16}
+          position={[-56, 32, 83.5]}
+        />
+
+        {isPowerSupplied && (
+          <OscilloscopeDisplay
+            width={200}
+            height={120}
+            position={[0, 124 / 2 + 54, 74]}
+          />
+        )}
       </group>
-
-      <mesh
-        ref={powerBtnRef}
-        geometry={nodes.power.geometry}
-        material={materials.power}
-        position={[-92.84, 32, 77.13]}
-        rotation={[0, -Math.PI / 2, 0]}
-        scale={[3.92, 5.58, 5.58]}
-        onClick={handlePowerClick}
-        onPointerOver={setPointerCursor}
-        onPointerLeave={setDefaultCursor}
-      />
-
-      <group
-        position={[87.01, 13.75, 74.96]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={[6.64, 144.05, 6.64]}
-      >
-        <mesh
-          geometry={nodes.Text001.geometry}
-          material={materials.Black_line}
-        />
-        <mesh geometry={nodes.Text001_1.geometry} material={materials.Corp} />
-        <mesh geometry={nodes.Text001_2.geometry} material={materials.blue} />
-        <mesh geometry={nodes.Text001_3.geometry} material={materials.metall} />
-      </group>
-
-      <mesh
-        geometry={nodes['-'].geometry}
-        material={materials.very_blue}
-        position={[12.23, 32, 77.13]}
-        rotation={[0, -Math.PI / 2, 0]}
-        scale={[3.92, 5.58, 5.58]}
-      />
-
-      <mesh
-        geometry={nodes['+'].geometry}
-        material={materials.very_blue}
-        position={[45.04, 32, 77.13]}
-        rotation={[0, -Math.PI / 2, 0]}
-        scale={[3.92, 5.58, 5.58]}
-      />
-
-      <TerminalConnectingZone
-        terminal='Oscilloscope+'
-        color='black'
-        size={16}
-        position={[-28, 32, 83.5]}
-      />
-
-      <TerminalConnectingZone
-        terminal='Oscilloscope-'
-        color='black'
-        size={16}
-        position={[-56, 32, 83.5]}
-      />
-
-      {isPowerSupplied && (
-        <OscilloscopeDisplay
-          width={200}
-          height={120}
-          position={[0, 124 / 2 + 54, 74]}
-        />
-      )}
     </group>
   )
 }

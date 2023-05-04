@@ -1,6 +1,7 @@
 import React from 'react'
 import { Stack } from '@mui/material'
 import { SchemeControls } from './SchemeControls'
+import { CameraViewControl } from './CameraViewControl'
 import { ChangeSidebarVisibilityButton } from './ChangeSidebarVisibilityButton'
 
 export const Controls = () => {
@@ -21,6 +22,8 @@ export const Controls = () => {
           justifyContent='space-between'
         >
           <SchemeControls />
+
+          <CameraViewControl />
 
           <ChangeSidebarVisibilityButton />
         </Stack>
