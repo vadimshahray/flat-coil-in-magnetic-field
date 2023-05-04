@@ -1,4 +1,5 @@
 import storage from 'redux-persist/lib/storage'
+import { getPersistConfig } from 'redux-deep-persist'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   FLUSH,
@@ -24,12 +25,6 @@ import {
   HelmholtzCoilsSlice,
 } from '@slices'
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist: ['user'],
-}
-
 const rootReducer = combineReducers({
   user: userSlice.reducer,
   engine: engineSlice.reducer,
@@ -42,6 +37,23 @@ const rootReducer = combineReducers({
   sidebar: sidebarSlice.reducer,
   scene: sceneSlice.reducer,
   modeling: modelingSlice.reducer,
+})
+
+const persistConfig = getPersistConfig({
+  key: 'root',
+  storage,
+  whitelist: [
+    'user',
+    'sidebar',
+    'engine.rotationFrequency',
+    'coil',
+    'HelmholtzCoils',
+    'oscilloscope.contrast',
+    'oscilloscope.scaleX',
+    'oscilloscope.scaleY',
+    'currentSource.amperage',
+  ],
+  rootReducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
