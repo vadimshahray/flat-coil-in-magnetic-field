@@ -23,7 +23,7 @@ export const Controls = () => {
         >
           <SchemeControls />
 
-          <Stack direction='row' spacing={2}>
+          <Stack direction='row' spacing={2} alignItems='center'>
             <CameraViewControl />
 
             <ChangeSidebarVisibilityButton />
