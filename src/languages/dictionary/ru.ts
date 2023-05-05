@@ -1,4 +1,5 @@
 import { extraRU } from './extra.dict'
+import { devicesRU } from './devices.dict'
 import { controlsRU } from './controls.dict'
 import { modelingInfoRU } from './modelingInfo.dict'
 import { configurationRU } from './configuration.dict'
@@ -7,11 +8,12 @@ import { modelingSceneRU } from './modelingScene.dict'
 
 const ru = {
   ...extraRU,
+  ...devicesRU,
+  ...controlsRU,
   ...modelingInfoRU,
   ...errorBoundaryRU,
   ...configurationRU,
   ...modelingSceneRU,
-  ...controlsRU,
 }
 
 export default ru
