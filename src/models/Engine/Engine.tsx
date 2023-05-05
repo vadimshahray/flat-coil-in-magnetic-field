@@ -5,6 +5,7 @@ import React, { useRef } from 'react'
 import EngineModelPath from './engine.glb'
 import { useFrame } from '@react-three/fiber'
 import { Text, useGLTF } from '@react-three/drei'
+import FiraCode from 'src/assets/fonts/firacode_light.woff'
 import { setDefaultCursor, setPointerCursor } from '@utils'
 import { setEngineIsPowerSupplied, setEngineRotationFrequency } from '@slices'
 import {
@@ -160,12 +161,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
           </group>
 
           <group scale={[0.7, 1, 1]} position={[24, 98, 118]}>
-            <Text
-              ref={textRef}
-              fontSize={47}
-              color='red'
-              font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
-            >
+            <Text ref={textRef} fontSize={47} color='red' font={FiraCode}>
               {' '}
             </Text>
 
@@ -174,7 +170,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
               fontSize={33}
               color='red'
               position={[46, -4, 0]}
-              font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+              font={FiraCode}
             >
               Hz
             </Text>

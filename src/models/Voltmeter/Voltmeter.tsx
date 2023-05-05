@@ -7,6 +7,7 @@ import { addInsignificantZeros } from '@utils'
 import VoltmeterModelPath from './voltmeter.glb'
 import { Text, useGLTF } from '@react-three/drei'
 import { TerminalConnectingZone } from '@components'
+import FiraCode from 'src/assets/fonts/firacode_light.woff'
 import {
   selectIsVoltmeterConnected,
   selectModelingOperatingVoltage,
@@ -65,12 +66,7 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
       </group>
 
       <group scale={[0.7, 1, 1]} position={[-7, 24, 18]}>
-        <Text
-          ref={textRef}
-          fontSize={34}
-          color='red'
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
-        >
+        <Text ref={textRef} fontSize={34} color='red' font={FiraCode}>
           {' '}
         </Text>
 
@@ -79,7 +75,7 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           fontSize={24}
           color='red'
           position={[50, -3, 0]}
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+          font={FiraCode}
         >
           V
         </Text>

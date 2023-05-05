@@ -6,6 +6,7 @@ import { Text, useGLTF } from '@react-three/drei'
 import { TerminalConnectingZone } from '@components'
 import CurrentSourceModelPath from './currentSource.glb'
 import { useFrame, ThreeEvent } from '@react-three/fiber'
+import FiraCode from 'src/assets/fonts/firacode_light.woff'
 import {
   setCurrentSourceAmperage,
   setCurrentSourceIsPowerSupplied,
@@ -174,7 +175,7 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
           fontSize={34}
           color='red'
           position={[-3, 0, 0]}
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+          font={FiraCode}
         >
           {' '}
         </Text>
@@ -184,7 +185,7 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
           fontSize={24}
           color='red'
           position={[45, -3, 0]}
-          font='https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Light.woff'
+          font={FiraCode}
         >
           A
         </Text>

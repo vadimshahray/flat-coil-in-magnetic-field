@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslate } from '@languages'
 import { Line, Text } from '@react-three/drei'
 import { GRID_CELLS_COUNT_IN_QUARTER } from '@constants'
+import Roboto from 'src/assets/fonts/roboto_regular.woff'
 
 type Props = {
   size: number
@@ -49,9 +50,7 @@ export const OscilloscopeWaveformGrid = ({ size }: Props) => {
 
       <Text
         fontSize={2.5}
-        font={
-          'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-regular-webfont.woff'
-        }
+        font={Roboto}
         color='red'
         position={[4, size / 2 - 3, 1]}
       >
@@ -60,9 +59,7 @@ export const OscilloscopeWaveformGrid = ({ size }: Props) => {
 
       <Text
         fontSize={2.5}
-        font={
-          'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-regular-webfont.woff'
-        }
+        font={Roboto}
         color='red'
         position={[size / 2 - 3, -2, 1]}
       >
