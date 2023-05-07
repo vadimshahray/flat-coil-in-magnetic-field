@@ -26,7 +26,7 @@ export const Camera = () => {
       wheel: CameraControls.ACTION.NONE,
     }
 
-    controls.minDistance = 260
+    controls.minDistance = 130
     controls.maxDistance = 900
 
     controls.maxPolarAngle = Math.PI / 2
