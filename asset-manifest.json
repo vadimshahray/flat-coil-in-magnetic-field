@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/alternator/static/js/main.010dd9e6.js",
+    "main.js": "/alternator/static/js/main.d35d43de.js",
     "static/js/109.c9a8825b.chunk.js": "/alternator/static/js/109.c9a8825b.chunk.js",
     "static/js/523.d1aaf176.chunk.js": "/alternator/static/js/523.d1aaf176.chunk.js",
     "static/js/803.bf9f7159.chunk.js": "/alternator/static/js/803.bf9f7159.chunk.js",
@@ -84,7 +84,7 @@
     "static/media/wire.svg": "/alternator/static/media/wire.b7364428159227a7b46748c714e8edbd.svg",
     "index.html": "/alternator/index.html",
     "static/media/rotation.svg": "/alternator/static/media/rotation.e6438c5c3458895a2b0afdb454538859.svg",
-    "main.010dd9e6.js.map": "/alternator/static/js/main.010dd9e6.js.map",
+    "main.d35d43de.js.map": "/alternator/static/js/main.d35d43de.js.map",
     "109.c9a8825b.chunk.js.map": "/alternator/static/js/109.c9a8825b.chunk.js.map",
     "523.d1aaf176.chunk.js.map": "/alternator/static/js/523.d1aaf176.chunk.js.map",
     "803.bf9f7159.chunk.js.map": "/alternator/static/js/803.bf9f7159.chunk.js.map",
@@ -116,6 +116,6 @@
     "334.0c11d12e.chunk.js.map": "/alternator/static/js/334.0c11d12e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.010dd9e6.js"
+    "static/js/main.d35d43de.js"
   ]
 }
