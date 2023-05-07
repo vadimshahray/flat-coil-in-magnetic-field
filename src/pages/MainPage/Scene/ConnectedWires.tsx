@@ -18,13 +18,7 @@ const renderConnectedWire = (wire: Wire) => {
     areConnectionsEqual(wire, c),
   )?.points
 
-  if (!wirePoints) {
-    alert(
-      `Не добавлены пути для подключения ${wire.terminal1} -> ${wire.terminal2}`,
-    )
-
-    return null
-  }
+  if (!wirePoints) return null
 
   return (
     <Wire key={wire.id} id={wire.id} color={wire.color} points={wirePoints} />
