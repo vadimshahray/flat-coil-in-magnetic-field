@@ -57,12 +57,12 @@ export const calculateData = createAsyncThunk<
   const Em = (result.voltageMax = 2 * Math.PI * Nu * n * B * S)
   result.operatingVoltage = Em / Math.sqrt(2)
 
-  const E = Em * sin(2 * Math.PI * Nu * t)
+  // const E = Em * sin(2 * Math.PI * Nu * t)
 
   const Rob =
     (Pm * (2 * n * (a + b))) / (4.7 * 10 ** -8) + (2 * Pm * lp) / WIRES_SECTION
 
-  result.amperage = E / Rob
+  result.amperage = Em / Rob
 
   return result
 })
