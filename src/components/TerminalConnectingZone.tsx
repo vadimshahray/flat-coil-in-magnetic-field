@@ -2,6 +2,7 @@ import { useDispatch } from '@hooks'
 import { Box } from '@react-three/drei'
 import { useSelector } from 'react-redux'
 import { setDefaultCursor } from '@utils'
+import { ThreeEvent } from '@react-three/fiber'
 import { connectWire, disconnectWire } from '@slices'
 import React, { useCallback, useEffect } from 'react'
 import ConnectWireIcon from 'src/assets/connect_wire.svg'
@@ -30,16 +31,25 @@ export const TerminalConnectingZone = ({
   const isSchemeConnecting = useSelector(selectIsSchemeConnecting)
   const haveConnection = useSelector(selectHaveTerminalConnection(terminal))
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback(
+    (e: ThreeEvent<MouseEvent>) => {
+      if (!isSchemeConnecting) return
+
+      e.stopPropagation()
+
+      dispatch(
+        !haveConnection ? connectWire(terminal) : disconnectWire(terminal),
+      )
+
+      changeTerminalCursor(!haveConnection)
+    },
+    [isSchemeConnecting, haveConnection, terminal, dispatch],
+  )
+
+  const handlePointerEnter = (e: ThreeEvent<PointerEvent>) => {
     if (!isSchemeConnecting) return
 
-    dispatch(!haveConnection ? connectWire(terminal) : disconnectWire(terminal))
-
-    changeTerminalCursor(!haveConnection)
-  }, [isSchemeConnecting, haveConnection, terminal, dispatch])
-
-  const handlePointerEnter = () => {
-    if (!isSchemeConnecting) return
+    e.stopPropagation()
 
     changeTerminalCursor(haveConnection)
   }
