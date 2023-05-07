@@ -29,24 +29,12 @@ export const CameraViewControl = () => {
         <VideocamOutlined />
 
         <ToggleButtonGroup value={view} onChange={handleChange} exclusive>
-          <Tooltip title={translate('engine')}>
-            <ToggleButton value='@Engine' selected={view === '@Engine'}>
-              {translate('engineShort')}
-            </ToggleButton>
-          </Tooltip>
-
-          <Tooltip title={translate('coil')}>
-            <ToggleButton value='@Coil' selected={view === '@Coil'}>
-              {translate('coilShort')}
-            </ToggleButton>
-          </Tooltip>
-
-          <Tooltip title={translate('HelmholtzCoils')}>
+          <Tooltip title={translate('oscilloscope')}>
             <ToggleButton
-              value='@HelmholtzCoils'
-              selected={view === '@HelmholtzCoils'}
+              value='@Oscilloscope'
+              selected={view === '@Oscilloscope'}
             >
-              {translate('HelmholtzCoilsShort')}
+              {translate('oscilloscopeShort')}
             </ToggleButton>
           </Tooltip>
 
@@ -59,18 +47,30 @@ export const CameraViewControl = () => {
             </ToggleButton>
           </Tooltip>
 
-          <Tooltip title={translate('oscilloscope')}>
+          <Tooltip title={translate('HelmholtzCoils')}>
             <ToggleButton
-              value='@Oscilloscope'
-              selected={view === '@Oscilloscope'}
+              value='@HelmholtzCoils'
+              selected={view === '@HelmholtzCoils'}
             >
-              {translate('oscilloscopeShort')}
+              {translate('HelmholtzCoilsShort')}
+            </ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('coil')}>
+            <ToggleButton value='@Coil' selected={view === '@Coil'}>
+              {translate('coilShort')}
             </ToggleButton>
           </Tooltip>
 
           <Tooltip title={translate('voltmeter')}>
             <ToggleButton value='@Voltmeter' selected={view === '@Voltmeter'}>
               {translate('voltmeterShort')}
+            </ToggleButton>
+          </Tooltip>
+
+          <Tooltip title={translate('engine')}>
+            <ToggleButton value='@Engine' selected={view === '@Engine'}>
+              {translate('engineShort')}
             </ToggleButton>
           </Tooltip>
         </ToggleButtonGroup>
