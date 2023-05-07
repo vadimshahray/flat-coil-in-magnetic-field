@@ -1,6 +1,6 @@
 export const configurationRU = {
   Sidebar: {
-    title: 'Моделирование',
+    title: 'Настройки',
   },
 
   EngineSection: {
@@ -71,7 +71,7 @@ export const configurationRU = {
 
 export const configurationEN = {
   Sidebar: {
-    title: 'Modeling',
+    title: 'Settings',
   },
 
   EngineSection: {
