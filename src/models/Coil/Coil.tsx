@@ -119,7 +119,7 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
             terminal='Coil+'
             color='#832D2E'
             rotation={[0, Math.PI / 2, 0]}
-            position={[137, 96, 0]}
+            position={[135, 96, 0]}
           />
 
           <TerminalConnectingZone
