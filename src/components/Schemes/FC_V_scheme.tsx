@@ -12,7 +12,7 @@ export const FC_V_scheme = () => {
       <g>
         <path
           d='M 0.5 25 L 200.5 25 L 200.5 125 L 0.5 125 L 0.5 25 Z'
-          fill='none'
+          fill={background}
           stroke='none'
         />
         <path
@@ -40,16 +40,16 @@ export const FC_V_scheme = () => {
         </g>
         <ellipse
           cx='100.5'
-          cy='125.5'
-          rx='14.5'
-          ry='14.5'
+          cy='122.5'
+          rx='17.5'
+          ry='17.5'
           fill={background}
           stroke={color}
         />
         <g transform='translate(-0.5 -0.5)'>
           <text
             x='101'
-            y='129'
+            y='126'
             fill={color}
             fontSize='12px'
             textAnchor='middle'

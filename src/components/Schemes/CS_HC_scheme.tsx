@@ -5,7 +5,7 @@ export const CS_HC_scheme = () => {
   const color = useTheme().palette.text.primary
 
   return (
-    <svg width='192' height='167' viewBox='-0.5 -0.5 192 167'>
+    <svg width='202px' height='167px' viewBox='-0.5 -0.5 202 167'>
       <g>
         <rect x='40' y='0' width='40' height='30' fill='none' stroke='none' />
         <g transform='translate(-0.5 -0.5)'>
@@ -26,18 +26,16 @@ export const CS_HC_scheme = () => {
             L2
           </text>
         </g>
-        <path d='M 90 165 L 90 125' fill='none' stroke={color} />
-        <path d='M 100.1 155 L 100.1 135' fill='none' stroke={color} />
-        <rect x='65' y='105' width='30' height='30' fill='none' stroke='none' />
+        <path d='M 94.74 165 L 94.74 125' fill='none' stroke={color} />
+        <path d='M 105.37 155 L 105.37 135' fill='none' stroke={color} />
         <g transform='translate(-0.5 -0.5)'>
-          <text x='80' y='124' fill={color} fontSize='12px' textAnchor='middle'>
+          <text x='83' y='124' fill={color} fontSize='12px' textAnchor='middle'>
             +
           </text>
         </g>
-        <rect x='90' y='105' width='30' height='30' fill='none' stroke='none' />
         <g transform='translate(-0.5 -0.5)'>
           <text
-            x='105'
+            x='110'
             y='124'
             fill={color}
             fontSize='12px'
@@ -47,47 +45,51 @@ export const CS_HC_scheme = () => {
           </text>
         </g>
         <path
-          d='M 110.86 54.33 C 105.34 54.48 100.15 52.59 97.35 49.43 C 94.54 46.26 94.57 42.32 97.42 39.17 C 100.28 36.02 105.5 34.17 111.01 34.35'
+          d='M 116.69 54.34 C 110.89 54.48 105.42 52.6 102.47 49.43 C 99.51 46.26 99.54 42.32 102.55 39.17 C 105.55 36.02 111.05 34.17 116.85 34.36'
           fill='none'
           stroke={color}
-          transform='rotate(89,110.26,44.34)'
+          transform='rotate(89,116.06,44.34)'
         />
         <path
-          d='M 130.95 54.33 C 125.43 54.48 120.24 52.59 117.44 49.43 C 114.63 46.26 114.66 42.32 117.51 39.17 C 120.37 36.02 125.59 34.17 131.1 34.35'
+          d='M 137.84 54.34 C 132.04 54.48 126.57 52.6 123.62 49.43 C 120.66 46.26 120.69 42.32 123.7 39.17 C 126.7 36.02 132.2 34.17 138 34.36'
           fill='none'
           stroke={color}
-          transform='rotate(89,130.35,44.34)'
+          transform='rotate(89,137.21,44.34)'
         />
         <path
-          d='M 150.95 54.33 C 145.43 54.48 140.24 52.59 137.44 49.43 C 134.63 46.26 134.66 42.32 137.51 39.17 C 140.37 36.02 145.59 34.17 151.1 34.35'
+          d='M 158.89 54.34 C 153.09 54.48 147.62 52.6 144.67 49.43 C 141.71 46.26 141.74 42.32 144.75 39.17 C 147.75 36.02 153.25 34.17 159.05 34.36'
           fill='none'
           stroke={color}
-          transform='rotate(89,150.35,44.34)'
+          transform='rotate(89,158.26,44.34)'
         />
-        <path d='M 89.76 44.43 L 100.74 44.66' fill='none' stroke={color} />
-        <path d='M 30 45 L 0 45 L 0 145 L 90 145' fill='none' stroke={color} />
+        <path d='M 93.98 44.45 L 106.55 44.67' fill='none' stroke={color} />
         <path
-          d='M 159.99 44.32 L 190 44.29 L 190 145 L 100 145'
+          d='M 31.58 45 L 0 45 L 0 145 L 94.74 145'
           fill='none'
           stroke={color}
-        />
-        <path
-          d='M 40.45 54.58 C 34.93 54.73 29.74 52.77 26.94 49.47 C 24.13 46.17 24.16 42.07 27.01 38.79 C 29.87 35.51 35.09 33.58 40.6 33.77'
-          fill='none'
-          stroke={color}
-          transform='rotate(89,39.85,44.18)'
         />
         <path
-          d='M 60.95 54.16 C 55.43 54.31 50.24 52.42 47.44 49.26 C 44.63 46.09 44.66 42.15 47.51 39 C 50.37 35.85 55.59 34 61.1 34.18'
+          d='M 167.9 44.33 L 200 44.3 L 200 145 L 105.26 145'
           fill='none'
           stroke={color}
-          transform='rotate(89,60.35,44.17)'
         />
         <path
-          d='M 80.95 54.16 C 75.43 54.31 70.24 52.42 67.44 49.26 C 64.63 46.09 64.66 42.15 67.51 39 C 70.37 35.85 75.59 34 81.1 34.18'
+          d='M 42.58 54.59 C 36.77 54.74 31.31 52.78 28.35 49.48 C 25.4 46.18 25.43 42.07 28.43 38.79 C 31.44 35.51 36.93 33.59 42.74 33.78'
           fill='none'
           stroke={color}
-          transform='rotate(89,80.35,44.17)'
+          transform='rotate(89,41.95,44.18)'
+        />
+        <path
+          d='M 64.16 54.17 C 58.35 54.31 52.89 52.43 49.93 49.26 C 46.98 46.09 47.01 42.15 50.01 39 C 53.02 35.85 58.51 34 64.31 34.19'
+          fill='none'
+          stroke={color}
+          transform='rotate(89,63.53,44.17)'
+        />
+        <path
+          d='M 85.21 54.17 C 79.4 54.31 73.94 52.43 70.98 49.26 C 68.03 46.09 68.06 42.15 71.07 39 C 74.07 35.85 79.56 34 85.37 34.19'
+          fill='none'
+          stroke={color}
+          transform='rotate(89,84.58,44.17)'
         />
       </g>
     </svg>

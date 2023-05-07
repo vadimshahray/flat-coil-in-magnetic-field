@@ -11,6 +11,13 @@ export const controlsRU = {
 
   SchemeDialog: {
     title: 'Схемы подключения',
+    CS_HC_schemeTitle: 'Схема "Катушки Гельмгольца - Источник тока"',
+    CS_HC_schemeDescription:
+      'L1 и L2 - катушки Гельмгольца, +|- - источник тока',
+    FC_V_schemeTitle: 'Схема "Плоская катушка - Вольтметр"',
+    FC_V_schemeDescription: 'FC - плоская катушка, V - вольтметр',
+    FC_OSC_schemeTitle: 'Схема "Плоская катушка - Осциллограф"',
+    FC_OSC_schemeDescription: 'FC - плоская катушка, OSC - осциллограф',
     okButton: 'Понятно',
   },
 
@@ -56,6 +63,13 @@ export const controlsEN = {
 
   SchemeDialog: {
     title: 'Wiring schemes',
+    CS_HC_schemeTitle: 'Scheme "Helmholtz coils - Current source"',
+    CS_HC_schemeDescription:
+      'L1 and L2 - Helmholtz coils, +|- - current source',
+    FC_V_schemeTitle: 'Scheme "Flat coil - Voltmeter"',
+    FC_V_schemeDescription: 'FC - flat coil, V - voltmeter',
+    FC_OSC_schemeTitle: 'Scheme "Flat coil - Oscilloscope"',
+    FC_OSC_schemeDescription: 'FC - flat coil, OSC - oscilloscope',
     okButton: 'Ok',
   },
 

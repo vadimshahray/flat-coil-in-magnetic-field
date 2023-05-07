@@ -1,15 +1,14 @@
 import React from 'react'
 import { useTranslate } from '@languages'
-import C_V_scheme from 'src/assets/C_V_scheme.svg'
-import AG_HC_scheme from 'src/assets/AG_HC_scheme.svg'
+import { CS_HC_scheme, FS_OSC_scheme, FC_V_scheme } from '@components'
 import {
   Stack,
   Button,
   Dialog,
-  Typography,
   DialogTitle,
   DialogContent,
   DialogActions,
+  Typography,
 } from '@mui/material'
 
 type Props = {
@@ -21,21 +20,48 @@ export const SchemeDialog = ({ isOpen, onClose }: Props) => {
   const translate = useTranslate('SchemeDialog')
 
   return (
-    <Dialog open={isOpen} onClose={onClose}>
+    <Dialog open={isOpen} onClose={onClose} maxWidth='lg'>
       <DialogTitle>{translate('title')}</DialogTitle>
 
       <DialogContent>
-        <Stack direction='row' spacing={2}>
-          <Stack alignItems='center'>
-            <img width={300} height={300} src={AG_HC_scheme} />
+        <Stack spacing={2}>
+          <Stack direction='row' spacing={3}>
+            <CS_HC_scheme />
 
-            <Typography>Схема подключения 1</Typography>
+            <Typography>
+              <b>{translate('CS_HC_schemeTitle')}</b>
+
+              <br />
+              <br />
+
+              {translate('CS_HC_schemeDescription')}
+            </Typography>
           </Stack>
 
-          <Stack alignItems='center'>
-            <img width={300} height={300} src={C_V_scheme} />
+          <Stack direction='row' spacing={3}>
+            <FC_V_scheme />
 
-            <Typography>Схема подключения 2</Typography>
+            <Typography>
+              <b>{translate('FC_V_schemeTitle')}</b>
+
+              <br />
+              <br />
+
+              {translate('FC_V_schemeDescription')}
+            </Typography>
+          </Stack>
+
+          <Stack direction='row' spacing={3}>
+            <FS_OSC_scheme />
+
+            <Typography>
+              <b>{translate('FC_OSC_schemeTitle')}</b>
+
+              <br />
+              <br />
+
+              {translate('FC_OSC_schemeDescription')}
+            </Typography>
           </Stack>
         </Stack>
       </DialogContent>
