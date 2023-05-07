@@ -43,11 +43,11 @@ export const CAMERA_CURRENT_SOURCE_POSITION =
   CURRENT_SOURCE_SCENE_POSITION.clone().add(new THREE.Vector3(0, 20, 210))
 
 export const OSCILLOSCOPE_SCENE_POSITION = new THREE.Vector3(
-  -421,
+  -420.5,
   TABLE_TOP + 67 + 110,
-  4,
+  4.5,
 )
 export const CAMERA_OSCILLOSCOPE_POSITION =
   OSCILLOSCOPE_SCENE_POSITION.clone().add(new THREE.Vector3(0, 0, 170))
 
-export const WIRE_HEAP_POSITION = new THREE.Vector3(330, TABLE_TOP + 2, 200)
+export const WIRE_HEAP_POSITION = new THREE.Vector3(430, TABLE_TOP + 2, 220)
