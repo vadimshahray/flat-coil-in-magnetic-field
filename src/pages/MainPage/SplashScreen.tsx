@@ -17,6 +17,12 @@ export const SplashScreen = () => {
   }, [])
 
   useEffect(() => {
+    window.addEventListener('keypress', handleBackdropClick)
+
+    return () => window.removeEventListener('keypress', handleBackdropClick)
+  }, [])
+
+  useEffect(() => {
     document.title = translate('projectName')
   }, [translate])
 
