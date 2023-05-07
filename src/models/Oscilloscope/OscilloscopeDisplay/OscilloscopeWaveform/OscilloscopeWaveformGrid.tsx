@@ -23,8 +23,8 @@ export const OscilloscopeWaveformGrid = ({ size }: Props) => {
         [size / 2, size / 2 - cellSize * i, 0],
       ]}
       dashed
-      dashSize={cellSize / 10}
-      lineWidth={0.5}
+      dashSize={0.4}
+      lineWidth={0.4}
       color='red'
     />
   )
@@ -36,8 +36,8 @@ export const OscilloscopeWaveformGrid = ({ size }: Props) => {
         [-size / 2 + cellSize * i, -size / 2, 0],
       ]}
       dashed
-      dashSize={cellSize / 10}
-      lineWidth={0.5}
+      dashSize={0.4}
+      lineWidth={0.4}
       color='red'
     />
   )
