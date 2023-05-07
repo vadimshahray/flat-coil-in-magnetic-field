@@ -35,6 +35,13 @@ export const components: ThemeOptions['components'] = {
       },
     },
   },
+  MuiDialog: {
+    styleOverrides: {
+      paper: {
+        backgroundImage: 'unset',
+      },
+    },
+  },
   MuiDivider: {
     defaultProps: {
       light: true,
