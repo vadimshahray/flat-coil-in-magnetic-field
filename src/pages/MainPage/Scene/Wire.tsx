@@ -12,7 +12,7 @@ import { dropSchemeConnectingWire, setSchemeConnectingWireId } from '@slices'
 
 type Props = {
   id: number
-  points: THREE.Vector3[]
+  points: [number, number, number][]
   position?: THREE.Vector3
   color?: string
 }
