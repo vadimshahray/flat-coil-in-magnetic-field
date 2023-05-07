@@ -16,6 +16,10 @@ export const SplashScreen = () => {
     setTimeout(setShow, 7 * 1000, false)
   }, [])
 
+  useEffect(() => {
+    document.title = translate('projectName')
+  }, [translate])
+
   return (
     <Fade in={show}>
       <Backdrop open sx={{ zIndex: 10000 }} onClick={handleBackdropClick}>
