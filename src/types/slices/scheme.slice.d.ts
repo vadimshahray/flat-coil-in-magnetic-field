@@ -1,7 +1,7 @@
 type SchemeSliceState = {
   wires: Wire[]
 
-  connectingWire: ({ id: number } & Partial<WireConnection>) | null
+  connectingWire: number | null
 
   status: SchemeStatus
 }

@@ -13,9 +13,7 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
   },
   reducers: {
     setSchemeConnectingWireId: (state, { payload }) => {
-      state.connectingWire = {
-        id: payload,
-      }
+      state.connectingWire = payload
     },
 
     dropSchemeConnectingWire: (state) => {
@@ -23,22 +21,13 @@ export const schemeSlice = createSlice<SchemeSliceState, SchemeSlice>({
     },
 
     connectWire: (state, { payload }) => {
-      if (!state.connectingWire) return
-
-      if (!state.connectingWire.terminal1)
-        state.connectingWire.terminal1 = payload
-      else if (!state.connectingWire.terminal2)
-        state.connectingWire.terminal2 = payload
-
-      const i = state.wires.findIndex((w) => w.id === state.connectingWire?.id)
+      const i = state.wires.findIndex((w) => w.id === state.connectingWire)
       if (i === -1) return
 
-      state.wires[i] = {
-        ...state.wires[i],
-        ...state.connectingWire,
-      }
+      if (!state.wires[i].terminal1) state.wires[i].terminal1 = payload
+      else if (!state.wires[i].terminal2) state.wires[i].terminal2 = payload
 
-      if (state.connectingWire.terminal1 && state.connectingWire.terminal2) {
+      if (state.wires[i].terminal1 && state.wires[i].terminal2) {
         state.connectingWire = null
       }
 
