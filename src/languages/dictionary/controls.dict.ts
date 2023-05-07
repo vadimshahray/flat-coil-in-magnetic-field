@@ -6,7 +6,7 @@ export const controlsRU = {
   },
 
   SchemeButton: {
-    aboutScheme: 'О схеме',
+    showSchemes: 'Показать схемы подключения',
   },
 
   SchemeDialog: {
@@ -58,7 +58,7 @@ export const controlsEN = {
   },
 
   SchemeButton: {
-    aboutScheme: 'About scheme',
+    showSchemes: 'Show wiring schemes',
   },
 
   SchemeDialog: {

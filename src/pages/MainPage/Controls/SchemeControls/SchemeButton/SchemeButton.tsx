@@ -12,7 +12,7 @@ export const SchemeButton = () => {
 
   return (
     <>
-      <Tooltip title={translate('aboutScheme')}>
+      <Tooltip title={translate('showSchemes')}>
         <IconButton color='primary' onClick={onOpen}>
           <CableOutlined />
         </IconButton>
