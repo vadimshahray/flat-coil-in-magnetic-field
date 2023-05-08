@@ -1,5 +1,7 @@
 import React from 'react'
+import { OscilloscopeInfoBar } from './OscilloscopeInfoBar'
 import { OscilloscopeWaveform } from './OscilloscopeWaveform'
+import { OscilloscopeContrastSurface } from './OscilloscopeContrastSurface'
 
 type Props = JSX.IntrinsicElements['group'] & {
   width: number
@@ -15,6 +17,10 @@ export const OscilloscopeDisplay = ({ width, height, ...props }: Props) => {
       </mesh>
 
       <OscilloscopeWaveform size={height - 10} position={[-40, 0, 0]} />
+
+      <OscilloscopeInfoBar height={height - 10} position={[30, 0, 0]} />
+
+      <OscilloscopeContrastSurface width={width} height={height} />
     </group>
   )
 }

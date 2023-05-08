@@ -16,3 +16,13 @@ export const addInsignificantZeros = (
 export const numberBetween = (value: number, min: number, max: number) => {
   return Math.min(max, Math.max(min, value))
 }
+
+export const toFixedLength = (value: number, length: number) => {
+  let str = value.toString()
+
+  while (str.length < length) {
+    str = ' ' + str
+  }
+
+  return str
+}

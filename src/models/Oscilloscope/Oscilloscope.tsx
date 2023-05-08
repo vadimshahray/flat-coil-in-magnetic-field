@@ -4,13 +4,30 @@ import { useDispatch } from '@hooks'
 import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useGLTF } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
+import { ThreeEvent, useFrame } from '@react-three/fiber'
 import { TerminalConnectingZone } from '@components'
 import OscilloscopeModelPath from './oscilloscope.glb'
-import { setOscilloscopeIsPowerSupplied } from '@slices'
+import {
+  setOscilloscopeContrast,
+  setOscilloscopeIsPowerSupplied,
+} from '@slices'
 import { OscilloscopeDisplay } from './OscilloscopeDisplay'
-import { setDefaultCursor, setPointerCursor } from '@utils'
-import { selectOscilloscopeIsPowerSupplied } from '@selectors'
+import {
+  numberBetween,
+  setDefaultCursor,
+  setPointerCursor,
+  setRotationCursor,
+} from '@utils'
+import {
+  selectOscilloscopeContrast,
+  selectOscilloscopeIsPowerSupplied,
+} from '@selectors'
+import { store } from 'src/store'
+import {
+  OSCILLOSCOPE_CONTRAST_MAX,
+  OSCILLOSCOPE_CONTRAST_MIN,
+  OSCILLOSCOPE_CONTRAST_STEP,
+} from '@constants'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -36,6 +53,7 @@ type GLTFResult = GLTF & {
 }
 
 const powerBtnZ = 77.13
+const contrastRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0)
 
 const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
   const dispatch = useDispatch()
@@ -43,8 +61,22 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
   const { nodes, materials } = useGLTF(OscilloscopeModelPath) as GLTFResult
 
   const powerBtnRef = useRef<THREE.Mesh>(null)
+  const contrastRef = useRef<THREE.Group>(null)
 
   const isPowerSupplied = useSelector(selectOscilloscopeIsPowerSupplied)
+
+  useFrame(() => {
+    if (!powerBtnRef.current) return
+
+    powerBtnRef.current.position.setZ(powerBtnZ - (isPowerSupplied ? 6 : 0))
+
+    const contrast = selectOscilloscopeContrast(store.getState())
+    const angle = Math.PI / 2 - (Math.PI * contrast) / OSCILLOSCOPE_CONTRAST_MAX
+
+    contrastRotation.set(contrastRotation.x, angle, contrastRotation.z)
+
+    contrastRef.current?.setRotationFromEuler(contrastRotation)
+  })
 
   const handlePowerClick = () => {
     dispatch(setOscilloscopeIsPowerSupplied(!isPowerSupplied))
@@ -53,19 +85,37 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
     powerBtnRef.current.position.z += isPowerSupplied ? 6 : -6
   }
 
-  useFrame(() => {
-    if (!powerBtnRef.current) return
+  const handleWheel = (e: ThreeEvent<WheelEvent>) => {
+    const contrast = selectOscilloscopeContrast(store.getState())
 
-    powerBtnRef.current.position.setZ(powerBtnZ - (isPowerSupplied ? 6 : 0))
-  })
+    const newContrast =
+      contrast + Math.sign(-e.deltaY) * OSCILLOSCOPE_CONTRAST_STEP
+
+    const newRoundedContrast =
+      Math.round((newContrast + Number.EPSILON) * 100) / 100
+
+    store.dispatch(
+      setOscilloscopeContrast(
+        numberBetween(
+          newRoundedContrast,
+          OSCILLOSCOPE_CONTRAST_MIN,
+          OSCILLOSCOPE_CONTRAST_MAX,
+        ),
+      ),
+    )
+  }
 
   return (
     <group {...props} dispose={null}>
       <group position={[0, -110, 0]}>
         <group
+          ref={contrastRef}
           position={[87.01, 34.15, 81.41]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[-12.81, -6.02, -12.81]}
+          onPointerEnter={setRotationCursor}
+          onPointerLeave={setDefaultCursor}
+          onWheel={handleWheel}
         >
           <mesh
             geometry={nodes.Cylinder.geometry}
