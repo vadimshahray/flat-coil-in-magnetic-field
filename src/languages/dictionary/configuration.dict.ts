@@ -48,16 +48,16 @@ export const configurationRU = {
     title: 'Осциллограф',
   },
 
-  OscilloscopeContrastField: {
-    label: 'Контраст',
+  OscilloscopeScaleYField: {
+    label: 'Усиление, В / дел.',
   },
 
   OscilloscopeScaleXField: {
-    label: 'Масштаб по Ox [заменить]',
+    label: 'Длительность, мс / дел.',
   },
 
-  OscilloscopeScaleYField: {
-    label: 'Масштаб по Oy [заменить]',
+  OscilloscopeContrastField: {
+    label: 'Контраст',
   },
 
   StartModelingButton: {
@@ -119,16 +119,16 @@ export const configurationEN = {
     title: 'Oscilloscope',
   },
 
-  OscilloscopeContrastField: {
-    label: 'Contrast',
+  OscilloscopeScaleYField: {
+    label: 'Gain, V / div.',
   },
 
   OscilloscopeScaleXField: {
-    label: 'Scale on Ox [replace]',
+    label: 'Duration, ms / div.',
   },
 
-  OscilloscopeScaleYField: {
-    label: 'Scale on Oy [replace]',
+  OscilloscopeContrastField: {
+    label: 'Contrast',
   },
 
   StartModelingButton: {
