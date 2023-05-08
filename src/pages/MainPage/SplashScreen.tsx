@@ -1,26 +1,34 @@
 import { useTranslate } from '@languages'
 import NSTULogoPath from 'src/assets/nstu.svg'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Backdrop, Fade, Paper, Stack, Typography } from '@mui/material'
 
-export const SplashScreen = () => {
+type Props = {
+  onClose: () => void
+}
+
+export const SplashScreen = ({ onClose }: Props) => {
   const translate = useTranslate('SplashScreen')
 
   const [show, setShow] = useState(true)
 
-  const handleBackdropClick = () => {
+  const hide = useCallback(() => {
     setShow(false)
-  }
+
+    onClose()
+  }, [onClose])
 
   useEffect(() => {
-    setTimeout(setShow, 7 * 1000, false)
-  }, [])
+    const timer = setTimeout(hide, 7 * 1000)
+
+    return () => clearTimeout(timer)
+  }, [hide])
 
   useEffect(() => {
-    window.addEventListener('keypress', handleBackdropClick)
+    window.addEventListener('keypress', hide)
 
-    return () => window.removeEventListener('keypress', handleBackdropClick)
-  }, [])
+    return () => window.removeEventListener('keypress', hide)
+  }, [hide])
 
   useEffect(() => {
     document.title = translate('projectName')
@@ -28,7 +36,7 @@ export const SplashScreen = () => {
 
   return (
     <Fade in={show}>
-      <Backdrop open sx={{ zIndex: 10000 }} onClick={handleBackdropClick}>
+      <Backdrop open sx={{ zIndex: 10000 }} onClick={hide}>
         <Paper elevation={0} sx={{ borderRadius: 0, padding: 4, paddingX: 10 }}>
           <Stack spacing={9} alignItems='center'>
             <Stack direction='row' spacing={1.5} alignItems='center'>

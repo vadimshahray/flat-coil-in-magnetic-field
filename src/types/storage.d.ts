@@ -1,1 +1,1 @@
-type StorageItem = '@userLanguage'
+type StorageItem = '@userLanguage' | '@userReadGuide'

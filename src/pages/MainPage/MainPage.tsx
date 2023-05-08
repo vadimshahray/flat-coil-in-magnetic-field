@@ -3,6 +3,7 @@ import { Sidebar } from './Sidebar'
 import { Controls } from './Controls'
 import React, { useEffect } from 'react'
 import { SplashScreen } from './SplashScreen'
+import { UserGuideDialog } from './UserGuideDialog'
 import { assemblyScheme, startModeling } from '@slices'
 import { useDeviceTypeValue, useDispatch } from '@hooks'
 
@@ -11,9 +12,9 @@ export const MainPage = () => {
 
   const showModelingSection = useDeviceTypeValue(true, false)
 
-  useEffect(() => {
+  const handleSplashScreenClose = () => {
     dispatch(startModeling())
-  })
+  }
 
   useEffect(() => {
     if (!showModelingSection) {
@@ -23,7 +24,9 @@ export const MainPage = () => {
 
   return (
     <>
-      <SplashScreen />
+      <SplashScreen onClose={handleSplashScreenClose} />
+
+      <UserGuideDialog />
 
       {showModelingSection ? (
         <div
