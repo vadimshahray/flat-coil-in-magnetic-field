@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkalternator=self.webpackChunkalternator||[]).push([[573],{6663:function(e,a,t){t.r(a),t.d(a,{default:function(){return u}});var r=t(1413),s=(t(2791),t.p+"static/media/sofa.a3012733ac7238532a6b.glb"),n=t(3655),o=t(184),u=function(e){var a=(0,n.L)(s),t=a.nodes,u=a.materials;return(0,o.jsx)("group",(0,r.Z)((0,r.Z)({},e),{},{dispose:null,children:(0,o.jsx)("group",{rotation:[-Math.PI/2,0,Math.PI/2],scale:8,children:(0,o.jsx)("mesh",{geometry:t.dessous__0.geometry,material:u["Scene_-_Root"]})})}))}}}]);
-//# sourceMappingURL=573.7b0a63a4.chunk.js.map
