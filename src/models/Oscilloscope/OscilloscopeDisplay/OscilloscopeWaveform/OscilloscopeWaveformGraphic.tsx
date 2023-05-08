@@ -34,7 +34,7 @@ export const OscilloscopeWaveformGraphic = ({ size }: Props) => {
   if (!isConnected) return null
 
   const TSize = (T / T_MAX_SIZE) * size
-  const oscillationsInQuarter = new Array(Math.round(size / 2 / TSize)).fill(0)
+  const oscillationsInQuarter = new Array(Math.ceil(size / 2 / TSize)).fill(0)
 
   const renderOscillation = (_: any, i: number) => {
     const sign = i % 2 ? -1 : 1
