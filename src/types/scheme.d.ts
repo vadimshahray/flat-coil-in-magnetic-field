@@ -14,6 +14,8 @@ type SchemeConnection =
   | 'Coil+Voltmeter+'
   | 'Coil-Voltmeter-'
   | 'Coil+Oscilloscope+'
+  | 'Coil+Oscilloscope-'
+  | 'Coil-Oscilloscope+'
   | 'Coil-Oscilloscope-'
   | 'CurrentSource+HelmholtzCoils+'
   | 'CurrentSource-HelmholtzCoils-'

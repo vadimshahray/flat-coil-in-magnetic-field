@@ -46,11 +46,15 @@ export const selectIsVoltmeterConnected = (state: RootState) => {
 }
 
 export const selectIsOscilloscopeConnected = (state: RootState) => {
-  const wireA = state.scheme.wires.find((w) =>
-    areConnectionsEqual(SCHEME_CONNECTIONS['Coil+Oscilloscope+'], w),
+  const wireA = state.scheme.wires.find(
+    (w) =>
+      areConnectionsEqual(SCHEME_CONNECTIONS['Coil+Oscilloscope+'], w) ||
+      areConnectionsEqual(SCHEME_CONNECTIONS['Coil+Oscilloscope-'], w),
   )
-  const wireB = state.scheme.wires.find((w) =>
-    areConnectionsEqual(SCHEME_CONNECTIONS['Coil-Oscilloscope-'], w),
+  const wireB = state.scheme.wires.find(
+    (w) =>
+      areConnectionsEqual(SCHEME_CONNECTIONS['Coil-Oscilloscope-'], w) ||
+      areConnectionsEqual(SCHEME_CONNECTIONS['Coil-Oscilloscope+'], w),
   )
 
   return !!wireA && !!wireB
