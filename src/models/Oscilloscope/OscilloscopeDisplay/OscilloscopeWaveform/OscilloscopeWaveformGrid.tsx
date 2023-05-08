@@ -49,6 +49,7 @@ export const OscilloscopeWaveformGrid = ({ size }: Props) => {
       {gridLines.map(renderLineV)}
 
       <Text
+        renderOrder={-1}
         fontSize={2.5}
         font={Roboto}
         color='red'
@@ -58,6 +59,7 @@ export const OscilloscopeWaveformGrid = ({ size }: Props) => {
       </Text>
 
       <Text
+        renderOrder={-1}
         fontSize={2.5}
         font={Roboto}
         color='red'
