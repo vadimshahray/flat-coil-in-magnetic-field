@@ -13,9 +13,9 @@ export const OscilloscopeSection = () => {
   return (
     <Section title={translate('title')} collapsible>
       <Stack direction='row' spacing={1}>
-        <OscilloscopeScaleXField />
-
         <OscilloscopeScaleYField />
+
+        <OscilloscopeScaleXField />
       </Stack>
 
       <OscilloscopeContrastField />
