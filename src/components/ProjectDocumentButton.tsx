@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslate } from '@languages'
 import { IconButton, Tooltip } from '@mui/material'
 import { TextSnippetOutlined } from '@mui/icons-material'
-import ProjectDocumentPath from '../assets/alternator.pdf'
+import ProjectDocumentPath from '../assets/flat-coil-in-magnetic-field.pdf'
 
 export const ProjectDocumentButton = () => {
   const translate = useTranslate('ProjectDocumentButton')
