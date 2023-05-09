@@ -1,8 +1,8 @@
 {
-  "name": "alternator",
+  "name": "flat-coil-in-magnetic-field",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vadimshahray.github.io/alternator/",
+  "homepage": "https://vadimshahray.github.io/flat-coil-in-magnetic-field/",
   "dependencies": {
     "@craco/craco": "^7.1.0",
     "@emotion/react": "^11.10.6",
