@@ -1,33 +1,33 @@
 import * as THREE from 'three'
+import { store } from 'src/store'
 import { GLTF } from 'three-stdlib'
 import { useDispatch } from '@hooks'
 import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useGLTF } from '@react-three/drei'
-import { ThreeEvent, useFrame } from '@react-three/fiber'
 import { TerminalConnectingZone } from '@components'
 import OscilloscopeModelPath from './oscilloscope.glb'
+import { ThreeEvent, useFrame } from '@react-three/fiber'
+import { OscilloscopeDisplay } from './OscilloscopeDisplay'
 import {
   setOscilloscopeContrast,
   setOscilloscopeIsPowerSupplied,
 } from '@slices'
-import { OscilloscopeDisplay } from './OscilloscopeDisplay'
+import {
+  selectOscilloscopeContrast,
+  selectOscilloscopeIsPowerSupplied,
+} from '@selectors'
+import {
+  OSCILLOSCOPE_CONTRAST_MAX,
+  OSCILLOSCOPE_CONTRAST_MIN,
+  OSCILLOSCOPE_CONTRAST_STEP,
+} from '@constants'
 import {
   numberBetween,
   setDefaultCursor,
   setPointerCursor,
   setRotationCursor,
 } from '@utils'
-import {
-  selectOscilloscopeContrast,
-  selectOscilloscopeIsPowerSupplied,
-} from '@selectors'
-import { store } from 'src/store'
-import {
-  OSCILLOSCOPE_CONTRAST_MAX,
-  OSCILLOSCOPE_CONTRAST_MIN,
-  OSCILLOSCOPE_CONTRAST_STEP,
-} from '@constants'
 
 type GLTFResult = GLTF & {
   nodes: {
