@@ -48,11 +48,11 @@ type GLTFResult = GLTF & {
   materials: {
     tabl_background: THREE.MeshStandardMaterial
     power: THREE.MeshStandardMaterial
-    very_blue: THREE.MeshStandardMaterial
     yellow: THREE.MeshStandardMaterial
+    very_blue: THREE.MeshStandardMaterial
     Corp: THREE.MeshStandardMaterial
     blue: THREE.MeshStandardMaterial
-    Back: THREE.MeshStandardMaterial
+    Back: THREE.MeshPhysicalMaterial
     metall: THREE.MeshPhysicalMaterial
     Black_line: THREE.MeshStandardMaterial
   }
@@ -145,21 +145,21 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
         />
         <mesh
           geometry={nodes['-'].geometry}
-          material={materials.very_blue}
+          material={materials.yellow}
           position={[14.54, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={3.92}
         />
         <mesh
           geometry={nodes['+'].geometry}
-          material={materials.very_blue}
+          material={materials.yellow}
           position={[33.76, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={3.92}
         />
         <mesh
           geometry={nodes.xy.geometry}
-          material={materials.yellow}
+          material={materials.very_blue}
           position={[-4.84, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={3.92}
