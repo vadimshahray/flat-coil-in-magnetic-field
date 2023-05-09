@@ -37,8 +37,8 @@ export const controlsRU = {
   CameraViewControl: {
     engineShort: 'Д',
     engine: 'Посмотреть на двигатель',
-    coilShort: 'К',
-    coil: 'Посмотреть на катушку',
+    coilShort: 'ПК',
+    coil: 'Посмотреть на плоскую катушку',
     HelmholtzCoilsShort: 'КГ',
     HelmholtzCoils: 'Посмотреть на катушки Гельмгольца',
     currentSourceShort: 'ИТ',
@@ -89,8 +89,8 @@ export const controlsEN = {
   CameraViewControl: {
     engineShort: 'E',
     engine: 'Look at the engine',
-    coilShort: 'C',
-    coil: 'Look at the coil',
+    coilShort: 'FC',
+    coil: 'Look at the flat coil',
     HelmholtzCoilsShort: 'HC',
     HelmholtzCoils: 'Look at the Helmholtz coils',
     currentSourceShort: 'CS',
