@@ -39,6 +39,7 @@ type GLTFResult = GLTF & {
     Text008_3: THREE.Mesh
     Text008_4: THREE.Mesh
     Text008_5: THREE.Mesh
+    stand015: THREE.Mesh
   }
   materials: {
     tabl_background: THREE.MeshStandardMaterial
@@ -118,11 +119,12 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
       ),
     )
   }
+
   return (
     <group {...props} dispose={null}>
       <group
         ref={amperageSwitchRef}
-        position={[5.84, 1.85, 105.19]}
+        position={[7.69, 1.85, 105.19]}
         rotation={[Math.PI / 2, 0, 0]}
         scale={[-12.81, -6.02, -12.81]}
         onPointerEnter={setRotationCursor}
@@ -138,12 +140,11 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
           material={materials.Black_line}
         />
       </group>
-
       <mesh
         ref={powerBtnRef}
         geometry={nodes.power.geometry}
         material={materials.power}
-        position={[94.96, 0.85, 102.85]}
+        position={[82.59, 0.85, 102.85]}
         rotation={[0, -Math.PI / 2, 0]}
         scale={[3.92, 5.58, 5.58]}
         onClick={handlePowerClick}
@@ -151,9 +152,9 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         onPointerLeave={setDefaultCursor}
       />
       <group
-        position={[32.91, -11.31, 99.86]}
+        position={[14.47, -0.64, 74.87]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={[6.64, 107.72, 6.64]}
+        scale={[5.29, 107.72, 6.64]}
       >
         <mesh
           geometry={nodes.Text008.geometry}
@@ -168,8 +169,15 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         />
         <mesh geometry={nodes.Text008_5.geometry} material={materials.black} />
       </group>
+      <mesh
+        geometry={nodes.stand015.geometry}
+        material={materials.black_line}
+        position={[7.69, 23.47, 99.89]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[5.29, 107.72, 6.64]}
+      />
 
-      <group scale={[0.7, 1, 1]} position={[-73, -4, 102]}>
+      <group scale={[0.7, 1, 1]} position={[-49, -4, 102]}>
         <Text
           ref={textRef}
           fontSize={34}
@@ -195,14 +203,14 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         terminal='CurrentSource+'
         color='#832D2E'
         size={16}
-        position={[66, 0, 108]}
+        position={[60, 0, 108]}
       />
 
       <TerminalConnectingZone
         terminal='CurrentSource-'
         color='#4C4C8A'
         size={16}
-        position={[39, 0, 108]}
+        position={[34, 0, 108]}
       />
     </group>
   )
