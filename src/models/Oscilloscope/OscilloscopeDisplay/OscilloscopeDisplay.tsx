@@ -11,7 +11,7 @@ type Props = JSX.IntrinsicElements['group'] & {
 export const OscilloscopeDisplay = ({ width, height, ...props }: Props) => {
   return (
     <group {...props}>
-      <mesh position={[-2, 0, -1]}>
+      <mesh position={[-2, 0, 2]}>
         <boxGeometry args={[width, height, 1]} />
         <meshBasicMaterial color='red' transparent opacity={0.15} />
       </mesh>
