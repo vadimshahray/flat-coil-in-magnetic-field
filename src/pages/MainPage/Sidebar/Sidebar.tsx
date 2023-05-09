@@ -43,15 +43,15 @@ export const Sidebar = () => {
 
         <Divider />
 
-        <EngineSection />
+        <OscilloscopeSection />
 
         <CurrentSourceSection />
 
-        <CoilSection />
-
         <HelmholtzCoilsSection />
 
-        <OscilloscopeSection />
+        <CoilSection />
+
+        <EngineSection />
 
         <WiresInfoSection />
       </div>
