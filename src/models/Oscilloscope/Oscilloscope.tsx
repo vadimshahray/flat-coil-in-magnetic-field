@@ -34,21 +34,27 @@ type GLTFResult = GLTF & {
     Cylinder: THREE.Mesh
     Cylinder_1: THREE.Mesh
     power: THREE.Mesh
-    Text001: THREE.Mesh
-    Text001_1: THREE.Mesh
-    Text001_2: THREE.Mesh
-    Text001_3: THREE.Mesh
     ['-']: THREE.Mesh
     ['+']: THREE.Mesh
+    xy: THREE.Mesh
+    Text024: THREE.Mesh
+    Text024_1: THREE.Mesh
+    Text024_2: THREE.Mesh
+    Text024_3: THREE.Mesh
+    Text024_4: THREE.Mesh
+    Text024_5: THREE.Mesh
+    Text024_6: THREE.Mesh
   }
   materials: {
     tabl_background: THREE.MeshStandardMaterial
-    Black_line: THREE.MeshStandardMaterial
     power: THREE.MeshStandardMaterial
+    very_blue: THREE.MeshStandardMaterial
+    yellow: THREE.MeshStandardMaterial
     Corp: THREE.MeshStandardMaterial
     blue: THREE.MeshStandardMaterial
+    Back: THREE.MeshStandardMaterial
     metall: THREE.MeshPhysicalMaterial
-    very_blue: THREE.MeshStandardMaterial
+    Black_line: THREE.MeshStandardMaterial
   }
 }
 
@@ -110,7 +116,7 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
       <group position={[0, -110, 0]}>
         <group
           ref={contrastRef}
-          position={[87.01, 34.15, 81.41]}
+          position={[63.35, 34.15, 81.41]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={[-12.81, -6.02, -12.81]}
           onPointerEnter={setRotationCursor}
@@ -126,51 +132,63 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
             material={materials.Black_line}
           />
         </group>
-
         <mesh
           ref={powerBtnRef}
           geometry={nodes.power.geometry}
           material={materials.power}
-          position={[-92.84, 32, 77.13]}
+          position={[-76.17, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
-          scale={[3.92, 5.58, 5.58]}
+          scale={3.92}
           onClick={handlePowerClick}
           onPointerOver={setPointerCursor}
           onPointerLeave={setDefaultCursor}
         />
-
-        <group
-          position={[87.01, 13.75, 74.96]}
-          rotation={[Math.PI / 2, 0, 0]}
-          scale={[6.64, 144.05, 6.64]}
-        >
-          <mesh
-            geometry={nodes.Text001.geometry}
-            material={materials.Black_line}
-          />
-          <mesh geometry={nodes.Text001_1.geometry} material={materials.Corp} />
-          <mesh geometry={nodes.Text001_2.geometry} material={materials.blue} />
-          <mesh
-            geometry={nodes.Text001_3.geometry}
-            material={materials.metall}
-          />
-        </group>
-
         <mesh
           geometry={nodes['-'].geometry}
           material={materials.very_blue}
-          position={[12.23, 32, 77.13]}
+          position={[14.54, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
-          scale={[3.92, 5.58, 5.58]}
+          scale={3.92}
         />
-
         <mesh
           geometry={nodes['+'].geometry}
           material={materials.very_blue}
-          position={[45.04, 32, 77.13]}
+          position={[33.76, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
-          scale={[3.92, 5.58, 5.58]}
+          scale={3.92}
         />
+        <mesh
+          geometry={nodes.xy.geometry}
+          material={materials.yellow}
+          position={[-4.84, 32, 76.53]}
+          rotation={[0, -Math.PI / 2, 0]}
+          scale={3.92}
+        />
+        <group
+          position={[1.43, 146.79, 74.14]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={[5.29, 144.11, 6.64]}
+        >
+          <mesh
+            geometry={nodes.Text024.geometry}
+            material={materials.Black_line}
+          />
+          <mesh geometry={nodes.Text024_1.geometry} material={materials.Corp} />
+          <mesh geometry={nodes.Text024_2.geometry} material={materials.blue} />
+          <mesh geometry={nodes.Text024_3.geometry} material={materials.Back} />
+          <mesh
+            geometry={nodes.Text024_4.geometry}
+            material={materials.very_blue}
+          />
+          <mesh
+            geometry={nodes.Text024_5.geometry}
+            material={materials.metall}
+          />
+          <mesh
+            geometry={nodes.Text024_6.geometry}
+            material={materials.Black_line}
+          />
+        </group>
 
         <TerminalConnectingZone
           terminal='Oscilloscope+'
@@ -187,7 +205,7 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
         />
 
         <OscilloscopeDisplay
-          width={200}
+          width={160}
           height={120}
           visible={isPowerSupplied}
           position={[0, 124 / 2 + 54, 74]}
