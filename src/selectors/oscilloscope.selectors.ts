@@ -9,3 +9,6 @@ export const selectOscilloscopeScaleX = (state: RootState) =>
 
 export const selectOscilloscopeScaleY = (state: RootState) =>
   state.oscilloscope.scaleY
+
+export const selectOscilloscopeConfigurableParameterI = (state: RootState) =>
+  state.oscilloscope.configurableParameterI

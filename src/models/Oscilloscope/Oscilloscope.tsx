@@ -11,6 +11,8 @@ import { ThreeEvent, useFrame } from '@react-three/fiber'
 import { OscilloscopeDisplay } from './OscilloscopeDisplay'
 import {
   setOscilloscopeContrast,
+  setOscilloscopeConfigurableParameter,
+  changeOscilloscopeConfigurableParameterI,
   setOscilloscopeIsPowerSupplied,
 } from '@slices'
 import {
@@ -111,6 +113,24 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
     )
   }
 
+  const handleIncreaseButtonClick = () => {
+    if (!isPowerSupplied) return
+
+    dispatch(setOscilloscopeConfigurableParameter(1))
+  }
+
+  const handleDecreaseButtonClick = () => {
+    if (!isPowerSupplied) return
+
+    dispatch(setOscilloscopeConfigurableParameter(-1))
+  }
+
+  const handleChangeConfigurableParameter = () => {
+    if (!isPowerSupplied) return
+
+    dispatch(changeOscilloscopeConfigurableParameterI())
+  }
+
   return (
     <group {...props} dispose={null}>
       <group position={[0, -110, 0]}>
@@ -149,6 +169,9 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
           position={[14.54, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={3.92}
+          onClick={handleDecreaseButtonClick}
+          onPointerOver={setPointerCursor}
+          onPointerLeave={setDefaultCursor}
         />
         <mesh
           geometry={nodes['+'].geometry}
@@ -156,6 +179,9 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
           position={[33.76, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={3.92}
+          onClick={handleIncreaseButtonClick}
+          onPointerOver={setPointerCursor}
+          onPointerLeave={setDefaultCursor}
         />
         <mesh
           geometry={nodes.xy.geometry}
@@ -163,6 +189,9 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
           position={[-4.84, 32, 76.53]}
           rotation={[0, -Math.PI / 2, 0]}
           scale={3.92}
+          onClick={handleChangeConfigurableParameter}
+          onPointerOver={setPointerCursor}
+          onPointerLeave={setDefaultCursor}
         />
         <group
           position={[1.43, 146.79, 74.14]}

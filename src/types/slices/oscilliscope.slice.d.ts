@@ -5,6 +5,8 @@ type OscilloscopeSliceState = {
 
   scaleX: number
   scaleY: number
+
+  configurableParameterI: number
 }
 
 interface OscilloscopeSlice extends SliceCaseReducers<OscilloscopeSliceState> {
@@ -24,6 +26,13 @@ interface OscilloscopeSlice extends SliceCaseReducers<OscilloscopeSliceState> {
   ): void
 
   setOscilloscopeScaleY(
+    state: OscilloscopeSliceState,
+    action: PayloadAction<number>,
+  ): void
+
+  changeOscilloscopeConfigurableParameterI(state: OscilloscopeSliceState): void
+
+  setOscilloscopeConfigurableParameter(
     state: OscilloscopeSliceState,
     action: PayloadAction<number>,
   ): void
