@@ -1,7 +1,7 @@
 export const extraRU = {
   SplashScreen: {
     NSTU: 'Новосибирский государственный\nтехнический университет',
-    projectName: 'Плоская катушка в магнитном поле',
+    projectName: 'Плоская катушка, вращающаяся в магнитном поле',
     students:
       'Факультет: ПМИ\nВыполнили: Шахрай Вадим, ПМ-15\n\t\t   Зуев Андрей, ПМ-15\n\t\t   Мироненко Алиса, ПМИ-11',
     supervisor: 'Руководитель: Баранов А. В.',
@@ -42,7 +42,7 @@ export const extraRU = {
 export const extraEN = {
   SplashScreen: {
     NSTU: 'Novosibirsk State\nTechnical University',
-    projectName: 'Flat coil in a magnetic field',
+    projectName: 'Flat coil rotating in a magnetic field',
     students:
       'Faculty: PMI\nPerformed by: Vadim Shakhray, PM-15\n\t\t     Andrey Zuev, PM-15\n\t\t     Alisa Mironenko, PMI-11',
     supervisor: 'Supervisor: Baranov A.V.',
