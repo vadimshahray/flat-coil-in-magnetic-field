@@ -1,7 +1,7 @@
 export const COIL_TURNS_COUNT_MIN = 10
-export const COIL_TURNS_COUNT_MAX = 4 * 1000
-export const COIL_TURNS_COUNT_STEP = 20
-export const COIL_TURNS_COUNT_DEFAULT = 100
+export const COIL_TURNS_COUNT_MAX = 1000
+export const COIL_TURNS_COUNT_STEP = 50
+export const COIL_TURNS_COUNT_DEFAULT = 500
 
 export const COIL_FRAME_WIDTH_MIN = 0.02
 export const COIL_FRAME_WIDTH_MAX = 0.2
