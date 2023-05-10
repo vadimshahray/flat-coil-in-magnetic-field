@@ -168,6 +168,7 @@ const CurrentSource = (props: JSX.IntrinsicElements['group']) => {
         />
         <mesh geometry={nodes.Text018_5.geometry} material={materials.black} />
       </group>
+
       <group scale={[0.7, 1, 1]} position={[-41.5, -4, 102]}>
         <Text
           ref={textRef}
