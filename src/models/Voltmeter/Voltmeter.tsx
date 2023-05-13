@@ -36,11 +36,10 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
     if (!textRef.current) return
 
     const isVoltmeterConnected = selectIsVoltmeterConnected(store.getState())
+    const voltage = selectModelingOperatingVoltage(store.getState())
+
     textRef.current.text = isVoltmeterConnected
-      ? addInsignificantZeros(
-          selectModelingOperatingVoltage(store.getState()).toFixed(2),
-          1,
-        )
+      ? addInsignificantZeros((voltage < 10 ? ' ' : '') + voltage.toFixed(2), 1)
       : ''
 
     if (!textSIRef.current) return
@@ -65,8 +64,8 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
         <mesh geometry={nodes.Cube_3.geometry} material={materials.blue} />
       </group>
 
-      <group scale={[0.7, 1, 1]} position={[-7, 24, 18]}>
-        <Text ref={textRef} fontSize={34} color='red' font={FiraCode}>
+      <group scale={[0.65, 1, 1]} position={[-7, 24, 18]}>
+        <Text ref={textRef} fontSize={32} color='red' font={FiraCode}>
           {' '}
         </Text>
 
@@ -74,7 +73,7 @@ const Voltmeter = (props: JSX.IntrinsicElements['group']) => {
           ref={textSIRef}
           fontSize={24}
           color='red'
-          position={[50, -3, 0]}
+          position={[56, -3, 0]}
           font={FiraCode}
         >
           V
