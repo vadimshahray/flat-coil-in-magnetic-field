@@ -13,7 +13,7 @@ export const engineSlice = createSlice<EngineSliceState, EngineSlice>({
     },
 
     setEngineRotationFrequency: (state, { payload }) => {
-      state.rotationFrequency = Math.floor(payload)
+      state.rotationFrequency = payload
     },
   },
 })
