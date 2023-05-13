@@ -1,46 +1,139 @@
-# Getting Started with Create React App
+# Что из себя представляет проект?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Отчет по проекту](/src/assets/flat-coil-in-magnetic-field.pdf)
 
-## Available Scripts
+В проекте реализован расчет электродвижущей силы плоской катушки, приводящейся во
+вращение двигателем, находящейся в однородном магнитном поле катушек Гельмгольца, для
+исследования явления электромагнитной индукции.
 
-In the project directory, you can run:
+### Создатели проекта
 
-### `yarn start`
+- [Шахрай Вадим](https://github.com/vadimshahray) - программирование;
+- Зуев Андрей - физика;
+- Мироненко Алиса - 3D-модели приборов и устройств.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Краткое руководство по использованию программы
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Экран приложения поделен на 2 окна:
 
-### `yarn test`
+- Окно моделирования;
+- Окно настроек.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Окно моделирования
 
-### `yarn build`
+В этом окне происходит 3D-симуляция маленькой комнаты, в центре
+которой находится стол с различными приборами и устройствами. Приборы
+и устройства являются **интерактивными** - их можно включать по
+кнопке "Пуск", менять их параметры и подключать друг к другу
+проводами.
+<br />
+<br />
+**Подключение приборов осуществляется** путем выбора провода кликом
+по нему курсором мыши и дальнейшего выбора 2-ух клемм (также кликом
+курсора), которые вы хотите соединить. На случай неверного подключения
+предусмотрен _специальный индикатор_ (подробнее ниже).
+<br />
+<br />
+При наведении курсора мыши на интерактивный элемент какого-либо
+прибора или устройства, иконка курсора будет сменяться на следующие:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ![вращение](/src/assets/rotation.svg 'вращение') - вращение, крутить колесико мыши;
+- ![нажатие на кнопку](/src/assets/hand.svg 'нажатие на кнопку') - нажатие на кнопку, нажать на левую кнопку
+  мыши (ЛКМ);
+- ![выбор провода](/src/assets/wire.svg 'выбор провода') - выбор провода, нажать ЛКМ;
+- ![отмена выбора провода](/src/assets/no_wire.svg 'отмена выбора провода') - отмена выбора провода, нажать ЛКМ;
+- ![подключить провод к клемме](/src/assets/connect_wire.svg 'подключить провод к клемме') - подключить провод к клемме, нажать
+  ЛКМ;
+- ![отключить провод от клеммы](/src/assets/disconnect_wire.svg 'отключить провод от клеммы') - отключить провод от клеммы, нажать
+  ЛКМ.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Также вам доступно **управление камерой**: вращение, изменение
+расстояния до объекта и смена объекта просмотра (подробнее ниже).
+Вращение камерой осуществляется с помощью зажатия правой кнопки мыши
+(ПКМ) и движения мыши в стороны, а расстояние до объекта - с помощью
+зажатия средней кнопки мыши (СКМ) и движения мыши в сторону.
+<br />
+<br />
+Внизу окна расположены несколько вспомогательных блоков. Слева
+находится блок, связанный с подключением приборов и устройств. Он
+содержит:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Специальный цветовой индикатор корректности существующих
+  соединений (_зеленый_ - все соединения корректны, _желтый_ - не все
+  провода использованы, _красный_ - есть некорректное соединение);
+- Кнопки автоматического подключения и отключения всех проводов
+  сразу;
+- Кнопка просмотра корректных _схем подключения_.
 
-### `yarn eject`
+Справа от него находиться блок смены объекта, на который направлена
+камера. В качестве объектов выступают приборы и устройства,
+находящиеся на столе. Они обозначены первой буквой их названия.
+_Чтобы выбрать_ объект просмотра, нужно нажать на него курсором
+мыши. _Чтобы отменить выбор_ (камера вернется в свое начальное
+положение), достаточно снова кликнуть на выбранный объект. В самом
+краю находится кнопка сокрытия окна "Настройки".
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Окно настроек
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Данное окно разделено на 3 секции:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Вспомогательные кнопки;
+- Результаты;
+- Настройка приборов и устройств.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Вспомогательные кнопки представляют из себя
+_переключатель темы приложения_ (светлая/темная),
+_переключатель языка интерфейса_ (русский/английский) и кнопку
+для скачивания **отчета по проекту**, который содержит в себе
+полное его описание.
+<br />
+<br />В секции "Результаты" будут выводиться контрольные значения
+эксперимента.
+<br />
+<br />
+Последняя секция представляет из себя
+**альтернативную и более точную** систему для настройки параметров
+приборов и устройств. Также она содержит дополнительную информацию:
+используемые константы и пр.
 
-## Learn More
+# Как запустить проект?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Данный проект доступен всем по ссылке https://vadimshahray.github.io/flat-coil-in-magnetic-field/.
+Если вы хотите клонировать данный репозиторий и запустить проект на локальной машине, на ней должна быть установлена [Node.js](https://nodejs.org/en/).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+После успешного клонирования репозитория, откройте корневую папку проекта в терминале и введите следующие команды:
+
+```shell
+npm install
+npm start
+```
+
+или с помощью [yarn](https://yarnpkg.com/):
+
+```shell
+yarn install
+yarn start
+```
+
+# Физика проекта
+
+Информация о физике, используемой в проекте, находится в [этом отчете](/src/assets/flat-coil-in-magnetic-field.pdf).
+
+### Файловая структура проекта
+
+```
+├───public - статичные данные
+└───src - рабочий корень проекта
+    ├───components - UI/UX компоненты
+    ├───constants - константы
+    ├───hooks - React-хуки
+    ├───models - 3D-компоненты
+    ├───pages - web-страницы проекта
+    ├───providers - провайдеры данных
+    ├───selectors - Redux-селекторы
+    ├───slices - Redux-слайсы
+    ├───storage - локальное хранилище
+    ├───styles - стилизация
+    ├───types - типы
+    └───utils - различный полезный функционал
+```
