@@ -4,9 +4,7 @@ import { degToRad } from 'three/src/math/MathUtils'
 import { LeftWindow, RightWindow } from './Windows'
 import { CEILING_W, FLOOR_D, FLOOR_W, WALL_D, WALL_H } from '@constants'
 
-const Fan = React.lazy(() => import('src/models/Fan'))
 const Door = React.lazy(() => import('src/models/Door'))
-const Lamp = React.lazy(() => import('src/models/Lamp'))
 const Sink = React.lazy(() => import('src/models/Sink'))
 const Sofa = React.lazy(() => import('src/models/Sofa'))
 const Chair = React.lazy(() => import('src/models/Chair'))
@@ -14,7 +12,6 @@ const Plinth = React.lazy(() => import('src/models/Plinth'))
 const Bookshelf = React.lazy(() => import('src/models/Bookshelf'))
 const Projector = React.lazy(() => import('src/models/Projector'))
 const Blackboard = React.lazy(() => import('src/models/Blackboard'))
-const LightSwitch = React.lazy(() => import('src/models/LightSwitch'))
 const PowerSocket = React.lazy(() => import('src/models/PowerSocket'))
 const ComputerDesk = React.lazy(() => import('src/models/ComputerDesk'))
 const ProjectorScreen = React.lazy(() => import('src/models/ProjectorScreen'))
@@ -44,12 +41,6 @@ export const Room = () => {
           position={[3 * FLOOR_W - 5, 5, 0]}
           rotation={[0, -Math.PI / 2, 0]}
         />
-      </group>
-
-      <group position={[0, 2 * WALL_H - 57, 0]} rotation={[0, -Math.PI / 2, 0]}>
-        <Lamp position={[0, 0, -CEILING_W]} />
-
-        <Lamp position={[0, 0, CEILING_W]} />
       </group>
 
       <Projector
@@ -102,22 +93,12 @@ export const Room = () => {
         rotation={[0, -Math.PI / 2, 0]}
       />
 
-      <Fan
-        position={[2.5 * FLOOR_D, 0, 2 * FLOOR_W - 320]}
-        rotation={[0, degToRad(-120), 0]}
-      />
-
       <PowerSocket
         position={[2.5 * FLOOR_D, 200, 2 * FLOOR_W - 16]}
         rotation={[0, Math.PI, 0]}
       />
 
       <Blackboard position={[0.7 * FLOOR_D, 0, 2 * FLOOR_W - 320]} />
-
-      <LightSwitch
-        position={[-FLOOR_D + 200, WALL_H + 100, 2 * FLOOR_W - 40]}
-        rotation={[0, Math.PI, 0]}
-      />
     </>
   )
 }

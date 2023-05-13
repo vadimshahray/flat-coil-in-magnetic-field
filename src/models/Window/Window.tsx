@@ -10,10 +10,7 @@ import React from 'react'
 import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 import WindowModelPath from './window.glb'
-import { useGLTF, useTexture } from '@react-three/drei'
-import WindowColorTexture from './textures/window_color.png'
-import WindowNormalTexture from './textures/window_normal.png'
-import WindowRoughnessTexture from './textures/window_roughness.png'
+import { useGLTF } from '@react-three/drei'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -31,13 +28,8 @@ type GLTFResult = GLTF & {
 
 const Window = (props: JSX.IntrinsicElements['group']) => {
   const { nodes } = useGLTF(WindowModelPath) as GLTFResult
-  const maps = useTexture({
-    map: WindowColorTexture,
-    normalMap: WindowNormalTexture,
-    roughnessMap: WindowRoughnessTexture,
-  })
 
-  const material = new THREE.MeshStandardMaterial(maps)
+  const material = new THREE.MeshStandardMaterial()
 
   return (
     <group {...props} dispose={null}>
