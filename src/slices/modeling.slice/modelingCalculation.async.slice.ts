@@ -57,8 +57,6 @@ export const calculateData = createAsyncThunk<
   const Em = (result.voltageMax = 2 * Math.PI * Nu * n * B * S)
   result.operatingVoltage = Em / Math.sqrt(2)
 
-  // const E = Em * sin(2 * Math.PI * Nu * t)
-
   const Rob =
     (Pm * (2 * n * (a + b))) / (4.7 * 10 ** -8) + (2 * Pm * lp) / WIRES_SECTION
 
@@ -66,7 +64,3 @@ export const calculateData = createAsyncThunk<
 
   return result
 })
-
-const sin = (n: number) => {
-  return Math.sin((n * Math.PI) / 180)
-}
