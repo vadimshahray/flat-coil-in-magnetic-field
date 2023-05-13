@@ -51,8 +51,9 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
     const isPowerSupplied = selectEngineIsPowerSupplied(store.getState())
 
     if (textRef.current) {
+      const frequency = selectEngineRotationFrequency(store.getState())
       textRef.current.text = isPowerSupplied
-        ? selectEngineRotationFrequency(store.getState()).toString()
+        ? (frequency < 10 ? ' ' : '') + frequency.toFixed(1)
         : ''
     }
 
@@ -160,7 +161,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
             />
           </group>
 
-          <group scale={[0.7, 1, 1]} position={[24, 98, 118]}>
+          <group scale={[0.7, 1, 1]} position={[-2, 98, 118]}>
             <Text ref={textRef} fontSize={47} color='red' font={FiraCode}>
               {' '}
             </Text>
@@ -169,7 +170,7 @@ const Engine = (props: JSX.IntrinsicElements['group']) => {
               ref={textSIRef}
               fontSize={33}
               color='red'
-              position={[46, -4, 0]}
+              position={[76, -4, 0]}
               font={FiraCode}
             >
               Hz
