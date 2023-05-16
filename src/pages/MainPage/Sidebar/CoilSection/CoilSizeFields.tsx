@@ -49,7 +49,7 @@ export const CoilSizeFields = () => {
         min={COIL_FRAME_LENGTH_MIN}
         max={COIL_FRAME_LENGTH_MAX}
         step={COIL_FRAME_LENGTH_STEP}
-        adornment='L'
+        adornment='l'
       />
     </Stack>
   )
