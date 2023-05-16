@@ -33,7 +33,7 @@ export const modelingInfoRU = {
   },
 
   VoltageInfoItem: {
-    label: 'Напряжение',
+    label: 'Действующее напряжение',
     value: '{{value}} В',
   },
 
@@ -78,7 +78,7 @@ export const modelingInfoEN = {
   },
 
   VoltageInfoItem: {
-    label: 'Voltage',
+    label: 'Operating voltage',
     value: '{{value}} V',
   },
 
