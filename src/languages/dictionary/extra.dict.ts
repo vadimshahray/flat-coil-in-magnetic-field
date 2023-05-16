@@ -3,7 +3,7 @@ export const extraRU = {
     NSTU: 'Новосибирский государственный\nтехнический университет',
     projectName: 'Плоская катушка, вращающаяся в магнитном поле',
     students:
-      'Факультет: ПМИ\nВыполнили: Шахрай Вадим, ПМ-15\n\t\t   Зуев Андрей, ПМ-15\n\t\t   Мироненко Алиса, ПМИ-11',
+      'Факультет: ПМИ\nВыполнили: Шахрай Вадим, ПМ-15\n\t\t     Зуев Андрей, ПМ-15\n\t\t     Мироненко Алиса, ПМИ-11',
     supervisor: 'Руководитель: Баранов А. В.',
     year: '2023 год',
   },
@@ -44,7 +44,7 @@ export const extraEN = {
     NSTU: 'Novosibirsk State\nTechnical University',
     projectName: 'Flat coil rotating in a magnetic field',
     students:
-      'Faculty: PMI\nPerformed by: Vadim Shakhray, PM-15\n\t\t     Andrey Zuev, PM-15\n\t\t     Alisa Mironenko, PMI-11',
+      'Faculty: PMI\nPerformed by: Vadim Shakhray, PM-15\n\t\t\tAndrey Zuev, PM-15\n\t\t\tAlisa Mironenko, PMI-11',
     supervisor: 'Supervisor: Baranov A.V.',
     year: '2023 year',
   },
