@@ -221,14 +221,14 @@ const Oscilloscope = (props: JSX.IntrinsicElements['group']) => {
 
         <TerminalConnectingZone
           terminal='Oscilloscope+'
-          color='black'
+          color='#832D2E'
           size={16}
           position={[-28, 32, 83.5]}
         />
 
         <TerminalConnectingZone
           terminal='Oscilloscope-'
-          color='black'
+          color='#4C4C8A'
           size={16}
           position={[-56, 32, 83.5]}
         />
