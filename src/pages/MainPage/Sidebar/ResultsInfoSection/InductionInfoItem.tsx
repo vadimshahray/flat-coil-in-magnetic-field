@@ -12,7 +12,7 @@ export const InductionInfoItem = () => {
   return (
     <InfoItem
       label={translate('label')}
-      value={translate('value', { value: induction.toFixed(3) })}
+      value={translate('value', { value: (induction * 1000).toFixed(3) })}
     />
   )
 }

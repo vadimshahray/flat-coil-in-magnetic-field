@@ -29,7 +29,7 @@ export const modelingInfoRU = {
 
   InductionInfoItem: {
     label: 'Индукция магнитного поля',
-    value: '{{value}} Тл',
+    value: '{{value}} мТл',
   },
 
   VoltageInfoItem: {
@@ -74,7 +74,7 @@ export const modelingInfoEN = {
 
   InductionInfoItem: {
     label: 'Magnetic field induction',
-    value: '{{value}} T',
+    value: '{{value}} mT',
   },
 
   VoltageInfoItem: {
