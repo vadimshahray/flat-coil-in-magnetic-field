@@ -1,4 +1,4 @@
-export const COIL_TURNS_COUNT_MIN = 10
+export const COIL_TURNS_COUNT_MIN = 100
 export const COIL_TURNS_COUNT_MAX = 1000
 export const COIL_TURNS_COUNT_STEP = 50
 export const COIL_TURNS_COUNT_DEFAULT = 500
