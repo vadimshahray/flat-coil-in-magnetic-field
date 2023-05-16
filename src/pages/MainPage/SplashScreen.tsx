@@ -55,14 +55,14 @@ export const SplashScreen = ({ onClose }: Props) => {
               justifyContent='space-between'
               alignSelf='stretch'
             >
-              <Typography variant='body1' component='pre'>
+              <Typography variant='h6' component='pre'>
                 {translate('students')}
               </Typography>
 
-              <Typography variant='body1'>{translate('supervisor')}</Typography>
+              <Typography variant='h6'>{translate('supervisor')}</Typography>
             </Stack>
 
-            <Typography variant='caption'> {translate('year')}</Typography>
+            <Typography variant='body1'> {translate('year')}</Typography>
           </Stack>
         </Paper>
       </Backdrop>
