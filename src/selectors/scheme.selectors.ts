@@ -59,3 +59,9 @@ export const selectIsOscilloscopeConnected = (state: RootState) => {
 
   return !!wireA && !!wireB
 }
+
+export const selectIsOscilloscopeConnectionInverted = (state: RootState) => {
+  return state.scheme.wires.some((w) =>
+    areConnectionsEqual(SCHEME_CONNECTIONS['Coil+Oscilloscope-'], w),
+  )
+}

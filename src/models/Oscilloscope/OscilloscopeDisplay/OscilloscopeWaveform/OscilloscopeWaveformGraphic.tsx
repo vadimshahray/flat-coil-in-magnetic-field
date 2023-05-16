@@ -11,6 +11,7 @@ import {
   selectOscilloscopeScaleX,
   selectEngineRotationFrequency,
   selectIsOscilloscopeConnected,
+  selectIsOscilloscopeConnectionInverted,
 } from '@selectors'
 
 type Props = {
@@ -21,6 +22,7 @@ const T_MAX_SIZE = T_MAX * GRID_CELLS_COUNT_IN_QUARTER
 
 export const OscilloscopeWaveformGraphic = ({ size }: Props) => {
   const isConnected = useSelector(selectIsOscilloscopeConnected)
+  const inverted = useSelector(selectIsOscilloscopeConnectionInverted)
 
   const V = scaleV(
     useSelector(selectModelingVoltageMax),
@@ -37,26 +39,27 @@ export const OscilloscopeWaveformGraphic = ({ size }: Props) => {
   const oscillationsInQuarter = new Array(Math.ceil(size / 2 / TSize)).fill(0)
 
   const renderOscillation = (_: any, i: number) => {
-    const sign = i % 2 ? -1 : 1
+    const ySign = i % 2 ? -1 : 1
+    const xSign = inverted ? -1 : 1
 
     return (
       <>
         <CubicBezierLine
           key={i}
-          start={[i * TSize, 0, 0]}
-          midA={[i * TSize + TSize / 2, sign * V, 0]}
-          midB={[i * TSize + TSize / 2, sign * V, 0]}
-          end={[i * TSize + TSize, 0, 0]}
+          start={[xSign * (i * TSize), 0, 0]}
+          midA={[xSign * (i * TSize + TSize / 2), ySign * V, 0]}
+          midB={[xSign * (i * TSize + TSize / 2), ySign * V, 0]}
+          end={[xSign * (i * TSize + TSize), 0, 0]}
           color='red'
           lineWidth={1}
         />
 
         <CubicBezierLine
           key={i}
-          start={[-i * TSize, 0, 0]}
-          midA={[-i * TSize - TSize / 2, -sign * V, 0]}
-          midB={[-i * TSize - TSize / 2, -sign * V, 0]}
-          end={[-i * TSize - TSize, 0, 0]}
+          start={[xSign * (-i * TSize), 0, 0]}
+          midA={[xSign * (-i * TSize - TSize / 2), -ySign * V, 0]}
+          midB={[xSign * (-i * TSize - TSize / 2), -ySign * V, 0]}
+          end={[xSign * (-i * TSize - TSize), 0, 0]}
           color='red'
           lineWidth={1}
         />
