@@ -14,7 +14,7 @@ export const ResultsInfoSection = () => {
 
       <VoltageInfoItem />
 
-      <AmperageInfoItem />
+      {/* <AmperageInfoItem /> */}
     </Section>
   )
 }
