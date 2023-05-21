@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/flat-coil-in-magnetic-field/static/js/main.07ce196e.js",
+    "main.js": "/flat-coil-in-magnetic-field/static/js/main.e332a3d8.js",
     "static/js/523.1df70799.chunk.js": "/flat-coil-in-magnetic-field/static/js/523.1df70799.chunk.js",
     "static/js/534.50577cb6.chunk.js": "/flat-coil-in-magnetic-field/static/js/534.50577cb6.chunk.js",
     "static/js/573.c15cd3e3.chunk.js": "/flat-coil-in-magnetic-field/static/js/573.c15cd3e3.chunk.js",
@@ -31,7 +31,7 @@
     "static/media/blackboard.glb": "/flat-coil-in-magnetic-field/static/media/blackboard.84e210374eac90c1775c.glb",
     "static/media/HelmholtzCoils.glb": "/flat-coil-in-magnetic-field/static/media/HelmholtzCoils.0363cd103917d1a36020.glb",
     "static/media/sofa.glb": "/flat-coil-in-magnetic-field/static/media/sofa.a3012733ac7238532a6b.glb",
-    "static/media/flat-coil-in-magnetic-field.pdf": "/flat-coil-in-magnetic-field/static/media/flat-coil-in-magnetic-field.b65fc8373bf6e99ca058.pdf",
+    "static/media/flat-coil-in-magnetic-field.pdf": "/flat-coil-in-magnetic-field/static/media/flat-coil-in-magnetic-field.7906bdf82cdfaf2b3197.pdf",
     "static/media/bookshelf.glb": "/flat-coil-in-magnetic-field/static/media/bookshelf.b182da0f73485c8f2bba.glb",
     "static/media/floor_color.png": "/flat-coil-in-magnetic-field/static/media/floor_color.7aeff27b4048038d3b8d.png",
     "static/media/oscilloscope.glb": "/flat-coil-in-magnetic-field/static/media/oscilloscope.5b6068498c9b3aadc321.glb",
@@ -73,7 +73,7 @@
     "static/media/wire.svg": "/flat-coil-in-magnetic-field/static/media/wire.b7364428159227a7b46748c714e8edbd.svg",
     "index.html": "/flat-coil-in-magnetic-field/index.html",
     "static/media/rotation.svg": "/flat-coil-in-magnetic-field/static/media/rotation.e6438c5c3458895a2b0afdb454538859.svg",
-    "main.07ce196e.js.map": "/flat-coil-in-magnetic-field/static/js/main.07ce196e.js.map",
+    "main.e332a3d8.js.map": "/flat-coil-in-magnetic-field/static/js/main.e332a3d8.js.map",
     "523.1df70799.chunk.js.map": "/flat-coil-in-magnetic-field/static/js/523.1df70799.chunk.js.map",
     "534.50577cb6.chunk.js.map": "/flat-coil-in-magnetic-field/static/js/534.50577cb6.chunk.js.map",
     "573.c15cd3e3.chunk.js.map": "/flat-coil-in-magnetic-field/static/js/573.c15cd3e3.chunk.js.map",
@@ -102,6 +102,6 @@
     "334.c46ba33e.chunk.js.map": "/flat-coil-in-magnetic-field/static/js/334.c46ba33e.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.07ce196e.js"
+    "static/js/main.e332a3d8.js"
   ]
 }
