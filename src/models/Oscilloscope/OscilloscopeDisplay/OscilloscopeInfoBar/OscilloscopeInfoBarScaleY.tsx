@@ -12,7 +12,7 @@ import {
 export const OscilloscopeInfoBarScaleY = (
   props: JSX.IntrinsicElements['group'],
 ) => {
-  const ref = useRef<Text & { text: string }>()
+  const ref = useRef<Text & { text: string; anchorX: number }>()
 
   const isConfigurable =
     useSelector(selectOscilloscopeConfigurableParameterI) === 0
@@ -20,9 +20,17 @@ export const OscilloscopeInfoBarScaleY = (
   useFrame(() => {
     if (!ref.current) return
 
-    ref.current.text = `${selectOscilloscopeScaleY(store.getState()).toFixed(
-      2,
-    )} В / ДЕЛ.`
+    const scaleY = selectOscilloscopeScaleY(store.getState())
+
+    if (scaleY >= 0.01) {
+      ref.current.text = `${scaleY.toFixed(2)} В / ДЕЛ.`
+      ref.current.anchorX = -2.5
+
+      return
+    }
+
+    ref.current.text = `${(scaleY * 1000).toFixed(2)} мВ / ДЕЛ.`
+    ref.current.anchorX = -0.65
   })
 
   return (
@@ -46,7 +54,6 @@ export const OscilloscopeInfoBarScaleY = (
       <Text
         ref={ref}
         renderOrder={-1}
-        anchorX={-2.5}
         fontSize={3}
         color={'red'}
         font={FiraCode}
