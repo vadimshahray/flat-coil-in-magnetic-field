@@ -62,12 +62,6 @@ export const CameraViewControl = () => {
             </ToggleButton>
           </Tooltip>
 
-          <Tooltip title={translate('voltmeter')}>
-            <ToggleButton value='@Voltmeter' selected={view === '@Voltmeter'}>
-              {translate('voltmeterShort')}
-            </ToggleButton>
-          </Tooltip>
-
           <Tooltip title={translate('engine')}>
             <ToggleButton value='@Engine' selected={view === '@Engine'}>
               {translate('engineShort')}

@@ -34,17 +34,6 @@ export const selectAreHelmholtzCoilsConnected = (state: RootState) => {
   return !!wireA && !!wireB
 }
 
-export const selectIsVoltmeterConnected = (state: RootState) => {
-  const wireA = state.scheme.wires.find((w) =>
-    areConnectionsEqual(SCHEME_CONNECTIONS['Coil+Voltmeter+'], w),
-  )
-  const wireB = state.scheme.wires.find((w) =>
-    areConnectionsEqual(SCHEME_CONNECTIONS['Coil-Voltmeter-'], w),
-  )
-
-  return !!wireA && !!wireB
-}
-
 export const selectIsOscilloscopeConnected = (state: RootState) => {
   const wireA = state.scheme.wires.find(
     (w) =>

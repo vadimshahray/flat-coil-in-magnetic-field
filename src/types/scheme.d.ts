@@ -1,8 +1,6 @@
 type Terminal =
   | 'Coil+'
   | 'Coil-'
-  | 'Voltmeter+'
-  | 'Voltmeter-'
   | 'Oscilloscope+'
   | 'Oscilloscope-'
   | 'HelmholtzCoils+'
@@ -11,8 +9,6 @@ type Terminal =
   | 'CurrentSource-'
 
 type SchemeConnection =
-  | 'Coil+Voltmeter+'
-  | 'Coil-Voltmeter-'
   | 'Coil+Oscilloscope+'
   | 'Coil+Oscilloscope-'
   | 'Coil-Oscilloscope+'

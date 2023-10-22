@@ -21,11 +21,6 @@ export const CAMERA_COIL_POSITION = COIL_SCENE_POSITION.clone().add(
   new THREE.Vector3(0, 30, 170),
 )
 
-export const VOLTMETER_SCENE_POSITION = new THREE.Vector3(240, TABLE_TOP, 200)
-export const CAMERA_VOLTMETER_POSITION = VOLTMETER_SCENE_POSITION.clone().add(
-  new THREE.Vector3(0, 30, 130),
-)
-
 export const HELMHOLTZ_COILS_SCENE_POSITION = new THREE.Vector3(
   0,
   TABLE_TOP,

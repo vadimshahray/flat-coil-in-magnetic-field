@@ -45,8 +45,6 @@ export const controlsRU = {
     currentSource: 'Посмотреть на источник тока',
     oscilloscopeShort: 'О',
     oscilloscope: 'Посмотреть на осциллограф',
-    voltmeterShort: 'В',
-    voltmeter: 'Посмотреть на вольтметр',
   },
 }
 
@@ -97,7 +95,5 @@ export const controlsEN = {
     currentSource: 'Look at the current source',
     oscilloscopeShort: 'O',
     oscilloscope: 'Look at the oscilloscope',
-    voltmeterShort: 'V',
-    voltmeter: 'Look at the voltmeter',
   },
 }

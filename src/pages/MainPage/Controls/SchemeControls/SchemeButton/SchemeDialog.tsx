@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslate } from '@languages'
-import { CS_HC_scheme, FS_OSC_scheme, FC_V_scheme } from '@components'
+import { CS_HC_scheme, FS_OSC_scheme } from '@components'
 import {
   Stack,
   Button,
@@ -35,19 +35,6 @@ export const SchemeDialog = ({ isOpen, onClose }: Props) => {
               <br />
 
               {translate('CS_HC_schemeDescription')}
-            </Typography>
-          </Stack>
-
-          <Stack direction='row' spacing={3}>
-            <FC_V_scheme />
-
-            <Typography>
-              <b>{translate('FC_V_schemeTitle')}</b>
-
-              <br />
-              <br />
-
-              {translate('FC_V_schemeDescription')}
             </Typography>
           </Stack>
 
