@@ -40,9 +40,9 @@ export const SplashScreen = ({ onClose }: Props) => {
         <Paper elevation={0} sx={{ borderRadius: 0, padding: 4, paddingX: 10 }}>
           <Stack spacing={9} alignItems='center'>
             <Stack direction='row' spacing={1.5} alignItems='center'>
-              <img src={NSTULogoPath} width={40} height={40} />
+              <img src={NSTULogoPath} width={60} height={60} />
 
-              <Typography variant='h6' fontSize={16} component='pre'>
+              <Typography variant='h5' component='pre'>
                 {translate('NSTU')}
               </Typography>
             </Stack>
