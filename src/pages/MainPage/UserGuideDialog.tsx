@@ -1,7 +1,6 @@
 import Hand from 'src/assets/hand.svg'
 import Wire from 'src/assets/wire.svg'
 import React, { useState } from 'react'
-import { useTranslate } from '@languages'
 import NoWire from 'src/assets/no_wire.svg'
 import Rotate from 'src/assets/rotation.svg'
 import ConnectWire from 'src/assets/connect_wire.svg'
@@ -24,6 +23,8 @@ export const UserGuideDialog = () => {
     setStorageItem('@userReadGuide', 'true')
     setOpen(false)
   }
+
+  if (getStorageItem('@userReadGuide')) return null
 
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth='lg'>
