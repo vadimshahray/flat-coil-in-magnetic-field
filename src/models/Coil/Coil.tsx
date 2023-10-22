@@ -40,6 +40,16 @@ const Coil = (props: JSX.IntrinsicElements['group']) => {
 
   const ref = useRef<THREE.Group>(null)
 
+  materials.grey_plastic.color = {
+    isColor: true,
+    b: 0.76,
+    g: 0.76,
+    r: 0.76,
+  } as THREE.Color
+  materials.grey_plastic.roughness = 1
+
+  console.log(materials.grey_plastic)
+
   useFrame(() => {
     const state = store.getState()
 
