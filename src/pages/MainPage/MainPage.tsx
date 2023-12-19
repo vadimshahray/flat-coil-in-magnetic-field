@@ -2,14 +2,16 @@ import { Scene } from './Scene'
 import { Sidebar } from './Sidebar'
 import { Controls } from './Controls'
 import React, { useEffect } from 'react'
+import { getStorageItem } from '@storage'
 import { SplashScreen } from './SplashScreen'
 import { UserGuideDialog } from './UserGuideDialog'
 import { assemblyScheme, startModeling } from '@slices'
-import { useDeviceTypeValue, useDispatch } from '@hooks'
+import { useDeviceTypeValue, useDisclose, useDispatch } from '@hooks'
 
 export const MainPage = () => {
   const dispatch = useDispatch()
 
+  const { isOpen, onClose } = useDisclose(!getStorageItem('@userReadGuide'))
   const showModelingSection = useDeviceTypeValue(true, false)
 
   const handleSplashScreenClose = () => {
@@ -26,7 +28,7 @@ export const MainPage = () => {
     <>
       <SplashScreen onClose={handleSplashScreenClose} />
 
-      <UserGuideDialog />
+      <UserGuideDialog isOpen={isOpen} onClose={onClose} />
 
       {showModelingSection ? (
         <div

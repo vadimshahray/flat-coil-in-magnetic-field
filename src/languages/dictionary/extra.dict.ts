@@ -17,6 +17,10 @@ export const extraRU = {
     switchLanguage: 'Switch to english',
   },
 
+  UserGuideButton: {
+    text: 'Открыть руководство',
+  },
+
   ProjectDocumentButton: {
     downloadDocument: 'Скачать отчет',
   },
@@ -56,6 +60,10 @@ export const extraEN = {
 
   LanguageButton: {
     switchLanguage: 'Переключиться на русский',
+  },
+
+  UserGuideButton: {
+    text: 'Open the guide',
   },
 
   ProjectDocumentButton: {

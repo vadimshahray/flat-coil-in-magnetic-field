@@ -1,10 +1,10 @@
+import React from 'react'
 import Hand from 'src/assets/hand.svg'
 import Wire from 'src/assets/wire.svg'
-import React, { useState } from 'react'
+import { setStorageItem } from '@storage'
 import NoWire from 'src/assets/no_wire.svg'
 import Rotate from 'src/assets/rotation.svg'
 import ConnectWire from 'src/assets/connect_wire.svg'
-import { getStorageItem, setStorageItem } from '@storage'
 import DisconnectWire from 'src/assets/disconnect_wire.svg'
 import {
   Button,
@@ -15,19 +15,19 @@ import {
   DialogActions,
 } from '@mui/material'
 
-export const UserGuideDialog = () => {
-  // !getStorageItem('@userReadGuide')
-  const [open, setOpen] = useState(true)
+type Props = {
+  isOpen: boolean
+  onClose(): void
+}
 
+export const UserGuideDialog = ({ isOpen, onClose }: Props) => {
   const handleClose = () => {
     setStorageItem('@userReadGuide', 'true')
-    setOpen(false)
+    onClose()
   }
 
-  if (getStorageItem('@userReadGuide')) return null
-
   return (
-    <Dialog open={open} onClose={handleClose} fullWidth maxWidth='lg'>
+    <Dialog open={isOpen} onClose={handleClose} fullWidth maxWidth='lg'>
       <DialogTitle variant='h5'>Руководство пользователя</DialogTitle>
 
       <DialogContent>

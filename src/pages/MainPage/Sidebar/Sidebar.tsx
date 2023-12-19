@@ -15,6 +15,7 @@ import {
   Toolbar,
   LanguageButton,
   ColorModeButton,
+  UserGuideButton,
   ProjectDocumentButton,
 } from '@components'
 
@@ -35,7 +36,12 @@ export const Sidebar = () => {
     >
       <Toolbar
         title={translate('title')}
-        actionButtons={[ColorModeButton, LanguageButton, ProjectDocumentButton]}
+        actionButtons={[
+          ColorModeButton,
+          LanguageButton,
+          UserGuideButton,
+          ProjectDocumentButton,
+        ]}
       />
 
       <div style={{ overflowY: 'auto' }}>
